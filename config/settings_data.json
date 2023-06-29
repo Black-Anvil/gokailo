@@ -54,7 +54,7 @@
           "menu_style": "classic",
           "menu_text_color": "is-dark",
           "menu_product": "",
-          "show_announcement": true,
+          "show_announcement": false,
           "home_page_only": true,
           "announcement_text": "*Due to COVID-19 please expect 1-2 day shipping delays for USPS Priority Mail and First Class Package Services.",
           "announcement_link": "shopify:\/\/collections",
