@@ -1,0 +1,31 @@
+<div class="landing-banner">
+  <img src="{{ section.settings.banner-image | img_url: 'master' }}" />
+  <div class="wrapper">
+    <h1>{{ section.settings.banner-heading }}</h1>
+    <div>{{ section.settings.banner-content }}</div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Banner",
+    "settings": [
+      {
+         "type": "text",
+         "id": "banner-heading",
+         "label": "Banner Heading"
+      },
+      {
+         "type": "textarea",
+         "id": "banner-content",
+         "label": "Banner Content"
+      },
+      {
+        "type": "image_picker",
+        "id": "banner-image",
+        "label": "Banner Image",
+		"info": "1920px wide recommended"
+      }
+	]
+  }
+{% endschema %}

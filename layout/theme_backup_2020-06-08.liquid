@@ -1,0 +1,216 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta name="google-site-verification" content="MgWAemHV-5U9Jn8RLZqWacksNkBJsGWrxozFj_bT7fk" />
+  <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="google-site-verification" content="oFqR9R01jT-rsbH7naphPLV5VWTc-7O-g-vuE1zNjLk" />
+<script type="text/javascript" async 
+ src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=Nvz3ut"></script>
+  <!-- Hotjar Tracking Code for www.gokailo.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1635685,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+  {% if settings.favicon != blank %}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  {% endif %}
+
+  <title>
+    {% if template.name == 'password' %}{{ shop.name }}{% else %}{{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}{% endif %}
+  </title>
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  {% include 'social-meta-tags' %}
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_primary }}">
+  <meta name="p:domain_verify" content="9d8c2221036f29c95439a88d8f1fe17b"/>
+  
+  <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
+  <link rel="dns-prefetch" href="//fonts.shopifycdn.com">
+  <link rel="dns-prefetch" href="//static.zdassets.com">
+  <link rel="dns-prefetch" href="//static.klaviyo.com">
+  <link rel="dns-prefetch" href="//script.hotjar.com">
+  <link rel="dns-prefetch" href="//cdn.shopify.com">
+
+  <link href="//maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin>
+  <link href="//fonts.shopifycdn.com" rel="preconnect" crossorigin>
+  <link href="//static.zdassets.com" rel="preconnect" crossorigin>
+  <link href="//static.klaviyo.com" rel="preconnect" crossorigin>
+  <link href="//cdn.shopify.com" rel="preconnect" crossorigin>	
+  {{ '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' | stylesheet_tag }}
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+
+  <script>
+    var theme = {
+      strings:{
+        sold_out: {{ 'products.product.sold_out' | t | json }},
+        add_to_cart: {{ 'products.product.add_to_cart' | t | json }},
+        unavailable: {{ 'products.product.unavailable' | t | json }},
+        increase_quantity: {{ 'cart.general.increase_quantity' | t | json }},
+        reduce_quantity: {{ 'cart.general.reduce_quantity' | t | json }},
+        addressError: {{ 'map.address_error' | t | json }},
+        addressNoResults: {{ 'map.address_no_results' | t | json }},
+        addressQueryLimit: {{ 'map.address_query_limit_html' | t | json }},
+        authError: {{ 'map.auth_error_html' | t | json }}
+      },
+      settings: {
+        ajax_cart_enable: {% if settings.ajax_cart_enable %}{{ settings.ajax_cart_enable | json }}{% else %}null{% endif %},
+        moneyFormat: {{ shop.money_format | json }}
+      }
+    };
+  </script>
+
+  {% comment %}
+  	{{ 'jquery-2.2.3.min.js' | asset_url | script_tag }}
+  	<script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
+  	{{ '//cdnjs.cloudflare.com/ajax/libs/packery/1.4.3/packery.pkgd.min.js' | script_tag }}
+  {% endcomment %}
+  {% include 'inline-content' %}
+  
+  <script type="text/javascript">
+    window.lazySizesConfig = window.lazySizesConfig || {};
+    //page is optimized for fast onload event
+   	lazySizesConfig.loadMode = 1;
+    window.lazySizesConfig.expand = 2; //default 360-500
+	lazySizesConfig. expFactor = 1.5; //default: 1.7
+  </script>
+  <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+
+  
+
+  {{ content_for_header }}
+<meta name="locale-bar--browsing-context-suggestions-url" content="{{ routes.browsing_context_suggestions_url }}">
+<meta name="locale-bar--current-language" content="{{ request.locale.iso_code }}">
+<meta name="locale-bar--current-currency" content="{{ cart.currency.iso_code }}">
+
+  {% if template.directory == 'customers' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+  {% endif %}
+<!-- Google Tag Manager -->
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TNMTZCC');	
+</script>
+<!-- End Google Tag Manager --—>
+<!-- Global site tag (gtag.js) - Google Ads: 726205991 --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-726205991"></script> 
+<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-726205991'); </script>
+<!--Gem_Page_Header_Script-->
+{% include 'gem-app-header-scripts' %}
+<!--End_Gem_Page_Header_Script-->
+<!-- Pinterest Tag -->
+<!-- Begin Pinterest Tag -->
+<script>
+  !function(e){if(!window.pintrk){window.pintrk=function()
+  {window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+  n=window.pintrk;n.queue=[],n.version="3.0";var
+  t=document.createElement("script");t.async=!0,t.src=e;var
+  r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r)}}
+  ("https://s.pinimg.com/ct/core.js");
+  pintrk('load','2613299209513', { em: '{{ customer.email }}', });
+  pintrk('page');
+</script>
+<noscript><img height="1" width="1" style="display:none;" alt=""  src="https://ct.pinterest.com/v3/?event=init&tid=2613299209513&pd[em]=<hashed_email_address>&noscript=1" /></noscript>
+<!--End Pinterest-->
+
+<!-- Pinterest Events -->
+<script>
+//addtocart event
+window.addEventListener('load', function() {
+if (document.getElementsByClassName('btn btn--fill btn--regular btn--color btn--shopify-payment-btn btn--secondary-accent')) {
+var ATCbutton = document.getElementsByClassName('btn btn--fill btn--regular btn--color btn--shopify-payment-btn btn--secondary-accent');
+for (var i = 0; i < ATCbutton.length; i++) {
+ATCbutton[i].addEventListener('click', function() {
+  pintrk('track', 'addtocart',{
+  	np: 'generator',
+  	value: 'varPlaceholder',
+  	order_quantity: 'varPlaceholder',
+  	currency: 'varPlaceholder',
+  });
+})}}});
+</script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js" type="text/javascript"></script>
+<!-- End Pinterest Tag -->
+<script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"17345195"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script>
+  
+{%- render 'bold-common' -%}
+{%- render 'bold-ro-init' -%}
+  
+  <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/6VubeMJ7GY2e0Ai0ynXuSw" async></script>
+</head>
+
+<body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TNMTZCC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div id="PageContainer"{% if color %} class="{{ color }}"{% endif %}>
+
+    
+    {% unless template == 'page.kailo-landing' or template == 'page.kailo-landing-2' or template == 'page.kailo-landing-3' %}
+        {% section 'header' %}
+    {% endunless %}
+    
+
+    <main class="main-content{% if template.name == blank %} main-content--no-template{% endif %}" role="main">
+
+      {{ content_for_layout }}
+
+    </main>
+
+    {% unless template == 'page.kailo-landing' or template == 'page.kailo-landing-2' or template == 'page.kailo-landing-3' %}
+        {% section 'footer' %}
+    {% endunless %}
+
+  </div>
+
+  <script type="text/javascript">
+
+    {% capture jQuery_plus_icon %} {% include "asset_svg" with "plus" %} {% endcapture %}
+    {% capture jQuery_minus_icon %} {% include "asset_svg" with "minus" %} {% endcapture %}
+    {% capture jQuery_close_icon %} {% include "asset_svg" with "close" %} {% endcapture %}
+    {% capture jQuery_arrow_down_icon %} {% include "asset_svg" with "arrow_down" %} {% endcapture %}
+    {% capture jQuery_arrow_left_icon %} {% include "asset_svg" with "arrow_left" %} {% endcapture %}
+    {% capture jQuery_arrow_right_icon %} {% include "asset_svg" with "arrow_right" %} {% endcapture %}
+
+    jQuery.themeAssets = {
+      plus: '{{ jQuery_plus_icon | lstrip | rstrip }}',
+      minus: '{{ jQuery_minus_icon | lstrip | rstrip }}',
+      close: '{{ jQuery_close_icon | lstrip | rstrip }}',
+      arrow_down: '{{ jQuery_arrow_down_icon | lstrip | rstrip }}',
+      arrow_left: '{{ jQuery_arrow_left_icon | lstrip | rstrip }}',
+      arrow_right: '{{ jQuery_arrow_right_icon | lstrip | rstrip }}'
+    }
+
+    {% if newHash %}
+      $(function() {
+        timber.updateHash('{{ newHash }}');
+      });
+    {% endif %}
+    {% if resetPassword %}
+      $(function() {
+        timber.resetPasswordSuccess();
+      });
+    {% endif %}
+  </script>
+<!--- Start of GetEmails.com Code ---><script async src="https://s3-us-west-2.amazonaws.com/files.getemails.com/account/DY4H40Z/source/getemails.js"></script><!--- End of GetEmails.com Code --->
+<!--Gem_Page_Footer_Script-->
+{% include 'gem-app-footer-scripts' %}
+<!--End_Gem_Page_Footer_Script-->
+<script src='https://revsliderapp.com/public/assets/js/themepunch-bind.js' defer="defer"></script>
+</body>
+</html>

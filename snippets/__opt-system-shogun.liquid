@@ -1,0 +1,91 @@
+{%- assign shogun_page = false -%}
+{%- assign shogun_url = 'https://cdn.getshogun.com/' -%}
+
+{%- if content_for_layout contains 'data-shogun-variant-id' -%}
+		{%- assign shogun_page = true -%}
+{%- endif -%}
+
+
+{%- if shogun_page -%}
+
+	{%- capture __content_for_layout -%}
+		{{ content_for_layout }}
+	{%- endcapture -%}
+
+	{%- assign words = __content_for_layout | split: '" data-region="' -%}
+	{%- assign temp  = __content_for_layout -%}
+	{%- assign js_content_for_shogun_defer = '' -%}
+	{%- assign js_content_for_shogun_defer_css = '' -%}
+
+	{%- capture _ids -%}{% for word in words %}{% if word contains 'data-shogun-variant-id="' %}{{ word | slice: -24, 25 | strip_newlines | lstrip }},{% endif %}{% endfor %}{%- endcapture -%}
+	
+	{%- assign ids = _ids | split: ',' -%}
+	{%- assign ids = ids | uniq | join: ", " -%}
+
+		{% for id in ids %}
+			{%- if id != '' -%}
+
+				{%- capture replace_css_from -%}href="{{ shogun_url }}{{ id }}.css"{%- endcapture -%}
+				{%- capture replace_css_to -%}data-href="{{ shogun_url }}{{ id }}.css"{%- endcapture -%}
+
+				{%- capture replace_js_from -%}<script type="text/javascript" src="{{ shogun_url }}{{ id }}.js" async></script>{%- endcapture -%}
+				{%- capture replace_js_to -%}{%- endcapture -%}	
+
+				{%- assign temp = temp | replace: replace_css_from, replace_css_to | replace: replace_js_from, replace_js_to  -%}
+
+			{%- endif -%}
+		{% endfor %}	
+
+	{%- capture js_content_for_shogun_defer_js -%}
+	<script>
+	var shogun_urls = [];
+	{% for id in ids %}
+		{%- if id != '' -%}
+			{%- capture __url -%}{{ shogun_url }}{{ id }}.js{%- endcapture -%}
+			{%- if content_for_layout contains __url -%}
+			shogun_urls[{{ forloop.index0 }}] = '{{__url}}';
+			{%- endif -%}
+		{%- endif -%}
+	{% endfor %}
+	var shogun_page = true;
+	engine.shogun = function()
+	{
+		var _0x8f2b=['length'];(function(_0x26587c,_0x8f2b08){var _0x5ab48e=function(_0x2468aa){while(--_0x2468aa){_0x26587c['push'](_0x26587c['shift']());}};_0x5ab48e(++_0x8f2b08);}(_0x8f2b,0x105));var _0x5ab4=function(_0x26587c,_0x8f2b08){_0x26587c=_0x26587c-0x0;var _0x5ab48e=_0x8f2b[_0x26587c];return _0x5ab48e;};for(var i=0x0;i<shogun_urls[_0x5ab4('0x0')];i++){if(shogun_urls[i]!=undefined){loadJS(shogun_urls[i]);}}
+	}
+	</script>	
+	{%- endcapture -%}
+
+	{%- capture js_content_for_shogun_defer_css -%}
+	{% for id in ids %}
+		{%- if id != '' -%}
+			{%- capture __url -%}{{ shogun_url }}{{ id }}.css{%- endcapture -%}
+			{%- if content_for_layout contains __url -%}
+				<link rel="preload" href="{{__url}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+				<noscript><link rel="stylesheet" href="{{__url}}"></noscript>
+			{%- endif -%}
+		{%- endif -%}
+	{% endfor %}
+	{%- endcapture -%}
+
+	{%- assign replace = '1200x1200' -%}
+
+	{%- capture shogunlazysizes -%}
+	<script src="{{ 'shogun-lazysizes.js' | asset_url }}" defer="defer"></script>
+	{%- endcapture -%}
+
+	{%- assign content_for_layout = 
+		temp 
+		| replace: 'class="shogun-image', 'class="lazyload shogun-image'
+		| replace: '<img src="https://i.shgcdn.com/', '<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://i.shgcdn.com/'
+		| replace: '<img data-src="https://i.shgcdn.com/', '<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="https://i.shgcdn.com/'
+		| replace: '<iframe class="shogun-video-embed " src="', '<iframe class="shogun-video-embed lazyload-event" data-src="'
+		| replace: '<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:600%7CMontserrat:400%7CMontserrat:">', ''
+		| replace: '3000x3000', replace
+		| replace: '<script type="text/javascript" src="https://lib.getshogun.com/lazysizes/2.0.0/shogun-lazysizes.js" async></script>',''
+		| append: js_content_for_shogun_defer_js
+	-%}
+
+{%- endif -%}
+
+{% comment %} Should put this directive to /snippets/__opt-css-theme-footer.liquid {% endcomment %}
+{% comment %} {{ js_content_for_shogun_defer_css }} {% endcomment %}

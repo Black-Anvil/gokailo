@@ -1,0 +1,40 @@
+<!-- Tracking Pixel Start -->
+    {% if first_time_accessed %}
+      <script type="text/javascript">
+        !function(e){
+          if(!window.pintrk){
+            window.pintrk=function()
+        		{window.pintrk.queue.push(Array.prototype.slice.call(arguments))};
+            var n=window.pintrk;n.queue=[],n.version="3.0";
+            var t=document.createElement("script");t.async=!0,t.src=e;
+            var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r)
+          }
+        }
+        
+        ("https://s.pinimg.com/ct/core.js");
+        pintrk('load','2613299209513', { em: '{{ customer.email }}', }); 
+        pintrk('page'); 
+      </script> 
+      <noscript>
+        <img height="1" width="1" style="display:none;" alt=""
+        src="https://ct.pinterest.com/v3/?tid=2613299209513&noscript=1" /> 
+   	  </noscript>
+
+      <script>
+        pintrk('track', 'checkout',{
+          value: {{ total_price | money_without_currency }}, 
+          currency: '{{ currency }}',
+          order_quantity: 1,
+          order_id: {{ checkout.id }}
+        });
+      </script>
+      <noscript>
+      	<img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/v3/?tid=2613299209513&event=checkout&noscript=1"/>
+      </noscript>
+    {% endif %}
+
+    {% if first_time_accessed %}
+    <iframe src="https://www.gu-ecom.com/?nid=373&adv_event_id=16459&transaction_id=&amount={{ total_price | money_without_currency }}&adv1={{ order_number }}&advid=173" scrolling="no" frameborder="0" width="1" height="1"></iframe>
+    {% endif %}
+
+<!-- Tracking Pixel End -->

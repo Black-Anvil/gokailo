@@ -1,0 +1,123 @@
+{% comment %}
+	GEMPAGE BUILDER (https://apps.shopify.com/gempage)
+
+	You SHOULD NOT modify source code in this page because
+	It is automatically generated from GEMPAGE BUILDER
+	Try to edit page with the live editor.
+{% endcomment %}
+<style>
+  .white-popup {
+    position: relative;
+    background: #FFF;
+    padding: 40px;
+    width: auto;
+    max-width: 1200px;
+    margin: 20px auto;
+    font-size: x-large;
+    line-height:normal;
+  }
+  .popup-inner{
+	display:flex;
+  }
+  .popup-inner > div{
+	flex:100%;
+  }
+  .special {
+	display:block;
+    text-align:center;
+    width:85%;
+  }
+  .rate {
+	text-align:center;
+	margin: -0.5em 0;
+  }
+  .number {
+	font-size:6em;
+    font-weight:600;
+  }
+  .percent {
+	position: relative;
+    top: -0.5em;
+    font-size: 3.5em;
+    font-weight:600;
+  }
+  .off {
+    position: relative;
+    left: -2.3em;
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+  .special-image {
+    width:85%;
+  }
+  .act-now {
+    display:block;
+    font-size:1.2em;
+	font-weight:600;
+    text-align:center;
+  }
+  .offer {
+	display:block;
+    font-size:2.2em;
+    font-weight:600;
+    text-align:center;
+    color: #ff6b01;
+  }
+  .original-price {
+	display:block;
+    text-align:center;
+	text-decoration: line-through;
+    color:red;
+  }
+  .new-price {
+	display:block;
+    text-align:center;
+  }
+  .yes-bundle {
+    margin: 2em 0 1em 0;
+	text-align:center;
+  }
+  .no-thanks {
+	display:block;
+    text-align:center;
+  }
+  .no-thanks a {
+	color:#343434;
+    text-decoration:underline;
+    cursor:pointer;
+  }
+</style>
+{% comment %}
+  The contents of the product.liquid template can be found in /sections/product-template.liquid
+{% endcomment %}
+
+{% section 'product-template' %}
+<div class="wrapper yotpo yotpo-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&amp;','%26'}}" data-description="{{ product.description | escape }}" data-price="{{ variant.price | money_without_currency }}" data-currency="{{ shop.currency }}"></div>
+<script text="text/javascript">
+  var _learnq = _learnq || [];
+
+  var item = {
+    Name: {{ product.title|json }},
+    ProductID: {{ product.id|json }},
+    Categories: {{ product.collections|map:'title'|json }},
+    ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+    URL: "{{ shop.secure_url }}{{ product.url }}",
+    Brand: {{ product.vendor|json }},
+    Price: {{ product.price|money|json }},
+    CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+  };
+
+  _learnq.push(['track', 'Viewed Product', item]);
+  _learnq.push(['trackViewedItem', {
+    Title: item.Name,
+    ItemId: item.ProductID,
+    Categories: item.Categories,
+    ImageUrl: item.ImageURL,
+    Url: item.URL,
+    Metadata: {
+      Brand: item.Brand,
+      Price: item.Price,
+      CompareAtPrice: item.CompareAtPrice
+    }
+  }]);
+</script>

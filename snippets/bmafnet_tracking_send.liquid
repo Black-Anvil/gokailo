@@ -1,0 +1,11 @@
+
+<script>
+  // Fetch the bmanet Session Cookie
+  let utm_term = Cookies.get('utm_term');
+  // remove the bmanet Session Cookie
+  Cookies.remove('utm_term');
+  // Add tracking Pixel
+  Shopify.Checkout.OrderStatus.addContentBox(
+    '<img src="https://bmafnet.com/p.ashx?o=1714&e=126&f=pb&r='+utm_term+'&t={{ checkout.order_id }}" width="0" height="0" border="0" />'
+  );
+</script>

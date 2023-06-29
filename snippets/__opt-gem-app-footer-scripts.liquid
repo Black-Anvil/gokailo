@@ -1,0 +1,37 @@
+{% if article.id == 387615785091 %}
+<script data-instant-track type="text/javascript">	
+    var pageLibs = [		"https://d1um8515vdn9kb.cloudfront.net/libs/js/gfyoutube.js",'{{ 'gem-article-387615785091.js' | asset_url }}',	];
+</script>
+{% endif %}
+{% capture gemFooterScripts %}
+<script data-instant-track type="text/javascript">	
+    var GEMVENDOR = GEMVENDOR || (function(){		var _js = {};		return {			init: function(Args) {				_js = Args;			},			getLibs: function() {				return _js;			}		};	}());	
+    GEMVENDOR.init(pageLibs);
+</script>
+<script data-instant-track type="text/javascript" src="https://d1um8515vdn9kb.cloudfront.net/files/gempagev2.js?v=1.0" class="gf-script" defer></script>
+{% endcapture %}
+{% assign gemHandleCheck = '387615785091' | split: ", " %}
+{% for h in gemHandleCheck %}
+    {% assign idVal = h | plus:0 %}
+    {% if article.id == idVal %}
+        {{ gemFooterScripts }}
+    {% endif %}
+{% endfor %}
+
+{%- assign variable = value -%}
+
+{%- capture __GEM_FOOTER_SCRIPT -%}
+	{{ GEM_FOOTER_SCRIPT }}
+{%- endcapture -%}
+
+{%- assign __GEM_FOOTER_SCRIPT = __GEM_FOOTER_SCRIPT
+	| replace: 'type="text/javascript" src="', 'type="text/javascript" data-src="'
+-%}
+
+{% comment %} 
+//cdn.shopify.com/s/files/1/0121/1537/8238/t/18/assets/gem-page-index-1607457077.js?v=11695208001060555118
+{% endcomment %}
+
+
+{%- assign GEM_FOOTER_SCRIPT = __GEM_FOOTER_SCRIPT -%}
+{{ GEM_FOOTER_SCRIPT }}

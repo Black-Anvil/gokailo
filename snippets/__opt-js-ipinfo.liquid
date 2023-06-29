@@ -1,0 +1,17 @@
+{% if template != 'cart' %}
+<script>
+  //var kailo_eu = ["DE", "BE", "NL"];
+    var kailo_eu = [];
+  var kailo_uk = ["GB"];
+  fetch('https://ipinfo.io/json?token=b95cafd25241d7')
+  .then(res => res.json())
+  .then( data => {
+	if(kailo_uk.includes( data.country )){
+      window.location.href = "https://gokailo.co.uk/";     
+    }
+    else if(kailo_eu.includes( data.country )){
+      window.location.href = "https://gokailo.eu/"
+    }
+  })
+</script>
+{% endif %}

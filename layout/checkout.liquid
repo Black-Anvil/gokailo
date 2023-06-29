@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    <title>{{ page_title }}</title>
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+    
+    {% include 'checkout_css' %}
+    <!-- GTM DataLayer Order Details -->
+    <script>
+window.dataLayer = window.dataLayer || [];
+
+function transactionComplete() {
+    
+    return dataLayer.push({
+        event : 'transactionComplete',
+        checkout: {
+            'transactionId': '{{order.order_number}}',
+            'transactionTotal': {{checkout.total_price | times: 0.01}},
+            'transactionRevenue': {{checkout.subtotal_price | times: 0.01}},
+            'transactionCurrency': 'USD',
+            'transactionShipping': {{checkout.shipping_price | times: 0.01}},
+            'transactionTax': {{tax_price | times: 0.01}},
+            'transactionDiscount': {{checkout.discounts_amount | times: 0.01}},
+            'customerName': '{{customer.name}}',
+          'customerEmail': '{{checkout.email}}',
+          'customerPhone': '{{customer.phone}}',
+          'customerAddressPhone': '{{address.phone}}',
+            'transactionProducts': [
+            {% for line_item in line_items %}
+                {
+                'id': '{{line_item.product_id}}',
+                'sku': '{{line_item.sku}}',
+                'name': '{{line_item.title}}',
+                'category': '{{line_item.type}}',
+                'price': {{line_item.line_price | times: 0.01}},
+                'quantity': {{line_item.quantity}}
+                },
+            {% endfor %}]
+    }});
+};
+    transactionComplete();
+</script>
+    <!-- End GTM DataLayer Order Details -->
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TNMTZCC');	
+    </script>
+    <!-- End Google Tag Manager --—>
+    <!-- Global site tag (gtag.js) - Google Ads: 726205991 --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-726205991"></script> 
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-726205991'); </script>    
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-126972362-7', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics -->
+      <!-- Facebook Pixel Code -->
+      <script>
+        if(typeof fbq === 'undefined') {
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+           if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+           n.queue=[];t=b.createElement(e);t.async=!0;
+           t.src=v;s=b.getElementsByTagName(e)[0];
+           s.parentNode.insertBefore(t,s)}(window, document,'script',
+                                           'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '2511177278913224');
+          fbq('trackCustom', 'CheckoutView');
+        }
+      </script>
+      <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=2511177278913224&ev=PageView&noscript=1"
+             />
+      </noscript>
+    	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js" type="text/javascript"></script>
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_3D1WlK2kBIuhWbuvKhvXm4OtJcEljvTKrh3BRI65ePO',{api_host:'https://app.posthog.com'})
+</script>
+    <meta name="google-site-verification" content="MV8mPwm85dO-vSLNGFgDTVYqRBr-f3HQeJ-ZtEFLgec" />
+    <meta name="msvalidate.01" content="1337C78CC5FEE3FD76328C27EAF8E199" />
+    <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '746065746668502');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=746065746668502&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    <script src="{{ 'ascii-only.min.js' | asset_url }}" defer></script>  
+  </head>
+  <body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TNMTZCC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->    
+    {{ skip_to_content_link }}
+
+    <!--<header class="banner-new" data-header role="banner">
+      <div class="wrap">
+       { { content_for_logo }}
+      </div>
+    </header>-->
+
+    {{ order_summary_toggle }}
+    <div class="content_master" data-content>
+      <div class="wrap">
+        <header class="banner" data-header="" role="banner" aria-hidden="false">
+      <div class="wrap">
+          
+  		<a class="logo" href="https://gokailo.com"><img alt="Kailo Pain Patch | Gokailo.com" class="logo__image logo__image--small" src="//cdn.shopify.com/s/files/1/0121/1537/8238/files/logo_480x480.png?v=1585137322"></a>
+      </div>
+    </header>
+        <div class="main">
+          <header class="main__header" role="banner">
+            {{ content_for_logo }}
+            {{ alternative_payment_methods }}
+          </header>
+          <div class="main__content">
+            {{ content_for_layout }}
+            <div class="section section--billing-addresses" data-billing-address="" data-update-order-summary="">
+              <div class="section__header">
+                <h2 class="section__title">Shipping method</h2>
+              </div> 
+  			</div>
+            <div class="section section--payment" data-payment="" data-update-order-summary="">
+              <div class="section__header">
+                <h2 class="section__title">Payment</h2>
+              </div>
+            </div>
+            
+          </div>
+          <footer class="main__footer" role="contentinfo">
+            {{ content_for_footer }}
+          </footer>
+        </div>
+        <aside class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+			<!-- adding contnet for custom design -->
+            {% assign items = false %}
+            {% for item in checkout.line_items %}
+            	{% if checkout.line_items.size > 1 %}
+            		{% assign items = true %}
+            	{% endif %}
+            	{% if items %}
+            		{% if forloop.index == 1 %}
+            			{{ item.image |remove:'_small' | product_img_url: 'master' | img_tag:'__bigImg','_bigcheckoutImg'}}
+            		{% endif %}
+            	{% else %}
+            		{{ item.image |remove:'_small' | product_img_url: 'master' | img_tag:'__bigImg','_bigcheckoutImg'}}
+            	{% endif %}
+            {% endfor %}
+            <div class="guarantee"><img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/money-back_480x480.png?v=1585142012" alt=""></div>
+            <h2 class="section__title wo">Order Summary</h2>
+            {{ content_for_order_summary }}
+          </div>
+          <div class="shipingDetail">
+            <div class="moneyGuranteeImg">
+              <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/money_480x480.png?v=1584523820" alt="" />
+            </div>
+            <div class="moneyGuranteeText">
+              <h2>90 Day Money-Back Guarantee</h2>
+            </div>
+          </div>
+          <div class="shipingDetail">
+            <div class="moneyGuranteeImg">
+              <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/shiping_480x480.png?v=1584523805" alt="" />
+            </div>
+            <div class="moneyGuranteeText">
+              <h2>Free Shipping (in the United States)</h2>
+            </div>
+          </div>
+           <div class="shipingDetail">
+            <div class="moneyGuranteeImg">
+              <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/return_480x480.png?v=1584523775" alt="" />
+            </div>
+            <div class="moneyGuranteeText">
+              <h2>Returns accepted up to 90 days</h2>
+            </div>
+          </div>
+          <div class="shipingDetail">
+            <div class="moneyGuranteeText soldTitle">
+              <h2>Over 1 Million Users</h2>
+            </div>
+          </div>
+
+          <div class="custComments">
+            <div class="WrapDiv">
+              <div class="UserName">
+              <div class="customerTitle">
+                <h1>M</h1>
+                <span>
+                  <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/correct_480x480.png?v=1584526096" alt="">
+                </span>
+              </div>             
+              
+              <div class="rating">
+                <h4><strong>Barbara B.</strong> <span>Verified Buyer</span></h4><img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+              </div>
+            </div>
+            <div class="date">
+              <p>02/10/22</p>
+            </div></div>
+            <div class="customerInfo">              
+              <div class="commntTile">
+                <h4>Quick and easy</h4>
+                <p>Quick and easy</p>
+                 <p class="commentPara">On Adhesive 10 Pack</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="custComments">
+            <div class="WrapDiv">
+              <div class="UserName">
+              <div class="customerTitle">
+                <h1>M</h1>
+                <span>
+                  <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/correct_480x480.png?v=1584526096" alt="">
+                </span>
+              </div>             
+              
+              <div class="rating">
+                <h4><strong>Mead</strong> <span>Verified Buyer</span></h4><img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+              </div>
+            </div>
+            <div class="date">
+              <p>01/25/22</p>
+            </div></div>
+            <div class="customerInfo">              
+              <div class="commntTile">
+                <h4>Surprised</h4>
+                <p>I’m pleasantly Surprised that this works.When my plain is mild to moderate it is very effective. It’s also comfortable to wear. Especially compared to a TEN unit.</p>
+                 <p class="commentPara">On Kailo<sup>TM</sup> Bundle</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="custComments">
+            <div class="WrapDiv">
+              <div class="UserName">
+              <div class="customerTitle">
+                <h1>M</h1>
+                <span>
+                  <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/correct_480x480.png?v=1584526096" alt="">
+                </span>
+              </div>             
+              
+              <div class="rating">
+                <h4><strong>Robin C.</strong> <span>Verified Buyer</span></h4><img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+              </div>
+            </div>
+            <div class="date">
+              <p>01/15/22</p>
+            </div></div>
+            <div class="customerInfo">              
+              <div class="commntTile">
+                <h4>Kailo really works. I have</h4>
+                <p>Kailo really works. I have been experiencing pain in my hips for months. After using Kailo I immediately motice my oain faded away. Kailo is my best friend now:)</p>
+                 <p class="commentPara">On Kailo<sup>TM</sup> Bundle</p>
+              </div>
+            </div>            
+          </div>
+
+          <div class="custComments">
+            <div class="WrapDiv">
+              <div class="UserName">
+              <div class="customerTitle">
+                <h1>M</h1>
+                <span>
+                  <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/correct_480x480.png?v=1584526096" alt="">
+                </span>
+              </div>             
+              
+              <div class="rating">
+                <h4><strong>Pam G.</strong> <span>Verified Buyer</span></h4><img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/star_480x480.png?v=1584526083" alt="">
+              </div>
+            </div>
+            <div class="date">
+              <p>01/11/22</p>
+            </div></div>
+            <div class="customerInfo">              
+              <div class="commntTile">
+                <h4>Amazing</h4>
+                <p>Glad I got these extras, haven’t used them yet (still using the originals I receved) but considering the incredible luck I’m having, I expect to use these and order mopre. I don’t know how this works but it WORKS beautifully!</p>
+                 <p class="commentPara">On Adhesive 10 Pack</p>
+              </div>
+            </div>            
+          </div>
+
+          
+                
+
+        </aside>
+      </div>
+    </div>
+
+	{{tracking_code}}
+    
+    {% include 'smsbump_checkout_marketing_subscription' %}
+    {% comment %}
+      {% include 'pinterest_tracking' %}
+      {% include 'yotpo_tracking' %}
+    
+    {% endcomment %}
+
+    <script>
+     {% if customer %}
+        var con = document.querySelector('.step__sections .section--contact-information');
+        if (con) {
+            con.classList.add('contact_info');
+        }
+
+        var elem = document.querySelector('.step__sections .section--shipping-address');
+        if (elem) {
+            elem.classList.add('expelliarmus');
+        }
+
+        var elem1 = document.querySelector('.step__sections .section--shipping-method');
+        if (elem1) {
+            elem1.classList.add('expelliarmus_method');
+        }
+
+        var pay = document.querySelector('.step__sections .section--payment-method');
+        if (pay) {
+            pay.classList.add('expelliarmus__pay');
+        }
+
+        var bill = document.querySelector('.step__sections .section--billing-address');
+        if (bill) {
+            bill.classList.add('expelliarmus__billing');
+        }
+    {% endif %}
+      
+      
+      function insertAfter(referenceNode, newNode) {
+        console.log(giftCardForm + " " + el);
+        referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+      }
+
+    var el = document.createElement("p");
+      el.innerHTML = "*Codes are only good for products that are not on sale.<br/><br/>";
+      var giftCardForm = document.querySelector(".order-summary__section--discount");
+      insertAfter(giftCardForm, el);
+
+
+      var ur = document.URL;
+      var query_string_paramter = ur.split("?")[1];
+      console.log(query_string_paramter);
+      if(query_string_paramter=="previous_step=contact_information&step=shipping_method"){
+        var bbbb = document.querySelector('.section--billing-addresses');
+        bbbb.style.display = 'none';
+      }
+      
+      if(query_string_paramter=="previous_step=shipping_method&step=payment_method"){
+        var bbbb2 = document.querySelector('.section--payment');
+        bbbb2.style.display = 'none';
+      }
+      
+      if(query_string_paramter=="previous_step=shipping_method&step=payment_method"){
+        var bbbb1 = document.querySelector('.section--billing-addresses');
+        bbbb1.style.display = 'none';
+      }
+      
+      if(query_string_paramter=="previous_step=contact_information&step=payment_method"){
+        var bbbb122 = document.querySelector('.section--payment');
+        bbbb122.style.display = 'none';
+      }
+
+      var last = ur.substring(ur.lastIndexOf("/") + 1, ur.length);
+
+      if(last=="thank_you"){
+        var bbbb11 = document.querySelector('.section--billing-addresses');
+        bbbb11.style.display = 'none';
+        var bbbb22 = document.querySelector('.section--payment');
+        bbbb22.style.display = 'none';
+
+      }
+
+      if(document.querySelector(".section--shipping-address") === null) {
+        if(document.querySelector(".section--shipping-method") === null) {
+          var last1 = ur.substring(ur.lastIndexOf("/") + 1, ur.length);
+          var lasr = last1.indexOf("previous_step=contact_information&step=shipping_method");
+	      var lasr1 = last1.indexOf("previous_step=shipping_method&step=payment_method");
+
+    		if(lasr===-1 && lasr1===-1){
+                //console.log(12);
+                var bbbb4 = document.querySelector('.section.section--billing-addresses');
+                bbbb4.style.display = 'none';
+                var bill_foot1 = document.querySelector('.main-checkout');
+                if (bill_foot1) {
+                    bill_foot1.classList.add('billing_footer');
+                }
+            }
+         }else{
+            var bbbbpay = document.querySelector('.section.section--billing-addresses');
+	        bbbbpay.style.display = 'none';
+
+    	 }
+      }
+      
+    </script>
+  {% include 'bmafnet_tracking' %}
+    {% include 'smsbump_checkout_marketing_subscription' %}
+
+    
+<!--Yotpo Rewards-->
+    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/6VubeMJ7GY2e0Ai0ynXuSw" async></script>
+    <div class="yotpo-widget-instance" data-yotpo-instance-id="65572"></div>
+    <!--End Yotpo Rewards-->
+   
+    <!-- LOYALTY CODE START POST CHECKOUT -->
+<script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/6VubeMJ7GY2e0Ai0ynXuSw" async></script>
+<!-- Initial CSS to hide the module -->
+<style type="text/css">
+    .yotpo-checkout-hide {
+        display: none;
+    }
+</style>
+<!-- module inside container -->
+<div class="yotpo-refer-popup-container yotpo-checkout-hide">
+<div class="yotpo-widget-instance" data-yotpo-instance-id="72227"></div>
+</div>
+<!-- JS to handle module initiation -->
+<script type="text/javascript">
+    window.location.href.indexOf("loyalty_thank_you") !== -1
+        ? document
+              .querySelector(".yotpo-checkout-hide")
+              .classList.remove("yotpo-checkout-hide")
+        : "";
+</script>
+<!-- LOYALTY CODE END -->
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{% comment %} This is an example "How to load googlefonts in the preload mode" {% endcomment %}
+{% comment %} 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap" media="print" onload="this.onload=null;this.removeAttribute('media');">
+{% endcomment %}
+
+{% comment %} <link rel="stylesheet" href="{{ 'font-awesome.min.css' | asset_url }}" media="print" onload="this.onload=null;this.removeAttribute('media');"> {% endcomment %}
+
+<style>
+@font-face{
+	font-display:swap;
+	font-family:'FontAwesome';
+	src:url('{{ 'fontawesome-webfont.woff2' | asset_url }}') format('woff2');
+	font-weight:normal;
+	font-style:normal
+}
+</style>

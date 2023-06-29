@@ -1,0 +1,178 @@
+{% if template != 'cart' %}
+  {% if template == 'page.kailo-landing-white-paper-download' %}
+      <!-- Facebook Pixel Code -->
+      <script>
+        if(typeof fbq === 'undefined') {
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '2138752733031580');
+    //       fbq('track', 'PageView');
+        }
+      </script>
+      <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=2138752733031580&ev=PageView&noscript=1"
+      /></noscript>
+      <!-- End Facebook Pixel Code -->
+      <script>
+  //      fbq('track', 'Lead', {value: '32', currency: 'USD'});
+      </script>
+    <!-- Event snippet for Sign- Ups for Giveaway | Nov 2020 conversion page
+    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-726205991/GIQvCNfxgOoBEKeMpNoC',
+            'event_callback': callback
+        });
+        return false;
+      }
+
+      window.addEventListener("klaviyoForms", function(e) {
+        if (e.detail.type == 'open') {
+
+          //Track Fb Pixels
+          fbq('init', '2138752733031580');
+          fbq('track', 'PageView');
+          // report gTag 
+          gtag_report_conversion();
+        }
+      });
+
+    </script>
+  {% endif %}
+
+
+  {% if template == 'page.kailo-landing-12-Days-Giveaways' or template == 'page.gem-79458467971-template' %}
+        {% comment %}
+    <!-- Facebook Pixel Code -->
+    <script>
+      if(typeof fbq === 'undefined') {
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2511177278913224');
+          //   fbq('track', 'PageView');
+      }
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+          src="https://www.facebook.com/tr?id=2511177278913224&ev=PageView&noscript=1"
+            />
+    </noscript>
+      {% endcomment %}
+    <!-- End Facebook Pixel Code -->
+    <script>
+    // fbq('track', 'Lead', {value: '32', currency: 'USD'});
+    </script>
+
+    <!-- Event snippet for Sign- Ups for Giveaway | Nov 2020 conversion page
+    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-726205991/foCRCOX_qvwBEKeMpNoC',
+            'event_callback': callback
+        });
+        return false;
+      }
+
+      window.addEventListener("klaviyoForms", function(e) {
+    {% comment %}
+  //       if (e.detail.type == 'open') {
+
+  //         //Track Fb Pixels
+  //         fbq('init', '2511177278913224');
+  //         fbq('track', 'PageView');
+  //         // report gTag 
+  //         gtag_report_conversion();
+  //       }
+          {% endcomment %}
+        if (e.detail.type == 'submit') {
+
+          //Track Fb Pixels
+          fbq('addPixelId', '2511177278913224');
+
+          {% if template == 'page.kailo-landing-12-Days-Giveaways' %}
+              fbq('trackCustom', 'giveawaySignUp');
+          {% endif %}
+
+          {% if template == 'page.gem-79458467971-template' %}
+          	console.log("Tracking");
+              //fbq('trackCustom', 'summerOfferSignUp');
+          		fbq('track', 'SummerOfferSignUp', {value: '32', currency: 'USD'});
+          {% endif %}        
+          // report gTag 
+          gtag_report_conversion();
+        }
+
+
+      });
+
+    </script>
+  {% endif %}
+
+
+  {% if template == 'page.kailo-landing-10' %}
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1152496025269439');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1152496025269439&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
+  {% endif %}
+
+  <script type="text/javascript">
+
+    function trackKlaviyoForm(formId){
+      var bmaUrl = 'https://bmafnet.com/p.ashx?o=1714&e=137&f=pb&r='+formId+'&t=';
+
+       var bmaImg = document.createElement("img");
+       bmaImg.setAttribute('src', bmaUrl);
+       bmaImg.setAttribute('alt', '');
+       bmaImg.setAttribute('height', '1px');
+       bmaImg.setAttribute('width', '1px');
+       bmaImg.style.height = '1px';
+       bmaImg.style.width = '1px';
+
+       document.body.appendChild(bmaImg);
+    }
+
+    window.addEventListener("klaviyoForms", function(e) {
+      if (e.detail.type == 'submit') {
+        trackKlaviyoForm(e.detail.formId);
+      }
+    });
+  </script>
+{% endif %}

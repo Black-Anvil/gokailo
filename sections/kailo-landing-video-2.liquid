@@ -1,0 +1,60 @@
+<div class="wrapper">
+{% if section.settings.video-heading != '' %}<h3>{{ section.settings.video-heading }}</h3>{% endif %}
+    {% unless section.settings.video-url.url == blank %}
+      {% assign video_id =  section.settings.video-url.id %}
+      {% case section.settings.video-url.type %}
+        {% when 'youtube' %}
+          {% assign video_url = 'https://www.youtube.com/watch?v=' | append: video_id %}
+        {% when 'vimeo' %}
+          {% assign video_url = 'https://vimeo.com/' | append: video_id %}
+      {% endcase %}
+  	<div class="video-wrapper"><a class="video-overlay video-overlay-{{ section.id }}" href="{{ video_url }}"><img class="lazyload" src="{{ section.settings.video-thumbnail | img_url: 'master' }}" /></a></div>
+    {% endunless %}
+  {% if section.settings.video-subtext != '' %}<p>{{ section.settings.video-subtext }}</p>{% endif %}
+  <br><br><hr /><br><br>
+  {% if section.settings.button-heading != '' %}<h3>{{ section.settings.button-heading }}</h3>{% endif %}
+</div>
+{% if section.settings.button-text != '' %}<div class="btn-wrapper"><button type="button" onclick="trackandtarget('{% if section.setting.button-link != blank %}{{ section.settings.button-link }}{% else %}#buy{% endif %}');"><span>{{ section.settings.button-text }}</span></button></div>{% endif %}
+{% schema %}
+  {
+    "name": "Video",
+    "settings": [
+      {
+         "type": "textarea",
+         "id": "video-heading",
+         "label": "Video Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "video-thumbnail",
+        "label": "Video Thumbnail"
+      },
+      {
+         "id": "video-url",
+         "type": "video_url",
+         "label": "Video URL",
+         "accept": ["youtube", "vimeo"]
+      },
+      {
+         "type": "textarea",
+         "id": "video-subtext",
+         "label": "Video Sub-Text"
+      },
+      {
+         "type": "text",
+         "id": "button-heading",
+         "label": "Button Heading"
+      },
+      {
+         "type": "text",
+         "id": "button-text",
+         "label": "Button Text"
+      },
+      {
+        "id": "button-link",
+        "type": "url",
+        "label": "Button link"
+      }
+	]
+  }
+{% endschema %}

@@ -1,0 +1,8 @@
+{% comment %} {{ js_content_for_shogun_defer_css }}  {% endcomment %}
+{% comment %} <style>.shg-product{display:block !important;}</style> {% endcomment %}
+{% comment %}
+/* https://web.dev/content-visibility/ */
+div[id^="shopify-section-1"]:nth-child(n+3) {
+	content-visibility: auto
+}
+{% endcomment %}

@@ -1,0 +1,3232 @@
+{% render 'anchorToProducts' %}
+
+
+
+<style>
+  
+  @font-face{
+	font-display:swap;
+	font-family:'FontAwesome';
+	src:url('//cdn.shopify.com/s/files/1/0121/1537/8238/t/33/assets/fontawesome-webfont.woff2?v=92687554370256573971632149975') format('woff2');
+	font-weight:normal;
+	font-style:normal
+}
+  .copyrights{
+  text-align: center;
+  color: #fffc;
+  }
+  footer.btm-footer {
+    /*display: none;*/
+}
+
+div#__load-section-footer {
+    display: none;
+}
+  .wrapper {
+    max-width:1300px;
+  }
+  .main-content {
+    overflow:inherit;
+  }
+  
+  div#shopify-section-header {
+    display: none;
+}
+  
+  h1 {
+  	font-size: 2.5em; 
+  }
+  h3 {
+  	font-size: 1.5em; 
+  } 
+  p {
+ 	font-size:1.3em;
+  }
+  section {
+  margin-bottom:0px;
+  }
+  .colMobile img {
+    width: 113px;
+}
+  .call-out-font-weight {
+  	font-size:1.6em;
+  }
+  .kailo-landing, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+   	color:#fff;
+    font-weight:600 !important;
+    line-height:normal;
+    
+  }
+
+  .kailo-landing button, .yes-bundle button {
+    background: rgb(53,93,102);
+    background: linear-gradient(48deg, rgba(53,93,102,1) 0%, rgba(30,148,169,1) 100%);
+    
+   
+    border:solid 1px #00c2c2;    
+    border-radius:8px;
+    color:#fff;
+    padding:.7em 0.8em;
+    font-size:1em;
+    
+    margin:20px 0px 60px 0px;
+  }
+  .productBtn {
+     padding:.6em 30px !important;
+}
+   
+  .kailo-landing button span, .yes-bundle button span {
+  	
+    
+    color:#fff;
+   
+    font-size:22px;
+    
+   
+  }
+  /* section 1 with video */
+	.topMargin {
+      padding-top:25px;
+    }
+  .col-main {
+    flex: 1;  
+  }  
+  .col-adjacent {
+    flex: 1;  
+  }
+  .right {
+    text-align: right;
+  }
+  .featureIcons {
+   background-color: #e3e1db;
+    padding:20px 0px; 
+    position:relative;
+  }
+  .featureIcons img {
+    width:80%;
+    margin:auto 0px;
+  }  
+  
+  .col.col-adjacent p {
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+    padding-top:20px;
+}
+  
+  .prinInvestigator {
+   background:url("https://cdn.shopify.com/s/files/1/0121/1537/8238/files/Jeffrey-Gudin-MD.jpg?v=1674080424") no-repeat;
+    background-size:100%;
+    padding:0px 0px 0px;  
+    vertical-align: bottom;
+    height:100vh;
+       
+  } 
+  .prinInvestigator .col-adjacent {
+    padding:20px;
+  
+    width: 65%;
+    flex: 1;
+    text-align: justify;
+  }
+  .prinInvestigator img {
+    vertical-align:bottom;
+    width:475px;
+  }
+  .prinInvestigator .col-main {
+    padding:0em;
+    text-align:center;
+  }
+  section.prinInvestigator.mb-0 h2 {
+    color: #355d66;
+    text-align: left;
+    font-weight: 700 !important;
+    font-size: 75px;
+    line-height: 40px;
+}
+  
+  .center {
+    text-align:center;
+    padding:30px 15px 30px 15px;
+  }
+  
+  
+  
+  
+  /* Products */
+  
+  .pricing {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kailo-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  width: 100%;
+  background:#fff;
+ border-radius:8px;
+  /*box-shadow: 0 8px 16px 0px rgba(0, 0, 0, 0.1);*/
+  
+ 
+  color:#000;
+}
+
+ 
+.mt-20{ margin-top:20px !important;}
+  
+.productImg_1bundle {
+  width:75%;
+  margin:0px auto;
+}
+  .productImg_3bundle {
+  width:90%;
+  margin:15px auto;
+}
+.productImg_5bundle {
+  width:80% ;
+  margin:15px auto;
+}  
+
+.kailo-card-heading {
+  padding: 6px 10px;
+  font-size: 18px;
+  text-transform:uppercase;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.kailo-card-heading-free {
+  
+  color: #000;
+  border-top-left-radius: 8px;
+  border-top-right-radius:8px;  
+}
+  
+  #offer .bundle-title{
+  font-size: 1.25rem;
+    color: #474747;
+    padding-bottom: 4px;
+}
+
+  .kailo-card-heading-lite{
+  letter-spacing:1px;
+    background: #1d94aa;
+   color:#fff;
+    border:1px solid #fff;
+    border-radius:7px;   
+    text-align: center;
+    -webkit-box-shadow: 0 0 8px rgb(0 0 0 / 30%);
+    -moz-box-shadow: 0 0 8px rgba(0,0,0,.3);
+    box-shadow: 0 0 8px rgb(0 0 0 / 30%);    
+    z-index: 90;
+  }
+
+  #offer .bundle-container .promo-text{
+  font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+
+  
+  }
+  
+
+.kailo-card-heading-lite {
+  background-color:#e54b37;
+  color: #fff;
+ 
+}
+
+.kailo-card-heading-pro {
+  background-color:#00c2c2;
+  color: #fff;
+    border:1px solid #fff;
+    border-radius:7px;   
+    text-align: center;
+    -webkit-box-shadow: 0 0 8px rgb(0 0 0 / 30%);
+    -moz-box-shadow: 0 0 8px rgba(0,0,0,.3);
+    box-shadow: 0 0 8px rgb(0 0 0 / 30%);    
+ 
+}
+
+.kailo-bundle-group {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+}
+
+.kailo-product-detail-item {
+  position: relative;
+}
+
+.kailo-card-highlight {
+  
+}
+.kailo-card-highlight .kailo-card-btn {
+  border: none;
+  color: #fff;
+  background-color: #27264b;
+}
+
+.kailo-card-highlight .kailo-card-btn:hover {
+  background-color: #9390db;
+}
+
+.kailo-card-price {
+  text-align: center;
+ font-size:20px;
+  
+  
+  margin: 15px;
+}
+.sale {
+ text-decoration: line-through;
+    font-size: 1em;
+    color: #1d94aa;
+    
+
+  }
+  
+
+.kailo-card-price-text {
+  font-weight: 400;
+  
+}
+.freeShipping { 
+  width:70%;
+  margin:20px auto;
+  color:#5c5c5c;
+  font-size:20px;
+  font-weight:600;
+}
+  .white {
+    color:#fff;
+  }
+  .light-green {
+    color:#2aad51;
+    font-weight:bold;
+  }
+  .bluish{ color:#1d94aa;}
+  .bluish-1{ color: #4ab0c3;}
+  .green {
+    color:#387e24;
+   font-weight: 700;
+  }
+ 
+  /* etc */
+  .container {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .col {
+    padding: 1em 0px;
+    margin: 0 2px 2px 0;    
+  }
+  
+  /* HIDE LIVE CHAT BUTTON IN LOWER RIGHT CORNER */  
+  #launcher, button.u-userLauncherColor {
+    display:none !important;
+  }
+  /* SLIDER */
+  .kailo-content-slider .slick-dots{
+  	display:flex !important;
+    justify-content:center;
+  }
+  .kail-image-slider button.slick-arrow{
+  	position: absolute;
+    top: 50%;
+    display:none !important;
+  }
+  
+  
+  
+  .slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    
+    padding: 0;
+    cursor: pointer;
+}
+  .ease_use .caption-heading span {
+    background: #0bbec0;
+    padding: 5px 20px;
+}
+  
+  .image-container.m-0{ margin:0px !important;}
+
+.slick-dots li button {
+    font-size: 0;
+  
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.slick-dots li button:before {
+    content: "";
+    font-size: 22px;
+    border-radius: 10px;
+    border: solid 1px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    color: #1d94aa;
+}
+  
+  .pt-10{ padding-top:10px;}
+  
+ .slick-dots li.slick-active button:before {
+    background-color:#1d94aa;
+}
+  
+  .kailo-testimonial-slider .slick-dots li.slick-active button:before {
+    background-color:#fff;
+}
+.footer {
+  background-color:#5e5e5e;
+  padding:0px;
+}
+  #shopify-section-content-video, #landing-video{
+  	width:100%;
+    height:100%;
+  }
+  #shopify-section-content-video iframe{
+  	width:90%;
+    height:90%;
+  }
+  #landing-video{
+  	/* display: flex; */
+    justify-content: end;
+    align-items: flex-start;
+  }
+
+  
+  /* Responsive: */
+  @media only screen and (min-width: 640px) {
+    .layout {
+      display: flex;
+    }
+  
+  .mobile {
+    display:none;
+   }
+  
+    
+  }
+  
+  
+  @media only screen and (max-width: 640px) {
+    
+     .kailo-landing button, .yes-bundle button {
+    margin: 20px 20% !important;
+   
+}
+
+  .call-out-font-weight {
+  	font-size:1.2em;
+   }
+   .pricing {
+   	display:initial;
+   } 
+	.topMargin {
+      text-align:center;
+    }
+  .col-adjacent {
+    text-align:center;
+    width:100%;
+   } 
+  .desktop {
+    display:none;
+   }
+  .colMobile {
+    text-align:left;
+    padding: .5em 0em 0em 0;
+  } 
+  .kailo-card {
+    flex-direction: inherit;
+    align-items: center;
+    padding: 15px 0px;
+    border-radius:8px;
+  }
+  .mobile .kailo-card li  {
+	font-size:.6em;
+    text-align:left;
+    margin:0px !important;
+  } 
+  #landing-video{
+    height: 210px;
+  }    
+#shopify-section-content-video iframe {
+  width:100% !important;
+}
+    
+.ribbonParent {
+  overflow: hidden; /* required */
+  position: relative; /* required  for demo*/
+}
+
+
+.ribbon {
+  margin: 0;
+  padding: 0;
+  /*background: rebeccapurple;*/
+  color:#fff;
+  padding:1em 0;
+  position: absolute;
+  top:0;
+  right:0;
+  transform: translateX(30%) translateY(0%) rotate(45deg);
+  transform-origin: top left;
+  font-size:10px;
+  font-weight:100;
+}
+.ribbon.blue {
+  background:#336370;
+}
+.ribbon.green {
+  background:green;
+}    
+.ribbon:before,
+.ribbon:after {
+  content: '';
+  position: absolute;
+  top:0;
+  margin: 0 -1px; /* tweak */
+  width: 100%;
+  height: 100%;
+  /*background: rebeccapurple;*/
+}
+.ribbon:before {
+  right:100%;
+} 
+.ribbon.blue:before,
+.ribbon.blue:after {
+  background:#336370;
+}
+.ribbon.green:before,
+.ribbon.green:after {
+  background:green;
+}    
+    
+}
+  .slider_top{
+  background-color: #1d94aa;
+  }
+  
+ #logo .site-logo img {
+    width: auto;
+    margin: 0 auto;
+    display: block;
+}
+  
+  #logo {
+    border-bottom: 2px solid #f1f1f1;
+}
+  #logo .site-logo {
+    margin: 15px auto;
+}
+  
+  
+  .bodycopy{
+  color: #434339;
+    
+    margin-bottom: 25px;
+}
+  
+  .grid-container {
+    padding: 30px;
+}
+  
+  .featureIcons .image-container .inner .image img.no-color {
+    filter: grayscale(100%) brightness(0) contrast(40%);
+}
+  .featureIcons .divider {
+    position: relative;
+    width:50px
+}
+  
+  .flex-row {
+    display: flex;
+}
+  
+  .featureIcons .divider:after {
+    content: '';
+    border-right: 1px solid #cbcac9;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    margin-left: -1px;
+    height: 80%;
+    width: 1px;
+}
+  
+  
+  .featureIcons .divider:last-child {
+    display: none;
+}
+  
+  .inner .caption .text-group .caption-heading {
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.inner.caption-position-right .caption .text-group {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+  
+  .inner .caption .text-group .caption-heading {
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+  section.slider_top.mb-0 {
+    margin-bottom: 0px;
+}
+  .mb-5{ margin-bottom:5px;}
+  .mb-30{ margin:30px 0;}
+  
+  .inner.caption-position-right {
+    display: flex;
+}
+  
+  .grid {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+}
+  
+  
+  
+  .featureIcons  .image-container .inner .image {
+    width: 110px;
+    max-width: 110px;
+}
+  .image-container {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index:1111;
+}
+ 
+  
+  .image-container .inner .caption .text-group .caption-heading {
+    font-size: 1.125rem;
+    line-height:1.125;
+    text-align: left;
+    
+}
+  .grid-container .grid .image-container .inner.caption-position-right .image {
+    flex: 1;
+}
+  
+  
+  .image-container .inner.caption-position-right .caption {
+    flex: 1;
+    padding: 0 10px;
+}
+  
+  .block-content .caption-copy {
+    text-align: left;
+}
+  .feature-grid-block .grid-container[data-display-type=image_grid] .caption {
+    padding: 15px 0 0;
+}
+  
+  .featureIcons  .grid .image-container .inner .image img {
+    object-fit: contain;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+  
+  .grid-container .grid .image-container {
+    flex: 1;
+    text-align: center;
+    /* position: relative; */
+}
+  .inner.caption-position-right .caption .text-group .caption-copy {
+    text-align: left;
+}
+  
+  .pb-0{ padding-bottom:0px;}
+  .grid-container .grid .divider:last-of-type {
+    display: none;
+}
+  
+  .icon-strip-blocks{
+    padding-top:100px;
+  background:#000 url('');
+/* background-image: linear-gradient(147deg, #000000 0%, #444347 74%); */
+
+  
+  }
+  
+  .icon-strip-block .grid-container .grid .image-container {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+  
+  .grid-container .grid .image-container {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+.teal {
+  color:#00c2c2 !important;
+}
+   .heading {
+    color: #1d96a9;
+    font-weight: 700;
+    text-align: center;
+     font-size: 2rem;
+     margin-bottom:7px;
+}
+  .call-out-font-weight{color:#00c2c2; font-weight:700;}
+  .pt-0{ padding-top:0px;}
+  .call-out-font-weight{ font-size: 1.4rem;
+    line-height: 1.667;}
+  
+  .how_does{ padding: 50px 5%!important; position:relative;}
+  
+  .how_does .new_div{
+    display: flex;
+    margin-bottom: 1.75em;
+    box-sizing: border-box;
+    flex-wrap: no-wrap;
+  }
+  
+  .icon-strip-block .grid-container .grid .image-container .inner .image {
+    width: 80px;
+    max-width: 80px;
+}
+  
+  .icon-strip-block .grid-container[data-display-type=icon_grid] .grid .image-container .inner {
+    padding: 0 0 30px;
+}
+  
+  .icon-strip-block .grid-container[data-display-type=icon_grid] .grid .divider {
+    display: none;
+}
+  
+  h2.demi-heading{ 
+
+font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-bottom: 17px;
+    margin-bottom: 10px!important;
+    position: relative;
+    color: #857550;
+position:relative;}
+
+
+  
+  button.productBtn.custom-btn span {
+    
+    font-size: 1.2em;
+}
+  
+  .new-items{
+  border-right: 1px solid rgba(0,0,0,.1);
+    position:relative;
+  }
+  .new-items_dev{
+    margin-left: 34px;
+  }
+ 
+  .feature-2-column-block .column-1 {
+    flex: 0 0 50%!important;
+    max-width: 50%!important;
+}
+  
+  .feature-2-column-block {
+    display: flex;
+    width: 100%;
+    position:relative;
+    z-index:11;
+}
+  
+  button.slick-next.slick-arrow, button.slick-prev.slick-arrow {
+    display: none !important;
+}
+  
+  .demi-heading{
+    position:relative;
+ font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-bottom: 17px;
+    margin-bottom: 10px!important;
+    position: relative;
+    color: #857550;
+}
+
+
+
+  
+  .demi-heading:after{
+  content: '';
+    border-top: 2.5px solid #857550;
+    width: 30px;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left:0;
+  }
+  
+  .icon-strip-block .grid-container .grid {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+}
+  
+  .santek-block-button__link {
+    padding: 15px 15px;
+    margin-top:8rem;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.125em;
+
+    text-decoration: none;
+    text-align: center;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #fff!important;
+    text-shadow: 0 1px 1px rgb(255 255 255 / 50%);
+    background: #1d94aa!important;
+    
+   
+}
+
+
+  
+  .feature-2-column-block .block-content .image-container.full-bleed {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    padding: 0;
+}
+  .feature-2-column-block .block-content .column-1 {
+    flex: 0 0 50%!important;
+    max-width: 50%!important;
+}
+   .feature-2-column-block .block-content {
+    flex-direction: row-reverse;
+}
+
+  
+  .icon-strip-block .grid-container[data-display-type=icon_grid] .grid .image-container .inner .image {
+    margin: 0 auto 0px;
+}
+  .icon-strip-block .grid-container .grid {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+}
+  .no-color{
+  filter: grayscale(100%) brightness(0) contrast(40%);
+   
+}
+  
+  .icon-strip-block .block-content .section-content .santek-block-group__inner-container {
+    transform: none;
+    top: 0;
+    padding:0px;
+}
+  .text-group .headings {
+    color: #00c2c2;
+    font-weight: 700;
+    margin-bottom: 60px;
+    font-size:22px;
+}
+  
+  .text-group .subhead {
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-bottom: 17px;
+    margin-bottom: 10px;
+    position: relative;
+    color: #857550;
+}
+  .feature-grid-block .grid-container[data-display-type=image_grid] .grid {
+    display: inline-flex;
+}
+  
+  .feature-grid-block .section-heading .heading {
+    padding-top: 50px;
+}
+  .grid-container[data-id="6259ba22f29da"]:not([data-display-type="slideshow"]) .grid {
+    margin: -15px 0 0 -15px;
+    width: calc(100.005% + 10px);
+}
+  
+  .feature-grid-block .grid-container {
+    max-width: 980px;
+    margin: 40px auto 0;
+}
+
+  
+  .kail-image-slider .slick-prev {
+    left: -30px;
+    position: absolute;
+    top: 27%;
+    font-size: 52px;
+    cursor:pointer;
+
+}
+  
+  .kail-image-slider .slick-next {
+    right: -30px;
+    position: absolute;
+    top: 27%;
+    font-size: 52px;
+    cursor:pointer;
+
+  }
+  .review h4 a{    
+    color: #fff;
+    font-size: 28px;
+    min-height: 80px;
+    display: block;
+}
+  .review p{
+      color: #fff;
+    text-align:justify;
+    
+    
+    
+}
+
+  .mb-0{margin-bottom:0px;}
+  
+ .feature-2-column-block .block-content {
+    display: flex;
+    width: 100%;
+}
+  
+  .text-group .santek-block-group__inner-container {
+    transform: translateY(-50%);
+    top: 53%;
+    padding: 80px 10%;
+}
+  
+ .santek-block-group__inner-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+  
+  .grid-container:not([data-display-type="slideshow"]) .grid {
+            margin: -15px 0 0 -15px;
+            width: calc(100.005% + 10px);
+        }
+        .grid-container:not([data-display-type="slideshow"]) .grid .image-container {
+            margin: 20px 0 0 20px;
+            /*flex: 1 0 calc(33.333333% - 20px);*/
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: calc(33.333333% - 20px);
+            max-width: calc(33.333333% - 20px);
+        }
+  
+ 
+        .grid-container[data-id="6259ba2309664"]:not([data-display-type="slideshow"]) .grid {
+            margin: -0px 0 0 -0px;
+            width: calc(100.005% + 0px);
+        }
+        .grid-container[data-id="6259ba2309664"]:not([data-display-type="slideshow"]) .grid .image-container {
+            margin: 0px 0 0 0px;
+            /*flex: 1 0 calc(33.333333% - 0px);*/
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: calc(33.333333% - 0px);
+            max-width: calc(33.333333% - 0px);
+        }
+  .p-0{ padding:0px;}
+  .inner.caption-position-middle:after{
+  
+  content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(10,0,0,.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  
+  p.freeShipping img {
+    margin-top: 0px;
+}
+  
+  .inner.caption-position-middle .caption .text-group{
+  
+  position:absolute;
+    top:30%;
+   
+  }
+  
+  .inner.caption-position-middle .caption .text-group .caption-heading{
+    color: #fff;
+    
+    text-transform: uppercase;
+    font-weight: 400;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    padding-left:35px;
+    text-shadow: 0 0 3px rgb(0 0 0 / 80%);
+    letter-spacing: 1px;
+    font-size: 1rem;
+  
+  }
+  .inner.caption-position-middle .caption .text-group .caption-copy{
+  font-size:1.2rem;
+  }
+  
+  .inner.caption-position-middle .caption .text-group .caption-copy p{
+    color: #fff;
+    text-align:left;
+    font-weight: 600;
+    line-height: 1.2;
+    padding:0 35% 0 5%;
+    
+   
+  font-size:33px;
+    
+    margin-bottom: 20px;
+  }
+  
+  
+  
+  .inner.caption-position-middle .caption{
+  padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  
+  .icon-strip-block .grid-container[data-display-type=icon_grid] .grid {
+    flex-wrap: wrap;
+}
+  .caption-position-below .caption { text-align:center;}
+  .caption-position-below .caption .caption-heading span{ display:block; text-align:center; font-size:1rem; }
+  .inner.caption-position-below .image img {
+    width: 22%;
+
+    /* text-align: center; */
+   
+    padding-top: 1em;
+    height: 140px;
+    object-fit: contain;
+}
+  ul.m-0.p-0 li span{ 
+    display: inline-block;
+    font-size: 16px;
+    color: #3c3c3c;
+    line-height: 1.4;
+    letter-spacing: 0px;}
+  
+  ul.m-0.p-0 li{
+  
+  margin-bottom:1.5rem;
+  }
+  
+  .kablo-bundle .heading{ text-align:left;}
+  
+  .kablo-bundle .text-group .santek-block-group__inner-container{
+      transform: translateY(-50%);
+    top: 60%;
+    padding: 10px 10%;
+  }
+  .kailo-product-detail-item {
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    line-height:24px;
+    color:#3c3c3c;
+}
+  .mt-3{ margin-top:3rem;}
+  
+  ul.m-0.p-0 li:nth-child(1) {
+      
+    color:#3c3c3c;
+   
+  }
+  
+  ul.m-0.p-0 li:nth-child(2) {
+      
+    color: #207778;
+   
+  }
+  
+  ul.m-0.p-0 li:nth-child(3) {
+      
+    color:#336370;
+   
+  }
+  
+  img.mastercard.primary-graphic {
+    width: 36px !important;
+}
+  
+  #footer-badges .footer-badge-container .payment-badge img, #footer-badges .footer-badge-container .payment-badge svg {
+    margin: 0 20px;
+    width:65px;
+}
+  
+  #footer-badges .footer-badge-container .payment-badge img.guarantee-90, #footer-badges .footer-badge-container .payment-badge svg.guarantee-90 {
+    object-position: -300px 0;
+    width: 75px;
+}
+  
+  .reliable-relief .caption-position-below .caption-copy,  .reliable-relief .caption-position-below .caption-heading span {
+    text-align: left !important;
+    display: block;
+}
+  
+  #footer-badges .footer-badge-container .payment-badge {
+    height: 62px;
+    order: 1;
+}
+  
+  .vertically-centered {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+  
+  .pb-50{ padding-bottom:50px;}
+  
+  #footer-badges .footer-badge-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top:30px;
+}
+  
+  
+
+  #footer-badges {
+     background: #5e5e5e;
+    padding: 6rem 0px;
+}
+  
+  #footer-badges  h4{ font-size:30px; padding-bottom:40px; color:#fff; text-align:center;}
+  
+
+  .inner.caption-position-below .caption-copy p{
+  text-align:left;
+  font-size:1.28em;
+    padding-top:0.8rem;
+    color:#fff;
+    line-height:1.2rem;
+  }
+
+  
+  .grid-container[data-id="6259ba2316010"]:not([data-display-type="slideshow"]) .grid {
+            margin: -15px 0 0 -15px;
+            width: calc(100.005% + 10px);
+        }
+        .grid-container[data-id="6259ba2316010"]:not([data-display-type="slideshow"]) .grid .image-container {
+            margin: 20px 0 0 20px;
+            /*flex: 1 0 calc(33.333333% - 20px);*/
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: calc(33.333333% - 20px);
+            max-width: calc(33.333333% - 20px);
+        }
+  
+     .grid-container[data-id="6259ba230d679"] .grid .image-container {
+                
+                max-width: 50%;
+            }
+  
+  
+  .feature-grid-block .grid-container[data-display-type=icon_grid] .grid {
+    flex-wrap: wrap;
+    display: inline-flex;
+}
+
+
+.inner.caption-position-below .caption-copy {
+    text-align: center;
+    font-size: 0.9em;
+}
+  
+.feature-grid-block .grid-container[data-display-type=icon_grid] .grid .image-container .inner .caption{
+padding: 4% 12px 4px;
+}
+  
+.feature-grid-block .grid-container[data-display-type=icon_grid] .grid .image-container .inner .image{
+    top: 15%;
+    left: 50%;
+    margin: 0 0 0 -11%;
+}
+
+  .feature-grid-block
+
+.feature-grid-block .grid-container[data-display-type=icon_grid] .grid .image-container .inner .caption .caption-heading{
+    display: flex;
+  
+    justify-content: flex-start;
+    align-items: start;
+ 
+}
+
+
+
+  
+  .feature-grid-block .grid-container[data-display-type=icon_grid] .grid .image-container{
+  
+  
+}
+  .m-0{ margin:0;}
+
+ 
+  
+  .visible-xs{ display:none;}
+  
+  
+ /*---modal body---*/
+          
+          
+     .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+      background:rgba(0,0,0,0.7);
+}
+    .modal-dialog {
+
+    margin: 2.75rem auto!important;
+}
+    
+    .modal .modal-dialog{
+      width: calc(100% - 40px);
+      
+    }
+    
+    .modal.show .modal-dialog {
+    transform: none;
+}
+    .modal-xl {
+    width: 100%;
+    max-width: 1120px;
+}
+    
+    .modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;
+}
+    
+   
+  
+    
+    .modal-body .row {
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+    
+    .modal-body .col-lg-5 {
+    flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+}
+    
+     .modal-body .col-lg-7 {
+    flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+}
+    .modal .headline {
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    margin: 10px 0px 0px 0px;
+    color: #666;
+}
+  
+    .popup-special-container {
+    max-width: 300px;
+    margin: -55px auto 0;
+    position: relative;
+    left: 30px;
+    color: #333;
+}
+    .popup-special-container .number {
+    float: left;
+    width: 50%;
+    font-size: 145px;
+    font-weight: 700;
+    margin-bottom: -20px;
+}
+    .popup-special-container .percentoff {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+  @media (min-width:600px) {
+    .popup-special-container .percentoff .percent {
+    font-size: 88px !important;
+} 
+     .popup-image img {
+    max-width: 100%;
+    width: 72% !important;
+}
+    .popup-content {
+    text-align: center;
+    margin-top: 30px !important;
+}     
+  }
+    .popup-special-container .percentoff .percent {
+    font-size: 50px;
+    position: relative;
+    top: 25px;
+}
+    .popup-special-container .percentoff .off {
+    font-size: 36px;
+    position: relative;
+      line-height:40px;
+}
+    .popup-image {
+    margin: 0 auto;
+    text-align: center;
+}
+    
+     .popup-image img {
+    max-width: 100%;
+    width: auto;
+}
+    
+     .modal-body  .col-lg-7 {
+    flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+}
+    .popup-content {
+    text-align: center;
+    margin-top: 0px;
+}
+     .popup-content .button-container {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+    
+    .modal .modal-dialog .modal-content{
+    box-shadow: 0 0 0 10px rgb(0 0 0 / 35%), 0 0 4px rgb(0 0 0 / 10%);
+    border-radius: 0;
+}
+    
+    .modal button.close {
+    position: absolute;
+    background: #000!important;
+    opacity: 1;
+    color: #fff;
+    border-radius: 50%;
+    line-height: 26px;
+    z-index: 999;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgb(0 0 0 / 40%);
+    border: 2px solid #fff;
+}
+
+   
+    .modal-dialog .modal-content button.close {
+    border-radius: 0;
+    border: 0;
+    background: 0 0!important;
+    box-shadow: none;
+    color: #aaa;
+    text-shadow: none;
+    right: 15px;
+    top: 5px;
+    width: 22px;
+    height: 22px;
+    font-size: 50px;
+}
+    
+   .modal .value-price {
+    font-size: 18px;
+}
+  
+  .modal-body .row{justify-content: center;}
+    
+    .popup-content p.cancel-upsell {
+    padding: 1px 0;
+      text-decoration:underline;
+      cursor:pointer;
+}
+    .modal .special-price {font-size: 17px;}
+    
+    .modal .kailo-landing button, .modal .yes-bundle button{ padding:15px !important; border-radius:6px;}     
+  
+        
+        @media only screen and (min-width: 992px) {
+            .grid-container[data-id="6259ba230d679"] .divider {
+                width: 50px;
+            }
+          
+          .feature-2-column-block.icon-strip-block .image-container .inner.caption-position-right .caption
+
+{ width:180px;}
+        }
+
+     .prinInvestigator .wrapper.container{ height:100%;}
+
+    
+            .prinInvestigator{
+                background-size: cover;
+                padding: 0px 0px 0px;
+               position:relative;
+                height: 100vh;
+                min-height: 28rem;
+              background-position:100% 100%;
+
+            }
+	
+			.slider-below .featureIcons .divider{ display:none;}
+			
+			.slider-below .image-container .inner .caption .text-group .caption-heading, .slider-below .inner.caption-position-right .caption .text-group .caption-copy{ text-align:center !important; font-size:0.8rem;}
+			
+			.kail-image-slider .slick-next, .kail-image-slider .slick-prev {
+    display: none !important;
+}
+			
+			.slider-below  .inner.caption-position-right .caption .text-group {
+					position: relative;
+					top: 80%;
+					transform: translateY(40%);
+    /* text-align: center !important; */
+}
+			
+			 .slider-below .inner.caption-position-right {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+}
+      
+          
+          
+        }
+
+	
+	
+	.testimonial-block{
+  
+  border: 1px solid #d1d1d1;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    padding:20px 20px 0px;
+    min-height:520px;
+}
+  section.testomonials-slides .stars {
+    color: #0bbec0;
+}
+  
+  .review {
+    font-size: 13px;
+    text-align: left;
+    padding-top:10px;
+    border-top:2px solid #fff;
+    margin-top:120px;
+}
+  
+  .bg-grey{background:#f5f4f2;}
+  
+  .rating{
+  
+  display: flex;
+   
+    justify-content: flex-start
+}
+
+  .pt-5{ padding-top:5rem;}
+    
+ 
+  .reviews{flex: 1;    padding: 20px 20px 70px;}
+  
+  
+  .stars img{ width:75px;}
+  
+  .user
+  {
+ 
+    color: #434339;
+    text-align:left !important;
+}
+
+  .rating .user .verified{
+  color: #fff;
+    
+    font-size: .75rem;
+}
+  
+  strong.reviewer-name, .verified {
+    color: #fff;
+}
+
+     ul.slick-dots {
+    margin: 1rem;
+}     
+          
+          
+ 
+@media only screen and (max-width: 420px) {
+    
+     .kailo-landing button, .yes-bundle button {
+    margin: 20px auto !important;
+   
+}
+  }
+  
+  
+  /*  <!----new css--> */
+  
+  .text-overlapings {
+            padding: 40px 12rem;
+           
+            padding-bottom:0rem;
+        }
+    
+  .main-heading{
+    text-transform:uppercase;
+    position: relative;
+    padding-left: 0px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 0px;
+    line-height: 1.1;
+    font-size: 30px;
+    line-height: 1em;
+    letter-spacing: -1px;
+    color: #355d66;
+    text-transform: none;
+    font-weight: 500 !important;
+  
+  }
+  .dividerLine {
+    height:3px;
+    width:50%;
+    background-color: #355d66;
+    display:block;
+    margin:1.5em 0;
+  }
+  
+  .ease_use p.white-text.pl-20 {
+    padding: 0 18rem;
+}
+  .top_header  .kailo-landing button span{ font-size:22px;}
+  .top_header .kailo-landing button {
+    padding: 15px 20px;
+    
+}
+  .ease_use .grid-container.full-width.p-0 > .flex {
+    margin: 0 -20px;
+}
+  
+  .productBtn {
+    padding: 1em 15px !important;
+  }
+  
+   #offer{ padding-bottom:80px;}      
+  .overlay-shadow {
+    background: rgba(0,0,0,0.3);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}           
+	
+  
+  .text-overlapings{ padding:0 1rem; font-weight:400;}
+  
+  .prinInvestigator{ position:relative;}
+  
+  .col-adjacent .notataion-name{ position:absolute; bottom:15px;}
+  
+  section.step_follow .flex {
+    position: relative;
+    margin: 0 -20px;
+}
+
+  
+  .pricing h4 {
+    color: #1d94aa;
+    font-size: 26px;
+    padding-top:30px;
+}
+  
+  .top_header{ 
+    background:url('https://cdn.shopify.com/s/files/1/0121/1537/8238/files/topImage.jpg?v=1673985024') no-repeat;
+  position:relative;
+    position: relative;
+    background-size: cover;
+    margin-bottom: 0px;
+    background-position: center center;
+    height:98vh;
+   
+  }
+  
+  .header-cta {
+    position: relative;
+    top: -170px;
+    left: -50px;
+  }
+  .FlexGraphic3d {
+    background:url('https://cdn.shopify.com/s/files/1/0121/1537/8238/files/flexGraphic3D.jpg?v=1673998626') no-repeat;
+  position:relative;
+    position: relative;
+    background-size: cover;
+    margin-bottom: 0px;
+    background-position: center 30%;
+    min-height:147vh;    
+  }
+  .FlexBlock3 {
+    background:url('https://cdn.shopify.com/s/files/1/0121/1537/8238/files/flexBlock3Bg.jpg?v=1674055570') no-repeat;
+  position:relative;
+    position: relative;
+    background-size: cover;
+    margin-bottom: 0px;
+    background-position: center center;
+    min-height:100vh;    
+  }  
+  .pt-120{ padding-top:40px;}
+  .logo-new img{width:275px;}
+  .pt-110{ padding-top:111px;}
+  .pt-50{ padding-top:25px;}
+  .text-side-video{ padding: 3rem 5rem 4rem 0rem;
+    color:#fff;
+    font-size: 22px;}
+  
+  .sponsors_seen{ display:flex; align-items:center; justify-content:space-between; padding-bottom:80px; margin:0px;}
+  .sponsors_seen li{ align-items:center;}
+  .sponsors_seen li:nth-child(1) img{ width:50px;}
+  .sponsors_seen li img{ width:100px;}
+  
+  .fast_acting{
+    background:#000 url('https://cdn.shopify.com/s/files/1/0121/1537/8238/t/33/assets/kailo-attributes-background.jpg') no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+   
+    background-position: center bottom;
+   
+    padding-bottom: 82px;
+  
+    background-repeat: no-repeat;
+    
+  }
+  
+  
+  
+  
+@media(max-width:600px){ 
+  
+  .sponsors_seen{ flex-flow:wrap; padding-bottom:20px !important; }
+  .sponsors_seen li {
+    display: flex;
+   
+    
+}
+  .sponsort_seen ul {margin:0px !important;}
+  .sponsort_seen ul li {margin:0px !important; padding-bottom:20px !important;}  
+  .sponsors_seen li img {width: 40px !important;}
+  .sponsors_seen img.icons {width: 90px !important;}
+  .patch-bg {
+    background-image: url('https://cdn.shopify.com/s/files/1/0121/1537/8238/files/behindTheScienceBg.jpg?v=1655392365');
+    background-position:left center !important;
+    color:#000;    
+    position:relative;
+    background-size:cover;
+    background-position:center center;
+    height: 120vh;  
+  }
+
+  
+}
+  
+  .flex-rows{ display:flex: justify-conntent:center;}
+  .flex-rows .sponsors_seen{ display:flex; align-items:center; justify-content:center; padding-bottom:0px;}
+  .flex-rows .sponsors_seen li {    align-items: center;    margin: 0 2rem;}
+  .flex-rows .sponsors_seen li:nth-child(1) img{ width:200px;}
+  .flex-rows .sponsors_seen li img{width:200px; }
+  .white-text{ color:#fff;}
+  .mt-0{ margin-top:0px;}
+  .background-crramy{ background:#e6e6e6;}
+  .mt-5{ margin-top:5rem;}
+  
+  @media(min-width:600px){ 
+  .patch-bg{ 
+    background:url('https://cdn.shopify.com/s/files/1/0121/1537/8238/t/33/assets/patch-bg.png?v=1654848916') no-repeat;
+    position:relative;
+    background-size:cover;
+    background-position:center center;
+    height: 206vh; 
+  
+  }
+ }    
+ 
+  .box-layout{
+   position: relative;
+    bottom: -60px;
+    background: #00c2c2;
+    width: 580px;
+    max-width:100%;
+    margin:24rem auto 0 auto;
+    
+    font-weight: 600;
+    color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;z-index:222;
+  }
+  .patch-bg h4{ font-size:1.5rem;}
+  .patch-heading{     
+    margin: 0px;
+    font-size: 50px;
+    line-height: 1.5em;
+    letter-spacing: -1px;
+    color: #4792a6;
+    text-transform: none;
+    font-weight: 600; 
+  }
+  .altColor {
+    color:#426974 !important;
+    margin-top: 250px;
+  }
+  .subheads:before{content: '';
+    border-top: 6.5px solid #0bbec0;
+    width: 120px;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;}
+  
+  h4.white-text.mt-0 {
+    font-size: 20px!important;
+    line-height: 1.5em!important;
+    letter-spacing: -1px!important;
+    color: #fff!important;
+    text-transform: none!important;
+    font-weight: 400!important;
+}
+  .font-size-50{ font-size:3.8rem;}
+  .flex-row .left-sections{ width:40%; margin-top:2rem;} .flex-row .right-sections{margin-top:2rem; width:50%; margin-left:10%;}
+  
+  .texting-news h4{ color:#0bbec0; font-size:22px;}
+  .texting-news p{ color:#fff; font-size:16px; line-height:1.2;}
+  .testomonials-slides{ background:#1d94aa; padding-top:110px;}
+  
+  .col.col-adjacent .notataion-name {
+    font-size: 14px !important;
+    color:#fff !important;
+}
+  
+   .step-2 .caption .text-group .caption-heading{padding-right: 60px !important; text-align: right !important;}
+  
+  .step-2 .caption .text-group .caption-copy p{
+        padding: 0 3% 0 44% !important;
+    font-size: 32px !important;
+  
+  }
+  
+  .step-2 .inner.caption-position-middle .caption .text-group{ right:0px;}
+  
+  .manage-grid{ width:980px;  background:#585657; padding:30px 0; margin:100px auto;}
+  
+  .text-left.pl-20{ text-align:left; padding-left:20px;}
+  .feature-grid-block .feature-grid-block .grid-container[data-display-type=icon_grid] .grid .image-container .inner .caption .caption-heading p {
+    font-size: 1.2rem !important;
+}
+  
+  .kablo-bundle{ background:url("https://cdn.shopify.com/s/files/1/0121/1537/8238/t/33/assets/kablo-budle.jpg") no-repeat;
+  background-size:cover; min-height:50rem;height:100vh; background-position:50% 100%;
+  }
+  
+  .kablo-bundle h2.subhead.is-style-demi-heading {
+  font-size: 24px;
+    color: #23918f;
+    text-shadow: 0.5px 0.5px #068c89;
+}
+  
+  .kablo-bundle .heading {
+  text-align: left;
+    font-size: 3rem;
+    font-weight: 700 !important;
+    color: #ffffff;
+    padding-bottom: 45px;
+    text-shadow: 1px 1px black;
+}
+  p.mb-0.meduim-font.bluish {
+    font-size: 22px;
+    font-weight:700;
+}
+    p.mb-0.meduim-font.bluish-1 {
+    font-size: 22px;
+    font-weight:700;
+}
+  .font-size-20{ font-size:24px; font-weight:700; display:block; margin:-5px;}
+  .font-size-13{ font-size:13px;  display:block; font-weight:600;}
+  .font-size-15{ font-size:16px; font-weight:600;}
+  .slick-initialized .slick-slide{ margin:0 0.5%;}
+  .kail-image-slider.slick-initialized .slick-slide{ margin:0;}
+  
+  .btm-footer{ background:#515151; padding:10rem 0px; text-align:center;}
+  
+  .kailo-testimonial-slider .slick-dots li button:before {
+    color: #fff;
+}
+ .prinInvestigator .wrapper.container {
+    height: 100%;
+} 
+  
+  
+  @media(max-width:820px){
+  .flex-row {
+    display: flex;
+    flex-wrap: wrap;
+}  
+    .pt-120 {
+    padding-top: 40px;
+}  
+    .fast_acting {  
+    background-position: 0% 100%;   
+}
+    .kablo-bundle {
+    background: url(https://cdn.shopify.com/s/files/1/0121/1537/8238/files/kailo-1-2-3-bundle-banner.jpg?v=1655485840) no-repeat;
+    background-size: contain;
+    background-size: contain;
+	min-height: auto;
+	height: 28vh;  
+} 
+    div.align-text-moblle {
+      position:relative;
+      top:-28vh;
+      z-index:99;
+    }
+    .align-text-moblle h2.subhead.is-style-demi-heading {
+    font-size: 18px;
+    color: #63bed6!important;
+      margin-bottom:0px;
+      padding-bottom:0px;
+}   
+    .align-text-moblle .text-group .santek-block-group__inner-container {
+   
+    padding: 80px 5% 0px 5%;
+}
+    
+   .align-text-moblle .heading {
+    text-align: left;
+    font-size: 2em;
+    font-weight: 700 !important;
+    color: #fff;
+    padding-bottom: 15%;
+     padding-top:0px;
+     max-width:300px
+} 
+    
+    
+  .top_header {
+    background: url(https://cdn.shopify.com/s/files/1/0121/1537/8238/files/topImage.jpg?v=1673985024) no-repeat;
+    background-size: cover;
+    margin-bottom: 0px;
+    background-position: 60% center;
+    min-height:770px;
+}
+    .dividerLine {
+      width:100%;
+    }
+
+.btn-wrapper.kailo-landing.pt-110 {
+    padding-top: 0px;
+}
+
+.text-side-video {
+    padding: 1rem 0rem 6rem 0rem;
+    
+}
+
+.step-2 .caption .text-group .caption-copy p {
+    padding: 0 6% 0 40% !important;
+    font-size: 14px !important;
+}
+
+.ease_use .caption-heading span {
+    background: #0bbec0;
+    padding: 5px 20px;
+  font-size:0.9rem;
+}
+
+.inner.caption-position-middle .caption .text-group .caption-copy p {
+    color: #fff;
+    text-align: left;
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 0 35% 0 6%;
+    font-size: 14px;
+    margin-bottom: 23px;
+}
+
+.manage-grid{ width:100%;margin: 0px auto;}
+.prinInvestigator .col-adjacent{ width:100%;}
+
+    
+.prinInvestigator{
+    background-size: cover;
+    padding: 0px 0px 0px;
+   position:relative;
+    height: 100vh;
+    min-height: 36rem;
+
+}
+.review{ margin-top:0px;}
+.mt-5 {
+    margin-top: 1rem;
+}
+.flex-row .left-sections, .flex-row .right-sections{ width:100%;}
+
+
+.feature-2-column-block .column-1 {
+    flex: 0 0 100%!important;
+    max-width: 100% !important;
+}
+    
+    .pt-5 {
+    padding-top: 2rem;
+}
+    .font-size-50 {
+    font-size: 2rem;
+}
+.kablo-bundle .text-group .santek-block-group__inner-container{ padding: 50px 5%;}
+
+#footer-badges {
+    background: #5e5e5e;
+    padding: 3rem 0px;
+}
+.btm-footer {
+    background: #515151;
+    padding: 5rem 0px;
+    text-align: center;
+}
+.santek-block-button__link{ margin-top:0px;}
+.box-layout{left:0; margin:0 auto; padding:3rem 1rem;}
+    .text-left.pl-20{ padding-left:0px;}
+    
+     .inner.caption-position-middle .caption .text-group{
+  
+ 
+    top:0%;
+   
+  }
+.inner.caption-position-middle .caption .text-group .caption-heading {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 400;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    text-shadow: 0 0 3px rgb(0 0 0 / 80%);
+    letter-spacing: 1px;
+    font-size: 1rem;
+}
+.flex-rows .sponsors_seen li{ margin:0 0.4rem;}
+  
+  .kablo-bundle .heading{ font-size:2.2rem;}
+    .ease_use p.white-text.pl-20 {
+    padding: 0 10rem;
+}
+    
+  }
+  
+  
+ @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .image-container.full-bleed {
+    background-size: cover !important;
+}
+      .logo-new img {
+    width: 200px;
+}
+   
+    .feature-grid-block .feature-grid-block .grid-container[data-display-type=icon_grid] .grid .image-container .inner .caption .caption-heading p {
+    font-size: 1rem !important;
+}
+      
+      .main-heading{ font-size:3.5rem;}
+      
+      .top_header {
+   
+   background-size: cover;
+    margin-bottom: 0px;
+    background-position: -120px center;
+   
+}
+      .prinInvestigator .col-adjacent {
+    width: 60%;
+}
+            .grid-container[data-id="6259ba230d679"] .divider {
+                width: 45px;
+            }
+              
+              
+            .text-left.pl-20 {
+                padding-left: 12px;
+            }
+              .modal-body {
+    padding: 20px 0;
+    max-height: calc(100vh - 50px);
+    overflow-y: auto;
+                  
+   
+}
+              
+                  
+           .popup-special-container .percentoff .percent {
+    font-size: 60px;
+    position: relative;
+    top: 25px;
+}
+    .popup-special-container .percentoff .off {
+    font-size: 30px;
+    position: relative;
+      line-height:40px;
+}
+              
+  .popup-special-container {
+    max-width: 200px;
+    margin: -40px auto 0;
+			}
+			.popup-special-container .number {
+    
+    font-size: 100px;
+    
+}
+			
+			
+          .modal .popup-special-container {
+          max-width: 250px;
+          margin: -25px auto 0;
+          position: relative;
+          left: 30px;
+          color: #333;
+          }
+			
+			
+			         
+            .modal button.productBtn.custom-btn span {    font-size: 1em !important;}
+			.modal-dialog {    margin: 2.75rem auto!important;}
+			.popup-special-container .number{ font-size:100px;}
+          
+          
+			.heading{margin-bottom:20px;}
+			
+			.center-mob{ text-align:center;}
+			
+          button.productBtn.custom-btn span {
+    font-size: 0.8rem;
+}
+      
+      .text-overlapings{ margin:0 2rem; padding-bottom:20rem;}
+      
+      button.productBtn.custom-btn {
+    width: 80%;
+}
+      .feature-2-column-block .column-1 {
+    flex: 0 0 60%!important;
+    max-width: 100% !important;
+}
+      .kablo-bundle {
+    
+   
+    height: 100vh;
+    background-position: 72% 100%;
+}
+      
+  .prinInvestigator {
+    
+    
+    background-position: 95% 100%;    
+              
+}
+      
+    }
+  
+@media only screen and (max-width: 1310px) {
+   .FlexGraphic3d {
+     background-position: center 43% !important;
+   }  
+}  
+  
+ @media only screen and (max-width: 767px) {
+   .mt-5.text-left.pl-20 > img {
+    width: 110px !important;
+}
+   h2.flexBlock2 {
+  margin: 0% 4%;
+  font-size: 2.5em !important;
+  color: #fff;
+  text-align: center;
+   }
+
+   h2.flexBlock2-2 {
+  font-size: 1.5em !important;
+  margin: 0px 0px !important;
+}
+   .flexBlock2-2-wrapper {
+     bottom:20px !important;
+   }
+   .FlexBlock3 h2 {
+     font-size:2.5em !important;
+   }
+   .FlexBlock3 div {
+     bottom:100px !important;
+   }
+     .FlexBlock4 img {
+    position:relative;
+    top:-50px !important;
+       width:100% !important;
+  }
+   .FlexBlock4 h2 {
+     font-size:2em !important;
+   }
+   .FlexBlock4 .featureList > div {
+     font-size:1em !important;
+   }
+   .FlexBlock6 img {
+     width:115px !important;
+   }
+   .FlexBlock6 .features > div {
+   font-size:13px !important;
+     padding:0px 5px !important;
+     flex-basis: min-content;
+   }
+   .FlexBlock6 .features .middleCol {
+     font-size:12px !important;
+     padding:0px 5px !important;
+   }
+   .FlexBlock6 h3 {
+     font-size:20px !important;
+   }
+   .FlexBlock7 {
+     height: 65vh !important;
+   }
+    .FlexBlock7 img {
+    width:100% !important;
+    padding-top:40%;
+    padding-bottom: 30px;
+  }
+   .FlexBlock8 h3 {
+     font-size:19px !important;
+   }
+   .patch-heading {
+     font-size: 36px;
+line-height: 37px;
+     margin-top:40px;
+   }
+   .FlexBlock9 h3 {
+     font-size: 24px !important;
+   }
+   .FlexBlock9 .text-overlapings {
+     font-size:14px !important;
+   }
+   .FlexBlock10 h2 {
+     font-size:35px !important;
+   }
+   .FlexBlock10 img {
+     width:100% !important;
+   }
+   section.prinInvestigator.mb-0 h2 {
+     font-size: 46px !important;
+     line-height: 25px !important;
+   }
+   .prinInvestigator img {
+     width: 288px !important;
+     padding-top: 40px !important;
+   }
+   .fast_acting {
+   
+    background-position: 0% 100%;
+      
+    background-attachment:unset;
+      
+}
+   .top_header .kailo-landing button {
+    padding: 10px 15px;
+}
+   .top_header .kailo-landing button span{ font-size:18px;}
+   
+   .productBtn {
+    padding: 0.6em 10px !important;
+}
+   button.productBtn.custom-btn {
+    width: 90%;
+}
+   button.productBtn.custom-btn span {
+    font-size: 0.9em;
+    padding: 0px;
+}
+   
+          .top_header { background-position: 59% 100%;}
+          .ease_use p.white-text.pl-20{ padding:0 2rem;}
+          .feature-grid-block .grid-container[data-display-type=icon_grid] .grid{display:block;}
+          .inner.caption-position-below{ display: inline-flex;}
+          .feature-grid-block .feature-grid-block .grid-container[data-display-type=icon_grid] .grid .image-container .inner .caption .caption-heading p {
+                margin-bottom:10px;
+                text-align: left;
+            }
+
+			.modal .modal-dialog { width: calc(100% - 10px);}
+			
+          .modal .popup-special-container {
+          max-width: 250px;
+          margin: -25px auto 0;
+          position: relative;
+          left: 30px;
+          color: #333;
+          }
+			
+			.modal-body .row{justify-content: center;}
+			         
+            .modal button.productBtn.custom-btn span {    font-size: 1em !important;}
+			.modal-dialog {    margin: 2.75rem auto!important;}
+			.popup-special-container .number{ font-size:90px;}
+          
+          
+			.heading{margin-bottom:20px;}
+			
+			.center-mob{ text-align:center;}
+			
+			.feature-grid-block .mobile-devices .inner.caption-position-right{ align-items: flex-start;}
+			
+			.feature-grid-block .mobile-devices .grid-container[data-display-type=icon_grid] .grid .image-container{
+				
+				box-shadow: none;
+			}
+			
+			.feature-grid-block .mobile-devices .grid-container.p-0{ padding:0px !important;}
+			.feature-grid-block .mobile-devices .icon-strip-block .grid-container[data-display-type=icon_grid] .grid .image-container .inner{
+				
+				padding:20px 10px;
+			}
+	    .feature-grid-block .mobile-devices .grid-container[data-display-type=icon_grid] .grid {
+			flex-wrap: wrap;
+			display: table-cell;
+}
+
+.feature-grid-block .mobile-devices .grid-container[data-display-type=icon_grid] .grid .image-container .inner .image{
+
+			margin:22px 10px 0px;
+}
+
+
+.feature-grid-block .mobile-devices .grid-container[data-display-type=icon_grid] .grid .image-container .inner .caption {
+    padding: 4% 20px 20px;
+}
+			
+			
+            .grid-container[data-id="6259ba230d679"] .divider {
+                width: 50px;
+            }
+          
+          .grid-container:not([data-display-type="slideshow"]) .grid {
+    width: 100%;
+}
+          
+       
+          .inner.caption-position-right .caption .text-group .caption-copy span{ text-align:left;}
+          
+          .no-color {
+    width: 70% !important;
+}
+          .inner.caption-position-right .caption {
+    flex: 0 78%;
+    padding: 0px 10px;
+    text-align: left !important;
+}
+          #footer-badges .footer-badge-container{ flex-wrap:wrap;}
+          
+          .mt-10.mb-30{margin-top:10px !important; margin-bottom:30px !important;}
+          .main-content{overflow:hidden;}
+           .slider-below .inner.caption-position-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+          
+          .inner.caption-position-right .caption .text-group{ transform: translateY(0%);}
+          .main-heading{ font-weight:500 !important; font-size:1.1rem; color:#355d66 !important;}
+   .header-cta {
+     position: relative;
+     top: 85px;
+     left: 0px;
+   }
+   .sproutVideo {
+     position: relative !important;
+    top: 66px !important;
+    padding-bottom: 56.7%  !important;
+   }
+          .slider-below .flex-row { display:flex; flex-wrap:wrap; }
+          .slider-below .flex-row .divider{ display:none;}
+         .slider-below  .image-container {flex: 1 50%; }
+           .hidden-xs{ display:none !important;}
+          .kailo-landing button, .yes-bundle button{ margin: 0px 0px 20px 0px !important; border-radius:6px;}
+          .text-group .subhead, .headings { text-align:left;}
+         
+          .feature-2-column-block .block-content {
+    display: block;
+    width: 100%;
+}
+          
+          .reliable-relief .inner.caption-position-below .caption-copy p {
+    font-size: 1.28em;
+    padding-top: 0.8rem;
+    color: #222;
+            text-align:left !important
+}
+          h2.emain-heading{ font-weight:700; font-size:1.7rem;}
+          .santek-block-button.button.cta.eplus-rcwaay.is-style-cta-outline {
+    text-align: center !important;
+}
+       
+     .slider-below  .image-container .inner.caption-position-right .caption {
+    padding: 30px 5px;
+       padding-bottom:0px;
+}     
+          .visible-xs{ display:block;}
+          
+          .flex-row .image-container{  float:left;}
+          .featureIcons .image-container .inner .image {
+            width: 70px;
+            max-width: 110px;
+            margin-bottom:30px;
+            margin-top:30px;
+        }
+          .caption-copy span {
+          text-align: center;
+          display: block;
+          }
+          
+          h2.emain-heading {
+         text-align: center;
+          }
+
+          .demi-heading:after{left:45%;}
+          .new-items{ border-right:0px; text-align:center;}
+          .center{ padding:10px;}
+          .image-container .inner .caption .text-group .caption-heading {
+            font-size: 1.125rem;
+            line-height: 1.125;
+           
+}
+         .inner.caption-position-right {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+         }
+          
+          .inner.caption-position-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+          .image-container .inner.caption-position-right .caption{
+            padding:30px 10px;
+          }
+          
+          .no-color{ width:60% !important;}
+          .text-group .santek-block-group__inner-container {
+              transform: translateY(0);
+              top: 50%;
+              padding: 50px 5%;
+             }
+          .inner.caption-position-right {
+    display: flex;
+    flex-direction: revert;
+    align-items: center;
+}
+          .grid{ display:block;}
+          .slick-dots {margin-top:1rem;}
+          .kailo-landing button, .yes-bundle button{ margin-bottom:30px;}
+          .kail-image-slider .slick-next, .kail-image-slider .slick-prev{ display:none !important;}
+          .grid-container{ padding:10px;} 
+          .new-items_dev{ margin-left:0px;}
+          .how_does .new_div, .flex-row{ display:block;}
+          .grid-container:not([data-display-type="slideshow"]) .grid .image-container {
+              margin: 20px 20px 0 20px;
+              flex: 1 0 calc(33.333333% - 20px);
+              flex-grow: 1;
+              flex-shrink: 0;
+              max-width: 100%;
+}
+     .layout {
+    display: flex;
+    flex-direction: column;
+}
+          .col.col-main img{ width:100%;}    
+        
+          .grid-container[data-id="6259ba2309664"]:not([data-display-type="slideshow"]) .grid .image-container
+          {max-width:100%;}
+          
+          .feature-grid-block .grid-container[data-display-type=image_grid] .grid {
+    display: block;
+}
+  .grid-container[data-id="6259ba22f29da"]:not([data-display-type="slideshow"]) .grid {
+    margin: 0;
+    width: 100%;
+}
+          
+          .feature-grid-block .section-heading .heading {
+    padding-top: 30px;
+}
+          
+         
+   
+          .feature-grid-block .grid-container{ margin:0 auto 0;}
+          .feature-2-column-block .block-content .column-1 {
+          flex: 0 0 50%!important;
+          max-width: 100%!important;
+}
+          .grid-container[data-id="6259ba2316010"]:not([data-display-type="slideshow"]) .grid .image-container{
+          
+          max-width:100%;
+          }
+          .kailo-landing button span, .yes-bundle button span {
+  	
+   font-size:18px;
+    padding:.0em 0.92em;
+    
+  }
+          
+            
+   .modal button.productBtn.custom-btn span {
+    font-size: 1.2em;
+}
+    .modal-body {
+    padding: 20px 0;
+    max-height: calc(100vh - 50px);
+      overflow-y:auto;
+}
+      .modal .kailo-landing button, .modal .yes-bundle button {
+				/*padding: 0px 0px !important;*/
+				width: auto;
+				text-align: center;
+      }  
+          
+          .prinInvestigator{ background-position:center; min-height:60rem;}
+          
+          
+        }
+  
+  
+  
+  
+  p.text-overlapings.p-0 {
+    
+    padding-top: 0px;
+}
+  
+  
+  @media(min-width:992px) and (max-width:1024px){
+  button.productBtn.custom-btn {
+    width: 100%;
+}
+    .prinInvestigator{ min-height:40rem;}
+    .manage-grid{ margin: 40px  auto;}
+    
+    .kablo-bundle{ background-position:70% 100%;}
+  
+  }
+  @media(max-width:340px){
+  .sponsors_seen li img {
+    width: 75px !important;
+}
+  
+  }		
+
+
+  span.semi-headings{ display:block; padding-top:10px; font-size:20px;}  
+  .sproutVideo {width:544px;}
+  @media (max-width:610px){
+    .sproutVideo {width:100%}
+  }
+  
+  
+.underline {
+  color:#00c2c2;
+  float:left;
+  width:50%;
+}
+  label {
+    border:solid 1px #abc5c8;
+    border-radius:5px;
+  }
+  @media (max-width:600px){
+    .dr-jeffrey-gudin-mobile-wrapper {
+      width:100%;
+ 	  top: 57.3em;
+	  position: absolute;
+	  left: 13em;
+    }
+    .dr-jeffrey-gudin-mobile-wrapper img {
+width: 343px;
+left: -150px;
+position: relative;
+top: -43px;
+  }
+  } 
+  @media (min-width:600px){
+  .dr-jeffrey-gudin-mobile {
+    display:none !important;
+  }
+  }   
+
+  .FlexBlock2-1 {
+  position: absolute;
+  width: 100%;
+  top: 10%;
+    }
+  h2.flexBlock2 {
+font-size: 3em !important;
+    color:#fff;
+    text-align:center;
+  }
+  h2.flexBlock2-2 {
+    font-size: 2.0em;
+    color:#fff;
+    text-align:center;
+    margin: 0px 20%;
+  }
+  h2.flexBlock2-2 span {
+    font-size:.7em !important;
+    margin-bottom:20px;
+    display:block;
+    font-weight:100;
+  }
+  .flexBlock2-2-wrapper {
+    position:absolute;
+    bottom:-25px
+  } 
+  .FlexBlock3 div {
+    position:absolute;
+    bottom:230px;
+    text-align:center;
+    width:100%;
+  }
+  .FlexBlock3 h2 {
+    font-size:4em;
+    text-align:center;
+  }
+  .FlexBlock3 span {
+    font-size:.5em;
+    display:block;
+  }
+  .FlexBlock4 {
+  background: rgb(233,233,234);
+background: linear-gradient(0deg, rgba(233,233,234,1) 0%, rgba(194,194,194,1) 100%);
+  }
+  .FlexBlock4 img {
+    position:relative;
+    top:-200px;
+    width:80%;
+  }
+  .FlexBlock4 h2 {
+    color:#6e6e6e;
+    font-size:4em;
+    margin-bottom:80px;
+  }
+  .FlexBlock4 span {
+    display:block;
+    color:#1e94a9;
+    font-size:.5em;
+  }
+  .FlexBlock4 .featureList {
+    display: flex;
+  }
+  .FlexBlock4 .featureList > div {
+    text-align:center;
+    font-size:2em;
+    color:#1e94a9;
+    margin:auto;
+  }
+  .FlexBlock4 .featureList li {
+    margin-bottom:25px;
+  }
+  .FlexBlock4 .featureList ul {
+    margin:0px !important;
+  }
+  .FlexBlock5 {  
+    background:url('https://cdn.shopify.com/s/files/1/0121/1537/8238/files/Flexblock5Graphic.jpg?v=1674069121') no-repeat;
+  position:relative;
+    position: relative;
+    background-size: cover;
+    margin-bottom: 0px;
+    background-position: center center;
+    height:95vh;
+  }
+  .flexFlex {
+    display:flex;
+     justify-content: space-around; 
+    align-items: stretch;
+  }
+  .flexFlex > div {
+    text-align:center;
+    flex: max-content;
+  }
+  .FlexBlock6 img {
+    width:70%;
+  }
+  .FlexBlock6 h3 {
+    color:#7c7979;
+    font-size: 35px;
+    margin:70px 0px 70px 0px;
+  }
+  .FlexBlock6 .features {
+    color:#87898a;
+    font-size:25px;
+    margin-top: 80px;
+  }
+  .FlexBlock6 .features .middleCol {
+    color:#1e94a9;
+    font-size:30px;
+    border-left:solid 1px #c6c6c6;
+    border-right:solid 1px #c6c6c6;
+    font-weight:600
+  }
+  .FlexBlock6 ul {
+    margin:0px !important;
+  }
+  .FlexBlock6 .features .middleCol li {
+    margin-bottom:85px;
+  }
+  .FlexBlock6 .features > div {
+    width:30% !important;
+  }
+  .FlexBlock6 li {
+    margin-bottom:67px;
+  }
+  .FlexBlock7 {  
+    background:url('https://cdn.shopify.com/s/files/1/0121/1537/8238/files/Flexblock7Graphic.jpg?v=1674077281') no-repeat;
+  position:relative;
+    position: relative;
+    background-size: cover;
+    margin-bottom: 0px;
+    background-position: center center;
+    height:95vh;
+  }  
+  .FlexBlock7 img {
+    width:40%;
+    padding-top:12%;
+  }
+  .FlexBlock8 h3 { 
+    color: #1e94a9;
+    font-size: 25px;
+    margin: 0px 0px 30px 0px;
+    display: block;
+    line-height: 80px;
+    padding-top:20px;
+  }
+  .FlexBlock8Text {
+    background: rgba(95,136, 148, .5);
+    position: absolute;
+    bottom: 0px;
+    text-align:left;
+    color:#d5e4e8;
+    padding:20px 0px;
+    height:305px;
+  }
+  .FlexBlock8 .docImage {
+    width: 50%;
+    top: -50px;
+    position: relative;
+  }
+  .FlexBlock8 .leftMargin {
+   margin-left:13%;
+    padding-right:10px;
+  }
+  .FlexBlock8 p {
+    text-align:left;
+    padding:0px 0 0px 8%;
+  }
+  .FlexBlock9 h3 {
+    font-size:40px;
+    color:#4792a6;
+  }
+  .FlexBlock10 {
+    color:#fff;
+    background:#355d66;    
+  }
+  .FlexBlock10 h2 {
+    margin: 100px 0px ;
+font-size: 50px;
+line-height: 1.5em;
+letter-spacing: -1px;
+color: #4792a6;
+text-transform: none;
+font-weight: 600;
+color:#fff;
+  }
+  .FlexBlock10 img {
+    width:60%;
+  }
+  .FlexBlock10 .includes {
+    margin:40px 0px;
+  }
+  .FlexBlock10 .price {
+    margin:0px 40px 0px;
+    font-size:28px;
+  }
+  .FlexBlock10 .guarantee {
+    font-size:20px;
+    margin:40px 0px;
+  }
+
+</style>
+
+
+<section class="top_header">
+  <!--<div class="overlay-shadow visible-xs"></div>-->
+ <div class="wrapper">
+  <div class="container pt-120">
+    <div class="logo-new">
+      <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/kailoLogo-flex-lp.png?v=1673987101" alt="logo"  loading="lazy">
+    </div>
+  <div class="col col-main">
+      <h1 class="main-heading pt-50">INTRODUCING A MORE FLEXIBLE,<br>SOFTER, AND LESS EXPENSIVE KAILO</h1>
+    <div class="dividerLine"></div>    
+    <div class="logo-new">
+    <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/theKailoFlex.png?v=1673989279" alt="logo"  loading="lazy">
+    </div>
+    <div class="sproutVideo" style="position:relative; top:55px; height:0;padding-bottom:23.7%;"><iframe class='sproutvideo-player' src='https://videos.sproutvideo.com/embed/ac9fdcbd111be4c625/43c22de1ca97b2a9?autoPlay=true&amp;showControls=false&amp;loop=true&amp;playerColor=00c2c2' style='position:absolute;width:100%;height:100%;left:0;top:0' frameborder='0' allowfullscreen referrerpolicy='no-referrer-when-downgrade'></iframe></div>
+      </div>
+      <div class="col col-adjacent right lazyload">
+          <div class="btn-wrapper kailo-landing header-cta"><button type="button" onclick="location.href='#buy';"><span>BUY NOW</span></button></div>
+      </div>    
+   </div>
+</div>
+</section>
+<section class="FlexGraphic3d">
+    <div class="FlexBlock2-1">
+      <h2 class="flexBlock2">DRUG-FREE PAIN RELIEF<br>FOR EVERYONE</h2>
+    </div>
+    <div class="flexBlock2-2-wrapper"><h2 class="flexBlock2-2"><span>MADE FROM THE SAME TECH THAT IS IN THE 
+<u><a href="https://gokailo.com/collections/all-pain-patches" target="_blank" class="white">ORIGINAL KAILO PAIN PATCH</a></u>, A DRUG-FREE SOLUTION</span>
+
+USED NOW BY HUNDREDS OF THOUSANDS OF PEOPLE AND IN A CLINICAL TRIAL, HAS BEEN SHOWN TO RELIEVE MILD, MODERATE, SEVERE, AND CHRONIC PAIN.
+</h2>
+    <div class="btn-wrapper kailo-landing center"><button type="button" onclick="location.href='#buy';"><span>BUY NOW</span></button></div>
+    </div>
+</section>
+<section class="FlexBlock3">
+  <div><h2><span>WE ASKED, YOU SPOKE & WE LISTENED.</span>
+THE NEW KAILO FLEX™ IS...</h2></div> 
+</section>  
+<section class="FlexBlock4 center">
+  <div class="wrapper">
+    <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/Flexblock4Graphic.png?v=1674059884" alt="logo"  loading="lazy">
+  <div><h2>AND WE DIDN’T STOP THERE<span>ALL THE NEW FEATURES</span></h2></div>
+    <div class="featureList center">
+      <div>
+        <ul>
+        <li>NEW DYNAMIC FLEX™<br>MATERIAL</li>
+        <li>COMFORT EVERYWHERE</li>
+        <li>BETTER ADHESION</li>
+        <li>BARELY THERE<br>SENSATION</li>
+        <li>WATERPROOF</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+        <li>BUILT FOR<br>ACTIVE USE</li>
+        <li>SOFTER EDGES</li>
+        <li>ERGONOMIC SHAPE</li>
+        <li>LASTS FOR 4-8 WEEKS</li>
+        <li>REUSABLE</li>
+        </ul>        
+      </div>
+    </div>
+    <div class="btn-wrapper kailo-landing center"><button type="button" onclick="location.href='#buy';"><span>BUY NOW</span></button></div>
+  </div>
+</section>
+<section class="FlexBlock5 center">
+  <div></div>
+</section>
+<section class="FlexBlock6 center">
+  <div class="wrapper">
+    <div class="flexFlex">
+      <div><h3>KAILO FLEX™</h3>
+      <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/flexProductCompare.png?v=1674069567" alt="Kailo Flex"  loading="lazy"></div>
+      <div><h3>ORIGINAL KAILO™</h3>
+      <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/kailoProductCompare.png?v=1674069567" alt="Original Kailo"  loading="lazy"></div>
+  </div>
+    <div class="flexFlex features">
+      <div>
+        <ul>
+          <li>1-2 months</li>          
+          <li>dynamic flex<br>
+          single-layered</li>         
+          <li>any pain<br> 
+          symptom</li>         
+          <li>$49.00</li>
+        </ul>
+      </div>
+      <div class="middleCol">
+        <ul>
+          <li>LONGEVITY</li>          
+          <li>CONSTRUCTION</li>         
+          <li>USAGE</li>         
+          <li>$COST</li>
+        </ul>         
+      </div>
+      <div>
+        <ul>
+          <li>1 year</li>          
+          <li>durable,<br>multi-layered</li>         
+          <li>any pain<br>symptom</li>         
+          <li>$119.00 each</li>
+        </ul>        
+      </div>
+    </div>
+  </div>  
+</section>
+<section class="FlexBlock7">
+  <div class="wrapper">
+    <div><img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/Flexblock7collage.jpg?v=1674077423" alt="Kailo Flex"  loading="lazy"><br>
+    <div class="btn-wrapper kailo-landing"><button type="button" onclick="location.href='#buy';"><span>BUY NOW</span></button></div>
+    </div>
+  </div>
+</section>
+
+<section class="prinInvestigator mb-0 FlexBlock8">
+     <!--<img class="mb-30" src="https://cdn.shopify.com/s/files/1/0121/1537/8238/t/33/assets/clinical-trial-icon.png" alt="">-->
+     <h3 class="leftMargin">KAILO PATCH TECHNOLOGY</h3>
+     <h2 class="leftMargin">CLINICALLY<br></br>TESTED</h2>
+     <img  class="leftMargin" src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/fdaRegistered.png?v=1674079550" alt="FDA Registered">
+    <div class="leftMargin visible-xs">
+      
+
+<br>CLARITY SCIENCE AND PAIN RELIEF TECHNOLOGIES HAVE RELEASED THEIR CLINICAL TRIAL RESULTS FOR THE KAILO PAIN PATCH<br><br>
+
+“Options such as this should be considered by healthcare clinicians and patients as part of a multimodal treatment approach.”<br><br>
+
+
+Anesthesia and Pain Research Journal<br>
+Dr. Jeffrey A. Gudin, Derek T. Dietze, and Peter L. Hurwitz
+
+    </div>
+     <div class="flexFlex FlexBlock8Text hidden-xs">
+       <div>          
+      <p class="leftMargin">CLARITY SCIENCE AND PAIN RELIEF TECHNOLOGIES HAVE RELEASED THEIR  CLINICAL TRIAL RESULTS FOR THE KAILO PAIN PATCH </p>          
+      <p class="leftMargin white">“Options such as this should be considered by healthcare clinicians and patients as part of a 
+      multimodal treatment approach.”</p>
+      <p class="leftMargin">_<br>
+      Anesthesia and Pain Research Journal<br>
+      Dr. Jeffrey A. Gudin, Derek T. Dietze, and Peter L. Hurwitz</p>
+     </div>
+     <div><img class="docImage" src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/documentsImage.png?v=1674082103" alt="FDA Registered"></div>  
+     </div>   
+     <div class="dr-jeffrey-gudin-mobile-wrapper">
+<img class="dr-jeffrey-gudin-mobile" src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/jefferyGudin-MD-sm-withName.png?v=1674085401" alt="Dr. Jeffrey Gudin MD" /></div>
+</section>
+<section class="patch-bg FlexBlock9">
+
+<div class="wrapper center pt-110">
+  <h2 class="patch-heading">BEHIND THE SCIENCE</h2><br><br>
+  
+  <p class="text-overlapings">
+    THE KAILO TECHNOLOGY IS A UNIQUELY ORGANIZED SHEET OF CAPACITORS.  RADIOS AND COMPUTERS USE CAPACITORS TO MANAGE AND TRANSMIT DATA. KAILO CAPACITORS ASSIST THE AXONS OF YOUR NERVOUS SYSTEM TO MANAGE AND TRASMIT THE SIGNALS OF YOUR BODY.</p>
+<h3 class="mt-0">THE KAILO & THE AXON</h3>
+  <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/kailos-alternate-pathway-graphic.png?v=1674088823" alt="KAILO’S ALTERNATE SIGNAL PATHWAY">
+  <br><br><h2 class="patch-heading altColor">The Kailo Flex Uses the Same Amazing Technology as the 
+Original Kailo.
+</h2><br><br>
+<!--<p class="text-overlapings">Electricity is everywhere, even in the human body. Our cells are specialized to conduct electrical currents. Electricity is required for the nervous system to send signals throughout the body and back to the brain — making it possible for us to move, think, and feel.<br></p>-->
+</div>
+</section>
+<section class="FlexBlock10 center">
+  <a class="buy-anchor" name="buy" tabindex="-1"></a>
+  <div class="wrapper">
+    <h2>BUY THE KAILO FLEX NOW!</h2>
+    <div><img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/kailoFLEXproductImage.png?v=1674096467" alt="Kailo Flex Patch"  loading="lazy"><br>
+    <div class="includes">Includes:<br>
+– 1 Kailo Flex<br>
+– 5 Free Adhesives</div>
+    </div>
+    <div class="price">$49.00</div>
+    <div class="guarantee">90 day money-back guarantee on unopened Kailo Flex™ product<br>
+FREE USA Shipping </div>
+  </div>
+  <div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" data-id="42788855480451" type="button" onclick="manageProductSelection();"><span>BUY NOW</span></button></div>
+</section>
+
+  
+  
+
+
+
+ 
+
+
+
+
+
+<footer id="footer-badges"  class="mb-0">
+ <div class="wrapper">
+   <!--<h4 class="text-white">Question? <a style="color:#fff;" href="https://gokailo.com/pages/faqs">See Our FAQs</a></h4>-->
+   
+<div class="footer-badge-container">
+  
+<div data-payment-accepted="trust-badge" class="payment-badge" style="">
+<div class="vertically-centered">
+
+<img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/t/33/assets/gueantee.png" class="trust-badge show-for-ie" loading="lazy">
+</div>
+</div>
+<div data-payment-accepted="american-express" class="payment-badge" style="">
+<div class="vertically-centered">
+
+<img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/t/33/assets/mastercard.png" class="american-express primary-graphic" loading="lazy">
+</div>
+</div>
+<div data-payment-accepted="discover" class="payment-badge" style="">
+<div class="vertically-centered">
+
+<img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/t/33/assets/AS.png" class="discover primary-graphic" loading="lazy">
+</div>
+</div>
+<div data-payment-accepted="mastercard" class="payment-badge" style="">
+<div class="vertically-centered">
+
+<img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/t/33/assets/discover.png" class="mastercard primary-graphic" loading="lazy">
+</div>
+</div>
+<div data-payment-accepted="visa" class="payment-badge" style="">
+<div class="vertically-centered">
+
+<img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/t/33/assets/visa.png" class="visa primary-graphic" loading="lazy">
+</div>
+</div>
+
+
+</div>
+</div>  
+ 
+  
+</footer> 
+
+<footer class="btm-footer">
+  
+   <div class="wrapper">
+  <div class="footer-badge-container">
+    
+    <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/t/33/assets/footer-logo.png?v=1654928194" width="150px" alt="footer-logo">
+    
+  </div>
+  <br>
+  <!--<div class="copyrights">
+          <p class="text">Copyright © 2022 
+            Kailo Labs LLC. All rights reserved. Kailo™, The K™ Emblem, and The Future of Pain Relief™ are trademarks of Kailo Labs LLC. Kailo is protected by U.S. Patents</p>
+          <p>Kailo licenses technology from nCAP technologies.</p>
+    </div>-->
+  
+  </div>
+  
+</footer>
+ 
+
+<div id="discount_show_popup" class="modal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;">
+<div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+<div class="modal-content">
+<button type="button" onclick="closePopup();" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">×</span>
+</button>
+<div class="modal-body">
+<div class="desktop-only hidden-xs">
+<div class="container">
+<div class="row">
+<div class="col-lg-5 left-column">
+<div class="headline">Special Offer!</div>
+<div class="popup-special-container usa-shipping">
+<div class="number">45</div>
+<div class="percentoff"><span class="percent">%</span>
+<span class="off">OFF</span></div>
+<div class="clearfix"></div>
+</div>
+
+<div class="popup-image">
+<img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/kailo-b1-01_0bd95b4e-2f90-4e71-82c1-0e17776dd16a.jpg?v=1651516940" width="200" height="200" alt="" loading="lazy">
+</div>
+</div>
+<div class="col-lg-7 right-column">
+<div class="popup-content">
+
+<div class="description">
+<div id="upsell-subtitle" class="wpb_text_column wpb_content_element e1">
+<div class="wpb_wrapper">
+<p style="text-align: center; font-size:22px;"><strong>Act Now and Get…</strong></p>
+</div>
+</div>
+<div id="upsell-description" class="wpb_text_column wpb_content_element e2">
+<div class="wpb_wrapper">
+<p style="text-align: center;"><span style="color: #ff6b01; font-size:50px;"><strong>Kailo Bundle for<br>45% OFF!</strong></span></p>
+</div>
+</div>
+</div>
+<div id="upsell_pricing_popup_0" class="bundle-pricing-text line-through" style=" color: #ee4433; font-weight: 400;text-decoration: line-through;">
+<div class="value-price">$119 Value</div>
+</div>
+<div id="upsell_pricing_popup_1" class="bundle-pricing-text ">
+<div class="special-price">Special Add-on Price = $65.45!</div>
+</div>
+<div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" type="button"  onclick="bundle(SelectedProductId, 'true');"><span>Yes, Get My 45% Saving</span></button></div>
+
+<p class="cancel-upsell" style="color: #5cbd64;" onclick="bundle(SelectedProductId, 'false');">No Thank You</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mobile-only visible-xs">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="popup-header">
+  <div class="headline">Special Offer!</div>
+<div class="popup-special-container usa-shipping">
+<div class="number">45</div>
+<div class="percentoff"><span class="percent">%</span>
+<span class="off">OFF</span></div>
+<div class="clearfix"></div>
+</div>
+
+<div class="popup-image">
+<img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/kailo-b1-01_0bd95b4e-2f90-4e71-82c1-0e17776dd16a.jpg?v=1651516940" alt="" loading="lazy">
+</div>
+
+
+</div>
+</div>
+<div class="col-12">
+<div class="popup-content">
+<div class="description">
+<div  class="wpb_text_column wpb_content_element e1">
+<div class="wpb_wrapper">
+<p style="text-align: center; font-size:22px; margin:0px;"><strong>Act Now and Get…</strong></p>
+</div>
+</div>
+<div  class="wpb_text_column wpb_content_element e2">
+<div class="wpb_wrapper">
+<p style="text-align: center; margin:0px;"><span style="color: #ff6b01; font-size:29px; margin:0px;"><strong>Kailo Bundle for<br>45% OFF!</strong></span></p>
+</div>
+</div>
+</div>
+<div id="upsell_pricing_popup_mobile_2" class="bundle-pricing-text" style=" color: #ee4433; font-weight: 400;text-decoration: line-through;">
+<div class="value-price">$119 Value</div>
+</div>
+<div id="upsell_pricing_popup_mobile_3" class="bundle-pricing-text">
+<div class="special-price">Special Add-on Price = $65.45!</div>
+</div>
+<div class="button-container">
+<div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" type="button" onclick="bundle(SelectedProductId, 'true');"><span>Yes, Get My 45% Saving</span></button></div>
+</div>
+<p class="cancel-upsell" style="color: #5cbd64;" onclick="bundle(SelectedProductId, 'false');">No Thank You</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  <input type="hidden" class="order_product" value="0">
+</div>  
+  
+  
+{% include 'bmafnet_tracking' %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.min.js"></script>
+
+<script type="text/javascript">
+  
+  
+  
+  
+  
+let SelectedProductId;
+const productButtons = document.querySelectorAll('.productBtn');
+
+productButtons.forEach(button =>{
+    button.addEventListener('click', manageProductSelection);
+});
+
+ function manageProductSelection(e){
+     if(this.dataset.id){
+         SelectedProductId = this.dataset.id;
+     }
+     jQuery.ajax({
+      type: "POST",
+      url: '/cart/add.js',
+      data: {
+        quantity: 1,
+        id: SelectedProductId
+      },
+      async: false
+    });
+   location.href='/cart';
+    };
+  
+
+  
+  
+  
+  
+function closePopup(){
+  jQuery("#discount_show_popup").hide();
+}
+  
+function checkDiscount(qty){
+  addToCart(qty);
+}
+function addToCart(qty){
+  var product_id = jQuery('.order_product').val();
+  if(qty==1){
+    jQuery.ajax({
+      type: "POST",
+      url: '/cart/add.js',
+      data: {
+        quantity: 1,
+        id: product_id
+      },
+      async: false
+    });
+  }else{
+    jQuery.ajax({
+      type: "POST",
+      url: '/cart/add.js',
+      data: {
+        quantity: 3,
+        id: product_id
+      },
+      async: false
+    });
+  }
+  location.href='/cart';
+}
+function bundle(SelectedProductId, bundle) {
+    jQuery.ajax({
+      type: "POST",
+      url: '/cart/add.js',
+      data: {
+        quantity: 1,
+        id: SelectedProductId
+      },
+      async: false
+    });
+  
+    if(bundle == 'true') {
+        jQuery.ajax({
+          type: "POST",
+          url: '/cart/add.js',
+          data: {
+              quantity: 1,
+              id: 32251489255555
+            },
+          async: false
+        });
+    }
+  
+  	location.href='/cart';
+};
+  
+ 
+  
+ 
+  //Things
+ mobileProducts = document.querySelectorAll('.products.mobile input[type=radio]');
+ mobileSubmitButton = document.querySelector('.products.mobile .productBtn');
+ console.log(mobileSubmitButton);
+
+ //Functions
+     function manageMobileProductSubmit(){
+            SelectedProductId = this.dataset.id;
+            console.log(SelectedProductId);
+     }
+ //Events
+     
+     window.addEventListener('load', ()=>{
+         mobileProducts.forEach(mobileProduct => {
+            mobileProduct.addEventListener('change', manageMobileProductSubmit);
+           if( mobileProduct.checked) SelectedProductId = mobileProduct.dataset.id;
+        });
+     });
+ //Actions
+ 
+ //Tests
+ 
+ //Notes
+ 
+ //1 - Kailo bundle
+ 
+ //id = 34127408169091
+ //bundle = false
+ 
+ 
+ //2 Buy 2, get one free
+ //id = 34306690809987
+ //bundle = false
+ 
+ 
+ //3 buy 3 get 2 free
+ //id = 34306695659651
+ //bundle = false
+</script>
