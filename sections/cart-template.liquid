@@ -22,9 +22,13 @@
          />
   </noscript>
 
-</head><style>div#shopify-section-header {
-    display: none;
-}</style><div id="CartSection" class="page-width" data-section-id="{{ section.id }}" data-section-type="cart-template">
+</head>
+<style>
+  div#shopify-section-header {
+      display: none;
+  }
+</style>
+<div id="CartSection" class="page-width" data-section-id="{{ section.id }}" data-section-type="cart-template">
 {% capture header_title %} {{ 'cart.general.title' | t }} {% endcapture %}
 {% include 'page_header' with header_title %}
 
