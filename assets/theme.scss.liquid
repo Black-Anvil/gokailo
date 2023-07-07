@@ -7408,4 +7408,68 @@ text-align: center;
   padding: 75px 0;
 }
 
+// Custom Header Basic Link Snippet for Cart
+.header-basic-link {
+    position: fixed;
+    background-color: #f9f9f9;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 100;
+}
+.header-basic-link__logo {
+    position: absolute;
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.link-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.basic-link {
+    padding: 10px 0;
+    line-height: 1;
+    color: #4d4d4c;
+    letter-spacing: 1px;
+    font-weight: 600;
 
+}
+.basic-link::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: 10px;
+    height: 2px;
+    width: 100%;
+    transition: 200ms linear height;
+}
+.basic-link:hover {
+    color: unset;
+}
+.basic-link:hover::after {
+    background-color: #4d4d4c;
+    transition: 200ms linear height;
+}
+@media screen and (max-width: 768px) {
+    .link-container {
+        margin: 0 50px 0 0;
+    }
+    .header-basic-link__logo {
+        left: 50px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .header-basic-link__logo {
+        width: 100px;
+    }
+    .link-container {
+        margin: 0 25px 0 0;
+    }
+    .header-basic-link__logo {
+        left: 25px;
+    }
+}

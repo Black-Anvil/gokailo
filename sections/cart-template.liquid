@@ -28,6 +28,9 @@
       display: none;
   }
 </style>
+{% if section.settings.basic_header %}
+  {% render 'header-basic-link' %}
+{% endif %}
 <div id="CartSection" class="page-width" data-section-id="{{ section.id }}" data-section-type="cart-template">
 {% capture header_title %} {{ 'cart.general.title' | t }} {% endcapture %}
 {% include 'page_header' with header_title %}
@@ -227,37 +230,43 @@
 
 {% schema %}
 {
-"name": {
-"de": "Warenkorb-Seite",
-"en": "Cart page",
-"es": "Página de carrito",
-"fr": "Page du panier",
-"it": "Pagina del carrello",
-"ja": "カートページ",
-"nl": "Winkelwagenpagina",
-"pt-BR": "Página do carrinho",
-"zh-CN": "购物车页面",
-"zh-TW": "購物車頁面"
-},
-"settings": [
-{
-"type": "checkbox",
-"id": "cart_notes_enable",
-"label": {
-"de": "Warenkorb-Notifikationen erlauben",
-"en": "Enable cart notes",
-"es": "Habilitar notas de carrito",
-"fr": "Activer les notes de panier",
-"it": "Abilita note carrello",
-"ja": "カートメモを有効にする",
-"nl": "Notities voor winkelwagen inschakelen",
-"pt-BR": "Ativar observações sobre o carrinho",
-"zh-CN": "启用购物车备注",
-"zh-TW": "啟用購物車備註"
-},
-"default": false
-}
-]
+  "name": {
+  "de": "Warenkorb-Seite",
+  "en": "Cart page",
+  "es": "Página de carrito",
+  "fr": "Page du panier",
+  "it": "Pagina del carrello",
+  "ja": "カートページ",
+  "nl": "Winkelwagenpagina",
+  "pt-BR": "Página do carrinho",
+  "zh-CN": "购物车页面",
+  "zh-TW": "購物車頁面"
+  },
+  "settings": [
+    {
+    "type": "checkbox",
+    "id": "cart_notes_enable",
+    "label": {
+    "de": "Warenkorb-Notifikationen erlauben",
+    "en": "Enable cart notes",
+    "es": "Habilitar notas de carrito",
+    "fr": "Activer les notes de panier",
+    "it": "Abilita note carrello",
+    "ja": "カートメモを有効にする",
+    "nl": "Notities voor winkelwagen inschakelen",
+    "pt-BR": "Ativar observações sobre o carrinho",
+    "zh-CN": "启用购物车备注",
+    "zh-TW": "啟用購物車備註"
+    },
+    "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "basic_header",
+      "label": "Use basic header link",
+      "default": true
+    }
+  ]
 }
 {% endschema %}
 
