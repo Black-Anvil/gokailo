@@ -27,6 +27,139 @@
   div#shopify-section-header {
       display: none;
   }
+  .popup-inner {
+    display: flex;
+  }
+  .hidden {
+    display:none;
+  }
+  .popup-button{
+      background: linear-gradient(to bottom,#f3ce75 0,#edb52f 100%) !important;
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%), 0 0 0 1px;
+      border: solid 1px #c2ac72;
+      border-radius: 10px;
+      color: #fff;
+      padding: 0.7em 0px;
+      font-size: 1.2em;
+      font-weight: 600;
+      margin: 20px auto;
+      width:fit-content;
+      padding: 15px !important;
+      border: solid 1px #c2ac72;
+      display:block;
+  }
+  .popup-button span{
+      border-radius: 10px;
+      color: #000;
+      padding: 0.8em 1.2em;
+      font-weight: 700;
+      font-size: 1.1em;
+  }
+  .popup-button:hover{
+      cursor: pointer;
+  }
+  .white-popup {
+      position: relative;
+      background: #FFF;
+      padding: 40px;
+      width: auto;
+      max-width: 1200px;
+      margin: 20px auto;
+      font-size: x-large;
+      line-height: normal;
+      border: solid 10px #000;
+  }
+  .special {
+    display: block;
+    text-align: center;
+    width: 85%;
+  }
+  .rate {
+    text-align: center;
+    margin: -0.5em 0;
+  }
+  .number {
+    font-size: 6em;
+    font-weight: 600;
+  }
+  .percent {
+    position: relative;
+    top: -0.5em;
+    font-size: 3.5em;
+    font-weight: 600;
+  }
+  .off {
+    position: relative;
+    left: -2.3em;
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+  .special-image {
+    /* width: 85%; */
+    margin: auto;
+    display: block;
+  }
+  .act-now {
+    display: block;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+  }
+  .offer {
+    display: block;
+    font-size: 1.9em;
+    font-weight: 600;
+    text-align: center;
+    color: #ff6b01;
+  }
+  .original-price {
+    display: block;
+    text-align: center;
+    text-decoration: line-through;
+    color: red;
+  }
+  .new-price {
+    display: block;
+    text-align: center;
+  }
+  .yes-bundle {
+    margin: 2em 0 1em 0;
+    text-align: center;
+  }
+  .popup-button {
+    background: linear-gradient(to bottom,#f3ce75 0,#edb52f 100%) !important;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%), 0 0 0 1px;
+    border: solid 1px #c2ac72;
+    border-radius: 10px;
+    color: #fff;
+    padding: 0.7em 0px;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 20px auto;
+    width: fit-content;
+    padding: 15px !important;
+    border: solid 1px #c2ac72;
+    display: block;
+  }
+  .popup-button span {
+    border-radius: 10px;
+    color: #000;
+    padding: 0.8em 1.2em;
+    font-weight: 700;
+    font-size: 1.1em;
+  }
+  .no-thanks {
+    display: block;
+    text-align: center;
+  }
+  .no-thanks a {
+    color: #5cbd64;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .mfp-close {
+    display: none !important;
+  }
 </style>
 {% if section.settings.basic_header %}
   {% render 'header-basic-link' %}
@@ -186,8 +319,62 @@
           <span aria-hidden="true">{% include 'asset_svg' with 'reload' %}</span>
           <span class="fallback-text">{{ 'cart.general.update_cart' | t }}</span>
         </button>
-        <button type="submit" name="checkout" class="btn btn--regular btn--color btn--fill">{{ 'cart.general.checkout' | t }}</button>
+        {% assign test_bundle = false %}
+        {% for item in cart.items %}
+          {% if item.product.tags contains '45_bundle' %}
+            {% assign test_bundle = true %}
+            {% assign current_variant = item %}
+          {% endif %}
+        {% endfor %}
+        {% if test_bundle == true %}
+          <a href="#bundle-discount" class="inline-popup btn btn--regular btn--color btn--fill">Check Out</a>
+          <div id="bundle-discount" class="white-popup mfp-hide">
+              <div class="popup-inner toggle-me">
+                <div>
+                  <span class="special">Special Offer!</span>
+                  <div class="rate">
+                      <span class="number">45</span>
+                      <span class="percent">%</span>
+                      <span class="off">OFF</span>
+                  </div>
+                  <img class="special-image lazyload" data-src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/kailo-b1-01_0bd95b4e-2f90-4e71-82c1-0e17776dd16a_500x.jpg?v=1651516940" width="250" />
+                </div>
+                <div>
+                  <span class="act-now">Act Now and Get...</span>
+                  <span class="offer">a Kailo bundle for 45% OFF!</span>
+                  <br><span class="original-price">$119 Value</span>
+                  <span class="new-price">Special Add-on Price = $65.45!</span>
+                  <div class="yes-bundle">
+                      <a class="popup-button toggle-me" data-bundle="32251489255555" style="font-size:1em;">
+                          <span>Yes, Get My 45% Saving</span>
+                      </a>
+                  </div>
+                  <div class="no-thanks"><a data-bundle="false">No Thank You</a></div>
+                </div>
+              </div>
+              <div class="popup-inner toggle-me hidden">
+                <div>
+                  <span class="special">Adhesive 10 Pack | Kailo Patch Adhesives</span>
+                  <center><img class="special-image lazyload" data-src="https://cdn.shopify.com/s/files/1/0121/1537/8238/products/kailo-pain-relief-adheasive-10pack_500x.jpg?v=1601653525" width="450" /></center>
+                </div>
+                <div>
+                  <span class="act-now">Need Adhesives?</span>
+                  <span class="offer">Add a 10 Pack Kailo Patch Adhesives to my order</span>
+                  <span class="new-price">Price = $24.99</span>
+                  <div class="yes-bundle">
+                      <a class="popup-button toggle-me" data-bundle="20859019427902" style="font-size:1em;">
+                          <span>Yes, Add Kailo Patch Adhesives</span>
+                      </a>
+                  </div>
+                  <div class="no-thanks"><a data-bundle="false">No Thank You</a></div>
+                </div>
+              </div>
+          </div>
+          <button type="submit" name="checkout" class="btn btn--regular btn--color btn--fill hidden">{{ 'cart.general.checkout' | t }}</button>
 
+        {% else %}
+          <button type="submit" name="checkout" class="btn btn--regular btn--color btn--fill">{{ 'cart.general.checkout' | t }}</button>
+        {% endif %}
       </div>
       <div class="grid__item{% if section.settings.cart_notes_enable %} large--one-half{% endif %} text-right">
         {% if cart.item_count > 0 %}
@@ -271,5 +458,97 @@
 {% endschema %}
 
 {% javascript %}
-
+ 
 {% endjavascript %}
+
+<script type="text/javascript">
+//Things
+    const popupActions = document.querySelectorAll('[data-bundle]');
+    const checkoutButton = document.querySelector('button[name="checkout"]');
+    const xSellButton = document.querySelector('.inline-popup');
+    let allowCrossSell = sessionStorage.getItem("allowCrossSell");
+    if (allowCrossSell === "false") {
+      document.addEventListener("DOMContentLoaded", function() {
+        checkoutButton.classList.remove('hidden');
+        xSellButton.classList.add('hidden');
+        sessionStorage.clear();
+      })
+    }
+//Data
+    let timesClicked = 0;
+    data = {};
+    data.items = [
+            {% comment %} {
+            id: {{ current_variant.id }},
+            quantity: 1
+            } {% endcomment %}
+        ];
+//Functions
+    function buildProductObject(e){
+        console.log('before', timesClicked)
+       if(timesClicked < 1){
+            const toggleElements = document.querySelectorAll('.toggle-me');
+            toggleElements.forEach(element => {
+            element.classList.toggle('hidden');
+        })
+       }
+       if(timesClicked <= 1 && this.dataset.bundle != 'false'){
+           const bundleProduct = {
+                id: this.dataset.bundle,
+                quantity: 1,
+                properties: {
+                  '_discount': this.dataset.discount ? this.dataset.discount : ''
+                }
+           }
+           console.log("data.items: ", data.items);
+           data.items.push(bundleProduct);
+           console.log(data);
+       }
+       if(timesClicked == 1){
+           addAllItems(data, e);
+       }
+        timesClicked ++;
+        console.log('after', timesClicked)
+    }
+//Events
+    popupActions.forEach(close => {
+        close.addEventListener('click', buildProductObject);
+    });
+//Actions
+
+//Tests
+
+//onclick="bundle('{{ current_variant.id }}','true')"
+    function addAllItems(data, e) {
+        e.target.closest('#bundle-discount').querySelector('.mfp-close').click();
+        fetch('/cart/add.js', {
+            body: JSON.stringify(data),
+            credentials: 'same-origin',
+            headers: {
+            'Content-Type': 'application/json',
+            'X-Requested-With':'xmlhttprequest'
+            },
+            method: 'POST'
+        }).then((response) => {
+            return response.json();
+        }).then((json) => {
+            /* yay! our products were added - do something here to indicate to the user */
+            sessionStorage.setItem("allowCrossSell", false);
+            location.href='/cart';
+        }).catch((err) => {
+            /* uh oh, we have error. */
+            console.error(err)
+        });
+    }
+</script>
+
+<script>
+  $(document).ready(function() {
+    $('.inline-popup').magnificPopup({
+      type:'inline',
+      midClick: true,
+      closeOnBgClick: false,
+      enableEscapeKey: false
+    });
+  })
+</script>

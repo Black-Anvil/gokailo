@@ -29,9 +29,9 @@
     }
 </style>
 {% assign bundle_discount = 'false' %}
-{% if product.tags contains '45_bundle' %}
+{% comment %} {% if product.tags contains '45_bundle' %}
 	  {% assign bundle_discount = 'true' %}
-{% endif %}
+{% endif %} {% endcomment %}
 <div class="product-template" itemscope itemtype="http://schema.org/Product" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true">{% render 'preorder-now-collection-item', product: product %}
 
 {% assign header_title = product.title %}
@@ -321,7 +321,7 @@ based on <span itemprop="ratingCount">{{ product.metafields.yotpo.reviews_count 
   </script>
 {% endunless %}
 
-<script type="text/javascript">
+{% comment %} <script type="text/javascript">
 //Things
     const popupActions = document.querySelectorAll('[data-bundle]');
 //Data
@@ -388,7 +388,7 @@ based on <span itemprop="ratingCount">{{ product.metafields.yotpo.reviews_count 
             console.error(err)
         });
     }
-</script>
+</script> {% endcomment %}
 
 {% schema %}
 {
@@ -456,8 +456,8 @@ based on <span itemprop="ratingCount">{{ product.metafields.yotpo.reviews_count 
 {% endschema %}
 
 {% javascript %}
-$('.inline-popup').magnificPopup({
+{% comment %} $('.inline-popup').magnificPopup({
   type:'inline',
   midClick: true
-});
+}); {% endcomment %}
 {% endjavascript %}
