@@ -1,0 +1,38 @@
+{{ "login.css" | asset_url | stylesheet_tag }}
+
+<div class="page-inner">
+    <div class="login">
+        <div class="container">
+            {% render "account-logged" %}
+
+            {% if customer == null %}
+                <div class="login__form">
+                    <h2 class="h2-title">Create Account</h2>
+
+                    {% form "create_customer" %}
+                        {% assign firstNameErrorMessage = form.errors.messages["first_name"] %}
+                        {% render "field-block", label: "First Name", id: "first_name", name: "customer[first_name]", type: "text", placeholder: "First Name", required: true, message: firstNameErrorMessage %}
+
+                        {% assign lastNameErrorMessage = form.errors.messages["last_name"] %}
+                        {% render "field-block", label: "Last Name", id: "last_name", name: "customer[last_name]", type: "text", placeholder: "Last Name", required: true, message: lastNameErrorMessage %}
+
+                        {% assign emailErrorMessage = form.errors.messages["email"] %}
+                        {% render "field-block", label: "Email", id: "email", name: "customer[email]", type: "email", placeholder: "example@gmail.com", required: true, message: emailErrorMessage %}
+
+                        {% assign passwordErrorMessage = form.errors.messages["password"] %}
+                        {% render "field-block", label: "Password", id: "password", name: "customer[password]", type: "password", placeholder: "Password", required: true, message: passwordErrorMessage %}
+
+                        {% render "form-error", form: form %}
+
+                        <input class="button button--primary" type="submit" value="Create Account">
+                    {% endform %}
+
+                    <p class="login__helper">
+                        Returning customer?
+                        <a href="{{ routes.account_login_url }}">Sign In</a>
+                    </p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+.login .account-logged,
+.login__form {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--grays2);
+}
+
+.login__form .button {
+    width: 100%;
+}
+
+.login .account-logged > *:not(:last-child),
+.login__form form > *:not(:last-child),
+.login__form > *:not(:last-child) {
+    margin: 0 0 24px;
+}
+
+.login__helper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.login__helper a {
+    margin: 0 0 0 8px;
+    color: var(--primary1);
+}
+
+.login__error {
+    font-weight: 700;
+    color: var(--system-error);
+}
+
+.login #recover {
+    display: none;
+}
+
+.login #recover:target {
+    display: block;
+}
+
+.login #recover:target ~ #loginForm {
+    display: none;
+}
+
+.login__buttons > *:not(:last-child) {
+    margin: 0 0 8px;
+}
+

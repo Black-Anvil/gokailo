@@ -1,0 +1,13 @@
+{{ "account-menu.css" | asset_url | stylesheet_tag }}
+
+<ul class="account-menu">
+    <li>
+        <a href="/account" class="h6-title {% if active == "account" %}{{ "active" }}{% endif %}">Orders History</a>
+    </li>
+    <li>
+        <a href="{{ routes.account_addresses_url }}" class="h6-title {% if active == "addresses" %}{{ "active" }}{% endif %}">Addresses</a>
+    </li>
+    <li>
+        <a href="{{ routes.account_logout_url }}" class="h6-title">Log out</a>
+    </li>
+</ul>

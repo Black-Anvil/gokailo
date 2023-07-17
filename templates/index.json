@@ -1,0 +1,42 @@
+{
+  "sections": {
+    "home-hero": {
+      "type": "home-hero",
+      "settings": {
+      }
+    },
+    "home-advantages-icons": {
+      "type": "home-advantages-icons",
+      "settings": {
+      }
+    },
+    "home-testimonials": {
+      "type": "home-testimonials",
+      "settings": {
+      }
+    },
+    "home-about": {
+      "type": "home-about",
+      "settings": {
+      }
+    },
+    "home-products": {
+      "type": "home-products",
+      "settings": {
+      }
+    },
+    "home-links-block": {
+      "type": "home-links-block",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "home-hero",
+    "home-testimonials",
+    "home-advantages-icons",
+    "home-about",
+    "home-products",
+    "home-links-block"
+  ]
+}

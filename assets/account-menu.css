@@ -1,0 +1,19 @@
+.account-menu {
+    padding: 12px 0;
+    border-radius: 6px;
+    color: var(--grays3);
+    background-color: var(--grays6);
+}
+
+.account-menu a {
+    position: relative;
+    display: block;
+    padding: 8px 24px;
+}
+
+.account-menu a.active {
+    border-left: 2px solid var(--primary2);
+    color: var(--primary2);
+    text-decoration: none;
+    pointer-events: none;
+}

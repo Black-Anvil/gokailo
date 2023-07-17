@@ -1,0 +1,52 @@
+{{ "home-products.css" | asset_url | stylesheet_tag }}
+
+<section class="home-products">
+    <div class="container">
+        <div class="home-products__header">
+            <h2 class="h2-title">WHICH KAILO IS RIGHT FOR YOU?</h2>
+            <p>KAILO OR KAILO FLEX</p>
+        </div>
+
+        <ul class="home-products__list">
+            <li>
+                <div class="home-products__item">
+                    <img src="{{ "product1-delete.png" | asset_url }}" alt="">
+
+                    <div class="home-products__info">
+                        <h3 class="h6-title">Kailo™ Original</h3>
+                        <span><b>$119.00</b></span>
+                    </div>
+                </div>
+
+                <ul class="home-products__sublist">
+                    <li class="h6-title">1 YEAR USAGE</li>
+                    <li class="h6-title">DURABLE MULTI-LAYERED construction</li>
+                    <li class="h6-title">EFFECTIVE FOR ANY PAIN SYMPTOM</li>
+                    <li class="h6-title">90-DAY MONEY-BACK GUARANTEE (no restrictions)</li>
+                    <li class="h6-title">$119.00 / ea</li>
+                </ul>
+
+                <a href="#" class="button button--primary">learn more</a>
+            </li>
+
+            <li>
+                <img src="{{ "product2-delete.png" | asset_url }}" alt="">
+
+                <div class="home-products__info">
+                    <h3 class="h6-title">Kailo™ Original</h3>
+                    <span><b>$49.00 - or $24.99/month</b></span>
+                </div>
+
+                <ul class="home-products__sublist">
+                    <li class="h6-title">1 month USAGE</li>
+                    <li class="h6-title">DYNAMIC FLEX SINGLE-LAYERED CONSTRUCTION</li>
+                    <li class="h6-title">EFFECTIVE FOR ANY PAIN SYMPTOM</li>
+                    <li class="h6-title">NO WARRANTY</li>
+                    <li class="h6-title">$49.00 / ea</li>
+                </ul>
+
+                <a href="#" class="button button--primary">learn more</a>
+            </li>
+        </ul>
+    </div>
+</section>

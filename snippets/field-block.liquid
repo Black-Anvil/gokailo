@@ -1,0 +1,12 @@
+<div class="field-block {% if message %}error{% endif %}">
+    <div class="field-block__inner">
+        <label for="{{ id }}{{ index }}">{{ label }}</label>
+
+        {% if link_to %}
+            <a class="field-block__link" href="{{ link_to }}">{{ link_text }}</a>
+        {% endif %}
+    </div>
+
+    <input type="{{ type }}" placeholder="{{ placeholder }}" id="{{ id }}{{ index }}" value="{{ value }}" name="{{ name }}" {% if required %}required{% endif %}>
+    <span class="small-text">{{ message }}</span>
+</div>

@@ -1,0 +1,12 @@
+{
+  "settings_schema": {
+    "fonts": {
+      "label": "Fonts",
+      "settings": {
+        "primary_text": "Font for Primary Text",
+        "secondary_text": "Font for Secondary Text",
+        "headlines": "Font for Headlines"
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{{ "hero.css" | asset_url | stylesheet_tag }}
+
+<section class="hero">
+    <div class="hero__swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="hero__block">
+                    <div class="container">
+                        <div class="hero__item">
+                            <h2 class="h1-title">the future of pain relief</h2>
+                            <img class="hero__item-image" src="{{ "hero-image-1.png" | asset_url }}" alt="as seen on">
+                            <a class="button button--primary" href="{{ routes.all_products_collection_url }}">shop now</a>
+                        </div>
+                    </div>
+
+                    <video class="hero__item-video" autoplay loop muted src="{{ "KailoFlexVignette.webm" | asset_url }}"></video>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="hero__block">
+                    <div class="container">
+                        <div class="hero__item">
+                            <h2 class="h1-title">the future of pain relief</h2>
+                            <img class="hero__item-image" src="{{ "hero-image-1.png" | asset_url }}" alt="as seen on">
+                            <a class="button button--primary" href="{{ routes.all_products_collection_url }}">shop now</a>
+                        </div>
+                    </div>
+
+                    <video class="hero__item-video" autoplay loop muted src="{{ "KailoFlexVignette.webm" | asset_url }}"></video>
+                </div>
+            </div>
+        </div>
+
+        <div class="container hero__pagination">
+            <div class="swiper-pagination swiper-pagination--vertical"></div>
+        </div>
+    </div>
+</section>
+
+<script type="module">
+    const swiper = new Swiper('.hero__swiper', {
+        slidesPerView: 1,
+
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>

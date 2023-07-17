@@ -1,0 +1,96 @@
+{{ "account.css" | asset_url | stylesheet_tag }}
+
+<div class="page-inner bg-gray">
+    <div class="account">
+        <div class="container">
+            <h2 class="h2-title">Your account</h2>
+
+            <div class="account__wrapper">
+                {% render "account-menu" %}
+
+                <div class="account-order account__info">
+                    <div class="account__header">
+                        <h3 class="h4-title">Order {{ order.name }}</h3>
+                    </div>
+
+                    <div class="account-order__block">
+                        <p>Placed on {{ order.created_at | time_tag: format: "date_at_time" }}</p>
+
+                        {%- if order.cancelled -%}
+                            <div class="account-order__canceled">
+                                <h3 class="h5-title">Order Cancellation</h3>
+                                {%- assign cancelled_at = order.cancelled_at | time_tag: format: "date_at_time" -%}
+                                <p><span>Time:</span> {{ order.cancelled_at | time_tag: format: "date_at_time" }}</p>
+                                <p><span>Reason:</span> {{ order.cancel_reason_label }}</p>
+                            </div>
+                        {%- endif -%}
+
+                        <div class="account-order__table">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th class="caption-text">Product</th>
+                                    <th class="caption-text">Price</th>
+                                    <th class="caption-text">Quantity</th>
+                                    <th class="caption-text">Total</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {%- for line_item in order.line_items -%}
+                                    <tr>
+                                        <td>
+                                            <a class="link" href="{{ line_item.url }}">{{ line_item.title }}</a>
+                                        </td>
+
+                                        <td>
+                                            <span>{{ line_item.original_price | money }}</span>
+                                        </td>
+
+                                        <td>
+                                            <span>{{ line_item.quantity }}</span>
+                                        </td>
+
+                                        <td>
+                                            <span>{{ line_item.final_line_price | money }}</span>
+                                        </td>
+                                    </tr>
+                                {%- endfor -%}
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td>Total</td>
+                                    <td colspan="4">{{ order.total_price | money_with_currency }}</td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                        <ul class="account-order__addresses">
+                            <li>
+                                <h2 class="h5-title">Billing Information</h2>
+
+                                <p>
+                                    Payment status:
+                                    <span class="tag tag--{{ order.financial_status }}">{{ order.financial_status_label }}</span>
+                                </p>
+
+                                {{ order.billing_address | format_address }}
+                            </li>
+
+                            <li>
+                                <h2 class="h5-title">Shipping Information</h2>
+
+                                <p>
+                                    Fulfillment status:
+                                    <span class="tag tag--{{ order.fulfillment_status }}">{{ order.fulfillment_status_label }}</span>
+                                </p>
+
+                                {{ order.shipping_address | format_address }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

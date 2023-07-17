@@ -1,0 +1,83 @@
+.tag {
+    display: inline-flex;
+    padding: 2px 6px;
+    border-radius: 6px;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.tag--complete {
+    color: var(--complete);
+    background-color: var(--complete-bg);
+}
+
+.tag--fulfilled {
+    color: var(--fulfilled);
+    background-color: var(--fulfilled-bg);
+}
+
+.tag--partial {
+    color: var(--partial);
+    background-color: var(--partial-bg);
+}
+
+.tag--restocked {
+    color: var(--restocked);
+    background-color: var(--restocked-bg);
+}
+
+.tag--unfulfilled {
+    color: var(--unfulfilled);
+    background-color: var(--unfulfilled-bg);
+}
+
+.tag--authorized {
+    color: var(--authorized);
+    background-color: var(--authorized-bg);
+}
+
+.tag--expired {
+    color: var(--expired);
+    background-color: var(--expired-bg);
+}
+
+.tag--paid {
+    color: var(--paid);
+    background-color: var(--paid-bg);
+}
+
+.tag--partially_paid {
+    color: var(--partially_paid);
+    background-color: var(--partially_paid-bg);
+}
+
+.tag--partially_refunded {
+    color: var(--partially_refunded);
+    background-color: var(--partially_refunded-bg);
+}
+
+.tag--pending {
+    color: var(--pending);
+    background-color: var(--pending-bg);
+}
+
+.tag--refunded {
+    color: var(--refunded);
+    background-color: var(--refunded-bg);
+}
+
+.tag--unpaid {
+    color: var(--unpaid);
+    background-color: var(--unpaid-bg);
+}
+
+.tag--voided {
+    color: var(--voided);
+    background-color: var(--voided-bg);
+}
+
+

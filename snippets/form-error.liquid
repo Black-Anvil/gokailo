@@ -1,0 +1,5 @@
+{% for error in form.errors %}
+    {% if error == 'form' %}
+        <p class="login__error">{{ form.errors.messages[error] }}</p>
+    {% endif %}
+{% endfor %}

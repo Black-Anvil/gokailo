@@ -1,0 +1,273 @@
+{{ "account.css" | asset_url | stylesheet_tag }}
+
+{{ "customer.js" | asset_url | script_tag }}
+
+<div class="page-inner bg-gray">
+    <div class="account">
+        <div class="container">
+            <h2 class="h2-title">Your account</h2>
+
+            <div class="account__wrapper">
+                {% render "account-menu", active: "addresses" %}
+
+                <div class="account-address account__info" data-customer-addresses>
+                    <div id="newAddress" style="display: none;" class="account-address__form">
+                        <div class="account__header">
+                            <h4 class="h4-title">New Address</h4>
+                        </div>
+
+                        {%- form 'customer_address', customer.new_address -%}
+                            {% render "field-block", label: "First Name", id: "address_first_name", name: "address[first_name]", type: "text", placeholder: "First Name", required: true %}
+
+                            {% render "field-block", label: "Last Name", id: "address_last_name", name: "address[last_name]", type: "text", placeholder: "Last Name", required: true %}
+
+                            {% render "field-block", label: "Phone", id: "address_phone", name: "address[phone]", type: "tel", placeholder: "Phone", required: true %}
+
+                            {% render "field-block", label: "Company", id: "address_company", name: "address[company]", type: "text", placeholder: "Company", required: true %}
+
+                            {% render "field-block", label: "Address 1", id: "address_address1", name: "address[address1]", type: "text", placeholder: "Address 1", required: true %}
+
+                            {% render "field-block", label: "Address 2", id: "address_address2", name: "address[address2]", type: "text", placeholder: "Address 2", required: true %}
+
+                            {% render "field-block", label: "City", id: "address_city", name: "address[city]", type: "text", placeholder: "City", required: true %}
+
+                            <div class="field-block select">
+                                <div class="field-block__inner">
+                                    <label for="AddressCountryNew">Country</label>
+                                </div>
+
+                                <div class="field-block__select">
+                                    <select
+                                            id="AddressCountryNew"
+                                            name="address[country]"
+                                            data-default="{{ form.country }}"
+                                            autocomplete="country"
+                                    >
+                                        {{ all_country_option_tags }}
+                                    </select>
+
+                                    {% render "icon-chevron" %}
+                                </div>
+                            </div>
+
+                            <div class="field-block select" id="AddressProvinceContainerNew" style="display: none">
+                                <div class="field-block__inner">
+                                    <label for="AddressProvinceNew">Province</label>
+                                </div>
+
+                                <div class="field-block__select">
+                                    <select
+                                            id="AddressProvinceNew"
+                                            name="address[province]"
+                                            data-default="{{ form.province }}"
+                                            autocomplete="address-level1"
+                                    ></select>
+
+                                    {% render "icon-chevron" %}
+                                </div>
+                            </div>
+
+                            {% render "field-block", label: "Zip", id: "address_zip", name: "address[zip]", type: "text", placeholder: "Zip", required: true %}
+
+                            <label class="field-block-checkbox">
+                                {{ form.set_as_default_checkbox }}
+                                <span class="field-block-checkbox__indicator"></span>
+                                <span>Set as default address</span>
+                            </label>
+
+                            <div class="account-address__buttons">
+                                <input class="button button--primary" type="submit" value="Add Address">
+                                <button class="button button--stroked" id="newAddressCancel" type="reset">Cancel</button>
+                            </div>
+                        {%- endform -%}
+                    </div>
+
+                    <div id="addressesList">
+                        <div class="account__header">
+                            <h4 class="h4-title">Addresses</h4>
+                            <button id="newAddressBtn" class="button button--stroked">Add New Address</button>
+                        </div>
+
+                        {% assign addressesCount = customer.addresses | size %}
+
+                        {% if addressesCount == 0 %}
+                            <p>You don't have any available addresses.</p>
+                        {% else %}
+                            {% paginate customer.addresses by 5 %}
+                                <ul class="account__list">
+                                    {% for address in customer.addresses %}
+                                        {% assign id = address.id  %}
+                                        <li class="account-card" data-id="{{ id }}">
+                                            <div class="addressInfo account-card__wrapper">
+                                                <div>
+                                                    <p class="caption-text">Name</p>
+
+                                                    <p>
+                                                        {{ address.name }}
+                                                        {%- if address == customer.default_address -%}
+                                                            <span>(Default)</span>
+                                                        {%- endif -%}
+                                                    </p>
+                                                </div>
+
+                                                <div>
+                                                    <p class="caption-text">City</p>
+                                                    <p>{{ address.city }}</p>
+                                                </div>
+
+                                                <div>
+                                                    <p class="caption-text">Address</p>
+                                                    <p>{{ address.address1 }}</p>
+                                                </div>
+
+                                                <div>
+                                                    <p class="caption-text hidden">Action</p>
+
+                                                    <div class="account-card__buttons">
+                                                        <button class="editAddressBtn" type="button">
+                                                            {% render "icon-edit" %}
+                                                            <span>Edit</span>
+                                                        </button>
+
+                                                        <form method="post" action="/account/addresses/{{ address.id }}">
+                                                            <input type="hidden" name="_method" value="delete">
+                                                            <button type="submit">
+                                                                {% render "icon-delete" %}
+                                                                <span>Delete</span>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="account-address__form editAddress" style="display:none;">
+                                                <h4 class="h4-title">Edit Address</h4>
+
+                                                {%- form 'customer_address', address -%}
+                                                    {% render "field-block", label: "First Name", value: address.first_name, index: id, id: "address_first_name", name: "address[first_name]", type: "text", placeholder: "First Name", required: true %}
+
+                                                    {% render "field-block", label: "Last Name", value: address.last_name, index: id, id: "address_last_name", name: "address[last_name]", type: "text", placeholder: "Last Name", required: true %}
+
+                                                    {% render "field-block", label: "Phone", value: address.phone, index: id, id: "address_phone", name: "address[phone]", type: "tel", placeholder: "Phone", required: true %}
+
+                                                    {% render "field-block", label: "Company", value: address.company, index: id, id: "address_company", name: "address[company]", type: "text", placeholder: "Company", required: true %}
+
+                                                    {% render "field-block", label: "Address 1", value: address.address1, index: id, id: "address_address1", name: "address[address1]", type: "text", placeholder: "Address 1", required: true %}
+
+                                                    {% render "field-block", label: "Address 2", value: address.address2, index: id, id: "address_address2", name: "address[address2]", type: "text", placeholder: "Address 2", required: true %}
+
+                                                    {% render "field-block", label: "City", value: address.city, index: id, id: "address_city", name: "address[city]", type: "text", placeholder: "City", required: true %}
+
+                                                    <div class="field-block select">
+                                                        <div class="field-block__inner">
+                                                            <label for="AddressCountryNew">Country</label>
+                                                        </div>
+
+                                                        <div class="field-block__select">
+                                                            <select
+                                                                    required
+                                                                    id="AddressCountry_{{ id }}"
+                                                                    name="address[country]"
+                                                                    data-default="{{ address.country }}"
+                                                                    data-address-country-select
+                                                                    data-form-id="{{ form.id }}"
+                                                                    autocomplete="country"
+                                                            >
+                                                                {{ all_country_option_tags }}
+                                                            </select>
+
+                                                            {% render "icon-chevron" %}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="field-block select" id="AddressProvinceContainer_{{ id }}" style="display: none">
+                                                        <div class="field-block__inner">
+                                                            <label for="AddressProvinceNew">Province</label>
+                                                        </div>
+
+                                                        <div class="field-block__select">
+                                                            <select
+                                                                    required
+                                                                    id="AddressProvince_{{ id }}"
+                                                                    name="address[province]"
+                                                                    data-default="{{ address.province }}"
+                                                            ></select>
+
+                                                            {% render "icon-chevron" %}
+                                                        </div>
+                                                    </div>
+
+                                                    {% render "field-block", label: "Zip", value: address.zip, index: id, id: "address_zip", name: "address[zip]", type: "text", placeholder: "Zip", required: true %}
+
+                                                    {%- if address != customer.default_address -%}
+                                                        <label class="field-block-checkbox">
+                                                            {{ form.set_as_default_checkbox }}
+                                                            <span class="field-block-checkbox__indicator"></span>
+                                                            <span>Set as default address</span>
+                                                        </label>
+                                                    {% endif %}
+
+                                                    <div class="account-address__buttons">
+                                                        <input class="button button--primary editAddressSubmit" type="submit" value="Edit Address">
+                                                        <button class="button button--stroked editAddressCancel" type="reset">Cancel</button>
+                                                    </div>
+                                                {%- endform -%}
+                                            </div>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+
+                                <div class="pagination">
+                                    {{ paginate | default_pagination }}
+                                </div>
+                            {% endpaginate %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    window.addEventListener('load', () => {
+        typeof CustomerAddresses !== 'undefined' && new CustomerAddresses();
+    });
+</script>
+
+<script type="module">
+    const addressesList = document.getElementById("addressesList");
+    const addressCard = addressesList.querySelectorAll(".account-card");
+
+    addressCard.forEach(card => {
+        const addressInfo = card.querySelector(".addressInfo");
+        const editAddressBtn = card.querySelector(".editAddressBtn");
+        const editAddressCancel = card.querySelector(".editAddressCancel");
+        const editAddressForm = card.querySelector(".editAddress");
+
+        editAddressCancel.addEventListener("click", () => {
+            addressInfo.style.display = "flex";
+            editAddressForm.style.display = "none";
+        });
+
+        editAddressBtn.addEventListener("click", () => {
+            addressInfo.style.display = "none";
+            editAddressForm.style.display = "block";
+        });
+    });
+
+    const newAddressForm = document.getElementById("newAddress");
+    const newAddressBtn = document.getElementById("newAddressBtn");
+    const newAddressCancelBtn = document.getElementById("newAddressCancel");
+
+    newAddressBtn.addEventListener("click", () => {
+        newAddressForm.style.display = "block";
+        addressesList.style.display = "none";
+    });
+
+    newAddressCancelBtn.addEventListener("click", () => {
+        newAddressForm.style.display = "none";
+        addressesList.style.display = "block";
+    });
+</script>

@@ -1,0 +1,39 @@
+.breadcrumbs {
+    display: flex;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    white-space: nowrap;
+    color: var(--grays3);
+}
+
+.breadcrumbs a:not(:first-child) {
+    position: relative;
+    padding-left: 24px;
+}
+
+.breadcrumbs a:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid var(--grays3);
+    border-right: 2px solid var(--grays3);
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.breadcrumbs a[href]::before {
+    border-color: var(--grays2);
+}
+
+.breadcrumbs a[href] {
+    color: var(--grays2);
+}
+
+.breadcrumbs a[href]:hover,
+.breadcrumbs a[href]:focus {
+    text-decoration: underline;
+}

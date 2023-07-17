@@ -1,0 +1,35 @@
+{{ "login.css" | asset_url | stylesheet_tag }}
+
+<div class="page-inner">
+    <div class="login">
+        <div class="container">
+            {% render "account-logged" %}
+
+            {% if customer == null %}
+                <div class="login__form">
+                    <h2 class="h2-title">Activate Account</h2>
+
+                    <p>
+                        Please enter your new password below. Make sure to choose a strong password that contains a combination
+                        of letters, numbers, and special characters.
+                    </p>
+
+                    {% form "activate_customer_password" %}
+                        {% assign passwordErrorMessage = form.errors.messages["password"] %}
+                        {% render "field-block", label: "Password", id: "password", name: "customer[password]", type: "password", placeholder: "Password", required: true, message: passwordErrorMessage %}
+
+                        {% assign confirmPasswordErrorMessage = form.errors.messages["password_confirmation"] %}
+                        {% render "field-block", label: "Confirm Password", id: "password_confirmation", name: "customer[password_confirmation]", type: "password", placeholder: "Confirm Password", required: true, message: confirmPasswordErrorMessage %}
+
+                        {% render "form-error", form: form %}
+
+                        <div class="login__buttons">
+                            <input class="button button--primary" type="submit" value="Activate account">
+                            <input  class="button button--stroked"  type="submit" name="decline" value="Decline invitation">
+                        </div>
+                    {% endform %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

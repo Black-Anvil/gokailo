@@ -1,0 +1,65 @@
+{{ "cart-drawer.css" | asset_url | stylesheet_tag }}
+
+{% form "cart", cart, class: "cart-drawer" %}
+    <div class="cart-drawer__modal">
+        <div class="cart-drawer__header">
+            <p class="h5-title">Cart</p>
+
+            <button type="button" id="cart-drawer-close" class="cart-drawer__btn-icon">
+                close
+                {% render "icon-close" %}
+            </button>
+        </div>
+
+        <div class="cart-drawer__body">
+            {% if cart.empty? %}
+                <p class="cart-drawer__empty h5-title">Your cart is empty</p>
+            {% else %}
+                <div class="cart-drawer__list">
+                    {% for item in cart.items %}
+                        <div class="cart-drawer__preview" data-item-key="{{ item.key }}">
+                            <img src="{{ item.image | img_url: "64x" }}" alt="{{ item.title }}">
+                            <a href="{{ item.product.url }}">{{ item.product.title }}</a>
+                            <span class="cart-drawer__preview-price">{{ item.price | money }}</span>
+
+                            <div class="stepper">
+                                <button type="button" class="stepper__counter decrement">
+                                    minus
+                                    {% render "icon-minus" %}
+                                </button>
+
+                                <input name="quantity" readonly value="{{ item.quantity }}" class="stepper__count button-text">
+
+                                <button  type="button" class="stepper__counter increment">
+                                    plus
+                                    {% render "icon-plus" %}
+                                </button>
+                            </div>
+
+                            <button type="button" class="cart-drawer__btn-icon cart-drawer-delete">
+                                delete
+                                {% render "icon-delete" %}
+                            </button>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <span class="loader">loading...</span>
+        </div>
+
+        <div class="cart-drawer__footer">
+            <ul class="cart-drawer__total">
+                <li>
+                    <span>Subtotal</span>
+                    <b>{{ cart.total_price | money }}</b>
+                </li>
+            </ul>
+
+            <div class="cart-drawer__buttons">
+                <a href="{{ routes.cart_url }}" type="button" class="button button--stroked">view cart</a>
+                <button type="submit" name="checkout" class="button button--primary">checkout</button>
+            </div>
+        </div>
+    </div>
+{% endform %}

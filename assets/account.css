@@ -1,0 +1,277 @@
+.account {
+    color: var(--grays2);
+}
+
+.account__wrapper {
+    display: flex;
+    align-items: flex-start;
+    margin: 40px 0 0;
+}
+
+.account__wrapper > *:not(:last-child) {
+    margin: 0 40px 0 0;
+}
+
+.account .account-menu {
+    min-width: 200px;
+    max-width: 400px;
+    width: 50%;
+}
+
+.account__info {
+    flex-grow: 1;
+    width: 100%;
+    padding: 24px;
+    border-radius: 6px;
+    background-color: var(--grays6);
+}
+
+.account__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 24px;
+}
+
+.account__header > *:not(:last-child) {
+    margin: 0 16px 0 0;
+}
+
+.account__list {
+    margin: 24px 0;
+}
+
+.account__list:last-child {
+    margin-bottom: 0;
+}
+
+.account__list > *:not(:last-child) {
+    margin: 0 0 8px;
+}
+
+
+
+.account-address__form form {
+    margin: 24px 0 0;
+}
+
+.account-address__form form > *:not(:last-child) {
+    margin: 0 0 16px;
+}
+
+.account-address__buttons {
+    display: flex;
+}
+
+.account-address__buttons > *:not(:last-child) {
+    margin: 0 16px 0 0;
+}
+
+.account-order__details.hidden {
+    display: none;
+}
+
+.account-order__details > * {
+    padding: 16px 0;
+}
+
+.account-order__details > *:last-child {
+    padding-bottom: 0;
+}
+
+.account-order__details > *:not(:last-child) {
+    border-bottom: 1px solid var(--grays4);
+}
+
+.account-order__description > *:not(:last-child),
+.account-order__item > *:not(:last-child) {
+    margin: 0 0 12px;
+}
+
+.account-order__canceled {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 12px;
+    border-radius: 6px;
+    color: var(--unfulfilled);
+    background-color: var(--unfulfilled-bg);
+}
+
+.account-order__canceled > *:not(:last-child) {
+    margin: 0 0 6px;
+}
+
+.account-order__canceled p {
+    display: flex;
+    align-items: center;
+}
+
+.account-order__canceled span {
+    margin: 0 8px 0 0;
+}
+
+.account-order__table {
+    border-radius: 6px;
+    border: 1px solid var(--grays4);
+}
+
+.account-order__table table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.account-order__table thead tr,
+.account-order__table tbody tr {
+    border-bottom: 1px solid var(--grays4);
+}
+
+.account-order__table th,
+.account-order__table td {
+    padding: 12px 8px;
+}
+
+.account-order__table td:last-child,
+.account-order__table th:last-child {
+    text-align: right;
+}
+
+.account-order__table th:first-child,
+.account-order__table td:first-child {
+    padding-left: 12px;
+}
+
+.account-order__table th:last-child,
+.account-order__table td:last-child {
+    padding-right: 12px;
+}
+
+.account-order__block {
+    margin: 24px 0 0;
+}
+
+.account-order__block > *:not(:last-child) {
+    margin: 0 0 16px;
+}
+
+.account-order__link:not(:last-child) {
+    padding: 0 0 12px;
+    border-bottom: 1px solid var(--grays4);
+}
+
+.account-order__link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.account-order__link img {
+    width: 120px;
+    min-width: 120px;
+    height: 120px;
+    margin: 0 12px 0 0;
+    border-radius: 6px;
+    object-position: center;
+    object-fit: cover;
+}
+
+.account-order__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.account-order__info > *:not(:last-child) {
+    margin: 0 0 8px;
+}
+
+.account-order__description li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.account-order__description span {
+    margin: 0 8px 0 0;
+}
+
+.account-order__description b {
+    text-align: right;
+}
+
+.account-order__description li:not(:last-child) {
+    margin: 0 0 8px;
+}
+
+.account-order__addresses {
+    display: flex;
+    margin: 0 0 0 -16px;
+}
+
+.account-order__addresses > * {
+    width: calc(50% - 16px);
+    margin: 0 0 0 16px;
+}
+
+.account-order__addresses li > *:not(:last-child) {
+    margin: 0 0 6px;
+}
+
+.account-order__addresses .tag {
+    margin: 0 0 0 8px;
+}
+
+
+.account-card {
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid var(--grays4);
+}
+
+.account-card__wrapper {
+    display: flex;
+}
+
+.account-card__wrapper > * {
+    width: 100%;
+}
+
+.account-card__wrapper > *:not(:last-child) {
+    margin: 0 8px 0 0;
+}
+
+.account-card__wrapper .hidden {
+    font-size: 0;
+}
+
+.account-card__wrapper > *:last-child {
+    width: auto;
+}
+
+.account-card__wrapper p:first-child {
+    margin: 0 0 4px;
+}
+
+.account-card__buttons {
+    display: flex;
+    align-items: flex-start;
+}
+
+.account-card__buttons button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font-size: 0;
+    cursor: pointer;
+}
+
+.account-card__buttons button:hover path,
+.account-card__buttons button:focus path {
+    stroke: var(--primary2)
+}
+
+.account-card__buttons > *:not(:last-child) {
+    margin: 0 8px 0 0;
+}
+
+.account-card__buttons form {
+    display: inherit;
+}

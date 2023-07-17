@@ -1,0 +1,36 @@
+{{ "catalog.css" | asset_url | stylesheet_tag }}
+
+<div class="catalog">
+    {% render "top-logo", title: "kailo collections", text: "Your pain deserves the right solution" %}
+
+    <div class="catalog__wrapper">
+        <div class="container">
+            <div class="catalog__menu">
+                <div class="breadcrumbs">
+                    <a href="{{ routes.root_url }}">Home</a>
+                    <a>Collections</a>
+                </div>
+            </div>
+
+            {% assign collectionsCount = collections | size %}
+
+            {% if collectionsCount == 0 %}
+                <p>No active collections here.</p>
+            {% else %}
+                <ul class="catalog__list">
+                    {% for collection in collections %}
+                        <li>
+                            <a class="catalog__collection" href="{{ collection.url }}">
+                                <div class="catalog__collection-img">
+                                    <img src="{{ collection.featured_image | image_url }}" alt="{{ collection.image.alt }}">
+                                </div>
+                                <h3 class="button-text">{{ collection.title }} ({{ collection.products_count }})</h3>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+</div>
+

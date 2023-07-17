@@ -1,0 +1,265 @@
+{{ "about.css" | asset_url | stylesheet_tag }}
+
+<section class="about">
+    <div class="container">
+        <div class="about__wrapper">
+            <div class="about__info">
+                <h2 class="h2-title">EVERYTHING YOU NEED TO KNOW ABOUT KAILO</h2>
+
+                <ul class="about__list">
+                    <li>
+                        <button class="h6-title active">HOW TO PLACE THE KAILO</button>
+                    </li>
+
+                    <li>
+                        <button class="h6-title">HOW TO USE ADHESIVES</button>
+                    </li>
+
+                    <li>
+                        <button class="h6-title">TRY KAILO RISK FREE</button>
+                    </li>
+
+                    <li>
+                        <button class="h6-title">WILL KAILO HELP MY CONDITION</button>
+                    </li>
+
+                    <li>
+                        <button class="h6-title">REVIEWS: THE GOOD BAD AND UGLY</button>
+                    </li>
+
+                    <li>
+                        <button class="h6-title">CLINICAL TRIAL RESULTS</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="about__slider">
+                <div class="about__slide about__placement">
+                    {% render "vimeo-image", link: "https://vimeo.com/644442787", img: "about-placement.jpg", width: 620, height: 350, alt: "about placement" %}
+
+                    <ul>
+                        <li>
+                            {% render "vimeo-image", btnStatus: "hidden", link: "https://vimeo.com/718286497", img: "about-shoulder.jpg", width: 204, height: 70, alt: "about shoulder" %}
+                        </li>
+
+                        <li>
+                            {% render "vimeo-image", btnStatus: "hidden", link: "https://vimeo.com/737971648", img: "about-back.jpg", width: 204, height: 70, alt: "about back" %}
+                        </li>
+
+                        <li>
+                            {% render "vimeo-image", btnStatus: "hidden", link: "https://vimeo.com/718286549", img: "about-trunk.jpg", width: 204, height: 70, alt: "about trunk" %}
+                        </li>
+
+                        <li>
+                            {% render "vimeo-image", btnStatus: "hidden", link: "https://vimeo.com/718287655", img: "about-knees.jpg", width: 204, height: 70, alt: "about knees" %}
+                        </li>
+
+                        <li>
+                            <a href="#" class="button button--primary">see all video</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="about__slide about__use">
+                    {% render "vimeo-image", link: "https://vimeo.com/644456317", img: "about-use.jpg", width: 840, height: 426, alt: "about how to use" %}
+                </div>
+
+                <div class="about__slide about__risk">
+                    <img src="{{ "about-money-back.png" | asset_url }}" width="197" height="124" alt="about money back">
+
+                    <h3 class="h3-title">
+                        We offer a no-hassle, no restrictions, 100% money-back guarantee on our Kailo Original product.
+                        We offer a 90 days money-back guarantee on unopened Kailo Flex™ product. If you feel Kailo isn't
+                        working for you within 90 days, we'll gladly take it back.
+                    </h3>
+
+                    <p>
+                        Over 90% of our customers have found an increase in comfort. Our goal is to help everyone get
+                        relief. If you feel Kailo isn’t working for you within 90 days,​ we’ll gladly take it back.
+                    </p>
+
+                    <p>
+                        Before returning your Kailo, we would love a chance to make sure you’ve found the correct
+                        placement. Please contact us at
+                        <a href="mailto:support@gokailo.com">support@gokailo.com</a>
+                    </p>
+
+                    <a href="#" class="button button--primary">return policy</a>
+                </div>
+
+                <div class="about__slide about__condition">
+                    <h3 class="h3-title">Will Kailo help my condition?</h3>
+
+                    <p>Most common ailments experienced by Kailo Customers</p>
+
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span class="h6-title">CHRONIC BACK PAIN</span>
+                                <span>Kailo patches are engineered to help many types of back pain and fit anywhere on your back</span>
+                                <span class="button">learn more</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <span class="h6-title">MENSTRUAL PAIN</span>
+                                <span>The Kailo pain patch has shown to be capable of relieving or eliminating pain from menstrual cramps</span>
+                                <span class="button">learn more</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <span class="h6-title">ARTHRITIS</span>
+                                <span>Many Kailo users report the relief of painful arthritic symptoms</span>
+                                <span class="button">learn more</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <span class="h6-title">OSTEOPOROSIS</span>
+                                <span>Kailo customers report significant relief from Osteoporosis pain while using Kailo</span>
+                                <span class="button">learn more</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <b>
+                                    These are the most common ailments customers suffer from. Please contact us if you
+                                    would
+                                    like information about Kailo's effectiveness / use for other ailments.
+                                </b>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="about__slide about__reviews">
+                    <h3 class="h3-title">The good, bad and the ugly</h3>
+
+                    <ul>
+                        <li>
+                            <div>
+                                {% render "star-review", star: 5 %}
+                                <span>Mauricio C.</span>
+                            </div>
+
+                            <p>
+                                <b>
+                                    "My hand had osteoarthritis and I used the Kailo for 5 minutes, and now I am free of
+                                    pain for the rest of the day. Gracias all of you!"
+                                </b>
+                            </p>
+                        </li>
+
+                        <li>
+                            <div>
+                                {% render "star-review", star: 5 %}
+                                <span>Ana A.</span>
+                            </div>
+
+                            <p>
+                                <b>
+                                    "I’m training for a 500 miles walk and my hip was killing me. I placed the Kailo
+                                    patch in two places and my pain is gone! I used a small piece near my ear, and it’s
+                                    also helping diminish my tinnitus."
+                                </b>
+                            </p>
+                        </li>
+
+                        <li>
+                            <div>
+                                {% render "star-review", star: 5 %}
+                                <span>Randall S.</span>
+                            </div>
+
+                            <p>
+                                <b>
+                                    "Hi, as a repeat customer, I wish to express my total satisfaction of your Kailo
+                                    pain product. I never would believe how such a thing could relieve pain like this."
+                                </b>
+                            </p>
+                        </li>
+
+                        <li>
+                            <div>
+                                {% render "star-review", star: 5 %}
+                                <span>John B.</span>
+                            </div>
+
+                            <p>
+                                <b>
+                                    "Quick shipping, great value, and has always reduced or eliminated pain when placed
+                                    properly. This is the second one I ordered. Very satisfied customer."
+                                </b>
+                            </p>
+                        </li>
+                    </ul>
+
+                    <a href="#" class="button button--primary">more reviews</a>
+                </div>
+
+                <div class="about__slide about__trial">
+                    <img src="{{ "about-clinical-trial.png" | asset_url }}" width="226" height="100"
+                         alt="about clinical trial">
+
+                    <h3 class="h3-title">The final results are in, and they’re incredibly positive.</h3>
+
+                    <p>
+                        On January 30, 2022, Pain Relief Technologies LLC and Kailo Pain Patch® announced the
+                        IRB-Approved PREVENT study’s final results. The trial produced positive results in patients with
+                        mild, moderate, and severe pain conditions, with resounding support from nearly all
+                        participants.
+                    </p>
+
+                    <p>
+                        <a href="https://www.scivisionpub.com/pdfs/using-a-novel-nondrug-topical-painrelief-patch-to-improve-pain-and-function-final-analysis-of-the-prevent-study-2062.pdf">Check out the full results</a> published in the international peer-reviewed journal Anesthesia and
+                        Pain Research. The research article includes everything you need to know about the study
+                        procedures, assessments, patients, methods, and outcome of the trial.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="module">
+    const about = document.querySelector(".about");
+    const list = about.querySelector(".about__list");
+    const slider = about.querySelector(".about__slider");
+    const listButtons = list.querySelectorAll("button");
+    const slides = slider.querySelectorAll(".about__slide");
+
+    slides.forEach(slide => {
+       slide.classList.add("visible-hidden");
+    });
+
+    listButtons.forEach((btn, btnIndex) => {
+        if (btn.classList.contains("active")) {
+            slides[btnIndex].classList.remove("visible-hidden");
+        }
+
+        const slideShow = (btnIndex) => {
+            slides.forEach((slide, slideIndex) => {
+                if (btnIndex === slideIndex) {
+                    slide.classList.remove("visible-hidden");
+                } else {
+                    slide.classList.add("visible-hidden");
+                }
+            });
+        };
+
+        btn.addEventListener("click", (e) => {
+            listButtons.forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+            slideShow(btnIndex);
+
+            e.target.classList.add("active");
+        });
+    });
+</script>

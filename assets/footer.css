@@ -1,0 +1,129 @@
+.footer {
+    position: relative;
+    padding: 60px 0;
+    background-color: var(--grays1);
+    color: var(--grays6);
+}
+
+.footer__subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer__subscribe-info {
+    margin: 32px 0;
+}
+
+.footer__subscribe-info > *:not(:last-child) {
+    margin: 0 0 16px;
+}
+
+.footer__subscribe-form {
+    align-self: stretch;
+}
+
+.footer__subscribe-success {
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    padding: 8px 12px;
+    border-radius: 12px;
+    background-color: var(--grays6);
+    color: var(--primary1);
+}
+
+#contact_form:target + #successSubscribe {
+    display: flex;
+}
+
+#contact_form:target {
+    display: none;
+}
+
+.footer__subscribe-success p {
+    margin: 2px 0 0;
+}
+
+.footer__subscribe-success svg {
+    margin: 0 6px 0 0;
+}
+
+.footer__subscribe-form form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__subscribe-form .field-block {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 8px 0 0;
+}
+
+.footer__navigation {
+    padding: 20px 0;
+}
+
+.footer__nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0 0;
+    margin: 0 0 -40px -40px;
+}
+
+.footer__nav {
+    border-top: 1px solid var(--grays6);
+}
+
+.footer__nav-list > li {
+    margin: 0 0 40px 40px;
+}
+
+.footer__socials {
+    padding: 20px 0;
+}
+
+.footer__socials-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 -16px -16px;
+}
+
+.footer__socials-list > li {
+    margin: 0 0 16px 16px;
+}
+
+.footer__socials-list a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 50%;
+    font-size: 0;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    transition: border 0.15s linear;
+}
+
+.footer__socials-list a:hover,
+.footer__socials-list a:focus {
+    border-color: #ffffff;
+}
+
+.footer__copyright {
+    max-width: 1060px;
+    width: 100%;
+    padding: 20px 0;
+    margin: 0 auto;
+    text-align: center;
+}

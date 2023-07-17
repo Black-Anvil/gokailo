@@ -1,0 +1,10 @@
+<a class="popup-vimeo" href="{{ link }}">
+    Open Vimeo video
+
+    {% if btnStatus != "hidden" %}
+        {% render "play-video" %}
+    {% endif %}
+
+    <img src="{{ img | asset_url }}" width="{{ width }}" height="{{ height }}" alt="{{ alt }}">
+</a>
+

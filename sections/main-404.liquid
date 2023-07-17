@@ -1,0 +1,11 @@
+{{ "error.css" | asset_url | stylesheet_tag }}
+
+<div class="page-inner">
+    <div class="container">
+        <div class="error">
+            <p class="error__title">404</p>
+            <p class="error__text h5-title">Sorry, the requested page not found</p>
+            <a class="button button--primary" href="{{ routes.root_url }}">back to homepage</a>
+        </div>
+    </div>
+</div>

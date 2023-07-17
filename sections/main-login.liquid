@@ -1,0 +1,64 @@
+{{ "login.css" | asset_url | stylesheet_tag }}
+
+<div class="page-inner">
+    <div class="login">
+        <div class="container">
+            {% render "account-logged" %}
+
+            {% if customer == null %}
+                <div id="recover" class="login__form">
+                    <h2 class="h2-title">Reset Password</h2>
+
+                    <p>
+                        Please enter the email associated with your account, and we’ll send you a link to reset your
+                        password.
+                    </p>
+
+                    {% form 'recover_customer_password' %}
+                        {% assign recover_success = form.posted_successfully? %}
+
+                        {% assign resetEmailErrorMessage = form.errors.messages["email"] %}
+                        {% render "field-block", label: "Email", id: "reset-email", name: "email", type: "email", placeholder: "example@gmail.com", required: true, message: resetEmailErrorMessage %}
+
+                        {% render "form-error", form: form %}
+
+                        <input class="button button--primary" type="submit" value="Send Recovery Link">
+                    {% endform %}
+                </div>
+
+                {% if recover_success == true %}
+                    <div class="login__form">
+                        <h2 class="h2-title">Reset Password</h2>
+
+                        <p>
+                            Please check your email. We have sent you a link so that you can reset your password.
+                        </p>
+
+                        <a class="button button--primary" href="{{ routes.account_login_url }}">Back to Sign In</a>
+                    </div>
+                {% else %}
+                    <div id="loginForm" class="login__form">
+                        <h2 class="h2-title">Sign in</h2>
+
+                        {% form 'customer_login' %}
+                            {% assign loginEmailErrorMessage = form.errors.messages["email"] %}
+                            {% render "field-block", label: "Email", id: "login-email", name: "customer[email]", type: "email", placeholder: "example@gmail.com", required: true, message: loginEmailErrorMessage %}
+
+                            {% assign passwordErrorMessage = form.errors.messages["password"] %}
+                            {% render "field-block", label: "Password", link_to: "#recover", link_text: "Forgot Password?", id: "password", name: "customer[password]", type: "password", placeholder: "Password", required: true, message: passwordErrorMessage %}
+
+                            {% render "form-error", form: form %}
+
+                            <input class="button button--primary" type="submit" value="Sign In">
+                        {% endform %}
+
+                        <p class="login__helper">
+                            New customer?
+                            <a href="{{ routes.account_register_url }}">Create Account</a>
+                        </p>
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>

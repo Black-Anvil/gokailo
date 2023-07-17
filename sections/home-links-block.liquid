@@ -1,0 +1,42 @@
+{{ "links-block.css" | asset_url | stylesheet_tag }}
+
+<ul class="links-block">
+    <li>
+        <a class="links-block__slide" href="#">
+            <img class="links-block__img" src="{{ "link-buy.jpg" | asset_url }}" alt="buy">
+            <span class="blur-effect"></span>
+            <div class="links-block__info">
+                {{ "buy.png" | asset_url | img_tag }}
+                <h3 class="h1-title">buy</h3>
+                <p>Free shipping in the USA</p>
+                <p>Bundle to save</p>
+            </div>
+        </a>
+    </li>
+
+    <li>
+        <a class="links-block__slide" href="#">
+            <img class="links-block__img" src="{{ "link-place.jpg" | asset_url }}" alt="place">
+            <span class="blur-effect"></span>
+            <div class="links-block__info">
+                {{ "place.png" | asset_url | img_tag }}
+                <h3 class="h1-title">place</h3>
+                <p>Watch placement video</p>
+                <p>Consult placement specialist</p>
+            </div>
+        </a>
+    </li>
+
+    <li>
+        <a class="links-block__slide" href="#">
+            <img class="links-block__img" src="{{ "link-love.jpg" | asset_url }}" alt="love">
+            <span class="blur-effect"></span>
+            <div class="links-block__info">
+                {{ "love.png" | asset_url | img_tag }}
+                <h3 class="h1-title">love</h3>
+                <p>Tell your friends & family</p>
+                <p>Share a testimonial with Kailo</p>
+            </div>
+        </a>
+    </li>
+</ul>

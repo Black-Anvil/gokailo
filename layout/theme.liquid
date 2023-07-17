@@ -1,424 +1,302 @@
-{% comment %} you can always turn off the speedupkernel{% endcomment %}
-{%- assign speedupkernel = true -%}
-{%- assign is_admin_interface = true -%}
-
-{%- if speedupkernel -%}
-{%- if request.host contains 'myshopify.com' -%}
-{%- assign is_admin_interface = true -%}
-{%- else -%}
-{%- assign is_admin_interface = false -%}
-{%- endif -%}
-
-{%- if request.host contains 'shopifypreview.com' -%}
-{%- assign is_admin_interface = true -%}
-{%- endif -%}
-
-{%- if request.host contains 'gempages.net' -%}
-{%- assign is_admin_interface = true -%}
-{%- endif -%}	
-
-{%- if request.path == '/cart' -%}
-{%- assign is_admin_interface = true -%}
-{%- endif -%}
-
-{%- if request.path == '/checkout' -%}
-{%- assign is_admin_interface = true -%}
-{%- endif -%}
-{%- endif -%}
-{%- capture html -%}
 <!doctype html>
-<html class="no-js">
-  <head>
-    <!-- Google Ads Dynamic Remarketing -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 
-    {% include '__opt-theme-preload' %}
-    {% include '__opt-js-theme-init' %}
-    {%comment%}{% include '__opt-js-ipinfo' %}{%endcomment%}
+    {{ "reset.css" | asset_url | stylesheet_tag }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    {{ "swiper.css" | asset_url | stylesheet_tag }}
+    {{ "magnific-popup.css" | asset_url | stylesheet_tag }}
 
-    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <script src="{{ 'shopify_common.js' | asset_url }}" defer="defer"></script>
 
-    <meta name="google-site-verification" content="oFqR9R01jT-rsbH7naphPLV5VWTc-7O-g-vuE1zNjLk" />
+    {% style %}
+        {{ settings.primary_text | font_face }}
+        {{ settings.secondary_text | font_face }}
+        {{ settings.headlines | font_face }}
 
-    {% if settings.favicon != blank %}
-    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
-    {% endif %}
-	
-    
-    {% comment %}
-	    {% include 'google-ads-dynamic-remarketing' %}
-    {% endcomment %}
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script src="//www.googletagmanager.com/gtag/js?id=UA-126972362-7"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-126972362-7');
-    </script>
-    
+        :root {
+        --font-weight-primary: {{ settings.primary_text.weight }};
+        --font-family-primary: {{ settings.primary_text.family }}, {{ settings.primary_text.fallback_families }};
 
-    <title>
-      {% if template.name == 'password' %}{{ shop.name }}{% else %}{{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}{% endif %}
-    </title>
+        --font-family-secondary: {{ settings.secondary_text.family }}, {{ settings.secondary_text.fallback_families }};
 
-    {% if page_description %}
-    <meta name="description" content="{{ page_description | escape }}">
-    {% endif %}
+        --font-weight-headlines: {{ settings.headlines.weight }};
+        --font-family-headlines: {{ settings.headlines.family }}, {{ settings.headlines.fallback_families }};
 
-    {% include 'social-meta-tags' %}
-    <link rel="canonical" href="{{ canonical_url }}">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="{{ settings.color_primary }}">
-    <meta name="p:domain_verify" content="9d8c2221036f29c95439a88d8f1fe17b"/>
+        --primary1: #2794A8;
+        --primary2: #248799;
+        --primary3: #3A7A8F;
+        --primary4: #5E8593;
+        --primary5: #355D66;
+        --primary6: #DCF1F5;
 
-    {% include 'inline-content' %}
+        --grays1: #4D4D4D;
+        --grays2: #666666;
+        --grays3: #999999;
+        --grays4: #D9D9D9;
+        --grays5: #F6F6F6;
+        --grays6: #FFFFFF;
 
-    <meta name="locale-bar--browsing-context-suggestions-url" content="{{ routes.browsing_context_suggestions_url }}">
-    <meta name="locale-bar--current-language" content="{{ request.locale.iso_code }}">
-    <meta name="locale-bar--current-currency" content="{{ cart.currency.iso_code }}">
+        --system-error: #CC4429;
 
-    {% if template.directory == 'customers' %}
-    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
-    {% endif %}
+        --complete: #249985;
+        --complete-bg: #DCF5F1;
 
-    {%- unless template.name == 'index' -%}
-    {% if template != 'cart' %}
+        --fulfilled: #248799;
+        --fulfilled-bg: #DCF1F5;
 
-    {% endif %}
-    {%- endunless -%}
+        --partial: #CC9629;
+        --partial-bg: #FAF1E0;
 
-    {% include '__opt-system-header' %}
+        --restocked: #7A29CC;
+        --restocked-bg: #EDE0FA;
+
+        --unfulfilled: #CC4429;
+        --unfulfilled-bg: #FFE9E5;
+
+        --authorized: #248799;
+        --authorized-bg: #DCF1F5;
+
+        --expired: #997224;
+        --expired-bg: #F5EDDC;
+
+        --paid: #249985;
+        --paid-bg: #DCF5F1;
+
+        --partially_paid: #B2B224;
+        --partially_paid-bg: #F5F5DC;
+
+        --partially_refunded: #B129CC;
+        --partially_refunded-bg: #F6E0FA;
+
+        --pending: #CC9629;
+        --pending-bg: #FAF1E0;
+
+        --refunded: #7A29CC;
+        --refunded-bg: #EDE0FA;
+
+        --unpaid: #CC4429;
+        --unpaid-bg: #FFE9E5;
+
+        --voided: #CC2944;
+        --voided-bg: #FFE5E9;
+        }
+
+        .h1-title {
+        font-weight: var(--font-weight-headlines);
+        font-size: 60px;
+        line-height: 68px;
+        text-transform: uppercase;
+        }
+
+        .h2-title {
+        font-weight: var(--font-weight-headlines);
+        font-size: 40px;
+        line-height: 48px;
+        text-transform: uppercase;
+        }
+
+        .h3-title {
+        font-weight: var(--font-weight-headlines);
+        font-size: 30px;
+        line-height: 38px;
+        }
+
+        .h4-title {
+        font-weight: var(--font-weight-headlines);
+        font-size: 24px;
+        line-height: 32px;
+        text-transform: uppercase;
+        }
+
+        .h5-title {
+        font-weight: var(--font-weight-primary);
+        font-size: 18px;
+        line-height: 26px;
+        }
+
+        .h6-title {
+        font-weight: var(--font-weight-primary);
+        font-size: 16px;
+        line-height: 24px;
+        text-transform: uppercase;
+        }
+
+        .small-text {
+        font-size: 13px;
+        line-height: 22px;
+        }
+
+        .caption-text {
+        font-weight: var(--font-weight-primary);
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        }
+
+        .button-text {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 22px;
+        letter-spacing: 0.56px;
+        text-transform: uppercase;
+        }
+
+        .container {
+        --container-padding: 15px;
+        --container-width: 1280px;
+        max-width: calc(var(--container-width) + var(--container-padding) * 2);
+        margin: 0 auto;
+        padding: 0 var(--container-padding);
+        }
+
+        .bg-gray {
+        background-color: var(--grays5);
+        }
+
+        .shopify-challenge__button,
+        .button {
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 26px;
+        border-radius: 6px;
+        color: inherit;
+        border: 1px solid transparent;
+        background-color: transparent;
+        text-decoration: none;
+        cursor: pointer;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 22px;
+        letter-spacing: 0.56px;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: opacity 0.15s linear;
+        }
+
+        .button:disabled {
+        opacity: 0.8;
+        pointer-events: none;
+        }
+
+        .button:hover,
+        .button:focus {
+        text-decoration: none;
+        }
+
+        .button--action {
+        padding: 0;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 24px;
+        text-transform: none;
+        letter-spacing: normal;
+        border: none;
+        }
+
+        .button--action svg {
+        margin: 0 4px;
+        transform: rotate(90deg);
+        }
+
+        .shopify-challenge__button,
+        .button--primary {
+        color: var(--grays6);
+        border: 1px solid var(--primary1);
+        background-color: var(--primary1);
+        transition: box-shadow 0.15s linear, transform 0.15s linear, background-color 0.15s linear, border 0.15s linear, color 0.15s linear;
+        }
+
+        .shopify-challenge__button:hover,
+        .shopify-challenge__button:focus,
+        .button--primary:hover,
+        .button--primary:focus {
+        transform: translateY(-3px);
+        background-color: var(--primary2);
+        border-color: var(--primary2);
+        box-shadow: 0px 4px 16px 0px rgba(36, 135, 153, 0.20);
+        }
+
+        .button--stroked {
+        color: var(--primary1);
+        border-color: var(--primary1);
+        transition: box-shadow 0.15s linear, transform 0.15s linear, background-color 0.15s linear;
+        }
+
+        .button--stroked:hover,
+        .button--stroked:focus {
+        color: var(--grays6);
+        background-color: var(--primary1);
+        }
+
+        html,
+        body {
+        font-weight: var(--font-weight-primary);
+        font-family: var(--font-family-primary);
+        font-size: 15px;
+        line-height: 24px;
+        color: var(--grays1);
+        background-color: var(--grays6);
+        }
+    {% endstyle %}
+
+    {{ "index.css" | asset_url | stylesheet_tag }}
+    {{ "header.css" | asset_url | stylesheet_tag }}
+    {{ "footer.css" | asset_url | stylesheet_tag }}
+    {{ "field-block.css" | asset_url | stylesheet_tag }}
+    {{ "pagination.css" | asset_url | stylesheet_tag }}
+    {{ "tags.css" | asset_url | stylesheet_tag }}
+    {{ "breadcrumbs.css" | asset_url | stylesheet_tag }}
+
     {{ content_for_header }}
-    {% include '__opt-css-theme' %}
-    <!--Gem_Page_Header_Script-->
-    {% include 'gem-app-header-scripts' %}
-    <!--End_Gem_Page_Header_Script-->
+  <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/6VubeMJ7GY2e0Ai0ynXuSw" async></script>
+</head>
+<body>
 
-    {%- render 'bold-common' -%}
-    {%- render 'bold-ro-init' -%}
-    {{ 'bold.css' | asset_url | stylesheet_tag }}
-    <meta name="facebook-domain-verification" content="8v2odzwmwu570v1drje7jboxf8ili3" />
-    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/6VubeMJ7GY2e0Ai0ynXuSw" async></script>
-    
-     <script type="text/javascript" async="" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=Nvz3ut"></script>
-{% comment %}
-    <script async type="text/javascript"
-     src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=Nvz3ut"></script>
-    <script>
-     var _learnq = _learnq || [];
-     if ('{{ customer.email }}') {
-       _learnq.push(['identify', {
-           '$email' : '{{ customer.email }}'
-         }]);
-      }
-    </script> {% endcomment %}
-	<script src="//staticxx.s3.amazonaws.com/aio_stats_lib_v1.min.js?v=1.0"></script>
-    
-    <meta name="msvalidate.01" content="7245AE2C381818F20D860E3B4B0150EC" />
-    <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2511177278913224');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2511177278913224&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-    <script>
-    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-    posthog.init('phc_3D1WlK2kBIuhWbuvKhvXm4OtJcEljvTKrh3BRI65ePO',{api_host:'https://app.posthog.com'})
-</script>
-    <meta name="google-site-verification" content="MV8mPwm85dO-vSLNGFgDTVYqRBr-f3HQeJ-ZtEFLgec" />
-    <meta name="msvalidate.01" content="1337C78CC5FEE3FD76328C27EAF8E199" />
-    <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '746065746668502');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=746065746668502&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-    {% if template.suffix == 'kailo-landing-11' or 'kailo-landing-cs' %}
-    	{{ 'slick.css' | asset_url | stylesheet_tag }}
-	{% endif %}
-  
-  </head>
+<header class="header">
+    {% sections "header-group" %}
+</header>
 
-  <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
+<main class="main">
+    {{ content_for_layout }}
+</main>
 
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TNMTZCC"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <div id="PageContainer"{% if color %} class="{{ color }}"{% endif %}>
-      {% unless template == 'page.kailo-landing' or template == 'page.kailo-landing-2' or template == 'page.kailo-landing-3' or template == 'page.kailo-landing-4' or template == 'page.kailo-landing-12-Days-Giveaways' or template == 'page.kailo-landing-white-paper-download' or template == 'page.kailo-landing-1' or template == 'page.kailo-landing-5' or template == 'page.kailo-landing-6' or template == 'page.kailo-landing-7' or template == 'page.kailo-landing-8' or template == 'page.kailo-landing-9' or template == 'page.kailo-landing-10' or template == 'page.kailo-landing-whm' or template == 'page.kailo-landing-11' or template == 'page.kailo-landing-cs' or template == 'page.kailo-landing-new' or template == 'page.kailo-offer-mothers-day' %}
-      {% section 'header' %}
-      {% endunless %}
-      <main class="main-content{% if template.name == blank %} main-content--no-template{% endif %}" role="main">
-        {%- if speedupkernel -%}
-        {%- unless is_admin_interface -%}
-        {% include '__opt-system-shogun' %}
-        {% include '__opt-theme-layout' %}
-        {%- endunless -%}
-        {{content_for_layout}}					
-        {%- else -%}
-        {{content_for_layout}}
-        {%- endif -%}
-      </main>
-      {% unless template == 'page.kailo-landing' or template == 'page.kailo-landing-2' or template == 'page.kailo-landing-3' or template == 'page.kailo-landing-4' or template == 'page.kailo-landing-12-Days-Giveaways' or template == 'page.kailo-landing-white-paper-download' or template == 'page.kailo-landing-1' or template == 'page.kailo-landing-5' or template == 'page.kailo-landing-6' or template == 'page.kailo-landing-7' or template == 'page.kailo-landing-8' or template == 'page.kailo-landing-9' or template == 'page.kailo-landing-10' or template == 'page.kailo-landing-whm' or template == 'page.kailo-landing-11' or template == 'page.kailo-landing-cs'  or template == 'page.kailo-landing-new'  or template == 'page.kailo-offer-mothers-day' or template == 'page.kailo-landing-custom-11' %}
-      {%- if is_admin_interface -%}
-      {% section 'footer' %}
-      {%- else -%}
-      <div id="__load-section-footer"></div>
-      {%- endif -%}
-      {% endunless %}
+<footer class="footer">
+    <div class="container">
+        {% sections "footer-group" %}
     </div>
-    <script type="text/javascript">
-      {% capture jQuery_plus_icon %} {% include "asset_svg" with "plus" %} {% endcapture %}
-      {% capture jQuery_minus_icon %} {% include "asset_svg" with "minus" %} {% endcapture %}
-      {% capture jQuery_close_icon %} {% include "asset_svg" with "close" %} {% endcapture %}
-      {% capture jQuery_arrow_down_icon %} {% include "asset_svg" with "arrow_down" %} {% endcapture %}
-      {% capture jQuery_arrow_left_icon %} {% include "asset_svg" with "arrow_left" %} {% endcapture %}
-      {% capture jQuery_arrow_right_icon %} {% include "asset_svg" with "arrow_right" %} {% endcapture %}
+</footer>
 
+{% section "cart-drawer" %}
 
-      jQuery.themeAssets = {
-        plus: '{{ jQuery_plus_icon | lstrip | rstrip }}',
-        minus: '{{ jQuery_minus_icon | lstrip | rstrip }}',
-        close: '{{ jQuery_close_icon | lstrip | rstrip }}',
-        arrow_down: '{{ jQuery_arrow_down_icon | lstrip | rstrip }}',
-        arrow_left: '{{ jQuery_arrow_left_icon | lstrip | rstrip }}',
-        arrow_right: '{{ jQuery_arrow_right_icon | lstrip | rstrip }}'
-      }
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+{{ "magnific-popup.min.js" | asset_url | script_tag }}
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-      __engine_loaded['theme.luquid.timber'] = function () {
-        {% if newHash %}
-        timber.updateHash('{{ newHash }}');
-                          {% endif %}
-                          {% if resetPassword %}
-                          timber.resetPasswordSuccess();
-        {% endif %}
-      }
+<script>
+    $(document).ready(function () {
+        $('.popup-vimeo').magnificPopup({
+            disableOn: 700,
+            type: 'iframe',
+            mainClass: 'mfp-fade',
+            removalDelay: 160,
+            preloader: false,
 
-    </script>
-
-    {% include 'wisepops-generated' %}
-
-
-    {% include 'klaviyo-tracking' %}
-
-    {% include '__opt-js-theme-main' %}
-    {% include '__opt-css-theme-footer' %}
-    {% include '__mod_signup_form' %}
-
-    <!--Gem_Page_Footer_Script-->
-    {% include '__opt-gem-app-footer-scripts' %}
-    {% comment %} {% include 'gem-app-footer-scripts' %} {% endcomment %}
-    <!--End_Gem_Page_Footer_Script-->
-
-    {% include 'adroll' %}
-    
-    <input type="hidden" id="656565115116111114101" data-customer-id="{{ customer.id }}" data-customer-email="{{ customer.email }}" data-customer-name="{{ customer.first_name }} {{ customer.last_name }}"/>
-        {% if template.suffix == 'kailo-landing-11' or template.suffix 'kailo-landing-cs' %}
-          
-<!--     	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script> -->
-    	{{ 'slick.min.js' | asset_url | script_tag }}
-          <script>
-            
-//             var $j = jQuery.noConflict();
-            jQuery(document).ready(function() { 
-              jQuery('.kailo-content-slider').slick({
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                arrows: true,
-                centerPadding: '60px',
-                dots: true,
-                draggable: true,
-                lazyLoad: 'ondemand',
-                pauseOnFocus: true,
-                pauseOnHover: true,
-                respondTo: 'window',
-                swipeToSlid: true,
-                touchMove: true
-              });
-              jQuery('.kail-image-slider').slick({
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                arrows: true,
-                centerPadding: '60px',
-                dots: true,
-                draggable: true,
-                lazyLoad: 'ondemand',
-                pauseOnFocus: true,
-                pauseOnHover: true,
-                respondTo: 'window',
-                swipeToSlid: true,
-                touchMove: true,
-                prevArrow: '<div class="slick-prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>',
-    			nextArrow: '<div class="slick-next"><i class="fa fa-angle-right" aria-hidden="true"></i></div>',
-                responsive: [
-                {
-                  breakpoint: 1024, 
-                  settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    infinite: true,
-                    dots: true
-                  }
-                },
-                {
-                  breakpoint: 600, 
-                  settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                  }
-                },
-                {
-                  breakpoint: 480,
-                  settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                  }
-                }]
-              });
-              jQuery('.kailo-testimonial-slider').slick({
-                infinite: true,
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                arrows: false,
-                centerPadding: '60px',
-                dots: true,
-                draggable: true,
-                lazyLoad: 'ondemand',
-                pauseOnFocus: true,
-                pauseOnHover: true,
-                respondTo: 'window',
-                swipeToSlid: true,
-                touchMove: true,
-                responsive: [
-                {
-                  breakpoint: 1024, 
-                  settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    infinite: true,
-                    dots: true
-                  }
-                },
-                {
-                  breakpoint: 600, 
-                  settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                  }
-                },
-                {
-                  breakpoint: 480,
-                  settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                  }
-                }]
-              });
-            });
-          </script>
-    {{ 'player.js' | asset_url | script_tag }}
-    <script>
-//       var iframe = document.querySelector('iframe');
-//         var player = new Vimeo.Player(iframe);
-      
-        var options = {
-        url: "//player.vimeo.com/video/434175468?autoplay=1#t=0m10s",
-        muted: true,
-        autoplay: true,
-        controls: true,
-        loop: true
-      };
-
-      var videoPlayer = new Vimeo.Player('landing-video', options);
-
-      document.on('play', function(){
-
-      })
-
-      videoPlayer.on('play', function() {
-        console.log('Played the video');
-      });
-      
-    </script>
-		{% endif %}
-  {% render 'preorder-now' %}
-
-<script type="text/javascript">
-var _learnq = _learnq || [];
-function addedToCart() {
-  fetch(`${window.location.origin}/cart.js`)
-  .then(res => res.clone().json().then(data => {
-    var cart = {
-      total_price: data.total_price/100,
-      $value: data.total_price/100,
-      total_discount: data.total_discount,
-      original_total_price: data.original_total_price/100,
-      items: data.items
-    }
-    if (item !== 'undefined') {
-      cart = Object.assign(cart, item)
-    }
-    _learnq.push(['track', 'Added to Cart', cart])
-  }))
-} 
-(function (ns, fetch) {
-  ns.fetch = function() {
-    const response = fetch.apply(this, arguments);
-    response.then(res => {
-      if (`${window.location.origin}/cart/add.js`
-      	.includes(res.url)) {
-        	addedToCart()
-      }
+            fixedContentPos: false
+        });
     });
-    return response
-  }
-}(window, window.fetch))
-$(document).ajaxComplete(function(event, request, settings){
-  if(settings.url == "/cart/add.js"){
-      addedToCart()
-  }
-})</script>
-	
-	
-    
-  </body>
+</script>
+
+<script src="{{ "index.js" | asset_url }}" type="module"></script>
+</body>
 </html>
-{%- endcapture -%}
-{% include '__opt-theme-html' %}
-
-
-{{ 'slick.min.js' | asset_url | script_tag }}
