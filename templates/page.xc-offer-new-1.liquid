@@ -3121,8 +3121,11 @@ Place Kailo at the source of your pain
         <hr class="priceDevider">
         <p class="productLifeSpan">LifeSpan - 1 Month<br>Price per day - as low as $0.83 per day</p>
         <p class="freeShipping"><i class="fa  fa-truck fa-flip-horizontal" aria-hidden="true"></i> FREE USA Shipping</p>
-        <!-- original product --><div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" data-id="42788855480451" type="button" onclick="manageProductSelection();"><span>ORDER KAILO NOW</span></button></div>
-        <!-- Mothers Day product <div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" data-id="39719228801155" type="button" onclick="manageProductSelection();"><span>ORDER KAILO NOW</span></button></div>-->
+        <!-- original product --><div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" data-id="42788855480451" type="button" onclick="addToCart(1, this.dataset.id);"><span>ORDER KAILO NOW</span></button></div>
+        {% comment %}
+          <!-- Mothers Day product -->
+          <div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" data-id="39719228801155" type="button" onclick="manageProductSelection();"><span>ORDER KAILO NOW</span></button></div>
+        {% endcomment %}
       </div>
       <div class="kailo-card kailo-card-highlight">
         <h3 class="kailo-card-heading kailo-card-heading-lite">Most Popular</h3>
@@ -3138,8 +3141,11 @@ Place Kailo at the source of your pain
         <hr class="priceDevider">
         <p class="productLifeSpan">LifeSpan - 1 Year<br>Price per day - as low as $0.33 per day</p>
        <p class="freeShipping"><i class="fa fa-truck fa-flip-horizontal" aria-hidden="true"></i> FREE USA Shipping</p>        
-        <!-- Original product --><div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" data-id="20859020836926" type="button" onclick="manageProductSelection();"><span>ORDER KAILO NOW</span></button></div>
-        <!-- Mothers Day product <div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" data-id="39719237681283" type="button" onclick="manageProductSelection();"><span>ORDER KAILO NOW</span></button></div>-->
+        <!-- Original product --><div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" data-id="20859020836926" type="button" onclick="addToCart(1, this.dataset.id);"><span>ORDER KAILO NOW</span></button></div>
+        {% comment %}
+          <!-- Mothers Day product -->
+          <div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" data-id="39719237681283" type="button" onclick="manageProductSelection();"><span>ORDER KAILO NOW</span></button></div>
+        {% endcomment %}
       </div>
       <div class="kailo-card">
         <h3 class="kailo-card-heading kailo-card-heading-pro">Best Value</h3>
@@ -3155,8 +3161,11 @@ Place Kailo at the source of your pain
         <hr class="priceDevider">
         <p class="productLifeSpan">LifeSpan - 1 Year<br>Price per day - as low as $0.33 per day</p>     
         <p class="freeShipping"><i class="fa  fa-truck fa-flip-horizontal" aria-hidden="true"></i> FREE USA Shipping</p>      
-        <!-- original product --><div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" data-id="42712927142019" type="button" onclick="manageProductSelection();"><span>ORDER NOW</span></button></div>
-        <!-- Mothers Day product <div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" data-id="34127410757763" type="button" onclick="manageProductSelection();"><span>ORDER KAILO NOW</span></button></div>-->
+        <!-- original product --><div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" data-id="42712927142019" type="button" onclick="addToCart(1, this.dataset.id);"><span>ORDER NOW</span></button></div>
+        {% comment %}
+          <!-- Mothers Day product -->
+          <div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" data-id="34127410757763" type="button" onclick="manageProductSelection();"><span>ORDER KAILO NOW</span></button></div>
+        {% endcomment %}
       </div>
     </div>
   </div>
@@ -3190,7 +3199,7 @@ Place Kailo at the source of your pain
         <!--<div class="btn-wrapper kailo-landing"><button class="productBtn" type="button" onclick="bundle(SelectedProductId,'false');"><span>ORDER NOW</span></button></div>-->
         
       </div>
-        <!-- original product --><div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" data-id="42788855480451" type="button" onclick="manageProductSelection();"><span>ORDER NOW</span></button></div>
+        <!-- original product --><div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" data-id="42788855480451" type="button" onclick="addToCart(1, this.dataset.id);"><span>ORDER NOW</span></button></div>
       </label>
       
       <label for="3kailo">
@@ -3214,7 +3223,7 @@ Place Kailo at the source of your pain
         </div>
         <!--<div class="btn-wrapper kailo-landing"><button class="productBtn" type="button" onclick="bundle(SelectedProductId, 'false');"><span>ORDER NOW</span></button></div>-->
       </div> 
-        <!-- Original product --><div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" data-id="20859020836926" type="button" onclick="manageProductSelection();"><span>ORDER NOW</span></button></div>
+        <!-- Original product --><div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" data-id="20859020836926" type="button" onclick="addToCart(1, this.dataset.id);"><span>ORDER NOW</span></button></div>
       </label>  
             
       <label for="5kailo">
@@ -3237,7 +3246,7 @@ Place Kailo at the source of your pain
         </div>
         <!--<div class="btn-wrapper kailo-landing"><button class="productBtn" type="button" onclick="bundle(SelectedProductId, 'false');"><span>ORDER NOW</span></button></div>-->
       </div> 
-        <!-- original product --><div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" data-id="42712927142019" type="button" onclick="manageProductSelection();"><span>ORDER NOW</span></button></div>
+        <!-- original product --><div class="btn-wrapper kailo-landing"><button class="productBtn custom-btn" data-id="42712927142019" type="button" onclick="addToCart(1, this.dataset.id);"><span>ORDER NOW</span></button></div>
       </label>       
       
     </div>
@@ -3530,53 +3539,54 @@ Place Kailo at the source of your pain
   
   
   
-  
-  
-let SelectedProductId;
-const productButtons = document.querySelectorAll('.productBtn');
+{% comment %}// NO LONGER NEEDED SINCE POP-UPS OCCUR AT CART
+  let SelectedProductId;
+  const productButtons = document.querySelectorAll('.productBtn');
 
-productButtons.forEach(button =>{
-    button.addEventListener('click', manageProductSelection);
-});
+  productButtons.forEach(button =>{
+      button.addEventListener('click', manageProductSelection);
+  });
 
- function manageProductSelection(e){
-     if(this.dataset.id){
-         SelectedProductId = this.dataset.id;
-     }
-     jQuery("#discount_show_popup").show();
+  function manageProductSelection(e){
+      if(this.dataset.id){
+          SelectedProductId = this.dataset.id;
+      }
+      jQuery("#discount_show_popup").show();
     } 
-  
+    
+  function closePopup(){
+    jQuery("#discount_show_popup").hide();
+  }
+  function step1(variantId, include){
+      if(include == 'true'){
+          bundleItem1 = variantId;
+      } else {
+        bundleItem1 = '';
+      }
+      jQuery(".bundle-item-1").hide();
+      jQuery(".bundle-item-2").show();
+      } 
+  function step2(variantId, include){
+      if(include == 'true'){
+          bundleItem2 = variantId;
+      } else {
+        bundleItem2 = '';
+      }
+      bundle(SelectedProductId, bundleItem1, bundleItem2);
+      } 
+    
+  function checkDiscount(qty){
+    addToCart(qty);
+  }
+{% endcomment %}
 
-  
-  
-  
-  
-function closePopup(){
-  jQuery("#discount_show_popup").hide();
-}
- function step1(variantId, include){
-     if(include == 'true'){
-        bundleItem1 = variantId;
-     } else {
-       bundleItem1 = '';
-     }
-     jQuery(".bundle-item-1").hide();
-     jQuery(".bundle-item-2").show();
-    } 
- function step2(variantId, include){
-     if(include == 'true'){
-        bundleItem2 = variantId;
-     } else {
-       bundleItem2 = '';
-     }
-     bundle(SelectedProductId, bundleItem1, bundleItem2);
-    } 
-  
-function checkDiscount(qty){
-  addToCart(qty);
-}
-function addToCart(qty){
-  var product_id = jQuery('.order_product').val();
+
+function addToCart(qty, SelectedProductId){
+  if (!SelectedProductId) {
+    var product_id = jQuery('.order_product').val();
+  } else {
+    var product_id = SelectedProductId;
+  }
   if(qty==1){
     jQuery.ajax({
       type: "POST",
@@ -3600,44 +3610,46 @@ function addToCart(qty){
   }
   location.href='/cart';
 }
-function bundle(SelectedProductId, bundleItem1, bundleItem2) {
-    jQuery.ajax({
-      type: "POST",
-      url: '/cart/add.js',
-      data: {
-        quantity: 1,
-        id: SelectedProductId
-      },
-      async: false
-    });
-  
-    if(bundleItem1 != '') {
-        jQuery.ajax({
-          type: "POST",
-          url: '/cart/add.js',
-          data: {
-              quantity: 1,
-              id: bundleItem1
-            },
-          async: false
-        });
-    }
 
-    if(bundleItem2 != '') {
-        jQuery.ajax({
-          type: "POST",
-          url: '/cart/add.js',
-          data: {
-              quantity: 1,
-              id: bundleItem2
-            },
-          async: false
-        });
-    }
-  
-  	location.href='/cart';
-};
-  
+{% comment %} // NO LONGER NEEDED SINCE POP-UPS OCCUR IN CART
+  function bundle(SelectedProductId, bundleItem1, bundleItem2) {
+      jQuery.ajax({
+        type: "POST",
+        url: '/cart/add.js',
+        data: {
+          quantity: 1,
+          id: SelectedProductId
+        },
+        async: false
+      });
+    
+      if(bundleItem1 != '') {
+          jQuery.ajax({
+            type: "POST",
+            url: '/cart/add.js',
+            data: {
+                quantity: 1,
+                id: bundleItem1
+              },
+            async: false
+          });
+      }
+
+      if(bundleItem2 != '') {
+          jQuery.ajax({
+            type: "POST",
+            url: '/cart/add.js',
+            data: {
+                quantity: 1,
+                id: bundleItem2
+              },
+            async: false
+          });
+      }
+    
+      location.href='/cart';
+  };
+{% endcomment %}
  
   
  
