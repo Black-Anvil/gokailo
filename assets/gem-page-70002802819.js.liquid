@@ -115,20 +115,50 @@ if (link != "") {
       
       
       
-      jQuery(function() {
-  var $module = jQuery('#m-1582837304029').children('.module');
-  var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
-  if(jQuery().gfYoutube) {
-    if (mode == 'production') {
-      jQuery(window).on('load.gfYoutube', function() {
-        $module.gfYoutube();
-      })
-    } else {
-      $module.gfYoutube();
-    }
-  }
-});
       
+      
+    (function( jQuery ){
+  var $module = jQuery('#m-1689468444983').children('.module');
+  var videoUrl = jQuery.trim($module.attr('data-url'));
+  var autoPause = $module.attr('data-autopause');
+  var autoPlay = $module.attr('data-autoplay');
+  var videoloop = $module.attr('data-videoloop');
+  var videoMute = $module.attr('data-videomute');
+  var byline = $module.attr('data-byline');
+  var showtitle = $module.attr('data-showtitle');
+  var showportrait = $module.attr('data-showportrait');
+
+  setTimeout(function() {
+    var videoWrapper = $module.children('.vimeo_video');
+    videoWrapper.empty().append('<div id="vimeo-wrapper-1689468444983"></div>');
+
+    var options = {
+      url: videoUrl,
+      loop: videoloop,
+      autoplay: autoPlay,
+      autopause: autoPause,
+      byline: byline,
+      title: showtitle,
+      muted: videoMute,
+      portrait: showportrait
+    };
+    var player = new Vimeo.Player("vimeo-wrapper-1689468444983", options);
+
+    player.on('loaded', function() {	
+      var $playerFrame = $module.find('iframe');	
+      var width = parseInt($playerFrame.attr('width'));	
+      var height = parseInt($playerFrame.attr('height'));	
+      if (width != NaN && height != NaN) {	
+        $module.find('.videoFullScreen').css('padding-bottom', (height / width * 100) + '%');	
+      }	
+    });	
+    
+    $module.on('pausevideo', function() {	
+      player.pause();	
+    });
+  }, 100);
+})( window.GemQuery || jQuery );
+  
       
       
       
@@ -515,23 +545,6 @@ if (link != "") {
       }
   }
 });
-    jQuery(function() {
-        var $module = jQuery('#m-1583957776352').children('.module');
-            $module.gfV1Popup();
-
-        var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
-
-        if(mode == 'dev') {
-            var moduleId = "1583957776352";
-            var moduleIdSlug = moduleId.toString().replace(/-/g, '');
-            if (moduleIdSlug == "1583957776352") {
-                window.getPopup1583957776352 = function() {
-                    return $module.data('gfv1popup');
-                }
-            }
-        }
-    });
-  
                           (function( jQuery ){
                               try{
                                   if(jQuery().gfV2Lazyload){
