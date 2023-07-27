@@ -117,7 +117,21 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=746065746668502&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-    <script src="{{ 'ascii-only.min.js' | asset_url }}" defer></script>  
+    <script src="{{ 'ascii-only.min.js' | asset_url }}" defer></script>
+
+
+    <style>
+      .ninety-split::after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 1px;
+        background-color: black;
+        margin: 10px auto;
+      }
+    </style>
+
+
   </head>
   <body>
 
@@ -170,9 +184,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             {{ content_for_logo }}
           </div>
           <div class="sidebar__content">
-			<!-- adding contnet for custom design -->
+			      <!-- adding contnet for custom design -->
+
             {% assign items = false %}
+            {% assign ninety_days = false %}
+            {% assign thirty_days = false %}
             {% for item in checkout.line_items %}
+              {% if item.product.tags contains "90 days" %}
+                {% assign ninety_days = true %}
+              {% endif %}
+              {% if item.product.tags contains "30 days" %}
+                {% assign thirty_days = true %}
+              {% endif %}
             	{% if checkout.line_items.size > 1 %}
             		{% assign items = true %}
             	{% endif %}
@@ -184,40 +207,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             		{{ item.image |remove:'_small' | product_img_url: 'master' | img_tag:'__bigImg','_bigcheckoutImg'}}
             	{% endif %}
             {% endfor %}
+
             <div class="guarantee"><img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/money-back_480x480.png?v=1585142012" alt=""></div>
             <h2 class="section__title wo">Order Summary</h2>
             {{ content_for_order_summary }}
           </div>
-          <div class="shipingDetail">
-            <div class="moneyGuranteeImg">
-              <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/money_480x480.png?v=1584523820" alt="" />
+          {% if ninety_days or thirty_days %}
+            <div class="shipingDetail">
+              <div class="moneyGuranteeImg">
+                <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/money_480x480.png?v=1584523820" alt="" />
+              </div>
+              <div class="moneyGuranteeText">
+                {% if ninety_days and thirty_days == false %}
+                  <h2>90 Day Money-Back Guarantee</h2>
+                {% elsif thirty_days and ninety_days == false %}
+                  <h2>30 Day Money-Back Guarantee</h2>
+                {% else %}
+                  <h2 class="ninety-split">90 Day Money-Back Guarantee on Original Kailo™ products<h2>
+                  <h2>30 Day Money-Back Guarantee on Flex™ products</h2>
+                {% endif %}
+              </div>
             </div>
-            <div class="moneyGuranteeText">
-              <h2>90 Day Money-Back Guarantee</h2>
+            <div class="shipingDetail">
+              <div class="moneyGuranteeImg">
+                <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/shiping_480x480.png?v=1584523805" alt="" />
+              </div>
+              <div class="moneyGuranteeText">
+                <h2>Free Shipping (in the United States)</h2>
+              </div>
             </div>
-          </div>
-          <div class="shipingDetail">
-            <div class="moneyGuranteeImg">
-              <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/shiping_480x480.png?v=1584523805" alt="" />
+            <div class="shipingDetail">
+              <div class="moneyGuranteeImg">
+                <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/return_480x480.png?v=1584523775" alt="" />
+              </div>
+              <div class="moneyGuranteeText">
+                {% if ninety_days and thirty_days == false %}
+                  <h2>Returns accepted up to 90 days</h2>
+                {% elsif thirty_days and ninety_days == false %}
+                  <h2>Returns accepted up to 30 days</h2>
+                {% else %}
+                  <h2 class="ninety-split">Returns accepted up to 90 days on Original Kailo™ products</h2>
+                  <h2>Returns accepted up to 30 days on Flex™ products</h2>
+                {% endif %}
+              </div>
             </div>
-            <div class="moneyGuranteeText">
-              <h2>Free Shipping (in the United States)</h2>
+            <div class="shipingDetail">
+                <div class="moneyGuranteeText soldTitle">
+                  <h2>Over 1 Million Users</h2>
+                </div>
             </div>
-          </div>
-           <div class="shipingDetail">
-            <div class="moneyGuranteeImg">
-              <img src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/return_480x480.png?v=1584523775" alt="" />
-            </div>
-            <div class="moneyGuranteeText">
-              <h2>Returns accepted up to 90 days</h2>
-            </div>
-          </div>
-          <div class="shipingDetail">
-            <div class="moneyGuranteeText soldTitle">
-              <h2>Over 1 Million Users</h2>
-            </div>
-          </div>
-
+          {% endif %}
           <div class="custComments">
             <div class="WrapDiv">
               <div class="UserName">
