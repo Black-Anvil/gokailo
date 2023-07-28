@@ -29,6 +29,12 @@
   }
   .popup-inner {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  .popup-inner__left {
+    min-width: 252px;
   }
   .hidden {
     display:none;
@@ -39,21 +45,12 @@
       border: solid 1px #c2ac72;
       border-radius: 10px;
       color: #fff;
-      padding: 0.7em 0px;
       font-size: 1.2em;
       font-weight: 600;
       margin: 20px auto;
       width:fit-content;
-      padding: 15px !important;
       border: solid 1px #c2ac72;
       display:block;
-  }
-  .popup-button span{
-      border-radius: 10px;
-      color: #000;
-      padding: 0.8em 1.2em;
-      font-weight: 700;
-      font-size: 1.1em;
   }
   .popup-button:hover{
       cursor: pointer;
@@ -72,24 +69,27 @@
   .special {
     display: block;
     text-align: center;
-    width: 85%;
   }
   .rate {
     text-align: center;
-    margin: -0.5em 0;
+    display: flex;
+    line-height: 1;
   }
   .number {
     font-size: 6em;
     font-weight: 600;
   }
+  .percent-off {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   .percent {
-    position: relative;
     top: -0.5em;
     font-size: 3.5em;
     font-weight: 600;
   }
   .off {
-    position: relative;
     left: -2.3em;
     font-size: 1.5em;
     font-weight: 600;
@@ -99,6 +99,9 @@
     margin: auto;
     display: block;
   }
+  .popup-inner__right {
+    line-height: 1;
+  }
   .act-now {
     display: block;
     font-size: 1.2em;
@@ -107,6 +110,8 @@
   }
   .offer {
     display: block;
+    width: 85%;
+    margin: 0 auto;
     font-size: 1.9em;
     font-weight: 600;
     text-align: center;
@@ -126,27 +131,13 @@
     margin: 2em 0 1em 0;
     text-align: center;
   }
-  .popup-button {
-    background: linear-gradient(to bottom,#f3ce75 0,#edb52f 100%) !important;
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%), 0 0 0 1px;
-    border: solid 1px #c2ac72;
-    border-radius: 10px;
-    color: #fff;
-    padding: 0.7em 0px;
-    font-size: 1.2em;
-    font-weight: 600;
-    margin: 20px auto;
-    width: fit-content;
-    padding: 15px !important;
-    border: solid 1px #c2ac72;
-    display: block;
-  }
-  .popup-button span {
+  .popup-button p {
     border-radius: 10px;
     color: #000;
     padding: 0.8em 1.2em;
     font-weight: 700;
     font-size: 1.1em;
+    margin: 0;
   }
   .no-thanks {
     display: block;
@@ -159,6 +150,28 @@
   }
   .mfp-close {
     display: none !important;
+  }
+  @media screen and (max-width: 1105px) {
+    .number {
+      font-size: 4.5em;
+    }
+    .percent {
+      font-size: 2.5em;
+    }
+    .off {
+      font-size: 1em;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .popup-inner {
+      flex-direction: column;
+      gap: 40px;
+    }
+    .popup-inner__left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 </style>
 {% if section.settings.basic_header %}
@@ -330,23 +343,29 @@
           <a href="#bundle-discount" class="inline-popup btn btn--regular btn--color btn--fill">Check Out</a>
           <div id="bundle-discount" class="white-popup mfp-hide">
               <div class="popup-inner toggle-me">
-                <div>
-                  <span class="special">Special Offer!</span>
-                  <div class="rate">
-                      <span class="number">45</span>
-                      <span class="percent">%</span>
-                      <span class="off">OFF</span>
+                <div class="popup-inner__left">
+                  <div class="popup-inner__left-text">
+                    <div class="special">Special Offer!</div>
+                    <div class="rate">
+                        <div class="number">45</div>
+                        <div class="percent-off">
+                          <div class="percent">%</div>
+                          <div class="off">OFF</div>
+                        </div>
+                    </div>
                   </div>
-                  <img class="special-image lazyload" data-src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/kailo-b1-01_0bd95b4e-2f90-4e71-82c1-0e17776dd16a_500x.jpg?v=1651516940" width="250" />
+                  <div class="popup-inner__left-img">
+                    <img class="special-image lazyload" data-src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/kailo-b1-01_0bd95b4e-2f90-4e71-82c1-0e17776dd16a_500x.jpg?v=1651516940" width="250" />
+                  </div>
                 </div>
-                <div>
-                  <span class="act-now">Act Now and Get...</span>
-                  <span class="offer">a Kailo bundle for 45% OFF!</span>
-                  <br><span class="original-price">$119 Value</span>
-                  <span class="new-price">Special Add-on Price = $65.45!</span>
+                <div class="popup-inner__right">
+                  <p class="act-now">Act Now and Get...</p>
+                  <p class="offer">a Kailo bundle for 45% OFF!</p>
+                  <br><p class="original-price">$119 Value</p>
+                  <p class="new-price">Special Add-on Price = $65.45!</p>
                   <div class="yes-bundle">
                       <a class="popup-button toggle-me" data-bundle="32251489255555" style="font-size:1em;">
-                          <span>Yes, Get My 45% Saving</span>
+                          <p>Yes, Get My 45% Savings</p>
                       </a>
                   </div>
                   <div class="no-thanks"><a data-bundle="false">No Thank You</a></div>
