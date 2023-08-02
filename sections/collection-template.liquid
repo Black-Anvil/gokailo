@@ -24,8 +24,125 @@
 
   {%- assign limit = section.settings.grid | times: section.settings.rows -%}
   {% paginate collection.products by limit %}
+    {% if collection.title == "Products" %}
+      <h2 class="collection-subtitle">Kailo Original Products</h2>
+      <div class="collection-list grid-uniform {% unless shop.products_count == 0 %} small-gutter {% endunless %}">
 
-    <div class="collection-list grid-uniform {% unless shop.products_count == 0 %} small-gutter {% endunless %}">
+
+        {% case section.settings.grid %}
+        {% when '2' %}
+          {%- assign grid_item_width = 'small--one-whole medium--one-half large--one-half' -%}
+        {% when '3' %}
+          {%- assign grid_item_width = 'small--one-whole medium--one-third large--one-third' -%}
+        {% when '4' %}
+          {%- assign grid_item_width = 'small--one-half medium--one-quarter large--one-quarter' -%}
+        {% when '5' %}
+          {%- assign grid_item_width = 'small--one-half medium--one-third large--one-fifth' -%}
+        {% endcase %}
+
+        {% for product in collection.products %}
+          {% if product.tags contains "kailo family" %}
+            {% include 'product-grid-item', grid_item_width: grid_item_width, first:forloop.first  %}
+          {% endif %}
+        {% else %}
+
+          {% if shop.products_count == 0 %}
+              <div class="grid__item">
+                <div class="helper-section">
+                  <div class="helper-note">
+                    <span class="helper-icon"></span>
+                    <h3>{{ 'homepage.onboarding.modal_title' | t }}</h3>
+                    <p>{{ 'homepage.onboarding.no_products_collection' | t }}</p>
+                    <p><a class="admin-btn-primary" href="/admin/products/new">{{ 'homepage.onboarding.add_product' | t }}</a></p>
+                  </div>
+
+                  <div class="collection-list grid-uniform helper-content">
+                    {% assign index = 1 %}
+                    {% for i in (1..6) %}
+                      <div class="product grid__item one-third medium--one-half small--one-whole text-center">
+                        <a href="/admin/products" class="grid__image">
+                          {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                          {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                        </a>
+                        <h3>{{ 'homepage.onboarding.product_title' | t }}</h3>
+                        <p class="price">
+                          $19.99
+                        </p>
+                      </div>
+                      {% assign index = index | plus: 1 %}
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            {% else %}
+              <div class="grid__item">
+                <p><em>{{ 'collections.general.no_matches' | t }}</em></p>
+              </div>
+            {% endif %}
+
+        {% endfor %}
+
+      </div>
+      <h2 class="collection-subtitle">Flex Products</h2>
+      <div class="collection-list grid-uniform {% unless shop.products_count == 0 %} small-gutter {% endunless %}">
+
+
+        {% case section.settings.grid %}
+        {% when '2' %}
+          {%- assign grid_item_width = 'small--one-whole medium--one-half large--one-half' -%}
+        {% when '3' %}
+          {%- assign grid_item_width = 'small--one-whole medium--one-third large--one-third' -%}
+        {% when '4' %}
+          {%- assign grid_item_width = 'small--one-half medium--one-quarter large--one-quarter' -%}
+        {% when '5' %}
+          {%- assign grid_item_width = 'small--one-half medium--one-third large--one-fifth' -%}
+        {% endcase %}
+
+        {% for product in collection.products %}
+          {% if product.tags contains "flex family" %}
+            {% include 'product-grid-item', grid_item_width: grid_item_width, first:forloop.first  %}
+          {% endif %}
+        {% else %}
+
+          {% if shop.products_count == 0 %}
+              <div class="grid__item">
+                <div class="helper-section">
+                  <div class="helper-note">
+                    <span class="helper-icon"></span>
+                    <h3>{{ 'homepage.onboarding.modal_title' | t }}</h3>
+                    <p>{{ 'homepage.onboarding.no_products_collection' | t }}</p>
+                    <p><a class="admin-btn-primary" href="/admin/products/new">{{ 'homepage.onboarding.add_product' | t }}</a></p>
+                  </div>
+
+                  <div class="collection-list grid-uniform helper-content">
+                    {% assign index = 1 %}
+                    {% for i in (1..6) %}
+                      <div class="product grid__item one-third medium--one-half small--one-whole text-center">
+                        <a href="/admin/products" class="grid__image">
+                          {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                          {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                        </a>
+                        <h3>{{ 'homepage.onboarding.product_title' | t }}</h3>
+                        <p class="price">
+                          $19.99
+                        </p>
+                      </div>
+                      {% assign index = index | plus: 1 %}
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            {% else %}
+              <div class="grid__item">
+                <p><em>{{ 'collections.general.no_matches' | t }}</em></p>
+              </div>
+            {% endif %}
+
+        {% endfor %}
+
+      </div>
+    {% else %}
+   <div class="collection-list grid-uniform {% unless shop.products_count == 0 %} small-gutter {% endunless %}">
 
 
       {% case section.settings.grid %}
@@ -82,7 +199,7 @@
       {% endfor %}
 
     </div>
-
+    {% endif %}
     {% include 'page_pagination' %}
 
   {% endpaginate %}
@@ -90,8 +207,6 @@
 </div>
 
 </div>
-
-
 
 {% schema %}
 {
