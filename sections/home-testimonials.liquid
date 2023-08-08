@@ -1,10 +1,81 @@
-{{ "testimonials.css" | asset_url | stylesheet_tag }}
+<style>
+    .home-testimonials {
+        padding: 80px 0;
+        color: var(--grays6);
+        background-color: var(--primary4);
+    }
 
-<section class="testimonials">
+    .home-testimonials__wrapper {
+        display: flex;
+        align-items: center;
+        margin: 0 0 0 -16px;
+    }
+
+    .home-testimonials__wrapper > * {
+        width: 50%;
+        margin: 0 0 0 16px;
+    }
+
+    .home-testimonials__interviews {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-testimonials__interviews .button {
+        margin: 24px 0 0;
+    }
+
+    .home-testimonials__interviews > div {
+        max-width: 330px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .home-testimonials__swiper {
+        overflow: hidden;
+    }
+
+    .home-testimonials__swiper .swiper-pagination {
+        margin: 64px 0 0;
+    }
+
+    .home-testimonials__swiper svg {
+        margin: 0 0 56px;
+    }
+
+    .home-testimonials__swiper h3 {
+        margin: 0 0 24px;
+    }
+
+    .home-testimonials__swiper blockquote {
+        margin: 0 0 24px;
+    }
+
+    .home-testimonials__author {
+        display: flex;
+    }
+
+    .home-testimonials__author img {
+        width: 48px;
+        height: 48px;
+        margin: 0 16px 0 0;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .home-testimonials__author figcaption {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+
+<section class="home-testimonials">
     <div class="container">
-        <div class="testimonials__wrapper">
+        <div class="home-testimonials__wrapper">
             <div>
-                <div class="testimonials__swiper">
+                <div class="home-testimonials__swiper">
                     <div class="swiper-wrapper">
                         <figure class="swiper-slide">
                             <blockquote>
@@ -21,8 +92,8 @@
                                 </p>
                             </blockquote>
 
-                            <div class="testimonials__author">
-                                <img src="{{ "testimonials-1.jpg" | asset_url }}" width="48" height="48" alt="Cary">
+                            <div class="home-testimonials__author">
+                                <img src="{{ "home-testimonials.jpg" | asset_url }}" width="48" height="48" alt="Cary">
 
                                 <figcaption>
                                     <span class="h6-title">Cary P.</span>
@@ -47,8 +118,8 @@
                                 </p>
                             </blockquote>
 
-                            <div class="testimonials__author">
-                                <img src="{{ "testimonials-2.jpg" | asset_url }}" width="48" height="48" alt="Liza">
+                            <div class="home-testimonials__author">
+                                <img src="{{ "home-testimonials.jpg" | asset_url }}" width="48" height="48" alt="Liza">
 
                                 <figcaption>
                                     <span class="h6-title">Liza B.</span>
@@ -72,8 +143,8 @@
                                 </p>
                             </blockquote>
 
-                            <div class="testimonials__author">
-                                <img src="{{ "testimonials-3.jpg" | asset_url }}" width="48" height="48" alt="Melody">
+                            <div class="home-testimonials__author">
+                                <img src="{{ "home-testimonials.jpg" | asset_url }}" width="48" height="48" alt="Melody">
 
                                 <figcaption>
                                     <span class="h6-title">Melody S.</span>
@@ -87,9 +158,9 @@
                 </div>
             </div>
 
-            <div class="testimonials__interviews">
+            <div class="home-testimonials__interviews">
                 <div>
-                    {% render "vimeo-image", link: "https://vimeo.com/644391532", img: "testimonial-interviews.gif", width: 330, height: 186, alt: "testimonial interviews" %}
+                    {% render "vimeo-image", link: "https://vimeo.com/644391532", img: "home-testimonials.gif", width: 330, height: 186, alt: "testimonial interviews" %}
                     <a class="button button--primary" href="#">read testimonials</a>
                 </div>
             </div>
@@ -98,7 +169,7 @@
 </section>
 
 <script type="module">
-    const swiper = new Swiper('.testimonials__swiper', {
+    const swiper = new Swiper('.home-testimonials__swiper', {
         slidesPerView: 1,
         spaceBetween: 32,
 

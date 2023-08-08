@@ -1,12 +1,189 @@
-{{ "about.css" | asset_url | stylesheet_tag }}
+<style>
+    .home-about {
+        padding: 120px 0;
+        color: var(--primary4);
+        background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.80) 100%), url({{ "home-about.png" | asset_url }});
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 
-<section class="about">
+    .home-about__wrapper {
+        display: flex;
+        margin: 0 0 0 -40px;
+    }
+
+    .home-about__wrapper > * {
+        margin: 0 0 0 40px;
+    }
+
+    .home-about__info {
+        min-width: 400px;
+        max-width: 400px;
+    }
+
+    .home-about__slide {
+        transition: opacity 0.15s linear;
+    }
+
+    .home-about__list {
+        margin: 40px 0 0;
+    }
+
+    .home-about__list button {
+        position: relative;
+        width: 100%;
+        padding-left: 20px;
+        color: inherit;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        text-align: left;
+        transition: opacity 0.15s linear;
+    }
+
+    .home-about__list button::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--primary4);
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: opacity 0.15s linear;
+    }
+
+    .home-about__list button:hover,
+    .home-about__list button:focus {
+        opacity: 0.6;
+    }
+
+    .home-about__list button.active {
+        pointer-events: none;
+        opacity: 1;
+    }
+
+    .home-about__list button.active::before {
+        opacity: 1;
+    }
+
+    .home-about__list > li:not(:last-child) {
+        margin: 0 0 24px;
+    }
+
+    .home-about__placement {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .home-about__placement ul {
+        margin: 0 0 0 16px;
+    }
+
+    .home-about__placement .button {
+        width: 100%;
+    }
+
+    .home-about__placement ul > li:not(:last-child) {
+        margin: 0 0 16px;
+    }
+
+    .home-about__risk a[href^="mailto:"] {
+        color: var(--primary2);
+    }
+
+    .home-about__risk img,
+    .home-about__trial img {
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--primary4);
+    }
+
+    .home-about__risk > * {
+        margin: 0 0 24px;
+    }
+
+    .home-about__condition ul {
+        margin: 24px 0;
+    }
+
+    .home-about__condition h3 {
+        margin: 0 0 16px;
+    }
+
+    .home-about__condition ul a {
+        display: flex;
+        align-items: flex-start;
+        padding: 24px;
+        transition: color 0.15s linear, background-color 0.15s linear;
+    }
+
+    .home-about__condition ul a span {
+        padding: 0;
+    }
+
+    .home-about__condition ul a span:last-child {
+        max-width: 110px;
+        width: 100%;
+    }
+
+    .home-about__condition ul a span:nth-child(2) {
+        margin: 0 24px;
+    }
+
+    .home-about__condition ul a span:first-child {
+        min-width: 200px;
+        width: 200px;
+    }
+
+    .home-about__condition ul a:hover,
+    .home-about__condition ul a:focus {
+        color: var(--grays6);
+        text-decoration: none;
+        background-color: var(--primary1);
+    }
+
+    .home-about__condition li:not(:last-child) {
+        border-bottom: 1px solid var(--primary4);
+    }
+
+    .home-about__reviews ul {
+        margin: 24px 0;
+    }
+
+    .home-about__reviews ul li > *:first-child {
+        max-width: 140px;
+        width: 100%;
+        margin: 0 24px 0 0;
+    }
+
+    .home-about__reviews li {
+        display: flex;
+        padding: 24px 0;
+        border-bottom: 1px solid var(--primary4);
+    }
+
+    .home-about__trial > *:not(:last-child) {
+        margin: 0 0 24px;
+    }
+
+    .home-about__trial a {
+        color: var(--primary2);
+    }
+f</style>
+
+{{ "play-video.css" | asset_url | stylesheet_tag }}
+{{ "star.css" | asset_url | stylesheet_tag }}
+
+<section class="home-about">
     <div class="container">
-        <div class="about__wrapper">
-            <div class="about__info">
+        <div class="home-about__wrapper">
+            <div class="home-about__info">
                 <h2 class="h2-title">EVERYTHING YOU NEED TO KNOW ABOUT KAILO</h2>
 
-                <ul class="about__list">
+                <ul class="home-about__list">
                     <li>
                         <button class="h6-title active">HOW TO PLACE THE KAILO</button>
                     </li>
@@ -33,25 +210,25 @@
                 </ul>
             </div>
 
-            <div class="about__slider">
-                <div class="about__slide about__placement">
-                    {% render "vimeo-image", link: "https://vimeo.com/644442787", img: "about-placement.jpg", width: 620, height: 350, alt: "about placement" %}
+            <div class="home-about__slider">
+                <div class="home-about__slide home-about__placement">
+                    {% render "vimeo-image", link: "https://vimeo.com/644442787", img: "home-about-placement.png", width: 620, height: 350, alt: "about placement" %}
 
                     <ul>
                         <li>
-                            {% render "vimeo-image", btnStatus: "hidden", link: "https://vimeo.com/718286497", img: "about-shoulder.jpg", width: 204, height: 70, alt: "about shoulder" %}
+                            {% render "vimeo-image", btnStatus: "hidden", link: "https://vimeo.com/718286497", img: "home-about-shoulder.png", width: 204, height: 70, alt: "about shoulder" %}
                         </li>
 
                         <li>
-                            {% render "vimeo-image", btnStatus: "hidden", link: "https://vimeo.com/737971648", img: "about-back.jpg", width: 204, height: 70, alt: "about back" %}
+                            {% render "vimeo-image", btnStatus: "hidden", link: "https://vimeo.com/737971648", img: "home-about-back.png", width: 204, height: 70, alt: "about back" %}
                         </li>
 
                         <li>
-                            {% render "vimeo-image", btnStatus: "hidden", link: "https://vimeo.com/718286549", img: "about-trunk.jpg", width: 204, height: 70, alt: "about trunk" %}
+                            {% render "vimeo-image", btnStatus: "hidden", link: "https://vimeo.com/718286549", img: "home-about-trunk.png", width: 204, height: 70, alt: "about trunk" %}
                         </li>
 
                         <li>
-                            {% render "vimeo-image", btnStatus: "hidden", link: "https://vimeo.com/718287655", img: "about-knees.jpg", width: 204, height: 70, alt: "about knees" %}
+                            {% render "vimeo-image", btnStatus: "hidden", link: "https://vimeo.com/718287655", img: "home-about-knees.png", width: 204, height: 70, alt: "about knees" %}
                         </li>
 
                         <li>
@@ -60,12 +237,12 @@
                     </ul>
                 </div>
 
-                <div class="about__slide about__use">
-                    {% render "vimeo-image", link: "https://vimeo.com/644456317", img: "about-use.jpg", width: 840, height: 426, alt: "about how to use" %}
+                <div class="home-about__slide home-about__use">
+                    {% render "vimeo-image", link: "https://vimeo.com/644456317", img: "home-about-adhesives.png", width: 840, height: 426, alt: "about how to use" %}
                 </div>
 
-                <div class="about__slide about__risk">
-                    <img src="{{ "about-money-back.png" | asset_url }}" width="197" height="124" alt="about money back">
+                <div class="home-about__slide home-about__risk">
+                    <img src="{{ "home-about-risk.png" | asset_url }}" width="198" alt="about money back">
 
                     <h3 class="h3-title">
                         We offer a no-hassle, no restrictions, 100% money-back guarantee on our Kailo Original product.
@@ -87,7 +264,7 @@
                     <a href="#" class="button button--primary">return policy</a>
                 </div>
 
-                <div class="about__slide about__condition">
+                <div class="home-about__slide home-about__condition">
                     <h3 class="h3-title">Will Kailo help my condition?</h3>
 
                     <p>Most common ailments experienced by Kailo Customers</p>
@@ -137,7 +314,7 @@
                     </ul>
                 </div>
 
-                <div class="about__slide about__reviews">
+                <div class="home-about__slide home-about__reviews">
                     <h3 class="h3-title">The good, bad and the ugly</h3>
 
                     <ul>
@@ -202,9 +379,8 @@
                     <a href="#" class="button button--primary">more reviews</a>
                 </div>
 
-                <div class="about__slide about__trial">
-                    <img src="{{ "about-clinical-trial.png" | asset_url }}" width="226" height="100"
-                         alt="about clinical trial">
+                <div class="home-about__slide home-about__trial">
+                    <img src="{{ "home-about-trial.png" | asset_url }}" width="198" alt="about clinical trial">
 
                     <h3 class="h3-title">The final results are in, and they’re incredibly positive.</h3>
 
@@ -216,7 +392,7 @@
                     </p>
 
                     <p>
-                        <a href="https://www.scivisionpub.com/pdfs/using-a-novel-nondrug-topical-painrelief-patch-to-improve-pain-and-function-final-analysis-of-the-prevent-study-2062.pdf">Check out the full results</a> published in the international peer-reviewed journal Anesthesia and
+                        <a class="link" href="https://www.scivisionpub.com/pdfs/using-a-novel-nondrug-topical-painrelief-patch-to-improve-pain-and-function-final-analysis-of-the-prevent-study-2062.pdf">Check out the full results</a> published in the international peer-reviewed journal Anesthesia and
                         Pain Research. The research article includes everything you need to know about the study
                         procedures, assessments, patients, methods, and outcome of the trial.
                     </p>
@@ -227,11 +403,11 @@
 </section>
 
 <script type="module">
-    const about = document.querySelector(".about");
-    const list = about.querySelector(".about__list");
-    const slider = about.querySelector(".about__slider");
+    const about = document.querySelector(".home-about");
+    const list = about.querySelector(".home-about__list");
+    const slider = about.querySelector(".home-about__slider");
     const listButtons = list.querySelectorAll("button");
-    const slides = slider.querySelectorAll(".about__slide");
+    const slides = slider.querySelectorAll(".home-about__slide");
 
     slides.forEach(slide => {
        slide.classList.add("visible-hidden");

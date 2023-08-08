@@ -1,0 +1,48 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+      }
+    },
+    "page-solutions": {
+      "type": "page-solutions",
+      "settings": {
+      }
+    },
+    "home-icons": {
+      "type": "home-icons",
+      "settings": {
+      }
+    },
+    "page-medical-review": {
+      "type": "page-medical-review",
+      "settings": {
+      }
+    },
+    "page-relief": {
+      "type": "page-relief",
+      "settings": {
+      }
+    },
+    "page-reviews": {
+      "type": "page-reviews",
+      "settings": {
+      }
+    },
+    "page-shop-category": {
+      "type": "page-shop-category",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "page-hero",
+    "page-solutions",
+    "home-icons",
+    "page-medical-review",
+    "page-relief",
+    "page-reviews",
+    "page-shop-category"
+  ]
+}

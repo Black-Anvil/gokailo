@@ -2,31 +2,13 @@
   "name": "Footer",
   "type": "footer",
   "sections": {
-    "footer-subscribe": {
-      "type": "footer-subscribe",
-      "settings": {
-      }
-    },
-    "footer-navigation": {
-      "type": "footer-navigation",
-      "settings": {
-      }
-    },
-    "footer-socials": {
-      "type": "footer-socials",
-      "settings": {
-      }
-    },
-    "footer-copyright": {
-      "type": "footer-copyright",
+    "footer": {
+      "type": "footer",
       "settings": {
       }
     }
   },
   "order": [
-    "footer-subscribe",
-    "footer-navigation",
-    "footer-socials",
-    "footer-copyright"
+    "footer"
   ]
 }

@@ -1,0 +1,60 @@
+<style>
+    .page-shop-category {
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .page-shop-category__list {
+        display: flex;
+        justify-content: center;
+        margin: 60px 0 0 -40px;
+    }
+
+    .page-shop-category__title {
+        color: var(--primary5);
+    }
+
+    .page-shop-category__list > * {
+        max-width: 290px;
+        margin: 0 0 0 40px;
+    }
+
+    .page-shop-category__list img {
+        object-fit: cover;
+        transition: transform 0.15s linear;
+    }
+
+    .page-shop-category__img {
+        margin: 0 0 16px;
+        overflow: hidden;
+    }
+
+    .page-shop-category__list a:hover img,
+    .page-shop-category__list a:focus img {
+        transform: scale(1.1)
+    }
+</style>
+
+{% assign collectionsSize = collections.size %}
+
+{% if collectionsSize >= 1 %}
+    <section class="page-shop-category">
+        <div class="container">
+            <h2 class="page-shop-category__title title-decorator h2-title">shop by category</h2>
+
+            <ul class="page-shop-category__list">
+                {% for collection in collections limit: 3 %}
+                    <li>
+                        <a href="{{ collection.url }}">
+                            <div class="page-shop-category__img">
+                                <img src="{{ collection.image | image_url }}" width="290" height="290" alt="{{ collection.image.alt }}">
+                            </div>
+                            <p class="button-text">{{ collection.title }} ({{ collection.products_count }})</p>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endif %}
+

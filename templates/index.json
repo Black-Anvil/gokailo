@@ -5,8 +5,8 @@
       "settings": {
       }
     },
-    "home-advantages-icons": {
-      "type": "home-advantages-icons",
+    "home-icons": {
+      "type": "home-icons",
       "settings": {
       }
     },
@@ -25,8 +25,8 @@
       "settings": {
       }
     },
-    "home-links-block": {
-      "type": "home-links-block",
+    "home-links": {
+      "type": "home-links",
       "settings": {
       }
     }
@@ -34,9 +34,9 @@
   "order": [
     "home-hero",
     "home-testimonials",
-    "home-advantages-icons",
+    "home-icons",
     "home-about",
     "home-products",
-    "home-links-block"
+    "home-links"
   ]
 }

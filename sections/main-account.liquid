@@ -1,10 +1,11 @@
 {{ "account.css" | asset_url | stylesheet_tag }}
+{{ "tag.css" | asset_url | stylesheet_tag }}
+{{ "pagination.css" | asset_url | stylesheet_tag }}
 
 <div class="page-inner bg-gray">
     <div class="account">
         <div class="container">
             <h2 class="h2-title">Your account</h2>
-
 
             <div class="account__wrapper">
                 {% render "account-menu", active: "account" %}
@@ -106,25 +107,25 @@
                                                     <li>
                                                         <span>Name</span>
                                                         {% assign shippingName = order.shipping_address.name %}
-                                                        <b>{% if shippingName != "" %}{{ shippingName }}{% else %}-{% endif %}</b>
+                                                        <b>{{ shippingName }}</b>
                                                     </li>
 
                                                     <li>
                                                         <span>Address</span>
                                                         {% assign shippingAddress = order.shipping_address.summary %}
-                                                        <b>{% if shippingAddress != "" %}{{ shippingAddress }}{% else %}-{% endif %}</b>
+                                                        <b>{{ shippingAddress }}</b>
                                                     </li>
 
                                                     <li>
                                                         <span>Email</span>
                                                         {% assign shippingEmail = order.customer.email %}
-                                                        <b>{% if shippingEmail != "" %}{{ shippingEmail }}{% else %}-{% endif %}</b>
+                                                        <b>{{ shippingEmail }}</b>
                                                     </li>
 
                                                     <li>
                                                         <span>Phone</span>
                                                         {% assign shippingPhone = order.shipping_address.phone %}
-                                                        <b>{% if shippingPhone != null %}{{ shippingPhone }}{% else %}-{% endif %}</b>
+                                                        <b>{{ shippingPhone }}</b>
                                                     </li>
                                                 </ul>
                                             </div>

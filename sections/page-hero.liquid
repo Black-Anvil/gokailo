@@ -1,0 +1,64 @@
+<style>
+    .page-hero {
+        padding: 150px 0 100px;
+        color: var(--grays6);
+        background-image: linear-gradient(0deg, rgba(53, 93, 102, 0.80) 0%, rgba(53, 93, 102, 0.80) 100%), url({{ "page-hero.png" | asset_url }});
+        background-color: var(--primary5);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .page-hero .caption-text {
+        margin: 0 0 8px;
+    }
+
+    .page-hero__block {
+        margin: 24px 0 0;
+        max-width: 620px;
+    }
+
+    .page-hero__block > *:not(:last-child) {
+        margin: 0 0 24px;
+    }
+
+    .page-hero__link {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 0 12px 32px;
+    }
+
+    .page-hero__link::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 24px;
+        height: 1px;
+        background-color: var(--grays6);
+        transform: translateY(-50%);
+    }
+</style>
+
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero__info">
+            <span class="caption-text">about kailo</span>
+            <h2 class="h1-title">how does the kailo works?</h2>
+
+            <div class="page-hero__block">
+                <p>
+                    Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage.
+                </p>
+
+                <p>
+                    The effectiveness of this technology for pain management has been developed by Kailo. The Kailo pain patch is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.
+                </p>
+
+                <a class="button-text page-hero__link" href="#">read more</a>
+            </div>
+        </div>
+    </div>
+</section>

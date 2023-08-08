@@ -1,4 +1,6 @@
 {{ "catalog.css" | asset_url | stylesheet_tag }}
+{{ "tag.css" | asset_url | stylesheet_tag }}
+{{ "compare-price.css" | asset_url | stylesheet_tag }}
 
 <div class="catalog">
     {% assign collectionName = collection.title %}
@@ -9,11 +11,7 @@
     <div class="catalog__wrapper">
         <div class="container">
             <div class="catalog__menu">
-                <div class="breadcrumbs">
-                    <a href="{{ routes.root_url }}">Home</a>
-                    <a href="{{ routes.collections_url }}">Collections</a>
-                    <a>{{ collectionName }}</a>
-                </div>
+                {% render "breadcrumbs", prevName: "Collections", prevUrl: routes.collections_url, current: collectionName %}
 
                 <div class="catalog__sort-by">
                     <span>Showing  all {{ productsCount }} results</span>
@@ -45,11 +43,15 @@
 
                         <li>
                             {% form "product", product %}
-                                <input class="visible-hidden" type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                                <input class="visible-hidden" type="hidden" name="id"
+                                       value="{{ product.variants.first.id }}"/>
                                 <input class="visible-hidden" min="1" type="hidden" name="quantity" value="1"/>
 
                                 <div class="catalog__product">
-                                    <div class="catalog__product-img">
+                                    {% if product.compare_at_price %}
+                                        <span class="tag tag--authorized">sale</span>
+                                    {% endif %}
+                                    <a href="{{ product.url }}" class="catalog__product-img">
                                         {% if productImagesSize > 1 %}
                                             <img src="{{ product.images[0] | image_url }}"
                                                  alt="{{ product.images[0].alt }}">
@@ -59,25 +61,23 @@
                                             <img src="{{ product.featured_image | image_url }}"
                                                  alt="{{ product.featured_image.alt }}">
                                         {% endif %}
-                                    </div>
+                                    </a>
 
                                     <div class="catalog__product-info">
-                                        <h3 class="button-text">{{ product.title }}</h3>
+                                        <a href="{{ product.url }}" class="button-text">{{ product.title }}</a>
 
-                                        <div class="catalog__product-buttons">
-                                            <div class="catalog__products-buttons-inner">
+                                        <div class="catalog__product-bottom">
+                                            <div class="catalog__product-price">
+                                                {% render "compare-product-price", product: product %}
+                                            </div>
+
+                                            <div class="catalog__product-buttons">
                                                 <button type="submit">
                                                     {% render "icon-cart" %}
                                                     Add To Cart
                                                 </button>
-                                                <button type="button">
-                                                    {% render "icon-view" %}
-                                                    Quick View
-                                                </button>
                                             </div>
                                         </div>
-
-                                        <span class="catalog__product-price">{{ product.price | money }}</span>
                                     </div>
                                 </div>
                             {% endform %}

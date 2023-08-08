@@ -42,6 +42,10 @@
     transition: box-shadow 0.15s linear, border 0.15s linear;
 }
 
+.field-block input {
+    height: 48px;
+}
+
 .field-block select,
 .field-block input {
     width: 100%;

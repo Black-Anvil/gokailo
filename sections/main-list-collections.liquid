@@ -6,10 +6,7 @@
     <div class="catalog__wrapper">
         <div class="container">
             <div class="catalog__menu">
-                <div class="breadcrumbs">
-                    <a href="{{ routes.root_url }}">Home</a>
-                    <a>Collections</a>
-                </div>
+                {% render "breadcrumbs", current: "Collections" %}
             </div>
 
             {% assign collectionsCount = collections | size %}

@@ -1,0 +1,381 @@
+<style>
+    .search {
+        position: absolute;
+        top: -100%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        opacity: 0;
+        background-color: var(--grays6);
+        box-shadow: inset 0 -1px 0 0 var(--grays4);
+        transition: top 0.15s linear, opacity 0.15s linear;
+    }
+
+    .search.opened {
+        top: 0;
+        opacity: 1;
+    }
+
+    .search .container {
+        display: flex;
+        align-items: center;
+    }
+
+    .search form {
+        position: relative;
+        flex-grow: 1;
+    }
+
+    .search label {
+        position: relative;
+        display: block;
+    }
+
+    .search label > svg {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    .search .search__btn-clear {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+
+    .search label path {
+        stroke: var(--grays3);
+    }
+
+    .search input {
+        width: 100%;
+        padding: 8px 30px;
+        border: none;
+        border-bottom: 1px solid var(--grays3);
+        transition: border 0.15s linear;
+    }
+
+    .search input:hover,
+    .search input:focus {
+        border-bottom-color: var(--primary1);
+    }
+
+    .search__btn-close {
+        margin: 0 0 0 16px;
+    }
+
+    .search__btn-close:hover path,
+    .search__btn-close:focus path {
+        stroke: var(--system-error);
+    }
+
+    .search__btn-clear:hover path,
+    .search__btn-clear:focus path {
+        stroke: var(--grays1);
+    }
+
+    .predictive-search {
+        position: absolute;
+        display: none;
+        width: 100%;
+        padding: 0 24px;
+        color: var(--grays2);
+        background-color: var(--grays6);
+        border-radius: 0 0 6px 6px;
+        box-shadow: 0 4px 8px 0 rgba(77, 77, 77, 0.10);
+    }
+
+    .predictive-search.opened {
+        display: block;
+    }
+
+    .predictive-search__link {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0;
+    }
+
+    .predictive-search__wrapper {
+        padding: 24px 0 0;
+    }
+
+    .predictive-search__results {
+        display: flex;
+        max-height: 320px;
+        margin: 0 0 0 -40px;
+        overflow: auto;
+    }
+
+    .predictive-search__column {
+        width: 100%;
+        margin: 0 0 0 40px;
+    }
+
+    .predictive-search__row:not(:last-child) {
+        margin: 0 0 40px;
+    }
+
+    .predictive-search img {
+        width: 100px;
+        min-width: 100px;
+        height: 100px;
+        margin: 0 8px 0 0;
+        object-fit: cover;
+    }
+
+    .predictive-search__title {
+        margin: 0 0 24px;
+        padding: 0 0 8px;
+        border-bottom: 1px solid var(--grays4);
+    }
+
+    .predictive-search__info > * {
+        margin: 0 0 6px;
+    }
+
+    .predictive-search__list > li:not(:last-child) {
+        margin: 0 0 8px;
+        padding: 0 0 8px;
+        border-bottom: 1px solid var(--grays4);
+    }
+
+    .predictive-search__published {
+        display: flex;
+    }
+
+    .predictive-search__published span:first-child {
+        position: relative;
+        margin-right: 8px;
+        padding-right: 8px;
+    }
+
+    .predictive-search__published span:first-child::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 1px;
+        height: 14px;
+        background-color: var(--grays4);
+        transform: translateY(-50%);
+    }
+
+    .predictive-search__list a {
+        display: flex;
+        align-items: center;
+    }
+</style>
+
+<div class="search">
+    <div class="container">
+        <form action="{{ routes.search_url }}">
+            <label>
+                {% render "icon-search" %}
+
+                <input placeholder="Search" type="text">
+
+                <span style="display:none;" class="search__btn-clear button-icon">
+                    clear
+                    {% render "icon-close" %}
+                </span>
+            </label>
+
+            <div class="predictive-search">
+                <div class="predictive-search__wrapper">
+                    <div class="predictive-search__results"></div>
+
+                    <div class="predictive-search__error"></div>
+
+                    {% render "loader", type: "dark" %}
+                </div>
+
+                <a href="/search?q=" class="predictive-search__link">
+                    <span>Search for <span class="text"></span></span>
+                    {% render "icon-chevron" %}
+                </a>
+            </div>
+        </form>
+
+        <button class="search__btn-close button-icon">
+            close
+            {% render "icon-close" %}
+        </button>
+    </div>
+</div>
+
+<script type="module">
+    const navigation = document.querySelector(".navigation");
+    const searchLink = navigation.querySelector("a[href='{{ routes.search_url }}']");
+
+    const search = navigation.querySelector(".search");
+    const searchBtnClose = search.querySelector(".search__btn-close");
+    const searchBtnClear = search.querySelector(".search__btn-clear");
+
+    const searchForm = search.querySelector("form[action='{{ routes.search_url }}']");
+    const searchInput = search.querySelector("input");
+
+    const predictiveSearch = search.querySelector(".predictive-search");
+    const searchResults = predictiveSearch.querySelector(".predictive-search__results");
+    const searchError = predictiveSearch.querySelector(".predictive-search__error");
+    const predictiveSearchLink = predictiveSearch.querySelector(".predictive-search__link");
+    const predictiveSearchLinkText = predictiveSearchLink.querySelector(".text");
+
+    const predictiveLoader = predictiveSearch.querySelector(".loader");
+
+    searchLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        search.classList.add("opened");
+    });
+
+    searchBtnClear.addEventListener("click", () => {
+        searchInput.value = "";
+        searchBtnClear.style.display = "none";
+    });
+
+    searchBtnClose.addEventListener("click", () => {
+        search.classList.remove("opened");
+        predictiveSearch.classList.remove("opened");
+    });
+
+    const convertData = (originalTime) => {
+        const dateObj = new Date(originalTime);
+        return dateObj.toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'});
+    };
+
+    const searchItems = async () => {
+        searchResults.innerHTML = "";
+        searchError.textContent = "";
+        predictiveSearchLinkText.textContent = `"${searchInput.value}"`;
+        predictiveSearchLink.href = "{{ routes.search_url }}?q=" + searchInput.value;
+        predictiveSearch.classList.add("opened");
+
+        if (!searchInput.value) {
+            searchError.textContent = "Start typing to search...";
+            return;
+        }
+
+        predictiveLoader.classList.add("isLoading");
+
+        const res = await fetch(`/search/suggest.json?q=${searchInput.value}&resources[type]=collection,product,article`);
+
+        const html = await res.json();
+
+        predictiveLoader.classList.remove("isLoading");
+
+        const {products, collections, articles} = html.resources.results;
+
+        if (products.length === 0 && collections.length === 0 && articles.length === 0) {
+            searchError.textContent = "No results found.";
+            return;
+        }
+
+        const createColumn = (string) => {
+            return string ? `<div class="predictive-search__column">
+                ${string}
+            </div>` : "";
+        };
+
+        const createRow = ({title, items}) => {
+            return `
+                <div class="predictive-search__row">
+                    <h6 class="h6-title predictive-search__title">${title}</h6>
+
+                    <ul class="predictive-search__list">
+                        ${items.map(item => item).join("")}
+                    </ul>
+                </div>
+            `;
+        };
+
+        const createSearchProducts = ({title, items}) => {
+            return items.length ? createRow({
+                title,
+                items: items.map(item => (`
+                    <li>
+                        <a href="${item.url}">
+                            <img src="${item.image}" alt="${item.title}">
+
+                            <div class="predictive-search__info">
+                                <p class="button-text">${item.title}</p>
+                                <span>${"$" + item.price}</span>
+                            </div>
+                        </a>
+                    </li>
+                `))
+            }) : "";
+        };
+
+        const createSearchCollections = ({title, items}) => {
+            return items.length ? createRow({
+                title,
+                items: items.map(item => (`
+                    <li>
+                        <a href="${item.url}">
+                            <img src="${item.featured_image.url}" alt="${item.title}">
+
+                            <div class="predictive-search__info">
+                                <p class="button-text">${item.title}</p>
+                            </div>
+                        </a>
+                    </li>
+                `))
+            }) : "";
+        };
+
+        const createSearchArticles = ({title, items}) => {
+            return items.length ? createRow({
+                title,
+                items: items.map(item => (`
+                    <li>
+                        <a href="${item.url}">
+                            <img src="${item.featured_image.url}" alt="${item.title}">
+
+                            <div class="predictive-search__info">
+                                <p><b>${item.title}</b></p>
+                                <p class="predictive-search__published">
+                                    <span>By ${item.author}</span>
+                                    <span>${convertData(item.published_at)}</span>
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                `))
+            }) : "";
+        };
+
+        const productsBlock = createSearchProducts({title: "Products", items: products});
+        const collectionsBlock = createSearchCollections({title: "Collections", items: collections});
+        const articlesBlock = createSearchArticles({title: "Articles", items: articles});
+
+        const columnFirst = createColumn(productsBlock + collectionsBlock);
+        const columnSecond = createColumn(articlesBlock);
+
+        searchResults.innerHTML = columnFirst + columnSecond;
+    };
+
+    let timer;
+
+    const resetTimerAndRequest = (callback) => {
+        clearTimeout(timer);
+        timer = setTimeout(callback, 1000);
+    };
+
+    searchForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        resetTimerAndRequest(searchItems);
+    });
+
+    searchInput.addEventListener("input", (e) => {
+        const value = e.target.value;
+
+        if (value) {
+            searchBtnClear.style.display = "block";
+        } else {
+            searchBtnClear.style.display = "none";
+        }
+
+        resetTimerAndRequest(searchItems);
+    });
+</script>

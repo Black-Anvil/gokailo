@@ -1,0 +1,65 @@
+<style>
+    .page-medical-review {
+        padding: 80px 0;
+        background-image: url({{ "page-medical-review.png" | asset_url }});
+        background-position: center top;
+        background-size: cover;
+    }
+
+    .page-medical-review__info {
+        position: relative;
+        max-width: 840px;
+        width: 100%;
+        padding: 80px 0 0;
+    }
+
+    .page-medical-review__info svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .page-medical-review__info path {
+        fill: var(--primary5);
+    }
+
+    .page-medical-review__block {
+        margin: 8px 0 0;
+    }
+
+    .page-medical-review__block > *:not(:last-child) {
+        margin: 0 0 24px;
+    }
+
+    .page-medical-review__title {
+        color: var(--primary5);
+    }
+</style>
+
+<section class="page-medical-review">
+    <div class="container">
+        <div class="page-medical-review__info">
+            {% render "icon-quote" %}
+
+            <p><b>The final results from the IRB-approved study demonstrated that</b></p>
+
+            <div class="page-medical-review__block">
+                <h3 class="h3-title page-medical-review__title">
+                    Patients who used Kailo over a period of 30 days showed a vast reduction of their pain severity levels.
+                </h3>
+
+                <p>
+                    They also experienced a better quality of life, improved function, were very satisfied with the Kailo Pain Patch, and preferred the patch over oral pain medications.
+                </p>
+
+                <p>
+                    "With the increased focus on identifying alternative therapies for patients experiencing pain, the use and ongoing research of novel approaches including the non-drug and microtechnology based Kailo patch, seem to have a very positive effect on patients who are experiencing mild, moderate, and chronic pain.”
+                </p>
+
+                <p><b>Jeffrey Gudin, MD | Principal Investigator</b></p>
+
+                <a class="button button--primary" href="#">read medical opinons</a>
+            </div>
+        </div>
+    </div>
+</section>

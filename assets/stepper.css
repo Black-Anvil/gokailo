@@ -1,0 +1,45 @@
+.stepper {
+    display: flex;
+    align-items: center;
+    min-width: 104px;
+    width: 104px;
+}
+
+.stepper > *:not(:last-child) {
+    margin: 0 4px 0 0;
+}
+
+.stepper__counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    min-width: 36px;
+    width: 36px;
+    height: 36px;
+    font-size: 0;
+    border-radius: 50%;
+    border: 1px solid var(--grays4);
+    background-color: var(--grays6);
+    cursor: pointer;
+    transition: border 0.15s linear;
+}
+
+.stepper__counter:hover,
+.stepper__counter:focus {
+    border-color: var(--primary1);
+}
+
+.stepper__counter:hover path,
+.stepper__counter:focus path {
+    stroke: var(--primary1);
+}
+
+.stepper__count {
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+}

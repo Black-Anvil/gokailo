@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+      }
+    },
+    "page-faqs": {
+      "type": "page-faqs",
+      "settings": {
+      }
+    },
+    "home-icons": {
+      "type": "home-icons",
+      "settings": {
+      }
+    },
+    "page-reviews": {
+      "type": "page-reviews",
+      "settings": {
+      }
+    },
+    "page-shop-category": {
+      "type": "page-shop-category",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "page-hero",
+    "page-faqs",
+    "home-icons",
+    "page-reviews",
+    "page-shop-category"
+  ]
+}

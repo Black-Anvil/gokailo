@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
@@ -15,18 +14,19 @@
     <script src="{{ 'shopify_common.js' | asset_url }}" defer="defer"></script>
 
     {% style %}
-        {{ settings.primary_text | font_face }}
-        {{ settings.secondary_text | font_face }}
-        {{ settings.headlines | font_face }}
+        {{ settings.primary_font | font_face }}
+        {{ settings.secondary_font | font_face }}
+        {{ settings.headline_font | font_face }}
 
         :root {
-        --font-weight-primary: {{ settings.primary_text.weight }};
-        --font-family-primary: {{ settings.primary_text.family }}, {{ settings.primary_text.fallback_families }};
+        --font-weight-primary: {{ settings.primary_font.weight }};
+        --font-family-primary: {{ settings.primary_font.family }}, {{ settings.primary_font.fallback_families }};
 
-        --font-family-secondary: {{ settings.secondary_text.family }}, {{ settings.secondary_text.fallback_families }};
+        --font-weight-secondary: {{ settings.secondary_font.weight }};
+        --font-family-secondary: {{ settings.secondary_font.family }}, {{ settings.secondary_font.fallback_families }};
 
-        --font-weight-headlines: {{ settings.headlines.weight }};
-        --font-family-headlines: {{ settings.headlines.family }}, {{ settings.headlines.fallback_families }};
+        --font-weight-headline: {{ settings.headline_font.weight }};
+        --font-family-headline: {{ settings.headline_font.family }}, {{ settings.headline_font.fallback_families }};
 
         --primary1: #2794A8;
         --primary2: #248799;
@@ -86,176 +86,9 @@
         --voided: #CC2944;
         --voided-bg: #FFE5E9;
         }
-
-        .h1-title {
-        font-weight: var(--font-weight-headlines);
-        font-size: 60px;
-        line-height: 68px;
-        text-transform: uppercase;
-        }
-
-        .h2-title {
-        font-weight: var(--font-weight-headlines);
-        font-size: 40px;
-        line-height: 48px;
-        text-transform: uppercase;
-        }
-
-        .h3-title {
-        font-weight: var(--font-weight-headlines);
-        font-size: 30px;
-        line-height: 38px;
-        }
-
-        .h4-title {
-        font-weight: var(--font-weight-headlines);
-        font-size: 24px;
-        line-height: 32px;
-        text-transform: uppercase;
-        }
-
-        .h5-title {
-        font-weight: var(--font-weight-primary);
-        font-size: 18px;
-        line-height: 26px;
-        }
-
-        .h6-title {
-        font-weight: var(--font-weight-primary);
-        font-size: 16px;
-        line-height: 24px;
-        text-transform: uppercase;
-        }
-
-        .small-text {
-        font-size: 13px;
-        line-height: 22px;
-        }
-
-        .caption-text {
-        font-weight: var(--font-weight-primary);
-        font-size: 12px;
-        line-height: 18px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        }
-
-        .button-text {
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 22px;
-        letter-spacing: 0.56px;
-        text-transform: uppercase;
-        }
-
-        .container {
-        --container-padding: 15px;
-        --container-width: 1280px;
-        max-width: calc(var(--container-width) + var(--container-padding) * 2);
-        margin: 0 auto;
-        padding: 0 var(--container-padding);
-        }
-
-        .bg-gray {
-        background-color: var(--grays5);
-        }
-
-        .shopify-challenge__button,
-        .button {
-        position: relative;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        padding: 12px 26px;
-        border-radius: 6px;
-        color: inherit;
-        border: 1px solid transparent;
-        background-color: transparent;
-        text-decoration: none;
-        cursor: pointer;
-        text-align: center;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 22px;
-        letter-spacing: 0.56px;
-        text-decoration: none;
-        text-transform: uppercase;
-        transition: opacity 0.15s linear;
-        }
-
-        .button:disabled {
-        opacity: 0.8;
-        pointer-events: none;
-        }
-
-        .button:hover,
-        .button:focus {
-        text-decoration: none;
-        }
-
-        .button--action {
-        padding: 0;
-        font-size: 15px;
-        font-weight: 700;
-        line-height: 24px;
-        text-transform: none;
-        letter-spacing: normal;
-        border: none;
-        }
-
-        .button--action svg {
-        margin: 0 4px;
-        transform: rotate(90deg);
-        }
-
-        .shopify-challenge__button,
-        .button--primary {
-        color: var(--grays6);
-        border: 1px solid var(--primary1);
-        background-color: var(--primary1);
-        transition: box-shadow 0.15s linear, transform 0.15s linear, background-color 0.15s linear, border 0.15s linear, color 0.15s linear;
-        }
-
-        .shopify-challenge__button:hover,
-        .shopify-challenge__button:focus,
-        .button--primary:hover,
-        .button--primary:focus {
-        transform: translateY(-3px);
-        background-color: var(--primary2);
-        border-color: var(--primary2);
-        box-shadow: 0px 4px 16px 0px rgba(36, 135, 153, 0.20);
-        }
-
-        .button--stroked {
-        color: var(--primary1);
-        border-color: var(--primary1);
-        transition: box-shadow 0.15s linear, transform 0.15s linear, background-color 0.15s linear;
-        }
-
-        .button--stroked:hover,
-        .button--stroked:focus {
-        color: var(--grays6);
-        background-color: var(--primary1);
-        }
-
-        html,
-        body {
-        font-weight: var(--font-weight-primary);
-        font-family: var(--font-family-primary);
-        font-size: 15px;
-        line-height: 24px;
-        color: var(--grays1);
-        background-color: var(--grays6);
-        }
     {% endstyle %}
 
     {{ "index.css" | asset_url | stylesheet_tag }}
-    {{ "header.css" | asset_url | stylesheet_tag }}
-    {{ "footer.css" | asset_url | stylesheet_tag }}
-    {{ "field-block.css" | asset_url | stylesheet_tag }}
-    {{ "pagination.css" | asset_url | stylesheet_tag }}
-    {{ "tags.css" | asset_url | stylesheet_tag }}
-    {{ "breadcrumbs.css" | asset_url | stylesheet_tag }}
 
     {{ content_for_header }}
   <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/6VubeMJ7GY2e0Ai0ynXuSw" async></script>
@@ -266,37 +99,20 @@
     {% sections "header-group" %}
 </header>
 
-<main class="main">
+<main>
     {{ content_for_layout }}
 </main>
 
-<footer class="footer">
-    <div class="container">
-        {% sections "footer-group" %}
-    </div>
-</footer>
+{% sections "footer-group" %}
 
 {% section "cart-drawer" %}
 
-<script src="https://code.jquery.com/jquery-3.7.0.min.js"
-        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-{{ "magnific-popup.min.js" | asset_url | script_tag }}
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+<script src="{{ 'magnific-popup.min.js' | asset_url }}" defer="defer"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-<script>
-    $(document).ready(function () {
-        $('.popup-vimeo').magnificPopup({
-            disableOn: 700,
-            type: 'iframe',
-            mainClass: 'mfp-fade',
-            removalDelay: 160,
-            preloader: false,
-
-            fixedContentPos: false
-        });
-    });
-</script>
-
-<script src="{{ "index.js" | asset_url }}" type="module"></script>
+<script src="{{ "index.js" | asset_url }}"></script>
 </body>
 </html>

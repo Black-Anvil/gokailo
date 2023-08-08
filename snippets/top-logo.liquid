@@ -1,8 +1,29 @@
+<style>
+    .top-logo {
+        color: var(--grays6);
+        background-color: var(--primary5);
+    }
+
+    .top-logo__header {
+        padding: 120px 0 80px;
+        max-width: 1440px;
+        margin: 0 auto;
+        background-image: url({{ "logo-opacity-k.png" | asset_url }});
+        background-repeat: no-repeat;
+    }
+
+    .top-logo__wrapper > *:not(:last-child) {
+        margin: 0 0 16px;
+    }
+</style>
+
 <div class="top-logo">
     <div class="top-logo__header">
         <div class="container">
-            <h2 class="h2-title">{{ title }}</h2>
-            <p>{{ text }}</p>
+            <div class="top-logo__wrapper">
+                <h2 class="h2-title">{{ title }}</h2>
+                <p>{{ count }} {{ text }}</p>
+            </div>
         </div>
     </div>
 </div>

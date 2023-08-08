@@ -1,23 +1,23 @@
 [
   {
-    "name": "t:settings_schema.fonts.label",
+    "name": "Fonts",
     "settings": [
       {
         "type": "font_picker",
-        "id": "primary_text",
-        "label": "t:settings_schema.fonts.settings.primary_text",
+        "id": "primary_font",
+        "label": "Primary Font",
         "default": "montserrat_n5"
       },
       {
         "type": "font_picker",
-        "id": "secondary_text",
-        "label": "t:settings_schema.fonts.settings.secondary_text",
+        "id": "secondary_font",
+        "label": "Secondary Font",
         "default": "montserrat_n6"
       },
       {
         "type": "font_picker",
-        "id": "headlines",
-        "label": "t:settings_schema.fonts.settings.headlines",
+        "id": "headline_font",
+        "label": "Headline Font",
         "default": "montserrat_n7"
       }
     ]

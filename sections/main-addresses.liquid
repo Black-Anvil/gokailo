@@ -1,5 +1,5 @@
 {{ "account.css" | asset_url | stylesheet_tag }}
-
+{{ "field-block.css" | asset_url | stylesheet_tag }}
 {{ "customer.js" | asset_url | script_tag }}
 
 <div class="page-inner bg-gray">
@@ -124,16 +124,16 @@
                                                     <p class="caption-text hidden">Action</p>
 
                                                     <div class="account-card__buttons">
-                                                        <button class="editAddressBtn" type="button">
+                                                        <button class="button-icon editAddressBtn" type="button">
+                                                            Edit
                                                             {% render "icon-edit" %}
-                                                            <span>Edit</span>
                                                         </button>
 
                                                         <form method="post" action="/account/addresses/{{ address.id }}">
                                                             <input type="hidden" name="_method" value="delete">
-                                                            <button type="submit">
+                                                            <button class="button-icon" type="submit">
+                                                                Delete
                                                                 {% render "icon-delete" %}
-                                                                <span>Delete</span>
                                                             </button>
                                                         </form>
                                                     </div>
@@ -228,7 +228,6 @@
         </div>
     </div>
 </div>
-
 
 <script>
     window.addEventListener('load', () => {

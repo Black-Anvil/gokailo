@@ -2,7 +2,9 @@
     Open Vimeo video
 
     {% if btnStatus != "hidden" %}
-        {% render "play-video" %}
+        <span class="play-video">
+            {% render "icon-play" %}
+        </span>
     {% endif %}
 
     <img src="{{ img | asset_url }}" width="{{ width }}" height="{{ height }}" alt="{{ alt }}">

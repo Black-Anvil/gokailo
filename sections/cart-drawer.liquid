@@ -1,11 +1,133 @@
-{{ "cart-drawer.css" | asset_url | stylesheet_tag }}
+<style>
+    .cart-drawer {
+        position: fixed;
+        z-index: 1010;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(77, 77, 77, 0.6);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.15s linear;
+    }
+
+    .cart-drawer.opened {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .cart-drawer.opened .cart-drawer__modal {
+        right: 0;
+    }
+
+    .cart-drawer__modal {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 620px;
+        height: 100%;
+        padding: 0 32px;
+        background-color: var(--grays6);
+        transition: right 0.3s linear;
+    }
+
+    .cart-drawer__header {
+        display: flex;
+        padding: 32px 0;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--grays4);
+    }
+
+    .cart-drawer__btn-close:focus path,
+    .cart-drawer__btn-close:hover path {
+        stroke: var(--grays1);
+    }
+
+    .cart-drawer__btn-delete:focus path,
+    .cart-drawer__btn-delete:hover path {
+        stroke: var(--system-error);
+    }
+
+    .cart-drawer__footer {
+        padding: 32px 0;
+        border-top: 1px solid var(--grays4);
+    }
+
+    .cart-drawer__buttons {
+        display: flex;
+    }
+
+    .cart-drawer__buttons > * {
+        width: 100%;
+    }
+
+    .cart-drawer__buttons > *:not(:last-child) {
+        margin: 0 16px 0 0;
+    }
+
+    .cart-drawer__total {
+        margin: 0 0 16px;
+    }
+
+    .cart-drawer__total > li {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .cart-drawer__list {
+        margin: 0 0 -1px 0;
+    }
+
+    .cart-drawer__empty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .cart-drawer__body {
+        flex-grow: 1;
+        overflow: auto;
+    }
+
+    .cart-drawer__preview {
+        display: flex;
+        align-items: center;
+        margin: 0 4px;
+        padding: 24px 0;
+        border-bottom: 1px solid var(--grays4);
+    }
+
+    .cart-drawer__preview img {
+        width: 64px;
+        min-width: 64px;
+        height: 64px;
+        object-fit: cover;
+    }
+
+    .cart-drawer__preview > *:not(:last-child) {
+        margin-right: 16px;
+    }
+
+    .cart-drawer__price {
+        margin-left: auto;
+    }
+</style>
+
+{{ "stepper.css" | asset_url | stylesheet_tag }}
+{{ "loader.css" | asset_url | stylesheet_tag }}
 
 {% form "cart", cart, class: "cart-drawer" %}
     <div class="cart-drawer__modal">
         <div class="cart-drawer__header">
             <p class="h5-title">Cart</p>
 
-            <button type="button" id="cart-drawer-close" class="cart-drawer__btn-icon">
+            <button type="button" id="cart-drawer-close" class="cart-drawer__btn-close button-icon">
                 close
                 {% render "icon-close" %}
             </button>
@@ -19,24 +141,12 @@
                     {% for item in cart.items %}
                         <div class="cart-drawer__preview" data-item-key="{{ item.key }}">
                             <img src="{{ item.image | img_url: "64x" }}" alt="{{ item.title }}">
-                            <a href="{{ item.product.url }}">{{ item.product.title }}</a>
-                            <span class="cart-drawer__preview-price">{{ item.price | money }}</span>
+                            <a class="link" href="{{ item.product.url }}">{{ item.product.title }}</a>
+                            <span class="cart-drawer__price"><b>{{ item.price | money }}</b></span>
 
-                            <div class="stepper">
-                                <button type="button" class="stepper__counter decrement">
-                                    minus
-                                    {% render "icon-minus" %}
-                                </button>
+                            {% render "stepper", quantity: item.quantity %}
 
-                                <input name="quantity" readonly value="{{ item.quantity }}" class="stepper__count button-text">
-
-                                <button  type="button" class="stepper__counter increment">
-                                    plus
-                                    {% render "icon-plus" %}
-                                </button>
-                            </div>
-
-                            <button type="button" class="cart-drawer__btn-icon cart-drawer-delete">
+                            <button type="button" class="button-icon cart-drawer__btn-delete">
                                 delete
                                 {% render "icon-delete" %}
                             </button>
@@ -45,7 +155,7 @@
                 </div>
             {% endif %}
 
-            <span class="loader">loading...</span>
+            {% render "loader", type: "overlay" %}
         </div>
 
         <div class="cart-drawer__footer">
@@ -63,3 +173,145 @@
         </div>
     </div>
 {% endform %}
+
+<script>
+    const cartDrawer = document.querySelector(".cart-drawer");
+    const cartDrawerOpeners = document.querySelectorAll(".cart-drawer-opener");
+
+    const openCartDrawer = () => {
+        document.body.style.overflow = "hidden";
+        cartDrawer.classList.add("opened");
+    };
+
+    const closeCartDrawer = () => {
+        document.body.style.overflow = "";
+        cartDrawer.classList.remove("opened");
+    };
+
+    cartDrawerOpeners.forEach(btn => {
+        btn.addEventListener("click", async (e) => {
+            e.preventDefault();
+            openCartDrawer();
+        });
+    });
+
+    cartDrawer.addEventListener("click", (e) => {
+        const isOverlay = e.target.classList.contains("cart-drawer");
+        const isCloseButton = e.target.id === "cart-drawer-close";
+
+        if (isOverlay || isCloseButton) {
+            closeCartDrawer();
+        }
+    });
+
+    const addCartDrawerListeners = () => {
+        const listItems = cartDrawer.querySelectorAll(".cart-drawer__preview");
+
+        listItems.forEach(item => {
+            const key = item.dataset.itemKey;
+
+            const deleteBtn = item.querySelector(".cart-drawer__btn-delete");
+
+            const stepper = item.querySelector(".stepper");
+            const increment = item.querySelector(".increment");
+            const decrement = item.querySelector(".decrement");
+            const stepperInput = stepper.querySelector("input");
+            const quantity = Number(stepperInput.value);
+
+            const updateQuantity = async (newQuantity) => {
+                const res = await fetch("/cart/update.js", {
+                    method: "POST",
+                    headers: {
+                        "Accept": "application/json",
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({updates: {[key]: newQuantity}})
+                });
+
+                return await res.json();
+            };
+
+            const changeQuantity = async (quantity) => {
+                const cartDrawer = document.querySelector(".cart-drawer");
+                const cartDrawerLoader = cartDrawer.querySelector(".loader");
+
+                cartDrawerLoader.classList.add("isLoading");
+
+                const cart = await updateQuantity(quantity);
+                await updateCartDrawer();
+
+                try {
+                    if (updateCart) {
+                        await updateCart();
+                    }
+                } catch (e) {
+                    console.log(e);
+                }
+
+                cartDrawerLoader.classList.remove("isLoading");
+
+                updateCartCounter(cart);
+            };
+
+            deleteBtn.addEventListener("click", () => {
+                changeQuantity(0);
+            });
+
+            increment.addEventListener("click", () => {
+                changeQuantity(quantity + 1);
+            });
+
+            decrement.addEventListener("click", async () => {
+                changeQuantity(quantity - 1);
+            });
+        });
+    };
+
+    const updateCartDrawer = async () => {
+        const res = await fetch("/?section_id=cart-drawer");
+        const text = await res.text();
+
+        const html = document.createElement("div");
+        html.innerHTML = text;
+
+        cartDrawer.innerHTML = html.querySelector(".cart-drawer").innerHTML;
+
+        addCartDrawerListeners();
+    };
+
+    const addItemToCart = async (form) => {
+        const cartDrawer = document.querySelector(".cart-drawer");
+        const cartDrawerLoader = cartDrawer.querySelector(".loader");
+
+        cartDrawerLoader.classList.add("isLoading");
+
+        await fetch("/cart/add", {
+            method: "POST",
+            body: new FormData(form),
+        });
+
+        const res = await fetch("/cart.json");
+        const cart = await res.json();
+
+        updateCartCounter(cart);
+
+        await updateCartDrawer();
+
+        cartDrawerLoader.classList.remove("isLoading");
+    };
+
+    addCartDrawerListeners();
+
+    const formsCartAdd = document.querySelectorAll("form[action='/cart/add']");
+
+    if (formsCartAdd.length !== 0) {
+        formsCartAdd.forEach(form => {
+            form.addEventListener("submit", async (e) => {
+                e.preventDefault();
+
+                openCartDrawer();
+                await addItemToCart(form);
+            });
+        });
+    }
+</script>

@@ -1,0 +1,13 @@
+<div class="stepper">
+    <button type="button" class="stepper__counter decrement">
+        minus
+        {% render "icon-minus" %}
+    </button>
+
+    <input name="quantity" readonly value="{{ quantity }}" class="stepper__count button-text">
+
+    <button type="button" class="stepper__counter increment">
+        plus
+        {% render "icon-plus" %}
+    </button>
+</div>

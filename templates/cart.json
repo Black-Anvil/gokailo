@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "main-cart": {
+      "type": "main-cart",
+      "settings": {
+      }
+    },
+    "page-single-review": {
+      "type": "page-single-review",
+      "settings": {
+      }
+    },
+    "page-faq-small": {
+      "type": "page-faq-small",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main-cart",
+    "page-single-review",
+    "page-faq-small"
+  ]
+}

@@ -1,0 +1,95 @@
+.accordion {
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+}
+
+.accordion__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: transparent;
+    color: inherit;
+    cursor: pointer;
+    border: none;
+}
+
+.accordion__header > *:not(:last-child) {
+    margin: 0 16px 0 0;
+}
+
+.accordion__header .button-icon {
+    transform: rotate(90deg);
+    transition: transform 0.15s linear;
+}
+
+.accordion__header path {
+    stroke: var(--grays6);
+}
+
+.accordion__body {
+    display: none;
+    padding: 12px 0 0;
+}
+
+.accordion__icon {
+    position: relative;
+    min-width: 36px;
+    width: 36px;
+    height: 36px;
+    border-radius: 90px;
+    border: 1px solid var(--grays4);
+}
+
+.accordion__icon::after,
+.accordion__icon::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 2px;
+    background-color: var(--grays2);
+    border-radius: 2px;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.15s linear, background-color 0.15s linear;
+}
+
+.accordion__icon::before {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.accordion.opened .accordion__icon::after,
+.accordion.opened .accordion__icon::before {
+    background-color: var(--primary2);
+}
+
+.accordion.opened .accordion__icon::before {
+    opacity: 0;
+}
+
+.accordion.opened .button-icon {
+    transform: rotate(270deg);
+}
+
+.accordion.opened .accordion__body {
+    display: block;
+}
+
+
+.accordion--secondary .accordion__header {
+    font-weight: 700;
+}
+
+.accordion--secondary {
+    border-bottom: 1px solid var(--grays4);
+}
+
+.accordion--big {
+    padding: 32px 0;
+}
+
+.accordion--big .accordion__body {
+    padding: 24px 0 0;
+}

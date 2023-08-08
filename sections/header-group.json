@@ -7,14 +7,14 @@
       "settings": {
       }
     },
-    "header": {
-      "type": "header",
+    "header-navigation": {
+      "type": "header-navigation",
       "settings": {
       }
     }
   },
   "order": [
     "header-announcement-bar",
-    "header"
+    "header-navigation"
   ]
 }

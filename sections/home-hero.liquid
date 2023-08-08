@@ -1,4 +1,47 @@
-{{ "hero.css" | asset_url | stylesheet_tag }}
+<style>
+    .hero {
+        position: relative;
+        color: var(--grays6);
+        background-color: var(--primary5);
+        overflow: hidden;
+    }
+
+    .hero__block {
+        padding: 150px 0 125px;
+    }
+
+    .hero__item {
+        width: 100%;
+        max-width: 620px;
+    }
+
+    .hero__item > *:not(:last-child) {
+        margin: 0 0 40px;
+    }
+
+    .hero__item-bg {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .hero__pagination {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+    }
+</style>
 
 <section class="hero">
     <div class="hero__swiper">
@@ -8,12 +51,12 @@
                     <div class="container">
                         <div class="hero__item">
                             <h2 class="h1-title">the future of pain relief</h2>
-                            <img class="hero__item-image" src="{{ "hero-image-1.png" | asset_url }}" alt="as seen on">
+                            <img class="hero__item-image" src="{{ "hero-image.png" | asset_url }}" alt="as seen on">
                             <a class="button button--primary" href="{{ routes.all_products_collection_url }}">shop now</a>
                         </div>
                     </div>
 
-                    <video class="hero__item-video" autoplay loop muted src="{{ "KailoFlexVignette.webm" | asset_url }}"></video>
+                    <video class="hero__item-bg" autoplay loop muted src="{{ "KailoFlexVignette.webm" | asset_url }}"></video>
                 </div>
             </div>
 
@@ -22,12 +65,12 @@
                     <div class="container">
                         <div class="hero__item">
                             <h2 class="h1-title">the future of pain relief</h2>
-                            <img class="hero__item-image" src="{{ "hero-image-1.png" | asset_url }}" alt="as seen on">
+                            <img class="hero__item-image" src="{{ "hero-image.png" | asset_url }}" alt="as seen on">
                             <a class="button button--primary" href="{{ routes.all_products_collection_url }}">shop now</a>
                         </div>
                     </div>
 
-                    <video class="hero__item-video" autoplay loop muted src="{{ "KailoFlexVignette.webm" | asset_url }}"></video>
+                    <video class="hero__item-bg" autoplay loop muted src="{{ "KailoFlexVignette.webm" | asset_url }}"></video>
                 </div>
             </div>
         </div>

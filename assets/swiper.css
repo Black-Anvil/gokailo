@@ -63,3 +63,33 @@
 .swiper-pagination--vertical .swiper-pagination-bullet:last-child {
     margin-bottom: 0 !important;
 }
+
+.swiper-initialized {
+    position: relative;
+}
+
+.swiper-initialized .swiper-button-next,
+.swiper-initialized .swiper-button-prev {
+    position: absolute;
+    top: calc(50% + 16px);
+    transform: translateY(-50%);
+}
+
+.swiper-initialized .swiper-button-next {
+    right: 0;
+}
+
+.swiper-initialized .swiper-button-prev {
+    left: 0;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.swiper-initialized .swiper-button-next path,
+.swiper-initialized .swiper-button-prev path {
+    stroke: var(--grays6);
+}
+
+.swiper-initialized .swiper-button-next::after,
+.swiper-initialized .swiper-button-prev::after {
+    content: none;
+}

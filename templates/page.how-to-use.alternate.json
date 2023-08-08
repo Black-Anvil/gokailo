@@ -1,0 +1,48 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+      }
+    },
+    "page-tabs": {
+      "type": "page-tabs",
+      "settings": {
+      }
+    },
+    "page-suggestions": {
+      "type": "page-suggestions",
+      "settings": {
+      }
+    },
+    "page-apply": {
+      "type": "page-apply",
+      "settings": {
+      }
+    },
+    "home-icons": {
+      "type": "home-icons",
+      "settings": {
+      }
+    },
+    "page-reviews": {
+      "type": "page-reviews",
+      "settings": {
+      }
+    },
+    "page-shop-category": {
+      "type": "page-shop-category",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "page-hero",
+    "page-tabs",
+    "page-suggestions",
+    "page-apply",
+    "home-icons",
+    "page-reviews",
+    "page-shop-category"
+  ]
+}

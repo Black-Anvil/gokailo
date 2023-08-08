@@ -1,4 +1,64 @@
-{{ "home-products.css" | asset_url | stylesheet_tag }}
+<style>
+    .home-products {
+        padding: 100px 0;
+        color: var(--grays1);
+        background-color: var(--grays6);
+    }
+
+    .home-products__header {
+        margin: 0 0 40px;
+        text-align: center;
+        color: var(--primary5);
+    }
+
+    .home-products__header > *:not(:last-child) {
+        margin: 0 0 24px;
+    }
+
+    .home-products__list {
+        display: flex;
+        justify-content: center;
+    }
+
+    .home-products__list > li {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        max-width: 520px;
+    }
+
+    .home-products__list > li {
+        padding: 0 48px;
+    }
+
+    .home-products__list > li:not(:last-child) {
+        border-right: 1px solid var(--grays4);
+    }
+
+    .home-products__list .button {
+        margin: auto 0 0;
+    }
+
+    .home-products__sublist {
+        flex-grow: 1;
+        margin: 32px 0;
+        color: var(--primary2);
+        text-align: center;
+        border-bottom: 1px solid var(--grays4);
+    }
+
+    .home-products__sublist > li {
+        margin: 0 0 24px;
+    }
+
+    .home-products__info {
+        text-align: center;
+    }
+
+    .home-products__info > *:not(:last-child) {
+        margin: 0 0 8px;
+    }
+</style>
 
 <section class="home-products">
     <div class="container">
@@ -10,7 +70,7 @@
         <ul class="home-products__list">
             <li>
                 <div class="home-products__item">
-                    <img src="{{ "product1-delete.png" | asset_url }}" alt="">
+                    <img src="{{ "home-products-1.png" | asset_url }}" alt="">
 
                     <div class="home-products__info">
                         <h3 class="h6-title">Kailo™ Original</h3>
@@ -30,7 +90,7 @@
             </li>
 
             <li>
-                <img src="{{ "product2-delete.png" | asset_url }}" alt="">
+                <img src="{{ "home-products-2.png" | asset_url }}" alt="">
 
                 <div class="home-products__info">
                     <h3 class="h6-title">Kailo™ Original</h3>

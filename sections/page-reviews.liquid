@@ -1,0 +1,124 @@
+<style>
+    .page-reviews {
+        padding: 80px 0;
+        color: var(--grays6);
+        background-color: var(--primary5);
+    }
+
+    .page-reviews__swiper {
+        overflow: hidden;
+    }
+
+    .page-reviews__slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 840px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 24px;
+    }
+
+    .page-reviews blockquote {
+        margin: 0 0 32px;
+    }
+
+    .page-reviews .star {
+        margin: 0 0 16px;
+    }
+
+    .page-reviews .star path {
+        fill: var(--primary1);
+    }
+
+    .page-reviews__author > *:not(:last-child) {
+        margin: 0 0 4px;
+    }
+
+    .page-reviews .swiper-pagination {
+        justify-content: center;
+        margin: 64px 0 0;
+    }
+</style>
+
+{{ "star.css" | asset_url | stylesheet_tag }}
+
+<section class="page-reviews">
+    <div class="container">
+        <div class="page-reviews__swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <figure class="page-reviews__slide">
+                        <blockquote>
+                            <p class="h5-title">
+                                "I had lung surgery 5 years ago and have been in pain every day since (nerve damage
+                                they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve
+                                pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been
+                                wearing two Kailo patches now for about 2 months and haven't taken a pain pill the
+                                entire time. THANK YOU KAILO!"
+                            </p>
+                        </blockquote>
+
+                        {% render "star-review", star: 5 %}
+
+                        <figcaption class="page-reviews__author">
+                            <span><b>Mauricio C.</b></span>
+                            <span>Verified Buyer | 09/09/21</span>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="swiper-slide">
+                    <figure class="page-reviews__slide">
+                        <blockquote>
+                            <p class="h5-title">
+                                "I had lung surgery 5 years ago and have been in pain every day since (nerve damage
+                                they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve
+                                pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been
+                                wearing two Kailo patches now for about 2 months and haven't taken a pain pill the
+                                entire time. THANK YOU KAILO!"
+                            </p>
+                        </blockquote>
+
+                        {% render "star-review", star: 5 %}
+
+                        <figcaption class="page-reviews__author">
+                            <span><b>Mauricio C.</b></span>
+                            <span>Verified Buyer | 09/09/21</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="swiper-button-prev button-icon">
+                {% render "icon-chevron" %}
+            </div>
+            <div class="swiper-button-next button-icon">
+                {% render "icon-chevron" %}
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+
+<script type="module">
+    const swiper = new Swiper('.page-reviews__swiper', {
+        slidesPerView: 1,
+        spaceBetween: 32,
+
+        autoHeight: true,
+
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>
