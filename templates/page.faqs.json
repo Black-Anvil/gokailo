@@ -1,0 +1,174 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+        "caption": "about kailo",
+        "title": "FREQUENTLY ASKED QUESTIONS…",
+        "description": "<p>Have questions? We have all the answers.<\/p>",
+        "image_background": "shopify:\/\/shop_images\/faq-page.png",
+        "link_url": "\/",
+        "link_text": "read more"
+      }
+    },
+    "faq-list": {
+      "type": "faq-list",
+      "blocks": {
+        "384069f5-ebdb-4dbf-afcc-5985defc2a12": {
+          "type": "kailo_work",
+          "settings": {
+            "title": "How does the Kailo work?",
+            "description": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage.  Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
+          }
+        },
+        "d4ec83ac-88db-497b-a005-791780966f12": {
+          "type": "kailo_work",
+          "settings": {
+            "title": "Do you plug them in? Is there a battery?",
+            "description": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage.  Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
+          }
+        },
+        "68263456-3f42-415b-b09f-f8d91b81147d": {
+          "type": "specific_condition",
+          "settings": {
+            "title": "Will Kailo help with my specific ailment?",
+            "description": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage.  Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
+          }
+        },
+        "01604c71-1f5d-472f-8a38-6b689c7f3be8": {
+          "type": "specific_condition",
+          "settings": {
+            "title": "What if Kailo doesn't work for me?",
+            "description": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage.  Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
+          }
+        },
+        "2f43021d-388f-48a8-adb4-ebe13ea131b5": {
+          "type": "logistical_questions",
+          "settings": {
+            "title": "Where is Kailo located?",
+            "description": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage.  Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
+          }
+        },
+        "55b568fe-56da-4e7a-b7d7-beff0d9902ca": {
+          "type": "logistical_questions",
+          "settings": {
+            "title": "Do you ship internationally?",
+            "description": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage.  Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "384069f5-ebdb-4dbf-afcc-5985defc2a12",
+        "d4ec83ac-88db-497b-a005-791780966f12",
+        "68263456-3f42-415b-b09f-f8d91b81147d",
+        "01604c71-1f5d-472f-8a38-6b689c7f3be8",
+        "2f43021d-388f-48a8-adb4-ebe13ea131b5",
+        "55b568fe-56da-4e7a-b7d7-beff0d9902ca"
+      ],
+      "settings": {
+        "title_1": "How Does the Kailo Work?",
+        "title_2": "Will Kailo Help my Specific Condition?",
+        "title_3": "Do you Have Logistical Questions?"
+      }
+    },
+    "icon-list": {
+      "type": "icon-list",
+      "blocks": {
+        "43c79d2a-f330-436b-a3d6-d7adcfa758a0": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "2a2f7184-0acd-406c-a582-e58da68415a4": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "4b7b552b-3a57-478c-8935-4216b272c2d8": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "6785c4ab-83cc-4a6d-b481-8d48542b1a28": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "e69dac7a-9502-4726-bdcd-395da514664f": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "87c54079-f0a0-48a8-ab69-5c1a7a2b0686": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        }
+      },
+      "block_order": [
+        "43c79d2a-f330-436b-a3d6-d7adcfa758a0",
+        "2a2f7184-0acd-406c-a582-e58da68415a4",
+        "4b7b552b-3a57-478c-8935-4216b272c2d8",
+        "6785c4ab-83cc-4a6d-b481-8d48542b1a28",
+        "e69dac7a-9502-4726-bdcd-395da514664f",
+        "87c54079-f0a0-48a8-ab69-5c1a7a2b0686"
+      ],
+      "settings": {
+        "background_color": "#2794a8"
+      }
+    },
+    "reviews-block": {
+      "type": "reviews-block",
+      "blocks": {
+        "6831fa99-b783-442b-a615-a8f22919d82f": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "stars": 5,
+            "author_name": "Mauricio C.",
+            "author_info": "Verified Buyer | 09\/09\/21"
+          }
+        },
+        "77c26a17-246d-41d4-b9cb-f35b1c97013b": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "stars": 5,
+            "author_name": "Mauricio C.",
+            "author_info": "Verified Buyer | 09\/09\/21"
+          }
+        }
+      },
+      "block_order": [
+        "6831fa99-b783-442b-a615-a8f22919d82f",
+        "77c26a17-246d-41d4-b9cb-f35b1c97013b"
+      ],
+      "settings": {
+      }
+    },
+    "shop-category": {
+      "type": "shop-category",
+      "settings": {
+        "title": "shop by category",
+        "collection_list": [
+          "frontpage",
+          "last-test",
+          "test-1"
+        ]
+      }
+    }
+  },
+  "order": [
+    "page-hero",
+    "faq-list",
+    "icon-list",
+    "reviews-block",
+    "shop-category"
+  ]
+}

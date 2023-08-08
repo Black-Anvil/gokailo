@@ -74,6 +74,7 @@ path {
     background-color: var(--primary1);
 }
 
+.content h1,
 .h1-title {
     font-weight: var(--font-weight-headline);
     font-size: 60px;
@@ -81,6 +82,7 @@ path {
     text-transform: uppercase;
 }
 
+.content h2,
 .h2-title {
     font-weight: var(--font-weight-headline);
     font-size: 40px;
@@ -88,12 +90,14 @@ path {
     text-transform: uppercase;
 }
 
+.content h3,
 .h3-title {
     font-weight: var(--font-weight-headline);
     font-size: 30px;
     line-height: 38px;
 }
 
+.content h4,
 .h4-title {
     font-weight: var(--font-weight-headline);
     font-size: 24px;
@@ -101,12 +105,14 @@ path {
     text-transform: uppercase;
 }
 
+.content h5,
 .h5-title {
     font-weight: var(--font-weight-primary);
     font-size: 18px;
     line-height: 26px;
 }
 
+.content h6,
 .h6-title {
     font-weight: var(--font-weight-primary);
     font-size: 16px;
@@ -116,8 +122,9 @@ path {
 
 .title-decorator {
     position: relative;
-    text-align: center;
     padding: 0 0 24px;
+    text-align: center;
+    color: var(--primary5);
 }
 
 .title-decorator::before {
@@ -229,7 +236,7 @@ path {
     transform: translateY(-3px);
     background-color: var(--primary2);
     border-color: var(--primary2);
-    box-shadow: 0px 4px 16px 0px rgba(36, 135, 153, 0.20);
+    box-shadow: 0 4px 16px 0 rgba(36, 135, 153, 0.20);
 }
 
 .button--stroked {
@@ -242,6 +249,25 @@ path {
 .button--stroked:focus {
     color: var(--grays6);
     background-color: var(--primary1);
+}
+
+.button-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0 12px 32px;
+}
+
+.button-link::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 24px;
+    height: 1px;
+    background-color: var(--grays6);
+    transform: translateY(-50%);
 }
 
 .header {
@@ -264,4 +290,50 @@ path {
 
 .page-inner {
     padding: 150px 0 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .page-inner {
+        padding: 100px 0 80px;
+    }
+
+    .content h1,
+    .h1-title {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .content h2,
+    .h2-title {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .content h3,
+    .h3-title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .content h4,
+    .h4-title {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .content h5,
+    .h5-title {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .content h6,
+    .h6-title {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .title-decorator {
+        padding: 0 0 16px;
+    }
 }

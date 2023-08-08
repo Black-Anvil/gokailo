@@ -1,53 +1,317 @@
-{{ "product.css" | asset_url | stylesheet_tag }}
+<style>
+    .product {
+        color: var(--grays2);
+    }
+
+    .product .breadcrumbs {
+        margin: 0 0 40px;
+    }
+
+    .product__wrapper {
+        display: flex;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .product__images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        max-width: 840px;
+    }
+
+    .product__images img {
+        object-fit: cover;
+    }
+
+    .product__info {
+        max-width: 400px;
+    }
+
+    .product__info-header > *:not(:last-child) {
+        margin: 0 0 8px;
+    }
+
+    .product__info-header {
+        margin: 0 0 24px;
+    }
+
+    .product__info-form > *:not(:last-child) {
+        margin: 0 0 24px;
+    }
+
+    .product__info-body > *:not(:last-child) {
+        margin: 0 0 32px;
+    }
+
+    .product__info-price {
+        margin: 0 0 24px;
+    }
+
+    .product__swiper {
+        display: none;
+        overflow: hidden;
+    }
+
+    .product__swiper .swiper-slide {
+        display: flex;
+        align-items: center;
+    }
+
+    .product__swiper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .product__swiper .swiper-pagination {
+        justify-content: center;
+        margin-top: 24px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .product .breadcrumbs {
+            margin: 0 0 24px;
+        }
+
+        .product__images {
+            display: none;
+        }
+
+        .product__swiper {
+            display: block;
+            margin-bottom: 40px;
+        }
+
+        .product__wrapper {
+            display: block;
+        }
+
+        .product__images {
+            max-width: 100%;
+        }
+
+        .product__info {
+            max-width: 100%;
+        }
+
+        .product__info-header {
+            margin: 0 0 16px;
+        }
+
+        .product__info-form > *:not(:last-child) {
+            margin: 0 0 16px;
+        }
+
+        .product__info-price {
+            margin: 0 0 16px;
+        }
+    }
+</style>
 
 <div class="page-inner">
     <div class="product">
         <div class="container">
-            <div class="breadcrumbs">
-                <a href="{{ routes.root_url }}">Home</a>
-                <a href="{{ routes.collections_url }}">Collections</a>
-                <a>{{ product.title }}</a>
-            </div>
+            {% render "breadcrumbs", prevUrl: routes.collections_url, prevName: "Collections", current: product.title %}
 
             <div class="product__wrapper">
+                <div class="product__swiper">
+                    <div class="swiper-wrapper">
+                        {% for image in product.images %}
+                            <div class="swiper-slide">
+                                {{ image | image_url: width: 400 | image_tag: alt: image.alt }}
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="swiper-pagination primary"></div>
+                </div>
+
                 <ul class="product__images">
                     {% for image in product.images %}
                         <li>
                             {{ image | image_url: width: 400 | image_tag: alt: image.alt }}
                         </li>
-                        <li>
-                            {{ image | image_url: width: 400 | image_tag: alt: image.alt }}
-                        </li>
                     {% endfor %}
                 </ul>
+
                 <div class="product__info">
                     <div class="product__info-header">
                         <h2 class="h2-title">{{ product.title }}</h2>
+                        <div class="yotpo bottomLine"
+                             data-appkey="vzvnSVMnInK45LS8EULZhISavZPQwk111Cmo1atm"
+                             data-domain="{{shop.permanent_domain | escape }}"
+                             data-product-id="{{ product.id }}"
+                             data-product-models="{{ product.id }}"
+                             data-name="{{ product.title | escape }}"
+                             data-url="{{ shop.url }}{{ product.url }}"
+                             data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+                             data-description="{{ product.description | escape }}"
+                             data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+                        </div>
                     </div>
+
 
                     <div class="h3-title product__info-price">
                         {% render "compare-product-price", product: product %}
                     </div>
 
-                    <div class="product__info-body">
-                        {% form "product", product, class: "product__info-form" %}
-                            <select style="display: none;" name="id">
-                                {% for variant in product.variants %}
-                                    <option value={{ variant.id }}>
-                                        {{ variant.title }}
-                                    </option>
-                                {% endfor %}
-                            </select>
+                    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                        <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+                        <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
 
-                            {% comment %}{% render "stepper", product: product %}{% endcomment %}
+                        {% form 'product', product, data-productid: product.id %}
+                            <div style='margin: 0 0 16px'>
+                                <p>Free Shipping in the US!</p>
+                                <p>Shipping calculated at checkout.</p>
+                            </div>
 
-                            <button class="button button--primary" type="submit">Add to Cart</button>
+                            <div class="form__row{% if product.has_only_default_variant and product.available == false %} form__row--no-variants-sold-out{% endif %}">
+                                <select style='display: none;' name="id" data-productid="{{ product.id }}" id="productSelect-{{ section.id }}" class="product-single__variants">
+                                    {% for variant in product.variants %}
+                                        {% if variant.available %}
+
+                                            <option {% if variant == current_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+
+                                        {% else %}
+                                            <option disabled="disabled">
+                                                {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                                            </option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+
+                                <div id="quantity-selector-{{ section.id }}" class="field-block form__column quantity-selector">
+                                    <label for="Quantity" class="quantity-selector">Quantity</label>
+                                    <input type="number" id="Quantity" name="quantity" value="1" min="1" class="qty-remove-defaults quantity-selector">
+                                </div>
+
+                                <div class="form__column{% if section.settings.enable_payment_button %} form__column--shopify-payment-btn{% endif %}">
+                                    <label>&nbsp;</label>
+                                    {% if bundle_discount == 'true' %}
+                                        <a href="#bundle-discount" class="inline-popup product-link bundle_discont addtocart btn btn--fill btn--regular btn--color btn--shopify-payment-btn btn--secondary-accent cartbutton" style="text-align:center;">Add to cart</a>
+                                        <div id="bundle-discount" class="white-popup mfp-hide">
+                                            <div class="popup-inner toggle-me">
+                                                <div>
+                                                    <span class="special">Special Offer!</span>
+                                                    <div class="rate">
+                                                        <span class="number">45</span>
+                                                        <span class="percent">%</span>
+                                                        <span class="off">OFF</span>
+                                                    </div>
+                                                    <img class="special-image lazyload" data-src="https://cdn.shopify.com/s/files/1/0121/1537/8238/files/kailo-b1-01_0bd95b4e-2f90-4e71-82c1-0e17776dd16a_500x.jpg?v=1651516940" width="250" />
+                                                </div>
+                                                <div>
+                                                    <span class="act-now">Act Now and Get...</span>
+                                                    <span class="offer">1 More Kailo bundle for 45% OFF!</span>
+                                                    <br><span class="original-price">$119 Value</span>
+                                                    <span class="new-price">Special Add-on Price = $65.45!</span>
+                                                    <div class="yes-bundle">
+                                                        <a class="popup-button toggle-me" data-bundle="32251489255555" style="font-size:1em;">
+                                                            <span>Yes, Get My 45% Saving</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="no-thanks"><a data-bundle="false">No Thank You</a></div>
+                                                </div>
+                                            </div>
+                                            <div class="popup-inner toggle-me hidden">
+                                                <div>
+                                                    <span class="special">Adhesive 10 Pack | Kailo Patch Adhesives</span>
+                                                    <center><img class="special-image lazyload" data-src="https://cdn.shopify.com/s/files/1/0121/1537/8238/products/kailo-pain-relief-adheasive-10pack_500x.jpg?v=1601653525" width="450" /></center>
+                                                </div>
+                                                <div>
+                                                    <span class="act-now">Need Adhesives?</span>
+                                                    <span class="offer">Add a 10 Pack Kailo Patch Adhesives to my order</span>
+                                                    <span class="new-price">Price = $24.99</span>
+                                                    <div class="yes-bundle">
+                                                        <a class="popup-button toggle-me" data-bundle="20859019427902" style="font-size:1em;">
+                                                            <span>Yes, Add Kailo Patch Adhesives</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="no-thanks"><a data-bundle="false">No Thank You</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        <div class="ro_widget"></div>
+                                        <button type="submit" name="add" id="AddToCart-{{ section.id }}" class="button button--primary addtocart btn btn--fill btn--regular btn--color{% if section.settings.enable_payment_button %} btn--shopify-payment-btn btn--secondary-accent{% endif %}" "pintrk('track', 'addtocart', {value:1 {{ product.selected_variant.price | money_without_currency}}, order_quantity: 1});">
+                                        <span id="AddToCartText-{{ section.id }}">Add to cart</span>
+                                        </button>
+                                    {% endif %}
+                                    {% if product.available %}
+                                        <div id="bread-checkout-btn-product" style="width:100%; height:50px; margin:20px 0px;"></div>
+                                    {% endif %}
+                                    {% if section.settings.enable_payment_button %}
+                                        {% comment %} {{ form | payment_button }} {% endcomment %}
+                                        <script>
+                                            function buy_it_now_submit()
+                                            {
+                                                var url = new URL(window.location.href);
+                                                var v = url.searchParams.get("variant");
+                                                var variant_id = (v) ? v : '{{ current_variant.id }}';
+                                                var quantity = $("#Quantity").val();
+
+                                                var href = 'https://'+ window.location.host +'/cart/' + variant_id +':' + quantity;
+                                                location.href= href;
+                                            }
+                                        </script>
+
+                                        <div class="shopify-payment-button">
+                                            <div class="shopify-cleanslate">
+                                                {% if bundle_discount == 'true' %}
+                                                    <a href="#bundle-discount" class="inline-popup product-link bundle_discont addtocart btn btn--fill btn--regular btn--color btn--shopify-payment-btn btn--secondary-accent cartbutton" style="text-align:center;">Buy it now</a>
+                                                {% else %}
+                                                    <button onclick="buy_it_now_submit()" type="button" style="width: 100%;" class="shopify-payment-button__button shopify-payment-button__button--unbranded" data-testid="Checkout-button">Buy it now</button>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
                         {% endform %}
-
-                        <div class="content">{{ product.description }}</div>
                     </div>
+
+                    <div class="content" itemprop="description">
+                        {{ product.description }}
+                    </div>
+
                 </div>
             </div>
         </div>
+
+        <div style='margin: 0 0 40px'></div>
+
+        <div class="container">
+            {% if product.metafields.yotpo.reviews_count and product.metafields.yotpo.reviews_count != "0" %}
+                <div class="wrapper" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                    <span itemprop="itemReviewed">{{ product.title }}</span>
+                    has a rating of <span itemprop="ratingValue">{{ product.metafields.yotpo.reviews_average }}</span> stars
+                    based on <span itemprop="ratingCount">{{ product.metafields.yotpo.reviews_count }}</span> reviews.
+                </div>
+            {% endif %}
+
+            <div class="wrapper yotpo yotpo-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&amp;','%26'}}" data-description="{{ product.description | escape }}" data-price="{{ variant.price | money_without_currency }}" data-currency="{{ shop.currency }}"></div>
+        </div>
     </div>
 </div>
+
+<script type="module">
+    const initSlider = () => {
+        new Swiper('.product__swiper', {
+            slidesPerView: 1,
+            spaceBetween: 16,
+
+            autoHeight: true,
+
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        })
+    };
+
+    document.addEventListener("shopify:section:load", initSlider);
+
+    initSlider();
+</script>
+

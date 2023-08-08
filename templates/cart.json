@@ -1,24 +1,68 @@
 {
   "sections": {
-    "main-cart": {
-      "type": "main-cart",
+    "cart": {
+      "type": "cart",
       "settings": {
       }
     },
-    "page-single-review": {
-      "type": "page-single-review",
+    "single-review": {
+      "type": "single-review",
       "settings": {
+        "title": "Read what thousands of satisfied customers are saying...",
+        "author": "Barbara B. (Verified Buyer)",
+        "stars": 5,
+        "subtitle_1": "It took away right knee ( popliteal) pain in 10 minutes...",
+        "blockquote": "“I put in an order for one patch. It took away right knee (popliteal) pain in 10 minutes...Then moved it to my right achilles ...This pain also ( almost) disappeared...",
+        "subtitle_2": "Kailo Pain Patch Purchase",
+        "image_background": "shopify:\/\/shop_images\/page-single-review.png"
       }
     },
-    "page-faq-small": {
-      "type": "page-faq-small",
+    "single-faq": {
+      "type": "single-faq",
+      "blocks": {
+        "e4cf79e8-da5d-48f2-95d3-ba3c7a4d1587": {
+          "type": "block",
+          "settings": {
+            "title": "How does the Kailo work?",
+            "content": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage. Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
+          }
+        },
+        "fbf7b35c-3ed9-4e4a-aaf6-8d32dd93555d": {
+          "type": "block",
+          "settings": {
+            "title": "Do you plug them in? Is there a battery?",
+            "content": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage. Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
+          }
+        },
+        "fd40f5c7-2ef6-47b5-8bc4-189376b348d1": {
+          "type": "block",
+          "settings": {
+            "title": "Can you wear more than one Kailo at a time?",
+            "content": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage. Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
+          }
+        },
+        "92e8eb11-f4de-49e0-a9d7-b8fb1d4963b7": {
+          "type": "block",
+          "settings": {
+            "title": "Is the Kailo a patch?",
+            "content": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage. Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "e4cf79e8-da5d-48f2-95d3-ba3c7a4d1587",
+        "fbf7b35c-3ed9-4e4a-aaf6-8d32dd93555d",
+        "fd40f5c7-2ef6-47b5-8bc4-189376b348d1",
+        "92e8eb11-f4de-49e0-a9d7-b8fb1d4963b7"
+      ],
       "settings": {
+        "title": "FAQs"
       }
     }
   },
   "order": [
-    "main-cart",
-    "page-single-review",
-    "page-faq-small"
+    "cart",
+    "single-review",
+    "single-faq"
   ]
 }

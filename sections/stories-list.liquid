@@ -1,0 +1,150 @@
+<style>
+    .stories-list {
+        padding: 80px 0 100px;
+    }
+
+    .stories-list__swiper {
+        display: none;
+        margin: 40px 0 0;
+        overflow: hidden;
+        visibility: hidden;
+    }
+
+    .stories-list__pagination {
+        margin: 24px 0 0;
+        justify-content: center;
+    }
+
+    .stories-list__list {
+        display: block;
+        column-count: 3;
+        column-gap: 40px;
+        margin: 60px 0 0;
+    }
+
+    .stories-list__swiper .swiper-slide,
+    .stories-list__list > li {
+        break-inside: avoid;
+        padding: 24px;
+        margin: 0 0 40px;
+        border-radius: 6px;
+        background-color: var(--grays5);
+    }
+
+    .stories-list__author {
+        display: flex;
+        flex-direction: column;
+        margin: 16px 0 0;
+    }
+
+    .stories-list__author span:last-child {
+        color: var(--grays3);
+    }
+
+    @media screen and (max-width: 768px) {
+        .stories-list__swiper {
+            display: block;
+            visibility: visible;
+        }
+
+        .stories-list__list {
+            display: none;
+            visibility: hidden;
+        }
+    }
+</style>
+
+<div class="stories-list">
+    <div class="container">
+        {% if section.settings.title != blank %}
+            <h2 class="h2-title title-decorator">{{ section.settings.title }}</h2>
+        {% endif %}
+
+        <ul class="stories-list__list">
+            {% for block in section.blocks %}
+                <li>
+                    <p>{{ block.settings.text }}</p>
+
+                    <div class="stories-list__author">
+                        <span><b>{{ block.settings.author_name }}</b></span>
+                        <span>{{ block.settings.author_position }}</span>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <div class="stories-list__swiper">
+            <div class="swiper-wrapper">
+                {% for block in section.blocks %}
+                    <div class="swiper-slide">
+                        <p>{{ block.settings.text }}</p>
+
+                        <div class="stories-list__author">
+                            <span><b>{{ block.settings.author_name }}</b></span>
+                            <span>{{ block.settings.author_position }}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="swiper-pagination primary stories-list__pagination"></div>
+        </div>
+    </div>
+</div>
+
+<script type="module">
+    const initSlider = () => {
+        new Swiper('.stories-list__swiper', {
+            slidesPerView: 1,
+            spaceBetween: 32,
+
+            autoHeight: true,
+
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    };
+
+    document.addEventListener("shopify:section:load", initSlider);
+
+    initSlider();
+</script>
+
+{% schema %}
+{
+  "name": "Stories List",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Story Slide",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author Name"
+        },
+        {
+          "type": "text",
+          "id": "author_position",
+          "label": "Author Position"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

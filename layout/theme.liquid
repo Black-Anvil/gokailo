@@ -28,19 +28,19 @@
         --font-weight-headline: {{ settings.headline_font.weight }};
         --font-family-headline: {{ settings.headline_font.family }}, {{ settings.headline_font.fallback_families }};
 
-        --primary1: #2794A8;
-        --primary2: #248799;
-        --primary3: #3A7A8F;
-        --primary4: #5E8593;
-        --primary5: #355D66;
-        --primary6: #DCF1F5;
+        --primary1: {{ settings.primary_1 }};
+        --primary2: {{ settings.primary_2 }};
+        --primary3: {{ settings.primary_3 }};
+        --primary4: {{ settings.primary_4 }};
+        --primary5: {{ settings.primary_5 }};
+        --primary6: {{ settings.primary_6 }};
 
-        --grays1: #4D4D4D;
-        --grays2: #666666;
-        --grays3: #999999;
-        --grays4: #D9D9D9;
-        --grays5: #F6F6F6;
-        --grays6: #FFFFFF;
+        --grays1: {{ settings.grays_1 }};
+        --grays2: {{ settings.grays_2 }};
+        --grays3: {{ settings.grays_3 }};
+        --grays4: {{ settings.grays_4 }};
+        --grays5: {{ settings.grays_5 }};
+        --grays6: {{ settings.grays_6 }};
 
         --system-error: #CC4429;
 
@@ -89,6 +89,7 @@
     {% endstyle %}
 
     {{ "index.css" | asset_url | stylesheet_tag }}
+    {{ "content.css" | asset_url | stylesheet_tag }}
 
     {{ content_for_header }}
   <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/6VubeMJ7GY2e0Ai0ynXuSw" async></script>

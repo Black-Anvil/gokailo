@@ -2,22 +2,187 @@
   "sections": {
     "home-hero": {
       "type": "home-hero",
-      "settings": {
-      }
-    },
-    "home-icons": {
-      "type": "home-icons",
+      "blocks": {
+        "975a47b5-c697-4197-a751-4cef40514ba0": {
+          "type": "slide",
+          "settings": {
+            "bg_video": "shopify:\/\/files\/videos\/77135cecaafa49bf80dbfff6af2fd89d.webm",
+            "title": "the future of pain relief",
+            "content": "",
+            "image": "shopify:\/\/shop_images\/hero-image.png",
+            "button_link": "\/",
+            "button_link_text": "shop now"
+          }
+        },
+        "18b19a9b-7634-4065-b2af-314f5b732ca8": {
+          "type": "slide",
+          "settings": {
+            "bg_image": "shopify:\/\/shop_images\/cbf7486200ba2c8d5cc66eec9b46cdb3.png",
+            "title": "the future of pain relief",
+            "content": "<p>the futureof pain relief the futureof pain relief the futureof pain relief<\/p>",
+            "button_link": "\/",
+            "button_link_text": "shop now"
+          }
+        }
+      },
+      "block_order": [
+        "975a47b5-c697-4197-a751-4cef40514ba0",
+        "18b19a9b-7634-4065-b2af-314f5b732ca8"
+      ],
       "settings": {
       }
     },
     "home-testimonials": {
       "type": "home-testimonials",
+      "blocks": {
+        "682df9a3-2db9-4911-9373-4494bad24266": {
+          "type": "slide",
+          "settings": {
+            "title": "THIS THING REALLY WORKS",
+            "content": "<p>\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"<\/p>",
+            "author_image": "shopify:\/\/shop_images\/home-testimonials.jpg",
+            "author_name": "cary p.",
+            "author_position": "CALIFORNIA"
+          }
+        },
+        "9220a555-1e34-4d21-b91a-da60ee2d9e4c": {
+          "type": "slide",
+          "settings": {
+            "title": "THIS THING REALLY WORKS",
+            "content": "<p>\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"<\/p>",
+            "author_image": "shopify:\/\/shop_images\/home-testimonials.jpg",
+            "author_name": "cary p.",
+            "author_position": "CALIFORNIA"
+          }
+        }
+      },
+      "block_order": [
+        "682df9a3-2db9-4911-9373-4494bad24266",
+        "9220a555-1e34-4d21-b91a-da60ee2d9e4c"
+      ],
       "settings": {
+        "video": "https:\/\/vimeo.com\/644391532",
+        "preview": "shopify:\/\/shop_images\/home-testimonials.gif",
+        "link_text": "read testimonials",
+        "link_url": "\/"
+      }
+    },
+    "icon-list": {
+      "type": "icon-list",
+      "blocks": {
+        "28bffeef-7425-4fe0-b9f3-040c0e05224c": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "d03c3b00-8867-4e09-8fc0-5f2ddbe901d7": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "3b918b82-01ae-4da9-9f8e-ba3408003c56": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "3ba45dc0-a78f-4018-b3ad-3cdaa759b8ad": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "df8ab8a6-60b7-42ae-b0e2-1c130e7b8ad1": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "9157630f-1e86-41b1-82e2-5f7285fedc62": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        }
+      },
+      "block_order": [
+        "28bffeef-7425-4fe0-b9f3-040c0e05224c",
+        "d03c3b00-8867-4e09-8fc0-5f2ddbe901d7",
+        "3b918b82-01ae-4da9-9f8e-ba3408003c56",
+        "3ba45dc0-a78f-4018-b3ad-3cdaa759b8ad",
+        "df8ab8a6-60b7-42ae-b0e2-1c130e7b8ad1",
+        "9157630f-1e86-41b1-82e2-5f7285fedc62"
+      ],
+      "settings": {
+        "background_color": "#355d66"
       }
     },
     "home-about": {
       "type": "home-about",
       "settings": {
+        "title": "EVERYTHING YOU NEED TO KNOW ABOUT KAILO",
+        "image_background": "shopify:\/\/shop_images\/home-about.png",
+        "slide_1_name": "HOW TO PLACE THE KAILO",
+        "slide_1_preview": "shopify:\/\/shop_images\/home-about-placement.png",
+        "slide_1_video": "https:\/\/vimeo.com\/644442787",
+        "slide_1_preview_1": "shopify:\/\/shop_images\/home-about-shoulder.png",
+        "slide_1_video_1": "https:\/\/vimeo.com\/718286497",
+        "slide_1_preview_2": "shopify:\/\/shop_images\/home-about-back.png",
+        "slide_1_video_2": "https:\/\/vimeo.com\/737971648",
+        "slide_1_preview_3": "shopify:\/\/shop_images\/home-about-trunk.png",
+        "slide_1_video_3": "https:\/\/vimeo.com\/718286549",
+        "slide_1_preview_4": "shopify:\/\/shop_images\/home-about-knees.png",
+        "slide_1_video_4": "https:\/\/vimeo.com\/718287655",
+        "slide_1_link_url": "\/",
+        "slide_1_link_text": "see all video",
+        "slide_2_name": "HOW TO USE ADHESIVES",
+        "slide_2_preview": "shopify:\/\/shop_images\/home-about-adhesives.png",
+        "slide_2_video": "https:\/\/vimeo.com\/644456317",
+        "slide_3_name": "TRY KAILO RISK FREE",
+        "slide_3_image": "shopify:\/\/shop_images\/home-about-risk.png",
+        "slide_3_content": "<h3>We offer a no-hassle, no restrictions, 100% money-back guarantee on our Kailo Original product. We offer a 90 day money-back guarantee on unopened Kailo Flex™ product. If you feel Kailo isn't working for you within 90 days, we'll gladly take it back.<\/h3><h3><\/h3><h3><\/h3><p>Over 90% of our customers have found an increase in comfort. Our goal is to help everyone get relief. If you feel Kailo isn’t working for you within 90 days,​ we’ll gladly take it back.<\/p><p><br\/>Before returning your Kailo, we would love a chance to make sure you’ve found the correct placement. Please contact us at <a href=\"mailto:support@gokailo.com\" title=\"mailto:support@gokailo.com\">support@gokailo.com<\/a><\/p>",
+        "slide_3_link_url": "\/",
+        "slide_3_link_text": "return policy",
+        "slide_4_name": "WILL KAILO HELP MY CONDITION",
+        "slide_4_content": "<h3>Will Kailo help my condition?<\/h3><h3><\/h3><p>Most common ailments experienced by Kailo Customers<\/p>",
+        "slide_4_item_1_title": "CHRONIC BACK PAIN",
+        "slide_4_item_1_text": "Kailo patches are engineered to help help many types of back pain and fit anywhere on your back",
+        "slide_4_item_1_link": "\/",
+        "slide_4_item_2_title": "MENSTRUAL PAIN",
+        "slide_4_item_2_text": "The Kailo pain patch has shown to be capable of relieving or eliminating pain from menstrual cramps",
+        "slide_4_item_2_link": "\/",
+        "slide_4_item_3_title": "KNEE PAIN",
+        "slide_4_item_3_text": "Kailo drug-free pain relief has shown to be effective in targeting knee pain",
+        "slide_4_item_3_link": "\/",
+        "slide_4_item_4_title": "ARTHRITIS",
+        "slide_4_item_4_text": "Many Kailo users report the relief of painful arthritic symptoms",
+        "slide_4_item_4_link": "\/",
+        "slide_4_item_5_title": "OSTEOPOROSIS",
+        "slide_4_item_5_text": "Kailo customers report significant relief from Osteoporosis pain while using Kailo",
+        "slide_4_item_5_link": "\/",
+        "slide_4_item_6_text": "These are the most common ailments customers suffer from. Please contact us if you would like information about Kailo's effectiveness \/ use for other ailments.",
+        "slide_4_item_6_link": "\/",
+        "slide_5_name": "REVIEWS: THE GOOD BAD AND UGLY",
+        "slide_5_content": "<h3>The good, bad and the ugly<\/h3>",
+        "slide_5_item_1_author": "Mauricio C.",
+        "slide_5_item_1_stars": 5,
+        "slide_5_item_1_text": "\"My hand had osteoarthritis and I used the Kailo for 5 minutes and now I am free of pain for the rest of the day. Gracias all of you!\"",
+        "slide_5_item_2_author": "Ana A.",
+        "slide_5_item_2_stars": 5,
+        "slide_5_item_2_text": "\"I’m training for a 500 mile walk and my hip was killing me. I placed the Kailo patch in two places and my pain is gone! I used a small piece near my ear and it’s also helping diminish my tinnitus.\"",
+        "slide_5_item_3_author": "Randall S.",
+        "slide_5_item_3_stars": 5,
+        "slide_5_item_3_text": "\"Hi, as a repeat customer, I wish to express my total satisfaction of your Kailo pain product. I never would believe how such a thing could relieve pain like this.\"",
+        "slide_5_item_4_author": "John B.",
+        "slide_5_item_4_stars": 5,
+        "slide_5_item_4_text": "\"Quick shipping, great value, and has always reduced or eliminated pain when placed properly. This is the second one I ordered. Very satisfied customer.\"",
+        "slide_5_link_url": "\/",
+        "slide_5_link_text": "more reviews",
+        "slide_6_name": "CLINICAL TRIAL RESULTS",
+        "slide_6_image": "shopify:\/\/shop_images\/home-about-trial.png",
+        "slide_6_content": "<h3>The final results are in, and they’re incredibly positive.<\/h3><h3><\/h3><p>On January 30, 2022 Pain Relief Technologies LLC and Kailo Pain Patch® announced the IRB-Approved PREVENT study’s final results. The trial produced positive results in patients with mild, moderate, and severe pain conditions, with resounding support from nearly all participants.<br\/><br\/><a href=\"https:\/\/www.scivisionpub.com\/pdfs\/using-a-novel-nondrug-topical-painrelief-patch-to-improve-pain-and-function-final-analysis-of-the-prevent-study-2062.pdf\" target=\"_blank\" title=\"https:\/\/www.scivisionpub.com\/pdfs\/using-a-novel-nondrug-topical-painrelief-patch-to-improve-pain-and-function-final-analysis-of-the-prevent-study-2062.pdf\">Check out the full results<\/a> published in the international peer-reviewed journal Anesthesia and Pain Research. The research article includes everything you need to know about the study procedures, assessments, patients, methods, and outcome of the trial.<\/p>"
       }
     },
     "home-products": {
@@ -27,6 +192,43 @@
     },
     "home-links": {
       "type": "home-links",
+      "blocks": {
+        "e86feb36-9972-4255-abd8-0d2113be03ee": {
+          "type": "block",
+          "settings": {
+            "link_url": "\/",
+            "image": "shopify:\/\/shop_images\/home-links-1.png",
+            "icon": "shopify:\/\/shop_images\/home-links-buy.png",
+            "title": "buy",
+            "content": "<p>Free shipping in the USA<br\/>Bundle to save<\/p>"
+          }
+        },
+        "dba86ecb-6076-4743-b887-0f3cdb607b9d": {
+          "type": "block",
+          "settings": {
+            "link_url": "\/",
+            "image": "shopify:\/\/shop_images\/home-links-2.png",
+            "icon": "shopify:\/\/shop_images\/home-links-place.png",
+            "title": "place",
+            "content": "<p>Free shipping in the USA<br\/>Bundle to save<\/p>"
+          }
+        },
+        "d05873e1-2fdf-4308-9526-4d88f2f68dd2": {
+          "type": "block",
+          "settings": {
+            "link_url": "\/",
+            "image": "shopify:\/\/shop_images\/home-links-3.png",
+            "icon": "shopify:\/\/shop_images\/home-links-love.png",
+            "title": "LOVE",
+            "content": "<p>Free shipping in the USA<br\/>Bundle to save<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "e86feb36-9972-4255-abd8-0d2113be03ee",
+        "dba86ecb-6076-4743-b887-0f3cdb607b9d",
+        "d05873e1-2fdf-4308-9526-4d88f2f68dd2"
+      ],
       "settings": {
       }
     }
@@ -34,7 +236,7 @@
   "order": [
     "home-hero",
     "home-testimonials",
-    "home-icons",
+    "icon-list",
     "home-about",
     "home-products",
     "home-links"

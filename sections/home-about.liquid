@@ -2,7 +2,7 @@
     .home-about {
         padding: 120px 0;
         color: var(--primary4);
-        background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.80) 100%), url({{ "home-about.png" | asset_url }});
+        background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.80) 100%), url({{ section.settings.image_background | image_url }});
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -172,7 +172,113 @@
     .home-about__trial a {
         color: var(--primary2);
     }
-f</style>
+
+    @media screen and (max-width: 1024px) {
+        .home-about {
+            padding: 80px 0;
+        }
+
+        .home-about__wrapper {
+            flex-direction: column;
+            margin: 0 0 -40px;
+        }
+
+        .home-about__wrapper > * {
+            margin: 0 0 40px 0;
+        }
+
+        .home-about__info {
+            min-width: 100%;
+            max-width: 100%;
+        }
+
+        .home-about__list {
+            margin: 32px 0 0;
+        }
+
+        .home-about__list > li:not(:last-child) {
+            margin: 0 0 16px;
+        }
+
+        .home-about__risk > * {
+            margin: 0 0 16px;
+        }
+
+        .home-about__condition ul {
+            margin: 16px 0;
+        }
+
+        .home-about__condition ul a {
+            flex-direction: column;
+            padding: 16px;
+        }
+
+        .home-about__condition ul a span:nth-child(2) {
+            margin: 0;
+        }
+
+        .home-about .home-about__condition ul a > *:not(:last-child) {
+            margin: 0 0 8px;
+        }
+
+        .home-about__condition ul a span:last-child {
+            max-width: 100%;
+            justify-content: flex-start;
+        }
+
+        .home-about__condition ul a span:first-child {
+            min-width: 100%;
+            width: 100%;
+        }
+
+
+        .home-about__reviews ul {
+            margin: 16px 0;
+        }
+
+        .home-about__reviews li {
+            padding: 16px 0;
+            flex-direction: column;
+        }
+
+        .home-about__reviews ul li > *:first-child {
+            max-width: 100%;
+            width: 100%;
+            margin: 0 0 8px;
+        }
+
+        .home-about__trial > *:not(:last-child) {
+            margin: 0 0 16px;
+        }
+
+        .home-about__use {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .home-about__placement {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .home-about__placement ul {
+            margin: 16px 0 0 0;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .home-about__placement ul {
+            width: 100%;
+        }
+
+        .home-about__placement ul img {
+            width: 100%;
+        }
+    }
+</style>
 
 {{ "play-video.css" | asset_url | stylesheet_tag }}
 {{ "star.css" | asset_url | stylesheet_tag }}
@@ -181,221 +287,176 @@ f</style>
     <div class="container">
         <div class="home-about__wrapper">
             <div class="home-about__info">
-                <h2 class="h2-title">EVERYTHING YOU NEED TO KNOW ABOUT KAILO</h2>
+                <h2 class="h2-title">{{ section.settings.title }}</h2>
 
                 <ul class="home-about__list">
                     <li>
-                        <button class="h6-title active">HOW TO PLACE THE KAILO</button>
+                        <button class="h6-title active">{{ section.settings.slide_1_name }}</button>
                     </li>
 
                     <li>
-                        <button class="h6-title">HOW TO USE ADHESIVES</button>
+                        <button class="h6-title">{{ section.settings.slide_2_name }}</button>
                     </li>
 
                     <li>
-                        <button class="h6-title">TRY KAILO RISK FREE</button>
+                        <button class="h6-title">{{ section.settings.slide_3_name }}</button>
                     </li>
 
                     <li>
-                        <button class="h6-title">WILL KAILO HELP MY CONDITION</button>
+                        <button class="h6-title">{{ section.settings.slide_4_name }}</button>
                     </li>
 
                     <li>
-                        <button class="h6-title">REVIEWS: THE GOOD BAD AND UGLY</button>
+                        <button class="h6-title">{{ section.settings.slide_5_name }}</button>
                     </li>
 
                     <li>
-                        <button class="h6-title">CLINICAL TRIAL RESULTS</button>
+                        <button class="h6-title">{{ section.settings.slide_6_name }}</button>
                     </li>
                 </ul>
             </div>
 
             <div class="home-about__slider">
                 <div class="home-about__slide home-about__placement">
-                    {% render "vimeo-image", link: "https://vimeo.com/644442787", img: "home-about-placement.png", width: 620, height: 350, alt: "about placement" %}
+                    {% render "vimeo-image", link: section.settings.slide_1_video, img: section.settings.slide_1_preview, width: 620, height: 350, alt: section.settings.slide_1_preview.alt %}
 
                     <ul>
                         <li>
-                            {% render "vimeo-image", btnStatus: "hidden", link: "https://vimeo.com/718286497", img: "home-about-shoulder.png", width: 204, height: 70, alt: "about shoulder" %}
+                            {% render "vimeo-image", btnStatus: "hidden", link: section.settings.slide_1_video_1, img: section.settings.slide_1_preview_1, width: 204, height: 70, alt: section.settings.slide_1_preview_1.alt %}
                         </li>
 
                         <li>
-                            {% render "vimeo-image", btnStatus: "hidden", link: "https://vimeo.com/737971648", img: "home-about-back.png", width: 204, height: 70, alt: "about back" %}
+                            {% render "vimeo-image", btnStatus: "hidden", link: section.settings.slide_1_video_2, img: section.settings.slide_1_preview_2, width: 204, height: 70, alt: section.settings.slide_1_preview_2.alt %}
                         </li>
 
                         <li>
-                            {% render "vimeo-image", btnStatus: "hidden", link: "https://vimeo.com/718286549", img: "home-about-trunk.png", width: 204, height: 70, alt: "about trunk" %}
+                            {% render "vimeo-image", btnStatus: "hidden", link: section.settings.slide_1_video_3, img: section.settings.slide_1_preview_3, width: 204, height: 70, alt: section.settings.slide_1_preview_3.alt %}
                         </li>
 
                         <li>
-                            {% render "vimeo-image", btnStatus: "hidden", link: "https://vimeo.com/718287655", img: "home-about-knees.png", width: 204, height: 70, alt: "about knees" %}
+                            {% render "vimeo-image", btnStatus: "hidden", link: section.settings.slide_1_video_4, img: section.settings.slide_1_preview_4, width: 204, height: 70, alt: section.settings.slide_1_preview_4.alt %}
                         </li>
 
                         <li>
-                            <a href="#" class="button button--primary">see all video</a>
+                            <a href="{{ section.settings.slide_1_link_url }}" class="button button--primary">{{ section.settings.slide_1_link_text }}</a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="home-about__slide home-about__use">
-                    {% render "vimeo-image", link: "https://vimeo.com/644456317", img: "home-about-adhesives.png", width: 840, height: 426, alt: "about how to use" %}
+                    {% render "vimeo-image", link: section.settings.slide_2_video, img: section.settings.slide_2_preview, width: 840, height: 426, alt: section.settings.slide_2_preview.alt %}
                 </div>
 
                 <div class="home-about__slide home-about__risk">
-                    <img src="{{ "home-about-risk.png" | asset_url }}" width="198" alt="about money back">
+                    <img src="{{ section.settings.slide_3_image | image_url }}" width="198" alt="{{ section.settings.slide_3_image.alt }}">
 
-                    <h3 class="h3-title">
-                        We offer a no-hassle, no restrictions, 100% money-back guarantee on our Kailo Original product.
-                        We offer a 90 days money-back guarantee on unopened Kailo Flex™ product. If you feel Kailo isn't
-                        working for you within 90 days, we'll gladly take it back.
-                    </h3>
+                    <div class="content">
+                        {{ section.settings.slide_3_content }}
+                    </div>
 
-                    <p>
-                        Over 90% of our customers have found an increase in comfort. Our goal is to help everyone get
-                        relief. If you feel Kailo isn’t working for you within 90 days,​ we’ll gladly take it back.
-                    </p>
-
-                    <p>
-                        Before returning your Kailo, we would love a chance to make sure you’ve found the correct
-                        placement. Please contact us at
-                        <a href="mailto:support@gokailo.com">support@gokailo.com</a>
-                    </p>
-
-                    <a href="#" class="button button--primary">return policy</a>
+                    <a href="{{ section.settings.slide_3_link_url }}" class="button button--primary">{{ section.settings.slide_3_link_text }}</a>
                 </div>
 
                 <div class="home-about__slide home-about__condition">
-                    <h3 class="h3-title">Will Kailo help my condition?</h3>
-
-                    <p>Most common ailments experienced by Kailo Customers</p>
+                    <div class="content">{{ section.settings.slide_4_content }}</div>
 
                     <ul>
                         <li>
-                            <a href="#">
-                                <span class="h6-title">CHRONIC BACK PAIN</span>
-                                <span>Kailo patches are engineered to help many types of back pain and fit anywhere on your back</span>
+                            <a href="{{ section.settings.slide_4_item_1_link }}">
+                                <span class="h6-title">{{ section.settings.slide_4_item_1_title }}</span>
+                                <span>{{ section.settings.slide_4_item_1_text }}</span>
                                 <span class="button">learn more</span>
                             </a>
                         </li>
 
                         <li>
-                            <a href="#">
-                                <span class="h6-title">MENSTRUAL PAIN</span>
-                                <span>The Kailo pain patch has shown to be capable of relieving or eliminating pain from menstrual cramps</span>
+                            <a href="{{ section.settings.slide_4_item_2_link }}">
+                                <span class="h6-title">{{ section.settings.slide_4_item_2_title }}</span>
+                                <span>{{ section.settings.slide_4_item_2_text }}</span>
                                 <span class="button">learn more</span>
                             </a>
                         </li>
 
                         <li>
-                            <a href="#">
-                                <span class="h6-title">ARTHRITIS</span>
-                                <span>Many Kailo users report the relief of painful arthritic symptoms</span>
+                            <a href="{{ section.settings.slide_4_item_3_link }}">
+                                <span class="h6-title">{{ section.settings.slide_4_item_3_title }}</span>
+                                <span>{{ section.settings.slide_4_item_3_text }}</span>
                                 <span class="button">learn more</span>
                             </a>
                         </li>
 
                         <li>
-                            <a href="#">
-                                <span class="h6-title">OSTEOPOROSIS</span>
-                                <span>Kailo customers report significant relief from Osteoporosis pain while using Kailo</span>
+                            <a href="{{ section.settings.slide_4_item_4_link }}">
+                                <span class="h6-title">{{ section.settings.slide_4_item_4_title }}</span>
+                                <span>{{ section.settings.slide_4_item_4_text }}</span>
                                 <span class="button">learn more</span>
                             </a>
                         </li>
 
                         <li>
-                            <a href="#">
-                                <b>
-                                    These are the most common ailments customers suffer from. Please contact us if you
-                                    would
-                                    like information about Kailo's effectiveness / use for other ailments.
-                                </b>
+                            <a href="{{ section.settings.slide_4_item_5_link }}">
+                                <span class="h6-title">{{ section.settings.slide_4_item_5_title }}</span>
+                                <span>{{ section.settings.slide_4_item_5_text }}</span>
+                                <span class="button">learn more</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ section.settings.slide_4_item_6_link }}">
+                                <b>{{ section.settings.slide_4_item_6_text }}</b>
                             </a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="home-about__slide home-about__reviews">
-                    <h3 class="h3-title">The good, bad and the ugly</h3>
+                    <div class="content">{{ section.settings.slide_5_content }}</div>
 
                     <ul>
                         <li>
                             <div>
-                                {% render "star-review", star: 5 %}
-                                <span>Mauricio C.</span>
+                                {% render "star-review", star: section.settings.slide_5_item_1_stars, color: "#5E8593", no_color: "#b3b3b3" %}
+                                <span>{{ section.settings.slide_5_item_1_author }}</span>
                             </div>
 
-                            <p>
-                                <b>
-                                    "My hand had osteoarthritis and I used the Kailo for 5 minutes, and now I am free of
-                                    pain for the rest of the day. Gracias all of you!"
-                                </b>
-                            </p>
+                            <p><b>{{ section.settings.slide_5_item_1_text }}</b></p>
                         </li>
 
                         <li>
                             <div>
-                                {% render "star-review", star: 5 %}
-                                <span>Ana A.</span>
+                                {% render "star-review", star: section.settings.slide_5_item_2_stars, color: "#5E8593", no_color: "#b3b3b3" %}
+                                <span>{{ section.settings.slide_5_item_2_author }}</span>
                             </div>
 
-                            <p>
-                                <b>
-                                    "I’m training for a 500 miles walk and my hip was killing me. I placed the Kailo
-                                    patch in two places and my pain is gone! I used a small piece near my ear, and it’s
-                                    also helping diminish my tinnitus."
-                                </b>
-                            </p>
+                            <p><b>{{ section.settings.slide_5_item_2_text }}</b></p>
                         </li>
 
                         <li>
                             <div>
-                                {% render "star-review", star: 5 %}
-                                <span>Randall S.</span>
+                                {% render "star-review", star: section.settings.slide_5_item_3_stars, color: "#5E8593", no_color: "#b3b3b3" %}
+                                <span>{{ section.settings.slide_5_item_3_author }}</span>
                             </div>
 
-                            <p>
-                                <b>
-                                    "Hi, as a repeat customer, I wish to express my total satisfaction of your Kailo
-                                    pain product. I never would believe how such a thing could relieve pain like this."
-                                </b>
-                            </p>
+                            <p><b>{{ section.settings.slide_5_item_3_text }}</b></p>
                         </li>
 
                         <li>
                             <div>
-                                {% render "star-review", star: 5 %}
-                                <span>John B.</span>
+                                {% render "star-review", star: section.settings.slide_5_item_4_stars, color: "#5E8593", no_color: "#b3b3b3" %}
+                                <span>{{ section.settings.slide_5_item_4_author }}</span>
                             </div>
 
-                            <p>
-                                <b>
-                                    "Quick shipping, great value, and has always reduced or eliminated pain when placed
-                                    properly. This is the second one I ordered. Very satisfied customer."
-                                </b>
-                            </p>
+                            <p><b>{{ section.settings.slide_5_item_4_text }}</b></p>
                         </li>
                     </ul>
 
-                    <a href="#" class="button button--primary">more reviews</a>
+                    <a href="{{ section.settings.slide_5_link_url }}" class="button button--primary">{{ section.settings.slide_5_link_text }}</a>
                 </div>
 
                 <div class="home-about__slide home-about__trial">
-                    <img src="{{ "home-about-trial.png" | asset_url }}" width="198" alt="about clinical trial">
+                    <img src="{{ section.settings.slide_6_image | image_url }}" width="198" alt="{{ section.settings.slide_6_image.alt }}">
 
-                    <h3 class="h3-title">The final results are in, and they’re incredibly positive.</h3>
-
-                    <p>
-                        On January 30, 2022, Pain Relief Technologies LLC and Kailo Pain Patch® announced the
-                        IRB-Approved PREVENT study’s final results. The trial produced positive results in patients with
-                        mild, moderate, and severe pain conditions, with resounding support from nearly all
-                        participants.
-                    </p>
-
-                    <p>
-                        <a class="link" href="https://www.scivisionpub.com/pdfs/using-a-novel-nondrug-topical-painrelief-patch-to-improve-pain-and-function-final-analysis-of-the-prevent-study-2062.pdf">Check out the full results</a> published in the international peer-reviewed journal Anesthesia and
-                        Pain Research. The research article includes everything you need to know about the study
-                        procedures, assessments, patients, methods, and outcome of the trial.
-                    </p>
+                    <div class="content">{{ section.settings.slide_6_content }}</div>
                 </div>
             </div>
         </div>
@@ -403,39 +464,402 @@ f</style>
 </section>
 
 <script type="module">
-    const about = document.querySelector(".home-about");
-    const list = about.querySelector(".home-about__list");
-    const slider = about.querySelector(".home-about__slider");
-    const listButtons = list.querySelectorAll("button");
-    const slides = slider.querySelectorAll(".home-about__slide");
+   const initSlide = () => {
+       const about = document.querySelector(".home-about");
+       const list = about.querySelector(".home-about__list");
+       const slider = about.querySelector(".home-about__slider");
+       const listButtons = list.querySelectorAll("button");
+       const slides = slider.querySelectorAll(".home-about__slide");
 
-    slides.forEach(slide => {
-       slide.classList.add("visible-hidden");
-    });
+       slides.forEach(slide => {
+           slide.classList.add("visible-hidden");
+       });
 
-    listButtons.forEach((btn, btnIndex) => {
-        if (btn.classList.contains("active")) {
-            slides[btnIndex].classList.remove("visible-hidden");
-        }
+       listButtons.forEach((btn, btnIndex) => {
+           if (btn.classList.contains("active")) {
+               slides[btnIndex].classList.remove("visible-hidden");
+           }
 
-        const slideShow = (btnIndex) => {
-            slides.forEach((slide, slideIndex) => {
-                if (btnIndex === slideIndex) {
-                    slide.classList.remove("visible-hidden");
-                } else {
-                    slide.classList.add("visible-hidden");
-                }
-            });
-        };
+           const slideShow = (btnIndex) => {
+               slides.forEach((slide, slideIndex) => {
+                   if (btnIndex === slideIndex) {
+                       slide.classList.remove("visible-hidden");
+                   } else {
+                       slide.classList.add("visible-hidden");
+                   }
+               });
+           };
 
-        btn.addEventListener("click", (e) => {
-            listButtons.forEach(btn => {
-                btn.classList.remove("active");
-            });
+           btn.addEventListener("click", (e) => {
+               listButtons.forEach(btn => {
+                   btn.classList.remove("active");
+               });
 
-            slideShow(btnIndex);
+               slideShow(btnIndex);
 
-            e.target.classList.add("active");
-        });
-    });
+               e.target.classList.add("active");
+           });
+       });
+   };
+
+   window.addEventListener("shopify:section:load", initSlide);
+
+   initSlide();
 </script>
+
+{% schema %}
+{
+  "name": "Home About",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Main Settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_background",
+      "label": "Image Background"
+    },
+    {
+      "type": "header",
+      "content": "Slide 1"
+    },
+    {
+      "type": "text",
+      "id": "slide_1_name",
+      "label": "Slide Name"
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_1_preview",
+      "label": "Video Preview"
+    },
+    {
+      "type": "text",
+      "id": "slide_1_video",
+      "label": "Video Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_1_preview_1",
+      "label": "Video Preview 1"
+    },
+    {
+      "type": "text",
+      "id": "slide_1_video_1",
+      "label": "Video Link 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_1_preview_2",
+      "label": "Video Preview 2"
+    },
+    {
+      "type": "text",
+      "id": "slide_1_video_2",
+      "label": "Video Link 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_1_preview_3",
+      "label": "Video Preview 3"
+    },
+    {
+      "type": "text",
+      "id": "slide_1_video_3",
+      "label": "Video Link 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_1_preview_4",
+      "label": "Video Preview 4"
+    },
+    {
+      "type": "text",
+      "id": "slide_1_video_4",
+      "label": "Video Link 4"
+    },
+    {
+      "type": "url",
+      "id": "slide_1_link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "text",
+      "id": "slide_1_link_text",
+      "label": "Link Text"
+    },
+    {
+      "type": "header",
+      "content": "Slide 2"
+    },
+    {
+      "type": "text",
+      "id": "slide_2_name",
+      "label": "Slide Name"
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_2_preview",
+      "label": "Video Preview"
+    },
+    {
+      "type": "text",
+      "id": "slide_2_video",
+      "label": "Video Link"
+    },
+    {
+      "type": "header",
+      "content": "Slide 3"
+    },
+    {
+      "type": "text",
+      "id": "slide_3_name",
+      "label": "Slide Name"
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_3_image",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "slide_3_content",
+      "label": "Content"
+    },
+    {
+      "type": "url",
+      "id": "slide_3_link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "text",
+      "id": "slide_3_link_text",
+      "label": "Link Text"
+    },
+    {
+      "type": "header",
+      "content": "Slide 4"
+    },
+    {
+      "type": "text",
+      "id": "slide_4_name",
+      "label": "Slide Name"
+    },
+    {
+      "type": "richtext",
+      "id": "slide_4_content",
+      "label": "Content"
+    },
+    {
+      "type": "text",
+      "id": "slide_4_item_1_title",
+      "label": "Item 1 Title"
+    },
+    {
+      "type": "text",
+      "id": "slide_4_item_1_text",
+      "label": "Item 1 Text"
+    },
+    {
+      "type": "url",
+      "id": "slide_4_item_1_link",
+      "label": "Item 1 Link"
+    },
+    {
+      "type": "text",
+      "id": "slide_4_item_2_title",
+      "label": "Item 2 Title"
+    },
+    {
+      "type": "text",
+      "id": "slide_4_item_2_text",
+      "label": "Item 2 Text"
+    },
+    {
+      "type": "url",
+      "id": "slide_4_item_2_link",
+      "label": "Item 2 Link"
+    },
+    {
+      "type": "text",
+      "id": "slide_4_item_3_title",
+      "label": "Item 3 Title"
+    },
+    {
+      "type": "text",
+      "id": "slide_4_item_3_text",
+      "label": "Item 3 Text"
+    },
+    {
+      "type": "url",
+      "id": "slide_4_item_3_link",
+      "label": "Item 3 Link"
+    },
+    {
+      "type": "text",
+      "id": "slide_4_item_4_title",
+      "label": "Item 4 Title"
+    },
+    {
+      "type": "text",
+      "id": "slide_4_item_4_text",
+      "label": "Item 4 Text"
+    },
+    {
+      "type": "url",
+      "id": "slide_4_item_4_link",
+      "label": "Item 4 Link"
+    },
+    {
+      "type": "text",
+      "id": "slide_4_item_5_title",
+      "label": "Item 5 Title"
+    },
+    {
+      "type": "text",
+      "id": "slide_4_item_5_text",
+      "label": "Item 5 Text"
+    },
+    {
+      "type": "url",
+      "id": "slide_4_item_5_link",
+      "label": "Item 5 Link"
+    },
+    {
+      "type": "text",
+      "id": "slide_4_item_6_text",
+      "label": "Item 6 Text"
+    },
+    {
+      "type": "url",
+      "id": "slide_4_item_6_link",
+      "label": "Item 6 Link"
+    },
+    {
+      "type": "header",
+      "content": "Slide 5"
+    },
+    {
+      "type": "text",
+      "id": "slide_5_name",
+      "label": "Slide Name"
+    },
+    {
+      "type": "richtext",
+      "id": "slide_5_content",
+      "label": "Content"
+    },
+    {
+      "type": "text",
+      "id": "slide_5_item_1_author",
+      "label": "Item 1 Author"
+    },
+    {
+      "type": "range",
+      "id": "slide_5_item_1_stars",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "label": "Item 1 Stars",
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "slide_5_item_1_text",
+      "label": "Item 1 Text"
+    },
+    {
+      "type": "text",
+      "id": "slide_5_item_2_author",
+      "label": "Item 2 Author"
+    },
+    {
+      "type": "range",
+      "id": "slide_5_item_2_stars",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "label": "Item 2 Stars",
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "slide_5_item_2_text",
+      "label": "Item 2 Text"
+    },
+    {
+      "type": "text",
+      "id": "slide_5_item_3_author",
+      "label": "Item 3 Author"
+    },
+    {
+      "type": "range",
+      "id": "slide_5_item_3_stars",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "label": "Item 3 Stars",
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "slide_5_item_3_text",
+      "label": "Item 3 Text"
+    },
+    {
+      "type": "text",
+      "id": "slide_5_item_4_author",
+      "label": "Item 4 Author"
+    },
+    {
+      "type": "range",
+      "id": "slide_5_item_4_stars",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "label": "Item 4 Stars",
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "slide_5_item_4_text",
+      "label": "Item 4 Text"
+    },
+    {
+      "type": "url",
+      "id": "slide_5_link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "text",
+      "id": "slide_5_link_text",
+      "label": "Link Text"
+    },
+    {
+      "type": "header",
+      "content": "Slide 6"
+    },
+    {
+      "type": "text",
+      "id": "slide_6_name",
+      "label": "Slide Name"
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_6_image",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "slide_6_content",
+      "label": "Content"
+    }
+  ]
+}
+{% endschema %}

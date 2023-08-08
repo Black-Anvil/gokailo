@@ -1,0 +1,79 @@
+<style>
+    .solutions {
+        padding: 80px 0;
+        background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.80) 100%), url({{ section.settings.image_background | image_url }});
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .solutions__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 620px;
+        width: 100%;
+        margin: 0 auto 40px;
+        text-align: center;
+    }
+
+    .solutions__header > *:not(:last-child) {
+        margin: 0 0 24px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .solutions {
+            padding: 60px 0;
+        }
+
+        .solutions__header > *:not(:last-child) {
+            margin: 0 0 16px;
+        }
+    }
+</style>
+
+<section class="solutions">
+    <div class="container">
+        <div class="solutions__header">
+            {% if section.settings.image != blank %}
+                <img src="{{ section.settings.image | image_url }}" width="300" alt="{{ section.settings.image.alt }}">
+            {% endif %}
+
+            {% if section.settings.title != blank %}
+                <h2 class="h2-title title-decorator">{{ section.settings.title }}</h2>
+            {% endif %}
+
+            {% if section.settings.description != blank %}
+                <p>{{ section.settings.description }}</p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Solutions",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_background",
+      "label": "Image Background"
+    }
+  ]
+}
+{% endschema %}

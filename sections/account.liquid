@@ -1,0 +1,166 @@
+{{ "account.css" | asset_url | stylesheet_tag }}
+{{ "tag.css" | asset_url | stylesheet_tag }}
+{{ "pagination.css" | asset_url | stylesheet_tag }}
+
+<div class="page-inner bg-gray">
+    <div class="account">
+        <div class="container">
+            <h2 class="h2-title">Your account</h2>
+
+            <div class="account__wrapper">
+                {% render "account-menu", active: "account" %}
+
+                <div class="account-order account__info">
+                    <div class="account__header">
+                        <h3 class="h4-title">Orders History</h3>
+                    </div>
+
+                    {% assign ordersCount = customer.orders | size %}
+
+                    {% if ordersCount == 0 %}
+                        <p>You don’t have orders yet. Go ahead and explore our products.</p>
+                    {% else %}
+                        {% paginate customer.orders by 5 %}
+                            <ul class="account__list" id="orderList">
+                                {% for order in customer.orders %}
+                                    <li class="account-card">
+                                        <div class="account-card__wrapper">
+                                            <div>
+                                                <p class="caption-text">Order</p>
+                                                <a class="link" href="{{ order.customer_url }}">{{ order.order_number }}</a>
+                                            </div>
+
+                                            <div>
+                                                <p class="caption-text">Date</p>
+                                                <p>{{ order.created_at | date: '%B %d, %Y' }}</p>
+                                            </div>
+
+                                            <div>
+                                                <p class="caption-text">Status</p>
+                                                <p>
+                                                    <span class="tag tag--{{ order.fulfillment_status }}">{{ order.fulfillment_status_label }}</span>
+                                                </p>
+                                            </div>
+
+                                            <div>
+                                                <p class="caption-text">Total</p>
+                                                <p>{{ order.total_price | money }}</p>
+                                            </div>
+
+                                            <div>
+                                                <p class="hidden caption-text">Action</p>
+                                                <button class="button button--action orderDetailsBtn" type="button">
+                                                    Details
+                                                    {% render "icon-chevron" %}
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="account-order__details hidden">
+                                            <div class="account-order__item">
+                                                <p class="caption-text">Order Items</p>
+
+                                                {%- for line_item in order.line_items -%}
+                                                    <a class="account-order__link" href="{{ line_item.product.url }}">
+                                                        <img src="{{ line_item.image | product_img_url: 'small' }}"
+                                                             width="120" height="120" alt="{{ line_item.title }}">
+
+                                                        <div class="account-order__info">
+                                                            <p>{{ line_item.title }}</p>
+                                                            <span>x{{ line_item.quantity }}</span>
+                                                            <span>{{ line_item.price | money }}</span>
+                                                        </div>
+                                                    </a>
+                                                {%- endfor -%}
+                                            </div>
+
+                                            <div class="account-order__description">
+                                                <p class="caption-text">Order Total</p>
+
+                                                <ul>
+                                                    <li>
+                                                        <span>Subtotal</span>
+                                                        <b>{{ order.subtotal_price | money }}</b>
+                                                    </li>
+
+                                                    <li>
+                                                        <span>Shipping</span>
+                                                        <b>{{ order.shipping_price | money }}</b>
+                                                    </li>
+
+                                                    <li>
+                                                        <span>Taxes</span>
+                                                        <b>{{ order.tax_price | money }}</b>
+                                                    </li>
+
+                                                    <li>
+                                                        <span>Order total</span>
+                                                        <b>{{ order.total_price | money }}</b>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="account-order__description">
+                                                <p class="caption-text">shipping info</p>
+
+                                                <ul>
+                                                    <li>
+                                                        <span>Name</span>
+                                                        {% assign shippingName = order.shipping_address.name %}
+                                                        <b>{{ shippingName }}</b>
+                                                    </li>
+
+                                                    <li>
+                                                        <span>Address</span>
+                                                        {% assign shippingAddress = order.shipping_address.summary %}
+                                                        <b>{{ shippingAddress }}</b>
+                                                    </li>
+
+                                                    <li>
+                                                        <span>Email</span>
+                                                        {% assign shippingEmail = order.customer.email %}
+                                                        <b>{{ shippingEmail }}</b>
+                                                    </li>
+
+                                                    <li>
+                                                        <span>Phone</span>
+                                                        {% assign shippingPhone = order.shipping_address.phone %}
+                                                        <b>{{ shippingPhone }}</b>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+
+                            <div class="pagination">
+                                {{ paginate | default_pagination }}
+                            </div>
+                        {% endpaginate %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <!-- YOTPO LOYALTY CODE -->
+  <div class="yotpo-widget-instance" data-yotpo-instance-id="65574"></div>
+  <!-- END YOTPO LOYALTY CODE -->
+
+<script type="module">
+    const orderList = document.getElementById("orderList");
+    const orders = orderList.querySelectorAll(".account-card");
+
+    orders.forEach(order => {
+        const detailsBtn = order.querySelector(".orderDetailsBtn");
+        const detailsInfo = order.querySelector(".account-order__details");
+
+        detailsBtn.addEventListener("click", () => {
+            detailsInfo.classList.toggle("hidden");
+            detailsBtn.classList.toggle("open");
+        });
+    })
+</script>
+

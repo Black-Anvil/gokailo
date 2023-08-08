@@ -1,0 +1,176 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+        "caption": "trust kailo",
+        "title": "clinical trials results",
+        "description": "<p>The final results are in, and they’re incredibly positive. The Kailo Pain Patch works. On January 30, 2022 Pain Relief Technologies LLC and Kailo Pain Patch® announced the IRB-Approved PREVENT study’s final results. The trial produced positive results in patients with mild, moderate, and severe pain conditions, with resounding support from nearly all participants.<\/p>",
+        "image_background": "shopify:\/\/shop_images\/cbf7486200ba2c8d5cc66eec9b46cdb3.png",
+        "link_url": "\/",
+        "link_text": "read more"
+      }
+    },
+    "review-summary": {
+      "type": "review-summary",
+      "blocks": {
+        "fed3eab0-3098-404e-b957-18d0b1d17b3a": {
+          "type": "block",
+          "settings": {
+            "text": "71% decrease in the mean Brief Pain Inventory (BPI) Severity score across all patients."
+          }
+        },
+        "7ad69edc-7827-4df2-b690-2ad1a6c57675": {
+          "type": "block",
+          "settings": {
+            "text": "67% decrease in the mean BPI Interference score across all patients."
+          }
+        },
+        "0d21dc26-9132-41fb-a6e2-7db3883fcbdf": {
+          "type": "block",
+          "settings": {
+            "text": "98% of participants reported “less” or “a lot less” concurrent oral medication use."
+          }
+        },
+        "ba31523b-b70d-4363-829a-9f1c7fb33af9": {
+          "type": "block",
+          "settings": {
+            "text": "97% of participants were “very\/extremely” satisfied with the Kailo Pain Patch and noted that they preferred the patch over oral medication."
+          }
+        },
+        "ba83766c-d0e4-49cc-9b3c-99565b338f18": {
+          "type": "block",
+          "settings": {
+            "text": "Quality of Life (QoL) improvements were demonstrated in mood, sleep, walking ability, relationships with other people, and enjoyment of life."
+          }
+        },
+        "46bbd962-6395-4b6c-b471-2478cf1ae8e8": {
+          "type": "block",
+          "settings": {
+            "text": "Patients reported no side effects."
+          }
+        }
+      },
+      "block_order": [
+        "fed3eab0-3098-404e-b957-18d0b1d17b3a",
+        "7ad69edc-7827-4df2-b690-2ad1a6c57675",
+        "0d21dc26-9132-41fb-a6e2-7db3883fcbdf",
+        "ba31523b-b70d-4363-829a-9f1c7fb33af9",
+        "ba83766c-d0e4-49cc-9b3c-99565b338f18",
+        "46bbd962-6395-4b6c-b471-2478cf1ae8e8"
+      ],
+      "settings": {
+        "blockquote_text": "<p>Patients who used Kailo over a period of 30 days showed a vast reduction of their pain severity levels. They experienced a better quality of life, improved function, were very satisfied with the Kailo Pain Patch, and preferred the patch over oral pain medications.\"<\/p>",
+        "author_name": "Jeffrey Gudin, MD",
+        "author_position": "Principal Investigator",
+        "blockquote_link_url": "\/",
+        "blockquote_link_text": "read study",
+        "summary_title": "summary \/ findings",
+        "summary_description": "<p>No time to read the full trial results? We have you covered with a brief outline of the trial and its outcome. The study was administered by Clarity Science LLC, a respected international scientific research company, and led by Dr. Jeffrey Gudin, the principal investigator.<br\/><br\/>The clinical trial results represent the outcomes from the PREVENT study. PREVENT is an IRB-approved, minimal risk, observational trial.<br\/><br\/>The trial evaluated a group of 66 patients with mild, moderate, and severe pain and neuropathic, musculoskeletal, and arthritic conditions. Their changes in pain severity, medication usage, pain interference, and side effects were closely monitored and evaluated.<\/p>"
+      }
+    },
+    "science-small": {
+      "type": "science-small",
+      "settings": {
+        "title": "THE SCIENCE BEHIND KAILO",
+        "text": "Learn everything you need to know about how the kailo works",
+        "link_url": "\/",
+        "link_text": "learn more"
+      }
+    },
+    "icon-list": {
+      "type": "icon-list",
+      "blocks": {
+        "44787196-5060-46c4-a3a4-d8148c22d120": {
+          "type": "block",
+          "settings": {
+          }
+        },
+        "4bff5309-1ae2-47e4-93b7-17b78eb3620b": {
+          "type": "block",
+          "settings": {
+          }
+        },
+        "f84483d2-1a45-4247-99b7-d9bc9eef29df": {
+          "type": "block",
+          "settings": {
+          }
+        },
+        "0885b358-2b55-4cb4-8763-c35c9d9ad1a1": {
+          "type": "block",
+          "settings": {
+          }
+        },
+        "2d971b40-4cde-42ea-8797-0ce9809eb6af": {
+          "type": "block",
+          "settings": {
+          }
+        },
+        "a0658ea1-9bc2-4485-b220-1046e9a6dc79": {
+          "type": "block",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "44787196-5060-46c4-a3a4-d8148c22d120",
+        "4bff5309-1ae2-47e4-93b7-17b78eb3620b",
+        "f84483d2-1a45-4247-99b7-d9bc9eef29df",
+        "0885b358-2b55-4cb4-8763-c35c9d9ad1a1",
+        "2d971b40-4cde-42ea-8797-0ce9809eb6af",
+        "a0658ea1-9bc2-4485-b220-1046e9a6dc79"
+      ],
+      "settings": {
+        "background_color": "#2794a8"
+      }
+    },
+    "reviews-block": {
+      "type": "reviews-block",
+      "blocks": {
+        "839c5d35-e2ac-4ced-887d-8c51d4d9c592": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "stars": 5,
+            "author_name": "Mauricio C.",
+            "author_info": "Verified Buyer | 09\/09\/21"
+          }
+        },
+        "3c010b63-5d43-4ea9-9268-f66d1582088e": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "stars": 5,
+            "author_name": "Mauricio C.",
+            "author_info": "Verified Buyer | 09\/09\/21"
+          }
+        }
+      },
+      "block_order": [
+        "839c5d35-e2ac-4ced-887d-8c51d4d9c592",
+        "3c010b63-5d43-4ea9-9268-f66d1582088e"
+      ],
+      "settings": {
+      }
+    },
+    "shop-category": {
+      "type": "shop-category",
+      "settings": {
+        "title": "shop by category",
+        "collection_list": [
+          "frontpage",
+          "last-test",
+          "test-1"
+        ]
+      }
+    }
+  },
+  "order": [
+    "page-hero",
+    "review-summary",
+    "science-small",
+    "icon-list",
+    "reviews-block",
+    "shop-category"
+  ]
+}

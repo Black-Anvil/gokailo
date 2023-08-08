@@ -2,19 +2,25 @@
   "name": "Header",
   "type": "header",
   "sections": {
-    "header-announcement-bar": {
-      "type": "header-announcement-bar",
+    "announcement-bar": {
+      "type": "announcement-bar",
       "settings": {
+        "text": "Due to the worker shortage please expect 1-2 day shipping delays for USPS Priority Mail and First Class Package Service",
+        "twitter": true,
+        "facebook": true,
+        "youtube": true,
+        "instagram": true,
+        "email": true
       }
     },
-    "header-navigation": {
-      "type": "header-navigation",
+    "navigation": {
+      "type": "navigation",
       "settings": {
       }
     }
   },
   "order": [
-    "header-announcement-bar",
-    "header-navigation"
+    "announcement-bar",
+    "navigation"
   ]
 }

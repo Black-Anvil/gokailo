@@ -56,6 +56,11 @@
     transition: opacity 0.15s linear, background-color 0.15s linear;
 }
 
+.accordion__title {
+    text-align: left;
+    transition: color 0.15s linear;
+}
+
 .accordion__icon::before {
     transform: translate(-50%, -50%) rotate(90deg);
 }
@@ -77,6 +82,9 @@
     display: block;
 }
 
+.accordion--secondary.opened .accordion__header {
+    color: var(--primary2);
+}
 
 .accordion--secondary .accordion__header {
     font-weight: 700;
@@ -92,4 +100,15 @@
 
 .accordion--big .accordion__body {
     padding: 24px 0 0;
+}
+
+@media screen and (max-width: 768px) {
+    .accordion--big {
+        padding: 16px 0;
+    }
+
+    .accordion {
+        padding: 16px 0;
+    }
+
 }

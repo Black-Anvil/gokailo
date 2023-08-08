@@ -1,0 +1,154 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+        "caption": "trust kailo",
+        "title": "KAILO CONCIERGE PROGRAM",
+        "description": "<p>The number one goal of everyone here at Kailo is to assist in the management and relief of pain. Critical to the success of the Kailo is the proper use and placement of the Kailo, therefore we have created the Kailo Concierge Program to personally assist our customers in the proper placement and adhesion of the Kailo by offering a<\/p>",
+        "image_background": "shopify:\/\/shop_images\/page-concierge.png",
+        "link_url": "\/",
+        "link_text": "read more testimonials"
+      }
+    },
+    "placement-help": {
+      "type": "placement-help",
+      "blocks": {
+        "c295ee41-94b9-4df4-bcd6-32d4f0b0b42e": {
+          "type": "block",
+          "settings": {
+            "text": "Complimentary 20 minute placement consultation"
+          }
+        },
+        "2584be59-5685-4e9a-a6c9-fc7a13e45c59": {
+          "type": "block",
+          "settings": {
+            "text": "Service will take place with a specialist via free web conferencing from zoom"
+          }
+        },
+        "31c69c37-46d2-4f63-a040-68d1ea12ef66": {
+          "type": "block",
+          "settings": {
+            "text": "No sales, product return, or distribution services available"
+          }
+        },
+        "7490b307-2736-40a0-9038-e61ef441c25b": {
+          "type": "block",
+          "settings": {
+            "text": "Concierge services available in us only"
+          }
+        }
+      },
+      "block_order": [
+        "c295ee41-94b9-4df4-bcd6-32d4f0b0b42e",
+        "2584be59-5685-4e9a-a6c9-fc7a13e45c59",
+        "31c69c37-46d2-4f63-a040-68d1ea12ef66",
+        "7490b307-2736-40a0-9038-e61ef441c25b"
+      ],
+      "settings": {
+        "title": "NEED PLACEMENT ASSISTANCE?",
+        "text": "The correct placement of the Kailo is key to its ability to reduce pain. To ensure you have the best experience we are happy to offer a complimentary consultation.",
+        "subtitle": "TERMS OF SERVICE"
+      }
+    },
+    "icon-list": {
+      "type": "icon-list",
+      "blocks": {
+        "ce4be929-87f1-4ddf-bcd8-7a701ff420c3": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "55e9a0c5-1bd2-477c-b748-dc03aef9396b": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "a60ab778-b6aa-423a-80be-454399caba63": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "b14361da-438a-4474-9180-970992f6795f": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "ec333aab-cbd7-49f5-8389-5176b8718f31": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "13f52280-84a8-401b-a487-bfb2e33c77b5": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        }
+      },
+      "block_order": [
+        "ce4be929-87f1-4ddf-bcd8-7a701ff420c3",
+        "55e9a0c5-1bd2-477c-b748-dc03aef9396b",
+        "a60ab778-b6aa-423a-80be-454399caba63",
+        "b14361da-438a-4474-9180-970992f6795f",
+        "ec333aab-cbd7-49f5-8389-5176b8718f31",
+        "13f52280-84a8-401b-a487-bfb2e33c77b5"
+      ],
+      "settings": {
+        "background_color": "#2794a8"
+      }
+    },
+    "reviews-block": {
+      "type": "reviews-block",
+      "blocks": {
+        "19368eb7-c320-4ac4-8315-b03dc478c071": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "stars": 5,
+            "author_name": "Mauricio C.",
+            "author_info": "Verified Buyer | 09\/09\/21"
+          }
+        },
+        "ddb7a667-bbbd-47d1-a7fb-2d4de3e0cfb9": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "stars": 5,
+            "author_name": "Mauricio C.",
+            "author_info": "Verified Buyer | 09\/09\/21"
+          }
+        }
+      },
+      "block_order": [
+        "19368eb7-c320-4ac4-8315-b03dc478c071",
+        "ddb7a667-bbbd-47d1-a7fb-2d4de3e0cfb9"
+      ],
+      "settings": {
+      }
+    },
+    "shop-category": {
+      "type": "shop-category",
+      "settings": {
+        "title": "shop by category",
+        "collection_list": [
+          "frontpage",
+          "test-1",
+          "last-test"
+        ]
+      }
+    }
+  },
+  "order": [
+    "page-hero",
+    "placement-help",
+    "icon-list",
+    "reviews-block",
+    "shop-category"
+  ]
+}

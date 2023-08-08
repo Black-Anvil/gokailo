@@ -1,0 +1,70 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+        "caption": "trust kailo",
+        "title": "Risk free program",
+        "description": "<p>We offer a no-hassle, no restrictions, 100% money-back guarantee on our Kailo Original. If you feel Kailo isn't working for you within 90 days, we'll gladly take it back.<\/p>",
+        "image_background": "shopify:\/\/shop_images\/page-risk.png",
+        "image": "shopify:\/\/shop_images\/image-header.png",
+        "link_url": "",
+        "link_text": ""
+      }
+    },
+    "single-product": {
+      "type": "single-product",
+      "settings": {
+      }
+    },
+    "need-assistance": {
+      "type": "need-assistance",
+      "blocks": {
+        "6f8c16d2-eeaa-4554-a614-da8cbec76d17": {
+          "type": "block",
+          "settings": {
+            "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M22 6L12 13L2 6\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "title": "email",
+            "text": "Please email us at the link below and include your name and order number for questions about a previous purchase.",
+            "link_url": "mailto:support@gokailo.com",
+            "link_text": "support@gokailo.com"
+          }
+        },
+        "1ed7b405-1ccf-4052-9d3b-c62157532937": {
+          "type": "block",
+          "settings": {
+            "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M21 11.5C21.0034 12.8199 20.6951 14.1219 20.1 15.3C19.3944 16.7118 18.3098 17.8992 16.9674 18.7293C15.6251 19.5594 14.0782 19.9994 12.5 20C11.1801 20.0035 9.87812 19.6951 8.7 19.1L3 21L4.9 15.3C4.30493 14.1219 3.99656 12.8199 4 11.5C4.00061 9.92179 4.44061 8.37488 5.27072 7.03258C6.10083 5.69028 7.28825 4.6056 8.7 3.90003C9.87812 3.30496 11.1801 2.99659 12.5 3.00003H13C15.0843 3.11502 17.053 3.99479 18.5291 5.47089C20.0052 6.94699 20.885 8.91568 21 11V11.5Z\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "title": "chat",
+            "text": "If you have a question that can’t wait, please click below for a live chat agent to get instant answers to your questions.",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "8fff5eb2-8f0c-494a-92df-6ed9ba0dd406": {
+          "type": "block",
+          "settings": {
+            "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M11.795 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V7C3 6.46957 3.21071 5.96086 3.58579 5.58579C3.96086 5.21071 4.46957 5 5 5H17C17.5304 5 18.0391 5.21071 18.4142 5.58579C18.7893 5.96086 19 6.46957 19 7V11\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M14 18C14 19.0609 14.4214 20.0783 15.1716 20.8284C15.9217 21.5786 16.9391 22 18 22C19.0609 22 20.0783 21.5786 20.8284 20.8284C21.5786 20.0783 22 19.0609 22 18C22 16.9391 21.5786 15.9217 20.8284 15.1716C20.0783 14.4214 19.0609 14 18 14C16.9391 14 15.9217 14.4214 15.1716 15.1716C14.4214 15.9217 14 16.9391 14 18Z\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M15 3V7\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M7 3V7\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M3 11H19\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M18 16.4961V18.0001L19 19.0001\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "title": "concierge",
+            "text": "As a concierge member, we want to give you the best assistance. Please visit our concierge page to learn more.",
+            "link_url": "\/",
+            "link_text": "Concierge service"
+          }
+        }
+      },
+      "block_order": [
+        "6f8c16d2-eeaa-4554-a614-da8cbec76d17",
+        "1ed7b405-1ccf-4052-9d3b-c62157532937",
+        "8fff5eb2-8f0c-494a-92df-6ed9ba0dd406"
+      ],
+      "settings": {
+        "title": "NEED ASSISTANCE?",
+        "text": "We have a number of ways to assist to ensure you have the best possible experience and results."
+      }
+    }
+  },
+  "order": [
+    "page-hero",
+    "single-product",
+    "need-assistance"
+  ]
+}

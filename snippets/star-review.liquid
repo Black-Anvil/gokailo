@@ -1,9 +1,9 @@
 <div class="star">
     {% for i in (1..5) %}
         {% if i <= star %}
-            {% render "icon-star", stroke: "full" %}
+            {% render "icon-star", stroke: color %}
         {% else %}
-            {% render "icon-star", stroke: "empty" %}
+            {% render "icon-star", stroke: no_color %}
         {% endif %}
     {% endfor %}
 </div>

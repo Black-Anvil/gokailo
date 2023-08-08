@@ -9,11 +9,22 @@
         max-width: 1440px;
         margin: 0 auto;
         background-image: url({{ "logo-opacity-k.png" | asset_url }});
+        background-size: contain;
         background-repeat: no-repeat;
     }
 
     .top-logo__wrapper > *:not(:last-child) {
         margin: 0 0 16px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .top-logo__header {
+            padding: 90px 0 60px;
+        }
+
+        .top-logo__wrapper > *:not(:last-child) {
+            margin: 0 0 8px;
+        }
     }
 </style>
 

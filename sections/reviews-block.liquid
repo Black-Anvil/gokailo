@@ -1,0 +1,182 @@
+<style>
+    .reviews-block {
+        padding: 80px 0;
+        color: var(--grays6);
+        background-color: var(--primary5);
+    }
+
+    .reviews-block__swiper {
+        overflow: hidden;
+    }
+
+    .reviews-block__slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 840px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 24px;
+    }
+
+    .reviews-block__pagination {
+        justify-content: center;
+        margin: 64px 0 0;
+    }
+
+    .reviews-block blockquote {
+        margin: 0 0 32px;
+    }
+
+    .reviews-block .star {
+        margin: 0 0 16px;
+    }
+
+    .reviews-block__author {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reviews-block__author > *:not(:last-child) {
+        margin: 0 0 4px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .reviews-block {
+            padding: 60px 0;
+        }
+
+        .reviews-block__slide {
+            padding: 0;
+        }
+
+        .reviews-block__pagination {
+            margin: 24px 0 0;
+        }
+
+        .reviews-block blockquote {
+            margin: 0 0 16px;
+        }
+
+        .reviews-block .star {
+            margin: 0 0 8px;
+        }
+
+        .reviews-block .swiper-button-prev,
+        .reviews-block .swiper-button-next {
+            display: none;
+        }
+    }
+</style>
+
+{{ "star.css" | asset_url | stylesheet_tag }}
+
+<section class="reviews-block">
+    <div class="container">
+        <div class="reviews-block__swiper">
+            <div class="swiper-wrapper">
+                {% for block in section.blocks %}
+                    <div class="swiper-slide">
+                        <figure class="reviews-block__slide">
+                            {% if block.settings.blockquote != blank %}
+                                <blockquote class="h5-title">{{ block.settings.blockquote }}</blockquote>
+                            {% endif %}
+
+                            {% render "star-review", star: block.settings.stars, color: "#2794A8", no_color: "#b3b3b3" %}
+
+                            <figcaption class="reviews-block__author">
+                                {% if block.settings.author_name != blank %}
+                                    <span><b>{{ block.settings.author_name }}</b></span>
+                                {% endif %}
+
+                                {% if block.settings.author_info != blank %}
+                                    <span>{{ block.settings.author_info }}</span>
+                                {% endif %}
+                            </figcaption>
+                        </figure>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="swiper-button-prev button-icon">
+                {% render "icon-chevron" %}
+            </div>
+            <div class="swiper-button-next button-icon">
+                {% render "icon-chevron" %}
+            </div>
+
+            <div class="swiper-pagination reviews-block__pagination"></div>
+        </div>
+    </div>
+</section>
+
+<script type="module">
+    const initSlider = () => {
+        new Swiper('.reviews-block__swiper', {
+            slidesPerView: 1,
+            spaceBetween: 32,
+
+            autoHeight: true,
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        })
+    };
+
+    document.addEventListener("shopify:section:load", initSlider);
+
+    initSlider();
+</script>
+
+{% schema %}
+{
+  "name": "Reviews Block",
+  "blocks": [
+    {
+      "name": "Review Slide",
+      "type": "slide",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "blockquote",
+          "label": "Blockquote"
+        },
+        {
+          "type": "range",
+          "id": "stars",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "Stars",
+          "default": 5
+        },
+        {
+          "type": "header",
+          "content": "Author"
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author Name"
+        },
+        {
+          "type": "text",
+          "id": "author_info",
+          "label": "Author Info"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

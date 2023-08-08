@@ -1,0 +1,168 @@
+<style>
+    .tabs-block {
+        padding: 80px 0;
+    }
+
+    .tabs-block .container {
+        --container-width: 950px;
+    }
+
+    .tabs-block__info {
+        display: none;
+    }
+
+    .tabs-block__info.active {
+        display: block;
+    }
+
+    .tabs-block__header {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 0 0 40px;
+    }
+
+    .tabs-block__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 40px;
+        background-color: transparent;
+        border: none;
+        color: inherit;
+        cursor: pointer;
+        box-shadow: inset 0 -1px 0 0 var(--grays4);
+        transition: color 0.15s linear, box-shadow 0.15s linear;
+    }
+
+    .tabs-block__button.active {
+        box-shadow: inset 0 -2px 0 0 var(--primary1);
+    }
+
+    .tabs-block__button:hover,
+    .tabs-block__button:focus {
+        color: var(--grays1);
+    }
+
+    .tabs-block__button svg {
+        margin: 0 6px 0 0;
+    }
+
+    .tabs-block__button path {
+        stroke: currentColor;
+        transition: color 0.15s linear;
+    }
+
+    @media screen and (max-width: 768px) {
+        .tabs-block {
+            padding: 60px 0;
+        }
+
+        .tabs-block__header {
+            grid-template-columns: 1fr;
+            margin: 0 0 24px;
+        }
+    }
+</style>
+
+<section class="tabs-block">
+    <div class="container">
+        <div class="tabs-block__header">
+            {% for block in section.blocks %}
+                <button data-active="{{ block.settings.activate_tab }}" class="h6-title tabs-block__button">
+                    {% if block.settings.icon != blank %}
+                        {{ block.settings.icon }}
+                    {% endif %}
+
+                    {% if block.settings.title != blank %}
+                        {{ block.settings.title }}
+                    {% endif %}
+                </button>
+            {% endfor %}
+        </div>
+
+        <div class="tabs-block__body">
+            {% for block in section.blocks %}
+                <div class="tabs-block__info content">
+                    {% if block.settings.description != blank %}
+                        {{ block.settings.description }}
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<script type="module">
+    const initTabs = () => {
+        const tabs = document.querySelector(".tabs-block");
+        const buttons = tabs.querySelectorAll(".tabs-block__button");
+        const contentItems = tabs.querySelectorAll(".tabs-block__info");
+
+        buttons.forEach((btn, index) => {
+            const isActive = btn.dataset.active === "true";
+
+            if (isActive) {
+                buttons.forEach((item, itemIndex) => {
+                    item.classList.remove("active");
+                    contentItems[itemIndex].classList.remove("active");
+                });
+
+                btn.classList.add("active");
+                contentItems[index].classList.add("active");
+            }
+
+            btn.addEventListener("click", () => {
+                buttons.forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                contentItems.forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                btn.classList.add("active");
+                contentItems[index].classList.add("active");
+            });
+        });
+    };
+
+    window.addEventListener("shopify:section:load", initTabs);
+
+    initTabs();
+</script>
+
+{% schema %}
+{
+  "name": "Tabs Block",
+  "blocks": [
+    {
+      "name": "Tab Item",
+      "type": "block",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "activate_tab",
+          "label": "Activate Tab",
+          "default": false
+        },
+        {
+          "type": "html",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

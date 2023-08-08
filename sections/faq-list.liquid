@@ -1,0 +1,183 @@
+<style>
+    .faq-list {
+        padding: 80px 0 100px;
+    }
+
+    .faq-list__title {
+        margin: 0 0 16px;
+        color: var(--primary5);
+    }
+
+    .faq-list__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .faq-list {
+            padding: 60px 0 70px;
+        }
+
+        .faq-list__wrapper {
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+    }
+</style>
+
+{{ "accordion.css" | asset_url | stylesheet_tag }}
+
+<section class="faq-list">
+    <div class="container">
+        <div class="faq-list__wrapper">
+            <div class="faq-list__block">
+                {% if section.settings.title_1 != blank %}
+                    <h5 class="h5-title faq-list__title">{{ section.settings.title_1 }}</h5>
+                {% endif %}
+
+                <ul>
+                    {% for block in section.blocks %}
+                        {% case block.type %}
+                            {% when "kailo_work" %}
+                                <li>
+                                    <div class="accordion accordion--secondary">
+                                        <button class="accordion__header">
+                                            <span class="accordion__title">{{ block.settings.title }}</span>
+                                            <span class="accordion__icon"></span>
+                                        </button>
+
+                                        <div class="accordion__body content">{{ block.settings.description }}</div>
+                                    </div>
+                                </li>
+                        {% endcase %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="faq-list__block">
+                {% if section.settings.title_2 != blank %}
+                    <h5 class="h5-title faq-list__title">{{ section.settings.title_2 }}</h5>
+                {% endif %}
+
+                <ul>
+                    {% for block in section.blocks %}
+                        {% case block.type %}
+                            {% when "specific_condition" %}
+                                <li>
+                                    <div class="accordion accordion--secondary">
+                                        <button class="accordion__header">
+                                            <span class="accordion__title">{{ block.settings.title }}</span>
+                                            <span class="accordion__icon"></span>
+                                        </button>
+
+                                        <div class="accordion__body content">{{ block.settings.description }}</div>
+                                    </div>
+                                </li>
+                        {% endcase %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="faq-list__block">
+                {% if section.settings.title_3 != blank %}
+                    <h5 class="h5-title faq-list__title">{{ section.settings.title_3 }}</h5>
+                {% endif %}
+
+                <ul>
+                    {% for block in section.blocks %}
+                        {% case block.type %}
+                            {% when "logistical_questions" %}
+                                <li>
+                                    <div class="accordion accordion--secondary">
+                                        <button class="accordion__header">
+                                            <span class="accordion__title">{{ block.settings.title }}</span>
+                                            <span class="accordion__icon"></span>
+                                        </button>
+
+                                        <div class="accordion__body content">{{ block.settings.description }}</div>
+                                    </div>
+                                </li>
+                        {% endcase %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ List",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "Title 1"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Title 2"
+    },
+    {
+      "type": "text",
+      "id": "title_3",
+      "label": "Title 3"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "kailo_work",
+      "name": "Kailo Work - FAQ",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "type": "specific_condition",
+      "name": "Specific - FAQ",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "type": "logistical_questions",
+      "name": "Logistical - FAQ",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

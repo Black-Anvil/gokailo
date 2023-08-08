@@ -63,6 +63,8 @@
     margin: 0 16px 0 0;
 }
 
+
+
 .account-order__details.hidden {
     display: none;
 }
@@ -99,7 +101,6 @@
 
 .account-order__canceled p {
     display: flex;
-    align-items: center;
 }
 
 .account-order__canceled span {
@@ -109,6 +110,7 @@
 .account-order__table {
     border-radius: 6px;
     border: 1px solid var(--grays4);
+    overflow: auto;
 }
 
 .account-order__table table {
@@ -216,7 +218,9 @@
 }
 
 
+
 .account-card {
+    position: relative;
     padding: 16px;
     border-radius: 6px;
     border: 1px solid var(--grays4);
@@ -262,4 +266,113 @@
 
 .account-card__buttons form {
     display: inherit;
+}
+
+@media screen and (max-width: 768px) {
+    .account__wrapper {
+        flex-direction: column;
+        margin: 16px 0 0;
+    }
+
+    .account__wrapper > *:not(:last-child) {
+        margin: 0 0 16px;
+    }
+
+    .account .account-menu {
+        min-width: 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .account__info {
+        padding: 16px;
+    }
+
+    .account__header {
+        margin: 0 0 16px;
+    }
+
+    .account__header > *:not(:last-child) {
+        margin: 0 16px 0 0;
+    }
+
+    .account__list {
+        margin: 16px 0;
+    }
+
+    .account-address__form form {
+        margin: 16px 0 0;
+    }
+
+
+    .account-card__wrapper {
+        flex-direction: column;
+    }
+
+    .account-card__wrapper > *:not(:last-child) {
+        margin: 0 0 12px;
+    }
+
+    .account-card__wrapper .hidden {
+        display: none;
+    }
+
+    .account-card__wrapper .button--action {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .account-order__block {
+        margin: 16px 0 0;
+    }
+
+    .account-order__addresses {
+        flex-direction: column;
+        margin: 0 0 -16px;
+    }
+
+    .account-order__addresses > * {
+        width: 100%;
+        margin: 0 0 16px;
+    }
+
+    .account-card__buttons {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+    }
+
+    .account-card {
+        padding: 12px;
+    }
+
+    .account-order__link img {
+        width: 80px;
+        min-width: 80px;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .account-address__buttons {
+        flex-direction: column;
+    }
+
+    .account-address__buttons > *:not(:last-child) {
+        margin: 0 0 16px;
+    }
+
+    .account__header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0 0 16px;
+    }
+
+    .account__header > *:not(:last-child) {
+        margin: 0 0 16px;
+    }
+
+    .account__header .button {
+        width: 100%;
+    }
 }

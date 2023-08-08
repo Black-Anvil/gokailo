@@ -1,12 +1,12 @@
 {
   "sections": {
-    "main-account": {
-      "type": "main-account",
+    "account": {
+      "type": "account",
       "settings": {
       }
     }
   },
   "order": [
-    "main-account"
+    "account"
   ]
 }

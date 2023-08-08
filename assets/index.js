@@ -14,17 +14,19 @@ const mainImageSize = () => {
 
     const catalogListSelector = ".catalog__list > li";
     const productImageSelector = ".product__images > li";
-    const pageCollectionSelector = ".page-shop-category__list > li";
+    const pageCollectionSelector = ".shop-category__swiper .swiper-slide";
 
-    changeImgSize(catalogListSelector);
-    changeImgSize(productImageSelector);
-    changeImgSize(pageCollectionSelector);
-
-    window.addEventListener("resize", () => {
+    const initImagesChanger = () => {
         changeImgSize(catalogListSelector);
         changeImgSize(productImageSelector);
         changeImgSize(pageCollectionSelector);
-    });
+    };
+
+    initImagesChanger();
+
+    document.addEventListener("shopify:section:load", initImagesChanger);
+
+    window.addEventListener("resize", initImagesChanger);
 };
 
 mainImageSize();
@@ -49,18 +51,26 @@ $(document).ready(function () {
     });
 });
 
-const accordions = document.querySelectorAll(".accordion");
+const initAccordion = () => {
+    const accordions = document.querySelectorAll(".accordion");
 
-accordions.forEach(accordion => {
-    const btn = accordion.querySelector(".accordion__header");
+    accordions.forEach(accordion => {
+        const btn = accordion.querySelector(".accordion__header");
 
-    btn.addEventListener("click", () => {
-        accordions.forEach(item => {
-            if (accordion !== item) {
-                item.classList.remove("opened");
-            }
+        btn.addEventListener("click", () => {
+            accordions.forEach(item => {
+                if (accordion !== item) {
+                    item.classList.remove("opened");
+                }
+            });
+
+            accordion.classList.toggle("opened");
         });
-
-        accordion.classList.toggle("opened");
     });
-});
+};
+
+document.addEventListener("shopify:section:load", initAccordion);
+
+initAccordion();
+
+

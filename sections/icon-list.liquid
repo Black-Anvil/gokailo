@@ -1,0 +1,71 @@
+<style>
+    .icon-list {
+        padding: 48px 0;
+        color: var(--grays6);
+        background-color: {{ section.settings.background_color }};
+    }
+
+    .icon-list ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .icon-list li {
+        transition: transform 0.15s linear;
+    }
+
+    .icon-list li:not(:last-child) {
+        margin: 0 0 16px 16px;
+    }
+
+    .icon-list li:hover {
+        transform: scale(1.2);
+    }
+
+    @media screen and (max-width: 768px) {
+        .icon-list {
+            padding: 32px 0;
+        }
+    }
+</style>
+
+<div class="icon-list">
+    <div class="container">
+        <ul>
+            {% for block in section.blocks %}
+                <li>
+                    <img src="{{ block.settings.image | image_url }}" alt="{{ block.settings.image.alt }}">
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Icon List",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#355D66"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Icon",
+      "type": "block",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

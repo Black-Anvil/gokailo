@@ -1,0 +1,292 @@
+<style>
+    .review-summary {
+        padding: 160px 0 80px;
+    }
+
+    .review-summary__image {
+        height: 556px;
+        background-image: url({{ section.settings.image_background | image_url }});
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+    }
+
+    .review-summary__block {
+        position: relative;
+    }
+
+    .review-summary__testimonial {
+        position: absolute;
+        top: -80px;
+        left: 80px;
+        max-width: 440px;
+        padding: 60px;
+        border-radius: 6px;
+        color: var(--grays6);
+        background-color: var(--primary1);
+    }
+
+    .review-summary__testimonial > *:not(:last-child) {
+        margin: 0 0 24px;
+    }
+
+    .review-summary__quote {
+        position: relative;
+        padding: 80px 0 0;
+    }
+
+    .review-summary__quote svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .review-summary__author {
+        display: flex;
+    }
+
+    .review-summary__author img {
+        margin: 0 16px 0 0;
+    }
+
+    .review-summary__author-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .review-summary__author-name {
+        font-weight: 700;
+    }
+
+    .review-summary__author-position {
+        margin: 4px 0 0;
+        opacity: .8;
+    }
+
+    .review-summary__info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 80px;
+        background-color: var(--grays5);
+        gap: 80px;
+    }
+
+    .review-summary__descriptions > *:not(:last-child) {
+        margin: 0 0 24px;
+    }
+
+    .review-summary__results > li {
+        font-weight: 700;
+        padding: 24px;
+        box-shadow: inset 0 -1px 0 0 var(--grays4);
+        transition: color 0.15s linear, background-color 0.15s linear, box-shadow 0.15s linear, border-radius 0.15s linear;
+    }
+
+    .review-summary__results > li:hover {
+        color: var(--grays6);
+        background-color: var(--primary1);
+        border-radius: 6px;
+        box-shadow: none;
+    }
+
+    @media screen and (max-width: 992px) {
+        .review-summary__info {
+            padding: 40px;
+            gap: 40px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .review-summary {
+            padding: 60px 0 0;
+        }
+
+        .review-summary .container {
+            padding: 0;
+        }
+
+        .review-summary__testimonial {
+            position: relative;
+            top: 30px;
+            left: 0;
+            transform: translate(0, 0);
+        }
+
+        .review-summary__block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .review-summary__image {
+            width: 100%;
+            height: 275px;
+        }
+
+        .review-summary__testimonial {
+            padding: 16px;
+        }
+
+        .review-summary__testimonial > *:not(:last-child) {
+            margin: 0 0 16px;
+        }
+
+        .review-summary__info {
+            grid-template-columns: 1fr;
+            padding: 60px 15px;
+            gap: 40px;
+        }
+
+        .review-summary__descriptions > *:not(:last-child) {
+            margin: 0 0 16px;
+        }
+
+        .review-summary__results > li {
+            padding: 16px;
+        }
+    }
+</style>
+
+<div class="review-summary">
+    <div class="container">
+        <div class="review-summary__block">
+            <div style="padding: 0 16px">
+                <div class="review-summary__testimonial">
+                    <div class="review-summary__quote">
+                        {% render "icon-quote" %}
+
+                        {% if section.settings.blockquote_text != blank %}
+                            <p class="h5-title review-summary__text">{{ section.settings.blockquote_text }}</p>
+                        {% endif %}
+                    </div>
+
+                    <div class="review-summary__author">
+                        {% if section.settings.blockquote_image %}
+                            <img src="{{ section.settings.blockquote_image | image_url }}" width="52" height="52" alt="{{ section.settings.blockquote_image.alt }}">
+                        {% endif %}
+
+                        <div class="review-summary__author-info">
+                            {% if section.settings.author_name != blank %}
+                                <span class="review-summary__author-name">{{ section.settings.author_name }}</span>
+                            {% endif %}
+
+                            {% if section.settings.author_position != blank %}
+                                <span class="review-summary__author-position">{{ section.settings.author_position }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    {% if section.settings.blockquote_link_text != blank and section.settings.blockquote_link_url != blank %}
+                        <a class="button-text button-link" href="{{ section.settings.blockquote_link_url }}">
+                            {{ section.settings.blockquote_link_text }}
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="review-summary__image"></div>
+        </div>
+
+        <div class="review-summary__info">
+            <div class="review-summary__descriptions">
+                {% if section.settings.summary_title %}
+                    <h4 class="h4-title">{{ section.settings.summary_title }}</h4>
+                {% endif %}
+
+                {% if section.settings.summary_description %}
+                    <div class="content">{{ section.settings.summary_description }}</div>
+                {% endif %}
+
+                {% if section.settings.summary_image %}
+                    <img src="{{ section.settings.summary_image | image_url }}" width="190" alt="{{ section.settings.summary_image.alt }}">
+                {% endif %}
+            </div>
+
+            <ul class="review-summary__results">
+                {% for block in section.blocks %}
+                    <li>{{ block.settings.text }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Review Summary",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Testimonial"
+    },
+    {
+      "type": "richtext",
+      "id": "blockquote_text",
+      "label": "Testimonial Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "blockquote_image",
+      "label": "Testimonial Image"
+    },
+    {
+      "type": "text",
+      "id": "author_name",
+      "label": "Author Name"
+    },
+    {
+      "type": "text",
+      "id": "author_position",
+      "label": "Author Position"
+    },
+    {
+      "type": "url",
+      "id": "blockquote_link_url",
+      "label": "Testimonial Link URL"
+    },
+    {
+      "type": "text",
+      "id": "blockquote_link_text",
+      "label": "Testimonial Link Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_background",
+      "label": "Testimonial Background Image"
+    },
+    {
+      "type": "header",
+      "content": "Summary Description"
+    },
+    {
+      "type": "text",
+      "id": "summary_title",
+      "label": "Summary Title"
+    },
+    {
+      "type": "richtext",
+      "id": "summary_description",
+      "label": "Summary Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "summary_image",
+      "label": "Summary Image"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Result Info",
+      "type": "block",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": " Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

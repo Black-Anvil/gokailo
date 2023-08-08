@@ -1,0 +1,191 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+        "caption": "about kailo",
+        "title": "how to use your kailo",
+        "description": "<p>Follow the steps in this general placement video to learn where to place your Kailo pain patch for the best pain relief.  Location is everything. Sometimes, when you’ve found the right spot, your Kailo pain patch will start to tingle or warm up. Sometimes the only thing you will feel is your pain subsiding. Kailo is designed to relieve pain in seconds.<\/p>",
+        "image_background": "shopify:\/\/shop_images\/cbf7486200ba2c8d5cc66eec9b46cdb3.png",
+        "link_url": "\/",
+        "link_text": "read more"
+      }
+    },
+    "tabs-block": {
+      "type": "tabs-block",
+      "blocks": {
+        "f9fc69e0-7b87-43cb-802c-67deb2f059df": {
+          "type": "block",
+          "settings": {
+            "activate_tab": true,
+            "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"25\" height=\"24\" viewbox=\"0 0 25 24\" fill=\"none\">\n  <path d=\"M12.333 22C17.8559 22 22.333 17.5228 22.333 12C22.333 6.47715 17.8559 2 12.333 2C6.81016 2 2.33301 6.47715 2.33301 12C2.33301 17.5228 6.81016 22 12.333 22Z\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M12.333 16V12\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M12.333 8H12.343\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "title": "overview",
+            "description": "<p>Proper Kailo patch placement is your drug-free solution to relieve pain in seconds. If you have received your Kailo patch in the mail and are ready to outsmart your pain, heard about Kailo and want to learn how and where to place it on your body for best results or are struggling to find the perfect placement location for fast relief, then this Kailo placement guide will share everything you need to know to say goodbye to pain and get back in the game of life.<br\/><br\/>VERY IMPORTANT FIRST STEP:<br\/> Your Kailo patch sticks to your body with a silicone adhesive strip that you physically attach to the patch. For best results, wait to apply the adhesive strip to your Kailo until after you’ve found the best placement on your body.<br\/><br\/>If you are struggling to find the perfect placement position for your Kailo pain patch, don’t give up. Kailo is all about helping you find relief. Our customer support team will gladly help you find the right location for your patch so you can truly experience the pain-free life that you desire. For help with placement, please contact us at <a href=\"mailto:support@gokailo.com\" title=\"mailto:support@gokailo.com\">support@gokailo.com<\/a><\/p>"
+          }
+        },
+        "31209c37-dd0f-4700-924f-d3753852fca0": {
+          "type": "block",
+          "settings": {
+            "activate_tab": false,
+            "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M16 4H20V8\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M14 10L20 4\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M8 20H4V16\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M4 20L10 14\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M16 20H20V16\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M14 14L20 20\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M8 4H4V8\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M4 4L10 10\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "title": "general placement",
+            "description": "<p>The Kailo pain patch is easy to use, water-proof, reusable, and relies on millions of micro-capacitors designed to act as bio antennas to clarify and enhance the communication between the brain and the location of pain. With hundreds of thousands of Kailo patches sold, not one person in our clinical trial reported harmful *side effects.<br\/><br\/>To simplify the placement process, wait to apply the adhesive strip to your Kailo until after you have found the location on your body that provides the most pain reduction possible. In most cases, it will be somewhere between the pain and your brain.<br\/><br\/>As a general rule, start by placing your Kailo patch near (but above) your pain. Then, slowly move Kailo away from the pain and toward your brain, following the pathway of your nervous system.<br\/><br\/>If you start to feel Kailo warm up or tingle, you might have found a good location for your pain and you should stop in that location to see if your pain diminishes. Some customers only experience a decrease in pain without any warming or tingling. Kailo is designed to relieve pain in seconds. However, for some people, it can take longer, even a few minutes.<br\/><br\/>Never settle with the first point of relief. Test several areas on your body until you find the location that maximizes your pain relief or eliminates the pain completely.<br\/><br\/>If you are struggling to find the perfect placement position for your Kailo pain patch, don’t give up. Kailo is all about helping you find relief. Our customer support team will gladly help you find the right location for your patch so you can truly experience the pain-free life that you desire.<br\/><br\/>For help with placement, reach out to our customer support team at <a href=\"mailto:support@gokailo.com\" title=\"mailto:support@gokailo.com\">support@gokailo.com<\/a><\/p>"
+          }
+        },
+        "d39134b6-33b1-45eb-8558-60310adf96db": {
+          "type": "block",
+          "settings": {
+            "activate_tab": false,
+            "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M4 11C4 11.9193 4.18106 12.8295 4.53284 13.6788C4.88463 14.5281 5.40024 15.2997 6.05025 15.9497C6.70026 16.5998 7.47194 17.1154 8.32122 17.4672C9.1705 17.8189 10.0807 18 11 18C11.9193 18 12.8295 17.8189 13.6788 17.4672C14.5281 17.1154 15.2997 16.5998 15.9497 15.9497C16.5998 15.2997 17.1154 14.5281 17.4672 13.6788C17.8189 12.8295 18 11.9193 18 11C18 10.0807 17.8189 9.1705 17.4672 8.32122C17.1154 7.47194 16.5998 6.70026 15.9497 6.05025C15.2997 5.40024 14.5281 4.88463 13.6788 4.53284C12.8295 4.18106 11.9193 4 11 4C10.0807 4 9.1705 4.18106 8.32122 4.53284C7.47194 4.88463 6.70026 5.40024 6.05025 6.05025C5.40024 6.70026 4.88463 7.47194 4.53284 8.32122C4.18106 9.1705 4 10.0807 4 11Z\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M8 11H14\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M11 8V14\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M20 20L16 16\" stroke=\"#666666\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "title": "site specific pain",
+            "description": "<p>With each part of the body being so unique, it’s important to get the placement of your Kailo right. Please see the videos below for site specific pain. If there is a specific part of the body you are experiencing pain, please feel free to contact us directly and a placement specialist will be happy to assist you.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "f9fc69e0-7b87-43cb-802c-67deb2f059df",
+        "31209c37-dd0f-4700-924f-d3753852fca0",
+        "d39134b6-33b1-45eb-8558-60310adf96db"
+      ],
+      "settings": {
+      }
+    },
+    "placement-block": {
+      "type": "placement-block",
+      "blocks": {
+        "5871d894-be5e-4ec4-ab55-75d0d95151ad": {
+          "type": "block",
+          "settings": {
+            "title": "Head pain",
+            "description": "<p>A headache can ruin even the brightest day. One reported successful placement for head pain is to orient the Kailo horizontally across the side of the forehead down to the temple with the top edge at the hairline. There is no movement necessary for this placement. For additional successful head placements contact a placement specialist at: <a href=\"mailto:support@gokailo.com\" title=\"mailto:support@gokailo.com\">support@gokailo.com<\/a><\/p>",
+            "video": "<iframe title=\"Kailo-PlacementVideos-HeadV2-1080P\" src=\"https:\/\/player.vimeo.com\/video\/718286612?h=da79498663&amp;dnt=1&amp;app_id=122963\" height=\"608\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" style=\"opacity: 1; visibility: visible;\"><\/iframe>"
+          }
+        },
+        "4bc27ae8-69fa-4814-b3c9-3b076bc475e2": {
+          "type": "block",
+          "settings": {
+            "title": "Head pain",
+            "description": "<p>A headache can ruin even the brightest day. One reported successful placement for head pain is to orient the Kailo horizontally across the side of the forehead down to the temple with the top edge at the hairline. There is no movement necessary for this placement. For additional successful head placements contact a placement specialist at: <a href=\"mailto:support@gokailo.com\" title=\"mailto:support@gokailo.com\">support@gokailo.com<\/a><\/p>",
+            "video": "<iframe title=\"Kailo-PlacementVideos-HeadV2-1080P\" src=\"https:\/\/player.vimeo.com\/video\/718286612?h=da79498663&amp;dnt=1&amp;app_id=122963\" height=\"608\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" style=\"opacity: 1; visibility: visible;\"><\/iframe>"
+          }
+        }
+      },
+      "block_order": [
+        "5871d894-be5e-4ec4-ab55-75d0d95151ad",
+        "4bc27ae8-69fa-4814-b3c9-3b076bc475e2"
+      ],
+      "settings": {
+        "title": "The following videos are offered as placement suggestions for both the original Kailo and the Kailo Flex™."
+      }
+    },
+    "apply-adhesive": {
+      "type": "apply-adhesive",
+      "settings": {
+        "title": "Once you have found the ideal location to block your pain with your Kailo patch, you’ll want to attach an adhesive.",
+        "video": "<iframe title=\"Kailo Adhesive Placement\" src=\"https:\/\/player.vimeo.com\/video\/644456317?h=f11b9f584d&amp;dnt=1&amp;app_id=122963\" width=\"1080\" height=\"608\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" style=\"opacity: 1; visibility: visible;\"><\/iframe>",
+        "description": "<p>Once you have found the ideal location to block your pain with your Kailo patch, you’ll want to attach an adhesive.<br\/><br\/>Our silicone adhesives:<\/p><ul><li>Are soft on the skin<\/li><li>Don’t pull out the hair<\/li><li>Will re-stick multiple times depending on both skin and environmental factors<\/li><\/ul><p>Each Kailo bundle comes with a number of adhesives that you can quickly apply to the back of your Kailo for easy application.<br\/><br\/>Here are the step-by-step instructions to use our adhesives:<\/p><ul><li>Align the adhesive (print side down) with the back of your Kailo patch.<\/li><li>Holding one end down, remove half of the adhesive backing as you adhere it to the Kailo patch.<\/li><li>Peel the second half of the adhesive backing and finish applying it to Kailo.<\/li><li>Now, you can store your Kailo for future use since the outside is not yet sticky.<\/li><li>When you are ready to use your pain patch, peel off the clear adhesive backing from Kailo and apply it to your body!<\/li><\/ul><p>Kailo, with our adhesive backing, can be removed and reapplied to your skin multiple times (depending on both skin and environmental factors) before losing its stickiness. Plus, it can be washed gently with soap and water to renew its adhesive properties. If washing no longer restores the stickiness, simply peel the old adhesive off Kailo and place a new adhesive strip on your patch following the above instructions. A small percentage of customers have reported allergic reactions to our silicon-based adhesive.<\/p>"
+      }
+    },
+    "icon-list": {
+      "type": "icon-list",
+      "blocks": {
+        "66288c5f-2923-4732-8916-fcce785d4d44": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "492d02e5-329a-4b26-8f72-751fa39cbd6c": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "21ea36b5-037a-4eff-ac1a-b3c7dbe9022c": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "32e8c041-a7cb-4848-98bd-908af9ab9b18": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "3e4787ba-1a67-41ad-9c50-be04e37e7060": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "cac74525-d17f-4dae-8b20-d01130e4d110": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        }
+      },
+      "block_order": [
+        "66288c5f-2923-4732-8916-fcce785d4d44",
+        "492d02e5-329a-4b26-8f72-751fa39cbd6c",
+        "21ea36b5-037a-4eff-ac1a-b3c7dbe9022c",
+        "32e8c041-a7cb-4848-98bd-908af9ab9b18",
+        "3e4787ba-1a67-41ad-9c50-be04e37e7060",
+        "cac74525-d17f-4dae-8b20-d01130e4d110"
+      ],
+      "settings": {
+        "background_color": "#2794a8"
+      }
+    },
+    "reviews-block": {
+      "type": "reviews-block",
+      "blocks": {
+        "8d963f35-8863-48e5-9fcc-f2652861c265": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "stars": 5,
+            "author_name": "Mauricio C.",
+            "author_info": "Verified Buyer | 09\/09\/21"
+          }
+        },
+        "864545a6-8122-42c2-a27b-eaebbb393b8b": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "stars": 5,
+            "author_name": "Mauricio C.",
+            "author_info": "Verified Buyer | 09\/09\/21"
+          }
+        }
+      },
+      "block_order": [
+        "8d963f35-8863-48e5-9fcc-f2652861c265",
+        "864545a6-8122-42c2-a27b-eaebbb393b8b"
+      ],
+      "settings": {
+      }
+    },
+    "shop-category": {
+      "type": "shop-category",
+      "settings": {
+        "title": "shop by category",
+        "collection_list": [
+          "frontpage",
+          "last-test",
+          "test-1"
+        ]
+      }
+    }
+  },
+  "order": [
+    "page-hero",
+    "tabs-block",
+    "placement-block",
+    "apply-adhesive",
+    "icon-list",
+    "reviews-block",
+    "shop-category"
+  ]
+}

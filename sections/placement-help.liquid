@@ -1,0 +1,156 @@
+<style>
+    .placement-help {
+        padding: 80px 0 100px;
+    }
+
+    .placement-help__wrapper:not(:last-child) {
+        margin: 0 0 60px;
+    }
+
+    .placement-help .container {
+        --container-width: 740px;
+    }
+
+    .placement-help__header {
+        text-align: center;
+        margin: 0 0 40px;
+    }
+
+    .placement-help__header > *:not(:last-child) {
+        margin: 0 0 24px;
+    }
+
+    .placement-help__terms {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .placement-help__terms > *:not(:last-child) {
+        margin: 0 0 32px;
+    }
+
+    .placement-help__subtitle {
+        color: var(--primary5);
+    }
+
+    .placement-help__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .placement-help__list > li:not(:last-child) {
+        margin: 0 0 16px;
+    }
+
+    .placement-help__list > li {
+        position: relative;
+        padding-left: 24px;
+        text-align: center;
+    }
+
+    .placement-help__list > li::before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: var(--grays2);
+        transform: translate(-50%, -50%);
+    }
+
+    @media screen and (max-width: 768px) {
+        .placement-help {
+            padding: 60px 0 80px;
+        }
+
+        .placement-help__wrapper:not(:last-child) {
+            margin: 0 0 40px;
+        }
+
+        .placement-help__header > *:not(:last-child) {
+            margin: 0 0 16px;
+        }
+
+        .placement-help__terms > *:not(:last-child) {
+            margin: 0 0 24px;
+        }
+
+        .placement-help__list > li:not(:last-child) {
+            margin: 0 0 8px;
+        }
+    }
+</style>
+
+<div class="placement-help">
+    <div class="container">
+        <div class="placement-help__wrapper">
+            <div class="placement-help__header">
+                {% if section.settings.title %}
+                    <h2 class="h2-title title-decorator">{{ section.settings.title }}</h2>
+                {% endif %}
+
+                {% if section.settings.text %}
+                    <p>{{ section.settings.text }}</p>
+                {% endif %}
+            </div>
+
+            <img src="{{ "calendar.png" | asset_url }}" alt="">
+        </div>
+
+        <div class="placement-help__wrapper placement-help__terms">
+            {% if section.settings.subtitle %}
+                <h4 class="h4-title placement-help__subtitle">{{ section.settings.subtitle }}</h4>
+            {% endif %}
+
+            <ul class="placement-help__list">
+                {% for block in section.blocks %}
+                    <li>{{ block.settings.text }}</li>
+                {% endfor %}
+            </ul>
+
+            <a class="button button--primary" href="#">schedule a time with a placement specialist</a>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Placement Assistance",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "List Item",
+      "type": "block",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

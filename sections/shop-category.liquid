@@ -1,0 +1,129 @@
+<style>
+    .shop-category {
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .shop-category__swiper {
+        max-width: 950px;
+        margin: 60px auto 0;
+        overflow: hidden;
+    }
+
+    .shop-category__swiper img {
+        object-fit: cover;
+        transition: transform 0.15s linear;
+    }
+
+    .shop-category__swiper a:hover img,
+    .shop-category__swiper a:focus img {
+        transform: scale(1.1);
+    }
+
+    .shop-category__swiper .swiper-slide {
+        display: flex;
+        justify-content: center;
+    }
+
+    .shop-category__img {
+        margin: 0 0 16px;
+        overflow: hidden;
+    }
+
+    .shop-category__item {
+        max-width: 290px;
+    }
+
+    .shop-category__pagination {
+        justify-content: center;
+        margin: 24px 0 0;
+    }
+
+    @media screen and (max-width: 768px) {
+        .shop-category {
+            padding: 80px 0;
+        }
+
+        .shop-category__swiper {
+            margin: 24px 0 0;
+        }
+
+        .shop-category__img {
+            margin: 0 0 8px;
+        }
+    }
+</style>
+
+<section class="shop-category">
+    <div class="container">
+        {% if section.settings.title != blank %}
+            <h2 class="h2-title title-decorator">{{ section.settings.title }}</h2>
+        {% endif %}
+
+        <div class="shop-category__swiper">
+            <div class="swiper-wrapper">
+                {% for collection in section.settings.collection_list %}
+                    <div class="swiper-slide">
+                        <a class="shop-category__item" href="{{ collection.url }}">
+                            <div class="shop-category__img">
+                                <img src="{{ collection.image | image_url }}" width="290" height="290" alt="{{ collection.image.alt }}">
+                            </div>
+                            <p class="button-text">{{ collection.title }} ({{ collection.products_count }})</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="swiper-pagination primary shop-category__pagination"></div>
+        </div>
+    </div>
+</section>
+
+<script type="module">
+    const initSlider = () => {
+        new Swiper('.shop-category__swiper', {
+            slidesPerView: 1,
+            spaceBetween: 16,
+
+            breakpoints: {
+                630: {
+                    slidesPerView: 2,
+                },
+                920: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+            },
+
+            autoHeight: true,
+
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        })
+    };
+
+    document.addEventListener("shopify:section:load", initSlider);
+
+    initSlider();
+</script>
+
+{% schema %}
+{
+  "name": "Shop By Category",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "collection_list",
+      "id": "collection_list",
+      "label": "Collections",
+      "limit": 3
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,117 @@
+<style>
+    .apply-partner {
+        padding: 80px 0;
+    }
+
+    .apply-partner .container {
+        --container-width: 950px;
+    }
+
+    .apply-partner__block > *:not(:last-child) {
+        margin: 0 0 24px;
+    }
+
+    .apply-partner__wrapper > *:not(:last-child) {
+        margin: 0 0 60px;
+    }
+
+    .apply-partner__author {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .apply-partner__author > *:not(:last-child) {
+        margin: 0 0 4px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .apply-partner {
+            padding: 60px 0;
+        }
+
+        .apply-partner__wrapper > *:not(:last-child) {
+            margin: 0 0 40px;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .apply-partner .button {
+            width: 100%;
+        }
+    }
+</style>
+
+<section class="apply-partner">
+    <div class="container">
+        <div class="apply-partner__wrapper">
+            {% if section.settings.title != blank %}
+                <h2 class="h2-title title-decorator">{{ section.settings.title }}</h2>
+            {% endif %}
+
+            {% for block in section.blocks %}
+                <div class="apply-partner__block">
+                    <div class="content">{{ block.settings.text }}</div>
+
+                    {% if block.settings.link_url != blank and block.settings.link_text != blank %}
+                        <a class="button button--primary" href="{{ block.settings.link_url }}">
+                            {{ block.settings.link_text }}
+                        </a>
+                    {% endif %}
+
+                    {% if block.settings.author_position != blank and block.settings.author_name != blank %}
+                        <div class="apply-partner__author">
+                            <span>{{ block.settings.author_position }}</span>
+                            <span><b>{{ block.settings.author_name }}</b></span>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Apply Partner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Block Info",
+      "type": "block",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text"
+        },
+        {
+          "type": "text",
+          "id": "author_position",
+          "label": "Author Position"
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author Name"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

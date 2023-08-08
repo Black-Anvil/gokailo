@@ -1,0 +1,177 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+        "caption": "about kailo",
+        "title": "kailo vs everything...",
+        "description": "<p>Kailo offers a reliable drug-free pain relief option for those living with the debilitating effects of chronic and acute pain. Experience a new and innovative approach to pain relief.<\/p>",
+        "image_background": "shopify:\/\/shop_images\/page-kailo-vs-others.png",
+        "link_url": "\/",
+        "link_text": "read more"
+      }
+    },
+    "solutions": {
+      "type": "solutions",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/page-solutions-1.png",
+        "title": "ONE SOLUTION STANDS OUT",
+        "description": "Kailo offers an innovative, drug-free approach to managing pain relief. Using unique, non-transdermal technology, Kailo pain patches offer an alternative, non-invasive pain relief solution.",
+        "image_background": "shopify:\/\/shop_images\/solution-bg.png"
+      }
+    },
+    "icon-list": {
+      "type": "icon-list",
+      "blocks": {
+        "d96d33a0-78b8-4278-b841-dbd5e3b92756": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "687c6acb-43d3-4a09-b8b9-d1ba4fccce92": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "fe259b9e-a40d-4a51-86dc-82c06fbf631a": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "7f97374a-3529-4f01-8579-2a93aa24d08c": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "4bfa30f6-0c98-4a9a-96ca-da067e5b641b": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "7c3b7788-282e-4fa8-bdea-ac602fe49526": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        }
+      },
+      "block_order": [
+        "d96d33a0-78b8-4278-b841-dbd5e3b92756",
+        "687c6acb-43d3-4a09-b8b9-d1ba4fccce92",
+        "fe259b9e-a40d-4a51-86dc-82c06fbf631a",
+        "7f97374a-3529-4f01-8579-2a93aa24d08c",
+        "4bfa30f6-0c98-4a9a-96ca-da067e5b641b",
+        "7c3b7788-282e-4fa8-bdea-ac602fe49526"
+      ],
+      "settings": {
+        "background_color": "#355d66"
+      }
+    },
+    "medical-review": {
+      "type": "medical-review",
+      "settings": {
+        "subtitle": "The final results from the IRB-approved study demonstrated that",
+        "title": "Patients who used Kailo over a period of 30 days showed a vast reduction of their pain severity levels.",
+        "description": "<p>They also experienced a better quality of life, improved function, were very satisfied with the Kailo Pain Patch, and preferred the patch over oral pain medications.<br\/><br\/>\"With the increased focus on identifying alternative therapies for patients experiencing pain, the use and ongoing research of novel approaches including the non-drug and microtechnology based Kailo patch, seem to have a very positive effect on patients who are experiencing mild, moderate, and chronic pain.”<\/p>",
+        "author": "Jeffrey Gudin, MD | Principal Investigator",
+        "image_background": "shopify:\/\/shop_images\/page-medical-review.png",
+        "link_url": "\/",
+        "link_text": "read medical opinons"
+      }
+    },
+    "relief-block": {
+      "type": "relief-block",
+      "blocks": {
+        "6fc1cbf4-59e7-4b26-8635-34847e86032e": {
+          "type": "block",
+          "settings": {
+            "title": "waterproof",
+            "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M11.9999 2.68945L17.6599 8.34945C18.7792 9.46806 19.5417 10.8935 19.8508 12.4455C20.1599 13.9975 20.0018 15.6063 19.3964 17.0684C18.7911 18.5305 17.7657 19.7803 16.45 20.6596C15.1343 21.5388 13.5874 22.0082 12.0049 22.0082C10.4224 22.0082 8.87549 21.5388 7.55978 20.6596C6.24407 19.7803 5.2187 18.5305 4.61335 17.0684C4.008 15.6063 3.84988 13.9975 4.15899 12.4455C4.46809 10.8935 5.23054 9.46806 6.34989 8.34945L11.9999 2.68945Z\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "description": "Kailo can be worn in the shower and in the pool without damaging your Kailo. Just dry it off when you get out of the water. Please be aware that the adhesive might loosen under water and don't lose your Kailo.",
+            "image": "shopify:\/\/shop_images\/page-relief-1.png"
+          }
+        },
+        "6e1b06ef-35fd-4873-8995-1958ab680212": {
+          "type": "block",
+          "settings": {
+            "title": "great longevity",
+            "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M6.5 7H17.5\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M6 20V18C6 16.4087 6.63214 14.8826 7.75736 13.7574C8.88258 12.6321 10.4087 12 12 12C13.5913 12 15.1174 12.6321 16.2426 13.7574C17.3679 14.8826 18 16.4087 18 18V20C18 20.2652 17.8946 20.5196 17.7071 20.7071C17.5196 20.8946 17.2652 21 17 21H7C6.73478 21 6.48043 20.8946 6.29289 20.7071C6.10536 20.5196 6 20.2652 6 20Z\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M6 4V6C6 7.5913 6.63214 9.11742 7.75736 10.2426C8.88258 11.3679 10.4087 12 12 12C13.5913 12 15.1174 11.3679 16.2426 10.2426C17.3679 9.11742 18 7.5913 18 6V4C18 3.73478 17.8946 3.48043 17.7071 3.29289C17.5196 3.10536 17.2652 3 17 3H7C6.73478 3 6.48043 3.10536 6.29289 3.29289C6.10536 3.48043 6 3.73478 6 4Z\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "description": "Kailo can be worn day after day, without losing effectiveness. Depending on your skin type and environmental factors, just replace the adhesive after 1-7 days of continued use and you are good to go.",
+            "image": "shopify:\/\/shop_images\/page-relief-2.png"
+          }
+        },
+        "afc43d7e-706a-4a4f-8779-d2b225dee474": {
+          "type": "block",
+          "settings": {
+            "title": "always on",
+            "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64156 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77738 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987V4.60987Z\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "description": "Kailo does not have a battery and doesn’t require any charging. It's always ready when you need it most.",
+            "image": "shopify:\/\/shop_images\/page-relief-3.png"
+          }
+        }
+      },
+      "block_order": [
+        "6fc1cbf4-59e7-4b26-8635-34847e86032e",
+        "6e1b06ef-35fd-4873-8995-1958ab680212",
+        "afc43d7e-706a-4a4f-8779-d2b225dee474"
+      ],
+      "settings": {
+        "title": "reliable relief when you need it most"
+      }
+    },
+    "reviews-block": {
+      "type": "reviews-block",
+      "blocks": {
+        "e8cdeb29-6f2e-416c-ad06-68773529a9af": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "stars": 5,
+            "author_name": "Mauricio C.",
+            "author_info": "Verified Buyer | 09\/09\/21"
+          }
+        },
+        "d263faf3-7a79-4ebc-b1f6-fae4acfb29e5": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "stars": 5,
+            "author_name": "Mauricio C.",
+            "author_info": "Verified Buyer | 09\/09\/21"
+          }
+        }
+      },
+      "block_order": [
+        "e8cdeb29-6f2e-416c-ad06-68773529a9af",
+        "d263faf3-7a79-4ebc-b1f6-fae4acfb29e5"
+      ],
+      "settings": {
+      }
+    },
+    "shop-category": {
+      "type": "shop-category",
+      "settings": {
+        "title": "shop by category",
+        "collection_list": [
+          "frontpage",
+          "last-test",
+          "test-1"
+        ]
+      }
+    }
+  },
+  "order": [
+    "page-hero",
+    "solutions",
+    "icon-list",
+    "medical-review",
+    "relief-block",
+    "reviews-block",
+    "shop-category"
+  ]
+}

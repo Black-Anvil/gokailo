@@ -1,0 +1,89 @@
+<style>
+    .single-faq {
+        padding: 80px 0;
+        color: var(--grays6);
+        background-color: var(--primary5);
+    }
+
+    .single-faq ul {
+        margin: 24px 0 0;
+    }
+
+    @media screen and (max-width: 768px) {
+        .single-faq {
+            padding: 60px 0;
+        }
+
+        .single-faq ul {
+            margin: 16px 0 0;
+        }
+    }
+</style>
+
+{{ "accordion.css" | asset_url | stylesheet_tag }}
+
+<section class="single-faq">
+    <div class="container">
+        {% if section.settings.title != blank %}
+            <h3 class="h3-title">{{ section.settings.title }}</h3>
+        {% endif %}
+
+        <ul>
+            {% for block in section.blocks %}
+                <li>
+                    <div class="accordion">
+                        <button class="accordion__header">
+                            {% if block.settings.title != blank %}
+                                <h5 class="h5-title">{{ block.settings.title }}</h5>
+                            {% endif %}
+
+                            <span class="button-icon">
+                            {% render "icon-chevron" %}
+                        </span>
+                        </button>
+
+                        <div class="accordion__body">
+                            {% if block.settings.content != blank %}
+                                <div class="content">
+                                    {{ block.settings.content }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Single FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "FAQ Block",
+      "type": "block",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

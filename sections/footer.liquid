@@ -121,6 +121,56 @@
         margin: 0 auto;
         text-align: center;
     }
+
+    @media screen and (max-width: 768px) {
+        .footer {
+            padding: 40px 0;
+        }
+
+        .footer__subscribe {
+            margin: 0 auto -24px;
+        }
+
+        .footer__subscribe > * {
+            margin: 0 0 24px;
+        }
+
+        .footer__subscribe-info > *:not(:last-child) {
+            margin: 0 0 8px;
+        }
+
+        .footer__nav-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 32px 0 0;
+            margin: 0 0 -24px -24px;
+        }
+
+        .footer__nav-list > li {
+            margin: 0 0 24px 24px;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .footer__subscribe-form form {
+            flex-direction: column;
+        }
+
+        .footer__subscribe-form .field-block {
+            max-width: 100%;
+            margin: 0 0 8px;
+        }
+
+        .footer__subscribe-form form > * {
+            width: 100%;
+        }
+
+        .footer__nav-list {
+            flex-direction: column;
+        }
+    }
 </style>
 
 {{ "field-block.css" | asset_url | stylesheet_tag }}
@@ -132,25 +182,27 @@
                 <img src="{{ "logo-white-k.png" | asset_url }}" width="100" height="100" alt="Kailo">
             </a>
 
-            <div class="footer__subscribe-info">
-                <h4 class="h4-title">subscribe to our newsletter</h4>
-                <p>Promotions, new products and sales, directly to your inbox.</p>
-            </div>
+            {% if section.settings.newsletter %}
+                <div class="footer__subscribe-info">
+                    <h4 class="h4-title">subscribe to our newsletter</h4>
+                    <p>Promotions, new products and sales, directly to your inbox.</p>
+                </div>
 
-            <div id="contact_form" class="footer__subscribe-form">
-                {% form 'customer' %}
-                    <div class="field-block">
-                        <input type="email" placeholder="Email" name="contact[email]"/>
-                    </div>
+                <div id="contact_form" class="footer__subscribe-form">
+                    {% form 'customer' %}
+                        <div class="field-block">
+                            <input type="email" placeholder="Email" name="contact[email]"/>
+                        </div>
 
-                    <button type="submit" class="button button--primary">subscribe</button>
-                {% endform %}
-            </div>
+                        <button type="submit" class="button button--primary">subscribe</button>
+                    {% endform %}
+                </div>
 
-            <div id="successSubscribe" class="footer__subscribe-success">
-                {% render "icon-success" %}
-                <p>Thank you for subscribing to our newsletter!</p>
-            </div>
+                <div id="successSubscribe" class="footer__subscribe-success">
+                    {% render "icon-success" %}
+                    <p>Thank you for subscribing to our newsletter!</p>
+                </div>
+            {% endif %}
         </div>
 
         <nav class="footer__navigation">
@@ -179,34 +231,60 @@
             </div>
         </nav>
 
-        <div class="footer__socials">
-            <ul class="footer__socials-list">
-                <li>
-                    <a href="#" target="_blank">
-                        Twitter
-                        {% render "icon-twitter" %}
-                    </a>
-                </li>
+        {% if section.settings.socials %}
+            <div class="footer__socials">
+                <ul class="footer__socials-list">
+                    <li>
+                        <a href="#" target="_blank">
+                            Twitter
+                            {% render "icon-twitter" %}
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="#" target="_blank">
-                        Facebook
-                        {% render "icon-facebook" %}
-                    </a>
-                </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            Facebook
+                            {% render "icon-facebook" %}
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="#" target="_blank">
-                        Instagram
-                        {% render "icon-instagram" %}
-                    </a>
-                </li>
-            </ul>
-        </div>
+                    <li>
+                        <a href="#" target="_blank">
+                            Instagram
+                            {% render "icon-instagram" %}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        {% endif %}
 
-        <p class="footer__copyright">
-            Copyright © 2023 Kailo Labs LLC. All rights reserved. Kailo™, The K™ Emblem, and The Future of Pain Relief™ are
-            trademarks of Kailo Labs LLC. Kailo is protected by U.S. Patents Kailo licenses technology from nCAP technologies.
-        </p>
+        {% if section.settings.copyright != blank %}
+            <p class="footer__copyright">{{ section.settings.copyright }}</p>
+        {% endif %}
     </div>
 </footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "socials",
+      "label": "Show Socials",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "newsletter",
+      "label": "Show Newsletter",
+      "default": true
+    },
+    {
+      "type": "richtext",
+      "id": "copyright",
+      "label": "Copyright"
+    }
+  ]
+}
+{% endschema %}

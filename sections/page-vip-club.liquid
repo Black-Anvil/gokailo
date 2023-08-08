@@ -1,0 +1,117 @@
+<style>
+    .page-vip-club {
+        padding: 100px 0;
+        background-color: var(--grays5);
+    }
+
+    .page-vip-club__title {
+        margin: 0 0 60px;
+        color: var(--primary5);
+    }
+
+    .page-vip-club__list {
+        display: flex;
+        margin: 0 0 -40px -40px;
+    }
+
+    .page-vip-club__list > li {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: calc(33.33% - 40px);
+        padding: 24px;
+        margin: 0 0 40px 40px;
+        border-radius: 6px;
+        background-color: var(--grays6);
+    }
+
+    .page-vip-club__list svg {
+        margin: 0 0 8px;
+    }
+
+    .page-vip-club__subtitle {
+        margin: 0 0 4px;
+        color: var(--grays1);
+    }
+
+    .page-vip-club__list p {
+        color: var(--grays3);
+    }
+
+    .page-vip-club__sublist {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 24px 0 0;
+    }
+
+    .page-vip-club__sublist > li {
+        display: flex;
+        align-items: center;
+    }
+
+    .page-vip-club__sublist > li:not(:last-child) {
+        margin: 0 0 16px;
+    }
+
+    .page-vip-club__sublist svg {
+        margin: 0 8px 0 0;
+    }
+</style>
+
+<div class="page-vip-club">
+    <div class="container">
+        <h2 class="h2-title page-vip-club__title title-decorator">the vip club</h2>
+
+        <ul class="page-vip-club__list">
+            <li>
+                {% render "icon-bronze-club" %}
+                <h4 class="h4-title page-vip-club__subtitle">Bronze</h4>
+                <p>Spend $100</p>
+
+                <ul class="page-vip-club__sublist">
+                    <li>
+                        {% render "icon-check" %}
+                        <span>1x Point Multipliers</span>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                {% render "icon-silver-club" %}
+                <h4 class="h4-title page-vip-club__subtitle">Silver</h4>
+                <p>Spend $300</p>
+
+                <ul class="page-vip-club__sublist">
+                    <li>
+                        {% render "icon-check" %}
+                        <span>1.25x Point Multipliers</span>
+                    </li>
+
+                    <li>
+                        {% render "icon-check" %}
+                        <span>25 Points Upon Entry</span>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                {% render "icon-gold-club" %}
+                <h4 class="h4-title page-vip-club__subtitle">Gold</h4>
+                <p>Spend $500</p>
+
+                <ul class="page-vip-club__sublist">
+                    <li>
+                        {% render "icon-check" %}
+                        <span>1.5x Point Multipliers</span>
+                    </li>
+
+                    <li>
+                        {% render "icon-check" %}
+                        <span>25 Points Upon Entry</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

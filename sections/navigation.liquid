@@ -1,0 +1,207 @@
+<style>
+    .navigation {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        min-height: 88px;
+        color: var(--grays6);
+        transition: background-color 0.15s linear, color 0.15s linear, box-shadow 0.15s linear, min-height 0.15s linear;
+    }
+
+    .navigation .container {
+        width: 100%;
+    }
+
+    .navigation path {
+        stroke: currentColor;
+    }
+
+    .navigation.scrolling {
+        min-height: 58px;
+    }
+
+    .navigation.dark,
+    .navigation.scrolling,
+    .navigation:hover {
+        color: inherit;
+        background-color: var(--grays6);
+        box-shadow: inset 0 -1px 0 0 var(--grays4);
+    }
+
+    .navigation.scrolling .navigation__logo-dark,
+    .navigation.dark .navigation__logo-dark,
+    .navigation:hover .navigation__logo-dark {
+        opacity: 1;
+    }
+
+    .navigation.scrolling .navigation__logo img {
+        width: 96px;
+    }
+
+    .navigation__logo {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin: 0 40px 0 0;
+        font-size: 0;
+        transition: transform 0.15s linear;
+    }
+
+    .navigation__logo:hover,
+    .navigation__logo:focus {
+        transform: scale(1.1);
+    }
+
+    .navigation__logo img {
+        transition: opacity 0.15s linear, width 0.15s linear, height 0.15s linear;
+    }
+
+    .navigation__wrapper {
+        display: flex;
+        height: 100%;
+    }
+
+    .navigation__logo-dark {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .navigation__list {
+        display: flex;
+    }
+
+    .navigation__list span,
+    .navigation__list a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .navigation__list > li:not(:last-child) {
+        margin: 0 40px 0 0;
+    }
+
+    .navigation__icons {
+        display: flex;
+        align-items: center;
+        margin: 0 0 0 auto;
+    }
+
+    .navigation__icons > li:not(:last-child) {
+        margin: 0 24px 0 0;
+    }
+
+    .navigation__icons a:hover,
+    .navigation__icons a:focus {
+        color: var(--primary1);
+    }
+
+    @media screen and (max-width: 768px) {
+        .navigation {
+            min-height: 64px;
+        }
+
+        .navigation.scrolling {
+            min-height: 64px;
+        }
+
+        .navigation .navigation__logo img,
+        .navigation.scrolling .navigation__logo img {
+            width: 116px;
+        }
+
+
+        .navigation__icons > li:not(:last-child) {
+            margin: 0 16px 0 0;
+        }
+
+        .navigation__list {
+            display: none;
+        }
+    }
+</style>
+
+{% if template.directory == "customers" or template == null or template.name == "404" or template.name == "product" %}
+    {% assign mode = "dark" %}
+{% endif %}
+
+<nav class="navigation {{ mode }}">
+    <div class="container">
+        <div class="navigation__wrapper">
+            <a class="navigation__logo" href="{{ routes.root_url }}">
+                Kailo
+
+                <img class="navigation__logo-light" width="154" height="40"
+                     src="{{ "logo-light.png" | asset_url }}" alt="kailo">
+                <img class="navigation__logo-dark" width="154" height="40"
+                     src="{{ "logo-dark.png" | asset_url }}" alt="kailo">
+            </a>
+
+            <ul class="navigation__list">
+
+                <li>
+                    <a class="h6-title" href="{{ routes.collections_url_all }}">shop</a>
+                </li>
+
+                <li>
+                    <span class="h6-title">about kailo</span>
+                </li>
+
+                <li>
+                    <span class="h6-title">trust kailo</span>
+                </li>
+            </ul>
+
+            <ul class="navigation__icons">
+                <li>
+                    <a href="#" class="button-icon">
+                        Favorite
+                        {% render "icon-favorite" %}
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ routes.search_url }}" class="button-icon">
+                        Search
+                        {% render "icon-search" %}
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ routes.account_url }}" class="button-icon">
+                        User
+                        {% render "icon-user" %}
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ routes.cart_url }}" class="cart-drawer-opener button-icon">
+                        Shopping Bag
+                        {% render "icon-cart" %}
+                        <span class="cart-counter">{{ cart.item_count }}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    {% render "header-search" %}
+</nav>
+
+<script type="module">
+    const navigation = document.querySelector(".navigation");
+
+    const addClassIsScrolling = () => {
+        if (document.documentElement.scrollTop > 0) {
+            navigation.classList.add("scrolling");
+        } else {
+            navigation.classList.remove("scrolling");
+        }
+    };
+
+    addClassIsScrolling();
+
+    window.addEventListener('scroll', () => {
+        addClassIsScrolling();
+    });
+</script>

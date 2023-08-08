@@ -1,0 +1,25 @@
+.content li,
+.content ul,
+.content ol {
+    margin: revert;
+    padding: 0;
+    list-style: revert;
+    list-style-position: inside;
+}
+
+.content a {
+    color: var(--primary1);
+    font-weight: 700;
+}
+
+.content h1,
+.content h2,
+.content h3 {
+    margin: 0 0 32px;
+}
+
+.content h4,
+.content h5,
+.content h6 {
+    margin: 0 0 16px;
+}

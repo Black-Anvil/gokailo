@@ -21,5 +21,113 @@
         "default": "montserrat_n7"
       }
     ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Primary"
+      },
+      {
+        "type": "color",
+        "id": "primary_1",
+        "label": "Primary 1"
+      },
+      {
+        "type": "color",
+        "id": "primary_2",
+        "label": "Primary 2"
+      },
+      {
+        "type": "color",
+        "id": "primary_3",
+        "label": "Primary 3"
+      },
+      {
+        "type": "color",
+        "id": "primary_4",
+        "label": "Primary 4"
+      },
+      {
+        "type": "color",
+        "id": "primary_5",
+        "label": "Primary 5"
+      },
+      {
+        "type": "color",
+        "id": "primary_6",
+        "label": "Primary 6"
+      },
+      {
+        "type": "header",
+        "content": "Grays"
+      },
+      {
+        "type": "color",
+        "id": "grays_1",
+        "label": "Grays 1"
+      },
+      {
+        "type": "color",
+        "id": "grays_2",
+        "label": "Grays 2"
+      },
+      {
+        "type": "color",
+        "id": "grays_3",
+        "label": "Grays 3"
+      },
+      {
+        "type": "color",
+        "id": "grays_4",
+        "label": "Grays 4"
+      },
+      {
+        "type": "color",
+        "id": "grays_5",
+        "label": "Grays 5"
+      },
+      {
+        "type": "color",
+        "id": "grays_6",
+        "label": "Grays 6"
+      }
+    ]
+  },
+  {
+    "name": "Socials",
+    "settings": [
+      {
+        "type": "text",
+        "id": "twitter",
+        "label": "Twitter",
+        "default": "https:\/\/twitter.com\/getKalio"
+      },
+      {
+        "type": "text",
+        "id": "facebook",
+        "label": "Facebook",
+        "default": "https:\/\/www.facebook.com\/getkailo"
+      },
+      {
+        "type": "text",
+        "id": "youtube",
+        "label": "Youtube",
+        "default": "https:\/\/www.youtube.com\/channel\/UC1n69oqoZn_Oj5NGIMxlLmQ"
+      },
+      {
+        "type": "text",
+        "id": "instagram",
+        "label": "Instagram",
+        "default": "https:\/\/www.instagram.com\/getkailo\/"
+      },
+      {
+        "type": "text",
+        "id": "email",
+        "label": "Email",
+        "default": "mailto:support@gokailo.com"
+      }
+    ]
   }
 ]

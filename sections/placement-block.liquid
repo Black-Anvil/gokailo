@@ -1,0 +1,101 @@
+<style>
+    .placement-block {
+        padding: 80px 0;
+    }
+
+    .placement-block .container {
+        --container-width: 950px;
+    }
+
+    .placement-block__list {
+        margin: 24px 0 0;
+    }
+
+    .placement-block iframe {
+        width: 100% !important;
+        height: 600px !important;
+    }
+
+    @media screen and (max-width: 768px) {
+        .placement-block {
+            padding: 60px 0;
+        }
+
+        .placement-block iframe {
+            margin-top: 24px;
+            height: 300px !important;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .placement-block iframe {
+            height: 200px !important;
+        }
+    }
+</style>
+
+{{ "accordion.css" | asset_url | stylesheet_tag }}
+
+<section class="placement-block">
+    <div class="container">
+        {% if section.settings.title != blank %}
+            <h4 class="h4-title title-decorator">{{ section.settings.title }}</h4>
+        {% endif %}
+
+        <ul class="placement-block__list">
+            {% for block in section.blocks %}
+                <li>
+                    <div class="accordion accordion--secondary accordion--big">
+                        <button class="accordion__header">
+                            <p class="h4-title accordion__title">{{ block.settings.title }}</p>
+                            <span class="accordion__icon"></span>
+                        </button>
+
+                        <div class="accordion__body">
+                            <div class="content">{{ block.settings.description }}</div>
+
+                            {{ block.settings.video }}
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Placement Block",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Placement Item",
+      "type": "block",
+      "limit": 18,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "html",
+          "id": "video",
+          "label": "Video"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,12 +1,12 @@
 {
   "sections": {
-    "main-activate-account": {
-      "type": "main-activate-account",
+    "activate-account": {
+      "type": "activate-account",
       "settings": {
       }
     }
   },
   "order": [
-    "main-activate-account"
+    "activate-account"
   ]
 }

@@ -1,0 +1,126 @@
+<style>
+    .single-review {
+        padding: 100px 0;
+        background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.60) 100%), url({{ section.settings.image_background | image_url }});
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .single-review__info {
+        max-width: 730px;
+        width: 100%;
+    }
+
+    .single-review__title {
+        margin: 0 0 40px;
+        color: var(--primary4);
+    }
+
+    .single-review .star {
+        margin: 8px 0 0;
+    }
+
+    .single-review .star path {
+        fill: var(--primary1);
+    }
+
+    .single-review__author > *:not(:last-child) {
+        margin: 0 0 24px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .single-review {
+            padding: 60px 0;
+        }
+
+        .single-review__title {
+            margin: 0 0 32px;
+        }
+
+        .single-review__author > *:not(:last-child) {
+            margin: 0 0 16px;
+        }
+    }
+</style>
+
+{{ "star.css" | asset_url | stylesheet_tag }}
+
+<section class="single-review">
+    <div class="container">
+        <div class="single-review__info">
+            {% if section.settings.title != blank %}
+                <h3 class="h3-title single-review__title">{{ section.settings.title }}</h3>
+            {% endif %}
+
+            <div class="single-review__author">
+                <div>
+                    {% if section.settings.author != blank %}
+                        <p>{{ section.settings.author }}</p>
+                    {% endif %}
+
+                    {% render "star-review", star: block.settings.stars, color: "#2794A8", no_color: "#b3b3b3" %}
+                </div>
+
+                {% if section.settings.subtitle_1 != blank %}
+                    <p><b>{{ section.settings.subtitle_1 }}</b></p>
+                {% endif %}
+
+                {% if section.settings.blockquote != blank %}
+                    <p>{{ section.settings.blockquote }}</p>
+                {% endif %}
+
+                {% if section.settings.subtitle_2 != blank %}
+                    <p><b>{{ section.settings.subtitle_2 }}</b></p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Single Review",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "author",
+      "label": "author"
+    },
+    {
+      "type": "range",
+      "id": "stars",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "label": "Stars",
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "subtitle_1",
+      "label": "Subtitle 1"
+    },
+    {
+      "type": "text",
+      "id": "blockquote",
+      "label": "Blockquote"
+    },
+    {
+      "type": "text",
+      "id": "subtitle_2",
+      "label": "Subtitle 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_background",
+      "label": "Image Background"
+    }
+  ]
+}
+{% endschema %}

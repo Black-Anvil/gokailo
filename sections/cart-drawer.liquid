@@ -79,10 +79,6 @@
         justify-content: space-between;
     }
 
-    .cart-drawer__list {
-        margin: 0 0 -1px 0;
-    }
-
     .cart-drawer__empty {
         display: flex;
         align-items: center;
@@ -100,6 +96,9 @@
         align-items: center;
         margin: 0 4px;
         padding: 24px 0;
+    }
+
+    .cart-drawer__preview:not(:last-child) {
         border-bottom: 1px solid var(--grays4);
     }
 
@@ -107,15 +106,90 @@
         width: 64px;
         min-width: 64px;
         height: 64px;
+        margin-right: 16px;
         object-fit: cover;
     }
 
-    .cart-drawer__preview > *:not(:last-child) {
+    .cart-drawer__item {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .cart-drawer__item-info {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    .cart-drawer__item-info > *:not(:last-child) {
         margin-right: 16px;
     }
 
-    .cart-drawer__price {
-        margin-left: auto;
+    @media screen and (max-width: 768px) {
+        .cart-drawer__modal {
+            top: auto;
+            bottom: -100%;
+            left: 0;
+            right: auto;
+            height: auto;
+            max-width: 100%;
+            padding: 0 16px;
+            border-radius: 6px 6px 0 0;
+        }
+
+        .cart-drawer__body {
+            max-height: 200px;
+        }
+
+        .cart-drawer__empty {
+            padding: 24px 0;
+        }
+
+        .cart-drawer.opened .cart-drawer__modal {
+            right: auto;
+            bottom: 0;
+        }
+
+        .cart-drawer__header {
+            padding: 16px 0;
+        }
+
+        .cart-drawer__footer {
+            padding: 24px 0;
+        }
+
+        .cart-drawer__buttons > *:not(:last-child) {
+            margin: 0 8px 0 0;
+        }
+
+        .cart-drawer__preview {
+            padding: 16px 0;
+        }
+
+        .cart-drawer__item {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .cart-drawer__item-info {
+            width: 100%;
+            margin: 4px 0 0;
+        }
+
+        .cart-drawer__item-info .stepper {
+            margin-left: auto;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .cart-drawer__buttons {
+            flex-direction: column;
+        }
+
+        .cart-drawer__buttons > *:not(:last-child) {
+            margin: 0 0 8px;
+        }
     }
 </style>
 
@@ -141,15 +215,21 @@
                     {% for item in cart.items %}
                         <div class="cart-drawer__preview" data-item-key="{{ item.key }}">
                             <img src="{{ item.image | img_url: "64x" }}" alt="{{ item.title }}">
-                            <a class="link" href="{{ item.product.url }}">{{ item.product.title }}</a>
-                            <span class="cart-drawer__price"><b>{{ item.price | money }}</b></span>
 
-                            {% render "stepper", quantity: item.quantity %}
+                            <div class="cart-drawer__item">
+                                <a class="link" href="{{ item.product.url }}">{{ item.product.title }}</a>
 
-                            <button type="button" class="button-icon cart-drawer__btn-delete">
-                                delete
-                                {% render "icon-delete" %}
-                            </button>
+                                <div class="cart-drawer__item-info">
+                                    <span class="cart-drawer__price"><b>{{ item.price | money }}</b></span>
+
+                                    {% render "stepper", quantity: item.quantity %}
+
+                                    <button type="button" class="button-icon cart-drawer__btn-delete">
+                                        delete
+                                        {% render "icon-delete" %}
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>

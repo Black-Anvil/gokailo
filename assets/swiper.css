@@ -48,6 +48,15 @@
     border: 2px solid var(--grays6);
 }
 
+.swiper-pagination.primary .swiper-pagination-bullet::before {
+    background-color: var(--primary1);
+}
+
+.swiper-pagination.primary .swiper-pagination-bullet-active::before {
+    background-color: transparent;
+    border-color: var(--primary1);
+}
+
 .swiper-pagination .swiper-pagination-bullet:first-child {
     margin-left: 0 !important;
 }

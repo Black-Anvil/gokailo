@@ -1,0 +1,190 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+        "caption": "trust kailo",
+        "title": "testimonials",
+        "description": "<p>Discover the possibilities of Kailo drug-free pain relief with testimonials from some of our most valued customers.<\/p>",
+        "image_background": "shopify:\/\/shop_images\/page-testimonials.png",
+        "link_url": "\/",
+        "link_text": "read more testimonials"
+      }
+    },
+    "stories-list": {
+      "type": "stories-list",
+      "blocks": {
+        "b543b9f8-0605-405c-90fa-79297f941970": {
+          "type": "slide",
+          "settings": {
+            "text": "“I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!”",
+            "author_name": "Cary P.",
+            "author_position": "Designer"
+          }
+        },
+        "e2982663-d4b4-44f8-9323-6e94ee0f624f": {
+          "type": "slide",
+          "settings": {
+            "text": "“I am a skeptic! It has gotten worse with age, but I have always been that way. I am no stranger to pain. I was accident prone as a child. Breaking, twisting and rupturing. At 17 I was hit head on by a drunk driver, changing my life. Lots of broken bones, severe injuries, metal in my body and years of pain. Even now. I have had lots of things removed, numerous surgeries, ovarian cysts, varicose veins, miscarriages and so much more. And now Fibromyalgia! All causing LOTS OF PAIN! So, when my sister told me about this Kailo pain patch I was skeptical. Excited, but skeptical.I got to go try Kailo before buying it. Yipee! I walked in there hopeful to relieve some pain, but still in the back of my head thinking that I was going to have to be the one to tell these people it didn't work. And on camera! But honesty is always the best policy. Guess what?!?! IT WORKED!!!! It took a little while to figure out where to best place it. But then.... RELIEF! I have found relief from my shoulder, neck, hand, arm, hip and back pain so far. Not a cure, but relief.",
+            "author_name": "Liza Burdette",
+            "author_position": "Teacher"
+          }
+        },
+        "3890fb70-73ee-4c52-ab0a-476a86c3b7b0": {
+          "type": "slide",
+          "settings": {
+            "text": "“Because of the quarantine, I have been unable to swim, which is the only exercise that keeps my back pain in check. I suffer from a failed back fusion. The more time that goes on without swimming, the worse my pain becomes. I have been suffering a constant back pain level of 6-7 for several days wondering to myself how I was going to go on like this! I saw the Kailo ad and thought to myself yeah right. But willing to give anything a try and fully expecting to return my order for a refund, I gave it a try. I cannot describe to you the feeling of \"it's a miracle\" that went through me as my daughter placed the patch in the right spot! I got up and walked around in disbelief! Tears of joy started to flow as realized my pain went from a 6 to a 1. My pain was pretty much gone! Kailo patches are the real deal! They truly work exactly as advertised. I'm considering buying a whole bunch more of the patches and adhesives just in case this company disappears. Kailo patches are the rare exception to the rule of it seems too good to be true it usually is. They are the real deal for pain relief.”",
+            "author_name": "Alisa N.",
+            "author_position": "Stay at home mom"
+          }
+        },
+        "88247786-71f4-4de6-9f7e-384a623b05c0": {
+          "type": "slide",
+          "settings": {
+            "text": "“HOLY COW, I just ran down to the mailbox to grab my Kailo patches and OMG… my son has been experiencing awful knee pain for months, but within seconds of putting the Kailo on him, he said IT’S COMPLETELY GONE! Thank you! Cross your fingers that I can find the magic spot for the back pain of 10+ years.”",
+            "author_name": "Crystal A.",
+            "author_position": "Designer"
+          }
+        },
+        "28b9848f-87a0-454c-8efd-ff8922258cdf": {
+          "type": "slide",
+          "settings": {
+            "text": "“Living with pain for an extended amount of time, not getting results from doctors visits and tests, it became very frustrating. I’m invited for dinner at my sister’s house one night and it becomes life changing as she wrapped a Kailo around my ankle. Moments later I felt warmth and the pain I had experienced for years subsided. After a few days, I could go without using it for a day or so. We have found it to help with headaches, cramps, back pain and neck pain. It has helped my friends and family with hip pain and knee pain and even worked to make the pain of passing a kidney stone tolerable. It works...It is simply miraculous.”",
+            "author_name": "Melody S.",
+            "author_position": "Retail Manager"
+          }
+        },
+        "85d7303b-e68f-4caf-806b-7de8a0f7bf31": {
+          "type": "slide",
+          "settings": {
+            "text": "“I have struggled with nerve pain down my left leg for 30 years...but it was intensified in 2016 after spine surgery. My niece introduced me to Kailo and I'm sure you know my immediate thought (after 30 years of pain)...sure, I'll try it but don't expect miracles. Within minutes, I felt relief and requested my children get me one for Christmas. Bless my children as they gave it to me at Thanksgiving. I am PAIN FREE and feel so much younger and fit. Your product truly saved my quality of life, if not my life itself. Sincerely appreciated daily.”",
+            "author_name": "Tammy Winkler",
+            "author_position": "Chef"
+          }
+        }
+      },
+      "block_order": [
+        "b543b9f8-0605-405c-90fa-79297f941970",
+        "e2982663-d4b4-44f8-9323-6e94ee0f624f",
+        "3890fb70-73ee-4c52-ab0a-476a86c3b7b0",
+        "88247786-71f4-4de6-9f7e-384a623b05c0",
+        "28b9848f-87a0-454c-8efd-ff8922258cdf",
+        "85d7303b-e68f-4caf-806b-7de8a0f7bf31"
+      ],
+      "settings": {
+        "title": "So many users...so many success stories."
+      }
+    },
+    "stories-video": {
+      "type": "stories-video",
+      "blocks": {
+        "db280854-5e43-452a-8b3b-2e0b93327003": {
+          "type": "slide",
+          "settings": {
+            "title": "liza’s story",
+            "text": "After trying acupuncture, massage, supplements, and other pain relief strategies that failed; Liza found relief from her pain with Kailo’s pain relief patch.",
+            "video_link": "https:\/\/vimeo.com\/727179122",
+            "video_preview": "shopify:\/\/shop_images\/story-video-1.png"
+          }
+        },
+        "c3297a83-2189-4f38-b91f-1278b8ea9d11": {
+          "type": "slide",
+          "settings": {
+            "title": "melody’s story",
+            "text": "Melody was experiencing debilitating foot pain. After being prescribed pain medications that did not help, Melody’s sister introduced her to Kailo. She now experiences pain free days, enabling her to live life to the fullest.",
+            "video_link": "https:\/\/vimeo.com\/727179178",
+            "video_preview": "shopify:\/\/shop_images\/story-video-2.png"
+          }
+        },
+        "821ed48c-8333-4d23-b2bb-0c68959cabab": {
+          "type": "slide",
+          "settings": {
+            "title": "katie’s story",
+            "text": "After trying physical therapy and cortisone shots, Katie felt miserable and hopeless. She was initially skeptical that Kailo could help with her nerve damage. She felt instant relief with the Kailo pain patch and has continued to use it to manage her pain.",
+            "video_link": "https:\/\/vimeo.com\/727179052",
+            "video_preview": "shopify:\/\/shop_images\/story-video-4.png"
+          }
+        }
+      },
+      "block_order": [
+        "db280854-5e43-452a-8b3b-2e0b93327003",
+        "c3297a83-2189-4f38-b91f-1278b8ea9d11",
+        "821ed48c-8333-4d23-b2bb-0c68959cabab"
+      ],
+      "settings": {
+        "title": "JUST A FEW OF THE STORIES",
+        "text": "What will be yours?"
+      }
+    },
+    "icon-list": {
+      "type": "icon-list",
+      "blocks": {
+        "0ca06201-9eda-4d56-a400-979e0c11cf04": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "60de126f-e902-4781-a50a-4197d0a5bd49": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "6123fcca-3d7f-410d-80c6-4732ee5c8a0a": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "6b557b72-2a03-41ec-ac8c-c98f33008f9f": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "124a3479-475e-4aa5-8c98-5d3bc9f77877": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "472d9de4-82e1-4b1c-8f6f-1d733d238a35": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        }
+      },
+      "block_order": [
+        "0ca06201-9eda-4d56-a400-979e0c11cf04",
+        "60de126f-e902-4781-a50a-4197d0a5bd49",
+        "6123fcca-3d7f-410d-80c6-4732ee5c8a0a",
+        "6b557b72-2a03-41ec-ac8c-c98f33008f9f",
+        "124a3479-475e-4aa5-8c98-5d3bc9f77877",
+        "472d9de4-82e1-4b1c-8f6f-1d733d238a35"
+      ],
+      "settings": {
+        "background_color": "#2794a8"
+      }
+    },
+    "shop-category": {
+      "type": "shop-category",
+      "settings": {
+        "title": "shop by category",
+        "collection_list": [
+          "frontpage",
+          "last-test",
+          "test-1"
+        ]
+      }
+    }
+  },
+  "order": [
+    "page-hero",
+    "stories-list",
+    "stories-video",
+    "icon-list",
+    "shop-category"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+      }
+    },
+    "page-rewards-works": {
+      "type": "page-rewards-works",
+      "settings": {
+      }
+    },
+    "page-vip-club": {
+      "type": "page-vip-club",
+      "settings": {
+      }
+    },
+    "page-rewards-use": {
+      "type": "page-rewards-use",
+      "settings": {
+      }
+    },
+    "page-refer": {
+      "type": "page-refer",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "page-hero",
+    "page-rewards-works",
+    "page-vip-club",
+    "page-rewards-use",
+    "page-refer"
+  ]
+}

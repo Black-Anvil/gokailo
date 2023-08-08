@@ -1,0 +1,163 @@
+<style>
+    .clinical-results__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .clinical-results__info {
+        padding: 80px 0;
+    }
+
+    .clinical-results .caption-text {
+        margin: 0 0 8px;
+        color: var(--primary1);
+    }
+
+    .clinical-results__title {
+        color: var(--primary5);
+    }
+
+    .clinical-results__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin: 40px 0;
+    }
+
+    .clinical-results__list > li {
+        display: flex;
+    }
+
+    .clinical-results__list svg {
+        min-width: 40px;
+        width: 40px;
+        margin: 0 8px 0 0;
+    }
+
+    @media screen and (max-width: 768px) {
+        .clinical-results {
+            padding: 0 0 80px;
+        }
+
+        .clinical-results__wrapper {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        .clinical-results__info {
+            padding: 0;
+        }
+
+        .clinical-results__list {
+            margin: 32px 0;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .clinical-results__list {
+            grid-template-columns: 1fr;
+        }
+
+        .clinical-results .button {
+            width: 100%;
+        }
+    }
+</style>
+
+<section class="clinical-results">
+    <div class="container">
+        <div class="clinical-results__wrapper">
+            {% if section.settings.image != blank %}
+                <img src="{{ section.settings.image | image_url }}" alt="{{ section.settings.image.alt }}">
+            {% endif %}
+
+            <div class="clinical-results__info">
+                {% if section.settings.caption != blank %}
+                    <div class="caption-text">{{ section.settings.caption }}</div>
+                {% endif %}
+
+                {% if section.settings.title != blank %}
+                    <h2 class="h2-title clinical-results__title">{{ section.settings.title }}</h2>
+                {% endif %}
+
+                <ul class="clinical-results__list">
+                    {% for block in section.blocks %}
+                        <li>
+                            {% if block.settings.icon != blank %}
+                                {{ block.settings.icon }}
+                            {% endif %}
+
+                            {% if block.settings.text != blank %}
+                                <p>{{ block.settings.text }}</p>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                {% if section.settings.link_url != blank and section.settings.link_text != blank %}
+                    <a class="button button--primary" href="{{ section.settings.link_url }}">
+                        {{ section.settings.link_text }}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Clinical Results",
+  "blocks": [
+    {
+      "name": "Result List Item",
+      "type": "block",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "html",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Link"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link text"
+    }
+  ]
+}
+{% endschema %}

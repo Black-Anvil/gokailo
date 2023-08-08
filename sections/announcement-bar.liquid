@@ -1,0 +1,153 @@
+<style>
+    .announcement-bar {
+        position: relative;
+        z-index: 1;
+        padding: 8px 0;
+        color: var(--grays6);
+        background-color: var(--primary4);
+    }
+
+    .announcement-bar .container {
+        --container-width: 1010px;
+    }
+
+    .announcement-bar__wrapper {
+        display: flex;
+    }
+
+    .announcement-bar ul {
+        display: flex;
+        align-items: center;
+        margin: 0 32px 0 0;
+    }
+
+    .announcement-bar li:not(:last-child) {
+        margin: 0 16px 0 0;
+    }
+
+    .announcement-bar a:hover,
+    .announcement-bar a:focus {
+        transform: scale(1.1);
+    }
+
+    @media screen and (max-width: 768px) {
+        .announcement-bar {
+            display: none;
+        }
+
+        .announcement-bar ul {
+            margin: 0 0 16px;
+        }
+
+        .announcement-bar__wrapper {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+</style>
+
+<div class="announcement-bar">
+    <div class="container">
+        <div class="announcement-bar__wrapper">
+            <ul>
+                {% if section.settings.twitter %}
+                    <li>
+                        <a class="button-icon" href="{{ settings.twitter }}" target="_blank">
+                            Twitter
+                            {% render "icon-twitter" %}
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if section.settings.facebook %}
+                    <li>
+                        <a class="button-icon" href="{{ settings.facebook }}" target="_blank">
+                            Facebook
+                            {% render "icon-facebook" %}
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if section.settings.youtube %}
+                    <li>
+                        <a class="button-icon" href="{{ settings.youtube }}" target="_blank">
+                            Youtube
+                            {% render "icon-youtube" %}
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if section.settings.instagram %}
+                    <li>
+                        <a class="button-icon" href="{{ settings.instagram }}" target="_blank">
+                            Instagram
+                            {% render "icon-instagram" %}
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if section.settings.email %}
+                    <li>
+                        <a class="button-icon" href="{{ settings.email }}">
+                            Email
+                            {% render "icon-email" %}
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+
+            {% if section.settings.text != blank %}
+                <p class="small-text">{{ section.settings.text }}</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Socials"
+    },
+    {
+      "type": "checkbox",
+      "id": "twitter",
+      "label": "Show Twitter",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "facebook",
+      "label": "Show Facebook",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "youtube",
+      "label": "Show Youtube",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "instagram",
+      "label": "Show Instagram",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "email",
+      "label": "Show Email",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

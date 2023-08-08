@@ -1,0 +1,179 @@
+<style>
+    .stories-video {
+        padding: 100px 0;
+        color: var(--grays6);
+        background-color: var(--primary5);
+    }
+
+    .stories-video__header {
+        margin: 0 0 60px;
+        text-align: center;
+    }
+
+    .stories-video__swiper {
+        max-width: 950px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .stories-video__swiper .swiper-slide {
+        display: flex;
+        justify-content: center;
+    }
+
+    .stories-video__item {
+        display: flex;
+        flex-direction: column;
+        max-width: 290px;
+    }
+
+    .stories-video__swiper .popup-vimeo {
+        align-self: center;
+        margin: 0 0 16px;
+    }
+
+    .stories-video .title-decorator {
+        color: var(--grays6);
+    }
+
+    .stories-video__header > *:not(:last-child) {
+        margin: 0 0 24px;
+    }
+
+    .stories-video__subtitle {
+        margin: 0 0 4px;
+    }
+
+    .stories-video__pagination {
+        margin: 24px 0 0;
+        justify-content: center;
+    }
+
+    @media screen and (max-width: 768px) {
+        .stories-video {
+            padding: 60px 0;
+        }
+
+        .stories-video__header {
+            margin: 0 0 40px;
+        }
+
+        .stories-video__header > *:not(:last-child) {
+            margin: 0 0 16px;
+        }
+    }
+</style>
+
+{{ "play-video.css" | asset_url | stylesheet_tag }}
+
+<div class="stories-video">
+    <div class="container">
+        <div class="stories-video__header">
+            {% if section.settings.title != blank %}
+                <h2 class="h2-title title-decorator">{{ section.settings.title }}</h2>
+            {% endif %}
+
+            {% if section.settings.text != blank %}
+                <p>{{ section.settings.text }}</p>
+            {% endif %}
+        </div>
+
+        <div class="stories-video__swiper">
+            <div class="swiper-wrapper">
+                {% for block in section.blocks %}
+                    <div class="swiper-slide">
+                        <div class="stories-video__item">
+                            {% render "vimeo-image", link: block.settings.video_link, img: block.settings.video_preview, width: 290, height: 290 %}
+
+                            {% if block.settings.title != blank %}
+                                <h6 class="h6-title stories-video__subtitle">{{ block.settings.title }}</h6>
+                            {% endif %}
+
+                            {% if block.settings.text != blank %}
+                                <p>{{ block.settings.text }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="swiper-pagination stories-video__pagination"></div>
+        </div>
+    </div>
+</div>
+
+<script type="module">
+    const initSlider = () => {
+        new Swiper('.stories-video__swiper', {
+            slidesPerView: 1,
+            spaceBetween: 40,
+
+            breakpoints: {
+                620: {
+                    slidesPerView: 2,
+                },
+                920: {
+                    slidesPerView: 3,
+                }
+            },
+
+            autoHeight: true,
+
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    };
+
+    document.addEventListener("shopify:section:load", initSlider);
+
+    initSlider();
+</script>
+
+{% schema %}
+{
+  "name": "Stories Video",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Story Video",
+      "type": "slide",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "video_link",
+          "label": "Video Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "video_preview",
+          "label": "Video Preview"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,183 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+        "caption": "about kailo",
+        "title": "how does the kailo works?",
+        "description": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage.<br\/><br\/>The effectiveness of this technology for pain management has been developed by Kailo. The Kailo pain patch is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>",
+        "image_background": "shopify:\/\/shop_images\/cbf7486200ba2c8d5cc66eec9b46cdb3.png",
+        "link_url": "\/",
+        "link_text": "read more"
+      }
+    },
+    "science-behind": {
+      "type": "science-behind",
+      "settings": {
+        "title": "THE SCIENCE BEHIND KAILO",
+        "description": "<p>Kailo technology is a uniquely organized sheet of capacitors. Capacitors are electrical components used by radios and computers to manage and transmit data. Kailo capacitors assist the axons of your nervous system to manage and transmit the signals of your body.<\/p>",
+        "subtitle": "THE KAILO AND THE AXON",
+        "image": "shopify:\/\/shop_images\/page-science.png"
+      }
+    },
+    "icon-list": {
+      "type": "icon-list",
+      "blocks": {
+        "53f67dc3-773b-4d04-b180-94a1df147bc9": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "4599ecb5-574a-4879-9493-a4aed25807b2": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "b2878c97-d377-481b-982d-a197ef93a3f6": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "0ef71a1b-6429-4d99-8224-eda06e952655": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "92cda0fb-0599-432a-951f-bd6061ed0995": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        },
+        "b8161146-16fb-4ce9-b54b-e15967259a1b": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+          }
+        }
+      },
+      "block_order": [
+        "53f67dc3-773b-4d04-b180-94a1df147bc9",
+        "4599ecb5-574a-4879-9493-a4aed25807b2",
+        "b2878c97-d377-481b-982d-a197ef93a3f6",
+        "0ef71a1b-6429-4d99-8224-eda06e952655",
+        "92cda0fb-0599-432a-951f-bd6061ed0995",
+        "b8161146-16fb-4ce9-b54b-e15967259a1b"
+      ],
+      "settings": {
+        "background_color": "#355d66"
+      }
+    },
+    "medical-review": {
+      "type": "medical-review",
+      "settings": {
+        "subtitle": "The final results from the IRB-approved study demonstrated that",
+        "title": "Patients who used Kailo over a period of 30 days showed a vast reduction of their pain severity levels.",
+        "description": "<p>They also experienced a better quality of life, improved function, were very satisfied with the Kailo Pain Patch, and preferred the patch over oral pain medications.<br\/><br\/>\"With the increased focus on identifying alternative therapies for patients experiencing pain, the use and ongoing research of novel approaches including the non-drug and microtechnology based Kailo patch, seem to have a very positive effect on patients who are experiencing mild, moderate, and chronic pain.”<\/p>",
+        "author": "Jeffrey Gudin, MD | Principal Investigator",
+        "image_background": "shopify:\/\/shop_images\/page-medical-review.png",
+        "link_url": "\/",
+        "link_text": "read medical opinons"
+      }
+    },
+    "clinical-results": {
+      "type": "clinical-results",
+      "blocks": {
+        "3ec14905-aad9-41b8-9777-7c7599a8b07a": {
+          "type": "block",
+          "settings": {
+            "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\">\n  <path d=\"M20 8.33398V31.6673\" stroke=\"#2794A8\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M31.6667 20L20 31.6667L8.33337 20\" stroke=\"#2794A8\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "text": "Significant decrease in pain severity with no side effects"
+          }
+        },
+        "579e56b9-9117-400e-a880-eb3302fac43a": {
+          "type": "block",
+          "settings": {
+            "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\">\n  <path d=\"M20 36.6673C29.2048 36.6673 36.6667 29.2054 36.6667 20.0007C36.6667 10.7959 29.2048 3.33398 20 3.33398C10.7953 3.33398 3.33337 10.7959 3.33337 20.0007C3.33337 29.2054 10.7953 36.6673 20 36.6673Z\" stroke=\"#2794A8\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M13.3334 23.334C13.3334 23.334 15.8334 26.6673 20 26.6673C24.1667 26.6673 26.6667 23.334 26.6667 23.334\" stroke=\"#2794A8\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M25 15H25.0167\" stroke=\"#2794A8\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M15 15H15.0167\" stroke=\"#2794A8\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "text": "Significant improvement in mood, sleep, activity, and relationships."
+          }
+        },
+        "8ccccaa7-5fc2-4bb3-99ba-f28ad6b5f4be": {
+          "type": "block",
+          "settings": {
+            "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\">\n  <path d=\"M33.3333 35V31.6667C33.3333 29.8986 32.6309 28.2029 31.3807 26.9526C30.1304 25.7024 28.4347 25 26.6666 25H13.3333C11.5652 25 9.86949 25.7024 8.61925 26.9526C7.369 28.2029 6.66663 29.8986 6.66663 31.6667V35\" stroke=\"#2794A8\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M13.3334 11.6667V15C13.3334 18.6819 16.3181 21.6667 20 21.6667C23.6819 21.6667 26.6667 18.6819 26.6667 15V11.6667C26.6667 7.98477 23.6819 5 20 5C16.3181 5 13.3334 7.98477 13.3334 11.6667Z\" stroke=\"#2794A8\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "text": "Patient satisfaction for convenience and ease of use"
+          }
+        },
+        "ec302098-a935-4a85-a1f5-559a61aacd9a": {
+          "type": "block",
+          "settings": {
+            "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"40\" height=\"40\" viewbox=\"0 0 40 40\" fill=\"none\">\n  <path d=\"M8.33337 35.0007C9.16671 27.5007 12.5 21.6673 20 18.334\" stroke=\"#2794A8\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n  <path d=\"M15 29.9994C25.3633 29.9994 32.5 24.5193 33.3333 9.99935V6.66602H26.6433C11.6433 6.66602 6.66664 13.3327 6.64331 21.666C6.64331 23.3327 6.64331 26.666 9.97664 29.9994H14.9766H15Z\" stroke=\"#2794A8\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>",
+            "text": "Patients used a lot less concurrent oral medication."
+          }
+        }
+      },
+      "block_order": [
+        "3ec14905-aad9-41b8-9777-7c7599a8b07a",
+        "579e56b9-9117-400e-a880-eb3302fac43a",
+        "8ccccaa7-5fc2-4bb3-99ba-f28ad6b5f4be",
+        "ec302098-a935-4a85-a1f5-559a61aacd9a"
+      ],
+      "settings": {
+        "caption": "clinical trials",
+        "title": "The Results Are In And They're Amazing",
+        "image": "shopify:\/\/shop_images\/clinical-results.png",
+        "link_url": "\/",
+        "link_text": "view clinical results"
+      }
+    },
+    "reviews-block": {
+      "type": "reviews-block",
+      "blocks": {
+        "6565d877-4ab4-40a7-ae14-a6ceb29c9321": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "stars": 5,
+            "author_name": "Mauricio C.",
+            "author_info": "Verified Buyer | 09\/09\/21"
+          }
+        },
+        "e3fd8008-781f-4948-8d94-6e6bfe12739d": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "stars": 5,
+            "author_name": "Mauricio C.",
+            "author_info": "Verified Buyer | 09\/09\/21"
+          }
+        }
+      },
+      "block_order": [
+        "6565d877-4ab4-40a7-ae14-a6ceb29c9321",
+        "e3fd8008-781f-4948-8d94-6e6bfe12739d"
+      ],
+      "settings": {
+      }
+    },
+    "shop-category": {
+      "type": "shop-category",
+      "settings": {
+        "title": "shop by category",
+        "collection_list": [
+          "frontpage",
+          "last-test",
+          "test-1"
+        ]
+      }
+    }
+  },
+  "order": [
+    "page-hero",
+    "science-behind",
+    "icon-list",
+    "medical-review",
+    "clinical-results",
+    "reviews-block",
+    "shop-category"
+  ]
+}

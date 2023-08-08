@@ -2,63 +2,120 @@
     .page-hero {
         padding: 150px 0 100px;
         color: var(--grays6);
-        background-image: linear-gradient(0deg, rgba(53, 93, 102, 0.80) 0%, rgba(53, 93, 102, 0.80) 100%), url({{ "page-hero.png" | asset_url }});
+        background-image: linear-gradient(0deg, rgba(53, 93, 102, 0.80) 0%, rgba(53, 93, 102, 0.80) 100%), url({{ section.settings.image_background | image_url }});
         background-color: var(--primary5);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
     }
 
+    .page-hero__wrapper {
+        max-width: 840px;
+    }
+
     .page-hero .caption-text {
+        display: block;
         margin: 0 0 8px;
     }
 
-    .page-hero__block {
-        margin: 24px 0 0;
+    .page-hero__info {
         max-width: 620px;
     }
 
-    .page-hero__block > *:not(:last-child) {
+    .page-hero__block > *:not(:last-child),
+    .page-hero__info > *:not(:last-child) {
         margin: 0 0 24px;
     }
 
-    .page-hero__link {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 12px 0 12px 32px;
-    }
+    @media screen and (max-width: 768px) {
+        .page-hero {
+            padding: 100px 0 60px;
+        }
 
-    .page-hero__link::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 24px;
-        height: 1px;
-        background-color: var(--grays6);
-        transform: translateY(-50%);
+        .page-hero__block > *:not(:last-child),
+        .page-hero__info > *:not(:last-child) {
+            margin: 0 0 16px;
+        }
     }
 </style>
 
 <section class="page-hero">
     <div class="container">
-        <div class="page-hero__info">
-            <span class="caption-text">about kailo</span>
-            <h2 class="h1-title">how does the kailo works?</h2>
+        <div class="page-hero__wrapper">
+            {% if section.settings.caption != blank %}
+                <span class="caption-text">{{ section.settings.caption }}</span>
+            {% endif %}
 
             <div class="page-hero__block">
-                <p>
-                    Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage.
-                </p>
+                {% if section.settings.title != blank %}
+                    <h2 class="h1-title">{{ section.settings.title }}</h2>
+                {% endif %}
 
-                <p>
-                    The effectiveness of this technology for pain management has been developed by Kailo. The Kailo pain patch is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.
-                </p>
+                <div class="page-hero__info">
+                    {% if section.settings.description != blank %}
+                        <div class="content">
+                            {{ section.settings.description }}
+                        </div>
+                    {% endif %}
 
-                <a class="button-text page-hero__link" href="#">read more</a>
+                    {% if section.settings.image %}
+                        <img src="{{ section.settings.image | image_url }}" width="200" alt="{{ section.settings.image.alt }}">
+                    {% endif %}
+
+                    {% if section.settings.link_url != blank and section.settings.link_text != blank %}
+                        <a class="button-text button-link" href="{{ section.settings.link_url }}">
+                            {{ section.settings.link_text }}
+                        </a>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+{% schema %}
+{
+  "name": "Page Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_background",
+      "label": "Image Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Link"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,140 @@
+<style>
+    .medical-review {
+        padding: 80px 0;
+        background-image: url({{ section.settings.image_background | image_url }});
+        background-position: center top;
+        background-size: cover;
+    }
+
+    .medical-review__title {
+        color: var(--primary5);
+    }
+
+    .medical-review__subtitle {
+        margin: 0 0 8px;
+        font-weight: 700;
+    }
+
+    .medical-review__author {
+        font-weight: 700;
+    }
+
+    .medical-review__block {
+        position: relative;
+        max-width: 840px;
+        width: 100%;
+        padding: 80px 0 0;
+    }
+
+    .medical-review__block svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .medical-review__block path {
+        fill: var(--primary5);
+    }
+
+    .medical-review__info > *:not(:last-child) {
+        margin: 0 0 24px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .medical-review {
+            padding: 60px 0;
+            background-position: revert;
+            background-size: revert;
+        }
+
+        .medical-review__info > *:not(:last-child) {
+            margin: 0 0 16px;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .medical-review .button {
+            width: 100%;
+        }
+    }
+</style>
+
+<section class="medical-review">
+    <div class="container">
+        <div class="medical-review__block">
+            {% render "icon-quote" %}
+
+            {% if section.settings.subtitle != blank %}
+                <p class="medical-review__subtitle">{{ section.settings.subtitle }}</p>
+            {% endif %}
+
+
+            <div class="medical-review__info">
+                {% if section.settings.title != blank %}
+                    <h3 class="h3-title medical-review__title">{{ section.settings.title }}</h3>
+                {% endif %}
+
+                {% if section.settings.description != blank %}
+                    <div class="content">{{ section.settings.description }}</div>
+                {% endif %}
+
+                {% if section.settings.author != blank %}
+                    <p class="medical-review__author">{{ section.settings.author }}</p>
+                {% endif %}
+
+                {% if section.settings.link_url != blank and section.settings.link_text != blank %}
+                    <a class="button button--primary" href="{{ section.settings.link_url }}">
+                        {{ section.settings.link_text }}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Medical Review",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "author",
+      "label": "Author"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_background",
+      "label": "Image Background"
+    },
+    {
+      "type": "header",
+      "content": "Link"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link text"
+    }
+  ]
+}
+{% endschema %}

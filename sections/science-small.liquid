@@ -1,0 +1,90 @@
+<style>
+    .page-science-small {
+        padding: 80px 0;
+        background-image: url({{ "page-science-small.png" | asset_url }});
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .page-science-small__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 620px;
+        height: 420px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .page-science-small__title {
+        margin: 0 0 24px;
+    }
+
+    .page-science-small .button {
+        margin-top: auto;
+    }
+
+    @media screen and (max-width: 768px) {
+        .page-science-small {
+            padding: 60px 0;
+            background-size: auto;
+        }
+
+        .page-science-small__title {
+            margin: 0 0 16px;
+        }
+
+        .page-science-small__wrapper {
+            height: 450px;
+        }
+    }
+</style>
+
+<div class="page-science-small">
+    <div class="container">
+        <div class="page-science-small__wrapper">
+            {% if section.settings.title != blank %}
+                <h2 class="h2-title title-decorator page-science-small__title">{{ section.settings.title }}</h2>
+            {% endif %}
+
+            {% if section.settings.text != blank %}
+                <p>{{ section.settings.text }}</p>
+            {% endif %}
+
+            {% if section.settings.link_url != blank and section.settings.link_text %}
+                <a class="button button--primary" href="{{ section.settings.link_url }}">
+                    {{ section.settings.link_text }}
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Science Behind Small",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text"
+    }
+  ]
+}
+{% endschema %}

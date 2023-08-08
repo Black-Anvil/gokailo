@@ -69,6 +69,48 @@
         display: flex;
         flex-direction: column;
     }
+
+    @media screen and (max-width: 768px) {
+        .home-testimonials {
+            padding: 60px 0;
+        }
+
+        .home-testimonials__wrapper {
+            flex-direction: column;
+            margin: 0 0 -40px 0;
+        }
+
+        .home-testimonials__wrapper > * {
+            width: 100%;
+            margin: 0 0 40px 0;
+        }
+
+        .home-testimonials__interviews .button {
+            margin: 16px 0 0;
+        }
+
+        .home-testimonials__swiper .swiper-pagination {
+            margin: 24px 0 0;
+        }
+
+        .home-testimonials__swiper h3 {
+            margin: 0 0 16px;
+        }
+
+        .home-testimonials__swiper blockquote {
+            margin: 0 0 16px;
+        }
+
+        .home-testimonials__swiper .swiper-pagination {
+            justify-content: center;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .home-testimonials__interviews .button {
+            width: 100%;
+        }
+    }
 </style>
 
 <section class="home-testimonials">
@@ -77,81 +119,27 @@
             <div>
                 <div class="home-testimonials__swiper">
                     <div class="swiper-wrapper">
-                        <figure class="swiper-slide">
-                            <blockquote>
-                                {% render "icon-quote" %}
+                        {% for block in section.blocks %}
+                            <figure class="swiper-slide">
+                                <blockquote>
+                                    {% render "icon-quote" %}
 
-                                <h3 class="h2-title">THIS THING REALLY WORKS</h3>
+                                    <h3 class="h2-title">{{ block.settings.title }}</h3>
 
-                                <p>
-                                    "I had lung surgery 5 years ago and have been in pain every day since (nerve damage
-                                    they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve
-                                    pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been
-                                    wearing two Kailo patches now for about 2 months and haven't taken a pain pill the
-                                    entire time. THANK YOU KAILO!"
-                                </p>
-                            </blockquote>
+                                    <p>{{ block.settings.content }}</p>
+                                </blockquote>
 
-                            <div class="home-testimonials__author">
-                                <img src="{{ "home-testimonials.jpg" | asset_url }}" width="48" height="48" alt="Cary">
+                                <div class="home-testimonials__author">
+                                    <img src="{{ block.settings.author_image | image_url }}"
+                                         alt="{{ block.settings.author_image.alt }}">
 
-                                <figcaption>
-                                    <span class="h6-title">Cary P.</span>
-                                    <span class="caption-text">California</span>
-                                </figcaption>
-                            </div>
-                        </figure>
-
-                        <figure class="swiper-slide">
-                            <blockquote>
-                                {% render "icon-quote" %}
-
-                                <h3 class="h2-title">FINALLY SOME RELIEF. IT WORKS.</h3>
-
-                                <p>
-                                    "I am a skeptic! It has gotten worse with age, but I have always been that way. I am
-                                    no stranger to pain. I was accident-prone as a child. Breaking, twisting and
-                                    rupturing. At 17, I was hit head on by a drunk driver, changing my life. I got to go
-                                    try Kailo before buying it...Guess what?!?! IT WORKED!!!! It took a little while to
-                                    figure out where to best place it. But then.... RELIEF!...Finally some RELIEF. It
-                                    WORKS. It's weird, I know."
-                                </p>
-                            </blockquote>
-
-                            <div class="home-testimonials__author">
-                                <img src="{{ "home-testimonials.jpg" | asset_url }}" width="48" height="48" alt="Liza">
-
-                                <figcaption>
-                                    <span class="h6-title">Liza B.</span>
-                                    <span class="caption-text">Utah</span>
-                                </figcaption>
-                            </div>
-                        </figure>
-
-                        <figure class="swiper-slide">
-                            <blockquote>
-                                {% render "icon-quote" %}
-
-                                <h3 class="h2-title">IT IS SIMPLY MIRACULOUS!</h3>
-
-                                <p>
-                                    "Living with pain for an extended amount of time, not getting results from doctors
-                                    visits and tests, it became very frustrating. We have found it to help with
-                                    headaches, cramps, back pain and neck pain. It has helped my friends and family with
-                                    hip pain and knee pain and even worked to make the pain of passing a kidney stone
-                                    tolerable. It works...It is simply miraculous."
-                                </p>
-                            </blockquote>
-
-                            <div class="home-testimonials__author">
-                                <img src="{{ "home-testimonials.jpg" | asset_url }}" width="48" height="48" alt="Melody">
-
-                                <figcaption>
-                                    <span class="h6-title">Melody S.</span>
-                                    <span class="caption-text">Utah</span>
-                                </figcaption>
-                            </div>
-                        </figure>
+                                    <figcaption>
+                                        <span class="h6-title">{{ block.settings.author_name }}</span>
+                                        <span class="caption-text">{{ block.settings.author_position }}</span>
+                                    </figcaption>
+                                </div>
+                            </figure>
+                        {% endfor %}
                     </div>
 
                     <div class="swiper-pagination"></div>
@@ -160,8 +148,15 @@
 
             <div class="home-testimonials__interviews">
                 <div>
-                    {% render "vimeo-image", link: "https://vimeo.com/644391532", img: "home-testimonials.gif", width: 330, height: 186, alt: "testimonial interviews" %}
-                    <a class="button button--primary" href="#">read testimonials</a>
+                    {% if section.settings.video != blank and section.settings.preview != blank %}
+                        {% render "vimeo-image", link: section.settings.video, img: section.settings.preview, width: 330, height: 186, alt: section.settings.preview.alt %}
+                    {% endif %}
+
+                    {% if section.settings.link_text != blank %}
+                        <a class="button button--primary" href="{{ section.settings.link_url }}">
+                            {{ section.settings.link_text }}
+                        </a>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -169,15 +164,92 @@
 </section>
 
 <script type="module">
-    const swiper = new Swiper('.home-testimonials__swiper', {
-        slidesPerView: 1,
-        spaceBetween: 32,
+    const initSlider = () => {
+        new Swiper('.home-testimonials__swiper', {
+            slidesPerView: 1,
+            spaceBetween: 32,
 
-        autoHeight: true,
+            autoHeight: true,
 
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-    });
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    };
+
+    document.addEventListener("shopify:section:load", initSlider);
+
+    initSlider();
 </script>
+
+{% schema %}
+{
+  "name": "Home Testimonials",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Interview Video"
+    },
+    {
+      "type": "text",
+      "id": "video",
+      "label": "Vimeo Video URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "preview",
+      "label": "Video Preview Image"
+    },
+    {
+      "type": "header",
+      "content": "Link"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "image_picker",
+          "id": "author_image",
+          "label": "Author Image"
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author Name"
+        },
+        {
+          "type": "text",
+          "id": "author_position",
+          "label": "Author Position"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
