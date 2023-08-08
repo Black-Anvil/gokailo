@@ -1,0 +1,70 @@
+<style>
+    .product-popular {
+        display: flex;
+        overflow: hidden;
+    }
+
+    .product-popular__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        max-width: 520px;
+        width: 100%;
+    }
+
+    .product-popular__img {
+        width: 100%;
+        background-image: url({{ section.settings.image | image_url }});
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+    }
+
+    @media screen and (max-width: 768px) {
+        .product-popular {
+            flex-direction: column;
+        }
+
+        .product-popular__item {
+            align-self: center;
+            padding: 16px;
+        }
+
+        .product-popular__img {
+            height: 375px;
+        }
+    }
+</style>
+
+{{ "single-product.css" | asset_url | stylesheet_tag }}
+{{ "compare-price.css" | asset_url | stylesheet_tag }}
+{{ "tag.css" | asset_url | stylesheet_tag }}
+
+<div class="product-popular">
+    {% if section.settings.product != blank %}
+        <div class="product-popular__item">
+            {% render "single-product", product: section.settings.product %}
+        </div>
+    {% endif %}
+
+    <span class="product-popular__img"></span>
+</div>
+
+{% schema %}
+{
+  "name": "Popular Product",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ]
+}
+{% endschema %}

@@ -53,7 +53,7 @@
             {% endif %}
 
             {% if section.settings.link_url != blank and section.settings.link_text %}
-                <a class="button button--primary" href="{{ section.settings.link_url }}">
+                <a target="_blank" class="button button--primary" href="{{ section.settings.link_url }}">
                     {{ section.settings.link_text }}
                 </a>
             {% endif %}

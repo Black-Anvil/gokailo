@@ -50,9 +50,9 @@
         width: 8px;
         height: 8px;
         border-radius: 50%;
+        opacity: 0;
         background-color: var(--primary4);
         transform: translateY(-50%);
-        opacity: 0;
         transition: opacity 0.15s linear;
     }
 
@@ -61,12 +61,12 @@
         opacity: 0.6;
     }
 
-    .home-about__list button.active {
-        pointer-events: none;
-        opacity: 1;
+    .home-about__list button.active::before {
+      opacity: 1;
     }
 
-    .home-about__list button.active::before {
+    .home-about__list button.active {
+        pointer-events: none;
         opacity: 1;
     }
 
@@ -262,6 +262,18 @@
         .home-about__placement {
             flex-direction: column;
             align-items: center;
+        }
+
+        .home-about__wrapper {
+            margin: 0;
+        }
+
+        .home-about__wrapper > * {
+            margin: 0;
+        }
+
+        .home-about__wrapper > *:not(:last-child) {
+            margin: 0 0 40px;
         }
 
         .home-about__placement ul {

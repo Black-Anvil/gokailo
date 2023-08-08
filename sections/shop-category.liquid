@@ -66,7 +66,7 @@
                     <div class="swiper-slide">
                         <a class="shop-category__item" href="{{ collection.url }}">
                             <div class="shop-category__img">
-                                <img src="{{ collection.image | image_url }}" width="290" height="290" alt="{{ collection.image.alt }}">
+                                <img src="{{ collection.featured_image | image_url }}" width="290" height="290" alt="{{ collection.featured_image.alt }}">
                             </div>
                             <p class="button-text">{{ collection.title }} ({{ collection.products_count }})</p>
                         </a>

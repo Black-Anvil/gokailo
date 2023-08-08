@@ -1,5 +1,6 @@
 {
   "current": {
+    "favicon": "shopify:\/\/shop_images\/kailo_icon_gold-01.png",
     "primary_1": "#2794A8",
     "primary_2": "#248799",
     "primary_3": "#3A7A8F",
@@ -11,7 +12,17 @@
     "grays_3": "#999999",
     "grays_4": "#D9D9D9",
     "grays_5": "#F6F6F6",
-    "grays_6": "#FFFFFF"
+    "grays_6": "#FFFFFF",
+    "sections": {
+      "cart-drawer": {
+        "type": "cart-drawer",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Kailo": {

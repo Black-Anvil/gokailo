@@ -1,5 +1,38 @@
 {
   "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "blocks": {
+        "76de4116-77cd-4145-832b-2b7e7d4b3f26": {
+          "type": "link",
+          "settings": {
+            "type": "primary",
+            "link_url": "\/account\/register",
+            "link_text": "join now"
+          }
+        },
+        "5a955996-c2db-4aca-9fc3-8a7350789819": {
+          "type": "link",
+          "settings": {
+            "type": "stroked",
+            "link_url": "\/account\/login",
+            "link_text": "log in"
+          }
+        }
+      },
+      "block_order": [
+        "76de4116-77cd-4145-832b-2b7e7d4b3f26",
+        "5a955996-c2db-4aca-9fc3-8a7350789819"
+      ],
+      "settings": {
+        "caption": "rewards",
+        "title": "join the club",
+        "description": "<p>Become a member and earn points & exclusive rewards every time you shop.<\/p>",
+        "image_background": "shopify:\/\/shop_images\/rewards.png",
+        "link_url": "",
+        "link_text": ""
+      }
+    },
     "rewards": {
       "type": "rewards",
       "settings": {
@@ -7,6 +40,7 @@
     }
   },
   "order": [
+    "page-hero",
     "rewards"
   ]
 }

@@ -32,7 +32,94 @@
     }
 </style>
 
-<section class="solutions">
+<style>
+    .advantages {
+        display: flex;
+        padding: 32px;
+        gap: 24px;
+        border-radius: 6px;
+        color: var(--grays6);
+        border-bottom: 1px solid var(--grays-6, #FFF);
+        background: rgba(36, 135, 153, 0.70);
+    }
+
+    .advantages__header > * {
+        padding: 16px 0;
+        white-space: nowrap;
+    }
+
+    .advantages__header > *:first-child {
+        box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.40);
+    }
+
+    .advantages__swiper {
+        overflow: hidden;
+    }
+
+    .advantages__swiper .swiper-slide {
+        padding: 16px 8px;
+        border-radius: 6px;
+        background: rgba(39, 148, 168, 0.50);
+    }
+
+    .advantages__swiper .swiper-slide > * {
+        padding: 16px 0;
+        text-align: center;
+    }
+
+    .advantages__swiper .swiper-slide > *:first-child {
+        padding: 0 0 16px;
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+    .advantages__swiper .swiper-pagination {
+        position: absolute;
+        bottom: 6px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @media screen and (max-width: 992px) {
+        .advantages {
+            padding: 16px;
+            gap: 16px;
+        }
+
+        .advantages__header {
+            min-width: 300px;
+            overflow: auto;
+        }
+
+        .advantages__header > * {
+            padding: 12px 0;
+        }
+
+        .advantages__swiper .swiper-slide {
+            padding: 12px 8px;
+        }
+
+        .advantages__swiper .swiper-slide > * {
+            padding: 12px 0;
+        }
+
+        .advantages__swiper .swiper-slide > *:first-child {
+            padding: 0 0 12px;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .advantages__header {
+            min-width: 150px;
+        }
+
+        .advantages__swiper .swiper-pagination .swiper-pagination-bullet {
+            margin: 0 4px !important;
+        }
+    }
+</style>
+
+<section id="more" class="solutions">
     <div class="container">
         <div class="solutions__header">
             {% if section.settings.image != blank %}
@@ -47,8 +134,130 @@
                 <p>{{ section.settings.description }}</p>
             {% endif %}
         </div>
+
+        <div class="advantages">
+            <div class="advantages__header">
+                <p class="h6-title">kailo vs others</p>
+
+                {% for block in section.blocks %}
+                    <p>{{ block.settings.name }}</p>
+                {% endfor %}
+            </div>
+
+            <div class="advantages__swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <p class="h6-title">kailo pain patch</p>
+
+                        {% for block in section.blocks %}
+                            <p>
+                                {% if block.settings.kailo %}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                        <path d="M20.5 6L9.5 17L4.5 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    {% else %}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                        <path d="M18.5 6L6.5 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M6.5 6L18.5 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                {% endif %}
+                            </p>
+                        {% endfor %}
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="h6-title">signal relief</p>
+
+                        {% for block in section.blocks %}
+                            <p>
+                                {% if block.settings.signal %}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                        <path d="M20.5 6L9.5 17L4.5 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                {% else %}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                        <path d="M18.5 6L6.5 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M6.5 6L18.5 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                {% endif %}
+                            </p>
+                        {% endfor %}
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="h6-title">salonpas</p>
+
+                        {% for block in section.blocks %}
+                            <p>
+                                {% if block.settings.salonpas %}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                        <path d="M20.5 6L9.5 17L4.5 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                {% else %}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                        <path d="M18.5 6L6.5 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M6.5 6L18.5 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                {% endif %}
+                            </p>
+                        {% endfor %}
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="h6-title">luminas</p>
+
+                        {% for block in section.blocks %}
+                            <p>
+                                {% if block.settings.luminas %}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                        <path d="M20.5 6L9.5 17L4.5 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                {% else %}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                        <path d="M18.5 6L6.5 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M6.5 6L18.5 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                {% endif %}
+                            </p>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
     </div>
 </section>
+
+<script type="module">
+    const initSlider = () => {
+        new Swiper('.advantages__swiper', {
+            slidesPerView: 1,
+            spaceBetween: 8,
+
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                920: {
+                    slidesPerView: 3,
+                },
+                1024: {
+                    slidesPerView: 4,
+                },
+            },
+
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    };
+
+    document.addEventListener("shopify:section:load", initSlider);
+
+    initSlider();
+</script>
 
 {% schema %}
 {
@@ -73,6 +282,43 @@
       "type": "image_picker",
       "id": "image_background",
       "label": "Image Background"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Advantage",
+      "type": "block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "checkbox",
+          "id": "kailo",
+          "label": "Kailo Pain Patch",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "signal",
+          "label": "signal relief",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "salonpas",
+          "label": "Salonpas",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "luminas",
+          "label": "Luminas",
+          "default": true
+        }
+      ]
     }
   ]
 }

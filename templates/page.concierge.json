@@ -7,7 +7,7 @@
         "title": "KAILO CONCIERGE PROGRAM",
         "description": "<p>The number one goal of everyone here at Kailo is to assist in the management and relief of pain. Critical to the success of the Kailo is the proper use and placement of the Kailo, therefore we have created the Kailo Concierge Program to personally assist our customers in the proper placement and adhesion of the Kailo by offering a<\/p>",
         "image_background": "shopify:\/\/shop_images\/page-concierge.png",
-        "link_url": "\/",
+        "link_url": "shopify:\/\/pages\/testimonials",
         "link_text": "read more testimonials"
       }
     },
@@ -54,50 +54,50 @@
     "icon-list": {
       "type": "icon-list",
       "blocks": {
-        "ce4be929-87f1-4ddf-bcd8-7a701ff420c3": {
+        "28bffeef-7425-4fe0-b9f3-040c0e05224c": {
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
           }
         },
-        "55e9a0c5-1bd2-477c-b748-dc03aef9396b": {
+        "31d12227-6898-4556-8683-17683561039e": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_10.png"
           }
         },
-        "a60ab778-b6aa-423a-80be-454399caba63": {
+        "38a8b462-9183-48c9-aea5-1ae292649094": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_12.png"
           }
         },
-        "b14361da-438a-4474-9180-970992f6795f": {
+        "a98e13e7-0572-4c40-b624-aa5822f0b609": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_9.png"
           }
         },
-        "ec333aab-cbd7-49f5-8389-5176b8718f31": {
+        "93491daa-47a4-462d-9e5b-25f80eea7aa8": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_8.png"
           }
         },
-        "13f52280-84a8-401b-a487-bfb2e33c77b5": {
+        "1e137e2b-1a05-4606-8ea9-63646a15fb44": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_7.png"
           }
         }
       },
       "block_order": [
-        "ce4be929-87f1-4ddf-bcd8-7a701ff420c3",
-        "55e9a0c5-1bd2-477c-b748-dc03aef9396b",
-        "a60ab778-b6aa-423a-80be-454399caba63",
-        "b14361da-438a-4474-9180-970992f6795f",
-        "ec333aab-cbd7-49f5-8389-5176b8718f31",
-        "13f52280-84a8-401b-a487-bfb2e33c77b5"
+        "28bffeef-7425-4fe0-b9f3-040c0e05224c",
+        "31d12227-6898-4556-8683-17683561039e",
+        "38a8b462-9183-48c9-aea5-1ae292649094",
+        "a98e13e7-0572-4c40-b624-aa5822f0b609",
+        "93491daa-47a4-462d-9e5b-25f80eea7aa8",
+        "1e137e2b-1a05-4606-8ea9-63646a15fb44"
       ],
       "settings": {
         "background_color": "#2794a8"
@@ -106,28 +106,78 @@
     "reviews-block": {
       "type": "reviews-block",
       "blocks": {
-        "19368eb7-c320-4ac4-8315-b03dc478c071": {
+        "6565d877-4ab4-40a7-ae14-a6ceb29c9321": {
           "type": "slide",
           "settings": {
-            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "blockquote": "\"My hand had osteoarthritis and I use the kailo for 5 minutes and I free of pain for the rest of the day is GOOD gracias all of you\"",
             "stars": 5,
             "author_name": "Mauricio C.",
             "author_info": "Verified Buyer | 09\/09\/21"
           }
         },
-        "ddb7a667-bbbd-47d1-a7fb-2d4de3e0cfb9": {
+        "545b2e9b-49e2-4621-ac8c-5c69cb2df12b": {
           "type": "slide",
           "settings": {
-            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "blockquote": "\"I’m training for a 500 mile walk and my hip was killing me. I placed the Kailo patch in two places and my pain is gone! I used a small piece near my ear and it’s also helping diminish my tinnitus.\"",
             "stars": 5,
-            "author_name": "Mauricio C.",
-            "author_info": "Verified Buyer | 09\/09\/21"
+            "author_name": "Ana A.",
+            "author_info": "Verified Buyer | 07\/26\/21"
+          }
+        },
+        "1d63207d-8ab1-48c5-9934-d47be4841326": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"Hi, as a repeat customer, I wish to express my total satisfaction of your Kailo pain product. I never would believe how such a thing could relieve pain like this. I have been spreading the extra ones that I purchased among my family and they just love it also.\"",
+            "stars": 5,
+            "author_name": "Randall S",
+            "author_info": "Verified Buyer | 05\/14\/20"
+          }
+        },
+        "f3b56489-09ff-4f28-aa09-e35c5477e73e": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"Quick shipping, great value, and has always reduced or eliminated pain when placed properly. This is the second one I ordered. Very satisfied customer.\"",
+            "stars": 5,
+            "author_name": "John B.",
+            "author_info": "Verified Buyer | 05\/16\/22"
+          }
+        },
+        "6542bf2b-afe1-4e38-bbea-893f439f2d13": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"Thanks this has been a break through in pain management for my wife and your products make it possible.\"",
+            "stars": 5,
+            "author_name": "William H.",
+            "author_info": "Verified Buyer | 04\/15\/22"
+          }
+        },
+        "bdc2d547-0b6d-4e5f-b656-4dac232213e4": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"So far the Kailo patch has worked for both my husband and me! I have also shared our stories with family and friends\"",
+            "stars": 4,
+            "author_name": "Anne D.",
+            "author_info": "Verified Buyer | 04\/14\/22"
+          }
+        },
+        "68e95ccb-b313-498e-aa56-13222e128101": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"Noticed a difference right away! I was able to work my whole shift without a pain reliever! Total Game Changer! it leaves no marks or sticky rings on the skin and is easy to move. Great product all the way around! I've told everyone i know about it!\"",
+            "stars": 5,
+            "author_name": "SABRINA B.",
+            "author_info": "Verified Buyer | 04\/12\/22"
           }
         }
       },
       "block_order": [
-        "19368eb7-c320-4ac4-8315-b03dc478c071",
-        "ddb7a667-bbbd-47d1-a7fb-2d4de3e0cfb9"
+        "6565d877-4ab4-40a7-ae14-a6ceb29c9321",
+        "545b2e9b-49e2-4621-ac8c-5c69cb2df12b",
+        "1d63207d-8ab1-48c5-9934-d47be4841326",
+        "f3b56489-09ff-4f28-aa09-e35c5477e73e",
+        "6542bf2b-afe1-4e38-bbea-893f439f2d13",
+        "bdc2d547-0b6d-4e5f-b656-4dac232213e4",
+        "68e95ccb-b313-498e-aa56-13222e128101"
       ],
       "settings": {
       }
@@ -137,9 +187,9 @@
       "settings": {
         "title": "shop by category",
         "collection_list": [
-          "frontpage",
-          "test-1",
-          "last-test"
+          "kailo-accessories",
+          "kailo-bundles",
+          "kailo-flex"
         ]
       }
     }

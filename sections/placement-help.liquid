@@ -113,7 +113,11 @@
                 {% endfor %}
             </ul>
 
-            <a class="button button--primary" href="#">schedule a time with a placement specialist</a>
+            <!-- Calendly link widget begin -->
+            <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+            <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+            <a class="button button--primary" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/placement-kailo?hide_gdpr_banner=1&text_color=1e94a9&primary_color=1e94a9'});return false;">schedule a time with a placement specialist</a>
+            <!-- Calendly link widget end -->
         </div>
     </div>
 </div>

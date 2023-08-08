@@ -5,6 +5,14 @@
     "footer": {
       "type": "footer",
       "settings": {
+        "newsletter": true,
+        "copyright": "<p>Copyright © 2023 Kailo Labs LLC. All rights reserved. Kailo™, The K™ Emblem, and The Future of Pain Relief™ are trademarks of Kailo Labs LLC. Kailo is protected by U.S. Patents Kailo licenses technology from nCAP technologies.<\/p>",
+        "socials": true,
+        "twitter": true,
+        "facebook": true,
+        "youtube": false,
+        "instagram": true,
+        "email": false
       }
     }
   },

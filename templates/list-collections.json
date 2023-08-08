@@ -3,6 +3,13 @@
     "list-collections": {
       "type": "list-collections",
       "settings": {
+        "collection_list": [
+          "all-pain-patches",
+          "kailo-flex",
+          "original-kailo",
+          "kailo-bundles",
+          "kailo-accessories"
+        ]
       }
     }
   },

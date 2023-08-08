@@ -20,6 +20,7 @@
         min-height: 58px;
     }
 
+    .navigation.white,
     .navigation.dark,
     .navigation.scrolling,
     .navigation:hover {
@@ -28,6 +29,14 @@
         box-shadow: inset 0 -1px 0 0 var(--grays4);
     }
 
+    .navigation.white .navigation__btn-menu span,
+    .navigation.scrolling .navigation__btn-menu span,
+    .navigation.dark .navigation__btn-menu span,
+    .navigation:hover .navigation__btn-menu span {
+        background-color: currentColor;
+    }
+
+    .navigation.white .navigation__logo-dark,
     .navigation.scrolling .navigation__logo-dark,
     .navigation.dark .navigation__logo-dark,
     .navigation:hover .navigation__logo-dark {
@@ -57,6 +66,7 @@
     }
 
     .navigation__wrapper {
+        position: relative;
         display: flex;
         height: 100%;
     }
@@ -70,11 +80,15 @@
         display: flex;
     }
 
-    .navigation__list span,
-    .navigation__list a {
+    .navigation__list > li > span {
         display: flex;
         align-items: center;
         height: 100%;
+    }
+
+    .navigation__list > li:hover .navigation__sublist {
+        opacity: 1;
+        pointer-events: auto;
     }
 
     .navigation__list > li:not(:last-child) {
@@ -96,7 +110,165 @@
         color: var(--primary1);
     }
 
+    .navigation__sublist {
+        position: absolute;
+        top: 100%;
+        padding: 8px 0;
+        border-radius: 0 0 6px 6px;
+        color: var(--grays2);
+        background-color: var(--grays6);
+        box-shadow: 0 4px 8px 0 rgba(77, 77, 77, 0.10);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.15s linear;
+    }
+
+    .navigation__sublist > li > a {
+        display: block;
+        padding: 9px 16px;
+    }
+
+    .navigation__sublist--store > li > a {
+        padding: 0;
+    }
+
+    .navigation__sublist--store {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 40px;
+        left: 0;
+        width: 100%;
+        padding: 60px 80px;
+    }
+
+    .navigation__sublist--store > li {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .navigation__collection-title {
+        color: var(--primary3);
+    }
+
+    .navigation__collection-image {
+        width: 144px;
+        min-width: 144px;
+        min-height: 144px;
+        overflow: hidden;
+    }
+
+    .navigation__collection-image img {
+        object-fit: cover;
+    }
+
+    .navigation__products {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .navigation .navigation__product {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 24px;
+        height: 350px;
+        color: var(--primary3);
+        background-image: url({{ "menu-link.png" | asset_url }});
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .navigation__btn-menu {
+        position: relative;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        width: 24px;
+        height: 24px;
+        min-height: 24px;
+        margin-left: 16px;
+        background-color: transparent;
+        font-size: 0;
+        border: none;
+        cursor: pointer;
+    }
+
+    .navigation__btn-menu span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: var(--grays6);
+        transform: translate(-50%, -50%);
+        border-radius: 6px;
+        transition: inset 0.15s linear, transform 0.15s linear, width 0.15s linear, background-color 0.15s linear;
+    }
+
+    .navigation__btn-menu span:first-child {
+        top: calc(50% - 5px);
+    }
+
+    .navigation__btn-menu span:last-child {
+        top: calc(50% + 5px);
+        left: calc(50% - 5px);
+        width: 10px;
+    }
+
+    .navigation__btn-menu.opened span:first-child {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%) rotate(45deg);
+    }
+
+    .navigation__btn-menu.opened span:last-child {
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        transform: translate(-50%) rotate(-45deg);
+    }
+
+    .navigation__btn-menu.opened span:nth-child(2) {
+        display: none;
+    }
+
+    .navigation__socials {
+        display: none;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .navigation__logo {
+            margin: 0 16px 0 0;
+        }
+
+        .navigation__list > li:not(:last-child) {
+            margin: 0 16px 0 0;
+        }
+
+        .navigation__sublist--store {
+            gap: 16px;
+            padding: 16px;
+        }
+
+        .navigation .navigation__product {
+            padding: 16px;
+        }
+    }
+
     @media screen and (max-width: 768px) {
+        .navigation__btn-menu {
+            display: flex;
+        }
+
         .navigation {
             min-height: 64px;
         }
@@ -110,13 +282,141 @@
             width: 116px;
         }
 
+        .navigation__icons.disabled {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
 
         .navigation__icons > li:not(:last-child) {
             margin: 0 16px 0 0;
         }
 
+        .navigation__wrapper {
+            position: static;
+        }
+
         .navigation__list {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 64px);
             display: none;
+            flex-direction: column;
+            background-color: var(--grays6);
+            padding: 0 16px 32px;
+            overflow: auto;
+        }
+
+        .navigation__sublist {
+            position: static;
+        }
+
+        .navigation__list.opened {
+            display: flex;
+        }
+
+        .navigation__list > li > span {
+            position: relative;
+            display: block;
+            height: auto;
+            cursor: pointer;
+            padding-right: 24px;
+            transition: color 0.15s linear;
+        }
+
+        .navigation__list > li > span.opened {
+            color: var(--grays1);
+        }
+
+        .navigation__list > li > span::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            width: 6px;
+            min-width: 6px;
+            height: 6px;
+            border-top: 1px solid var(--grays2);
+            border-right: 1px solid var(--grays2);
+            transform: translateY(-50%) rotate(135deg);
+            transition: transform 0.15s linear;
+        }
+
+        .navigation__list > li > span.opened::before {
+            transform: translateY(-50%) rotate(-45deg);
+        }
+
+        .navigation__list > li:not(:last-child) {
+            margin: 0;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--grays4);
+        }
+
+        .navigation__sublist,
+        .navigation__sublist--store {
+            display: none;
+            flex-direction: column;
+            padding: 12px 0 0;
+            gap: 12px;
+            box-shadow: none;
+            background-color: transparent;
+            border-radius: 0;
+            opacity: 1;
+        }
+
+        .navigation__sublist.opened {
+            display: flex;
+        }
+
+        .navigation__sublist--store > li:last-child {
+            display: none;
+        }
+
+        .navigation__collection > *:not(.navigation__collection-title) {
+            display: none;
+        }
+
+        .navigation__collection-title {
+            color: inherit;
+        }
+
+        .navigation__sublist > li > a {
+            padding: 0;
+        }
+
+        .navigation__socials {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 24px;
+            padding: 24px 0 0;
+            margin: auto 0 0;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .navigation__socials > a {
+            color: var(--primary1);
+            font-weight: 700;
+        }
+
+        .navigation__socials-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .navigation__socials-list path {
+            fill: var(--grays2);
+        }
+
+        .navigation__socials-instagram path {
+            fill: none;
         }
     }
 </style>
@@ -138,24 +438,103 @@
             </a>
 
             <ul class="navigation__list">
-
                 <li>
-                    <a class="h6-title" href="{{ routes.collections_url_all }}">shop</a>
+                    <span class="h6-title">shop</span>
+
+                    <ul class="navigation__sublist navigation__sublist--store">
+                        {% for collection in section.settings.collection_list %}
+                            <li class="navigation__collection">
+                                <div class="navigation__collection-image">
+                                    <img src="{{ collection.featured_image | image_url: width: 144, height: 144 }}"
+                                         alt="{{ collection.featured_image.alt }}">
+                                </div>
+
+                                <a href="{{ collection.url }}"
+                                   class="navigation__collection-title button-text">{{ collection.title }}</a>
+
+                                <ul class="navigation__products">
+                                    {% for product in collection.products %}
+                                        <li><a href="{{ product.url }}">{{ product.title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        {% endfor %}
+
+                        {% if section.settings.product %}
+                            <li class="navigation__collection">
+                                <a class="h6-title navigation__product"
+                                   href="{{ section.settings.product.url }}">
+                                    <span>{{ section.settings.product.title }}</span>
+                                    <span>now shipping!</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
                 </li>
 
-                <li>
-                    <span class="h6-title">about kailo</span>
-                </li>
+                {% for block in section.blocks %}
+                    {% if block.type == "nav" %}
+                        <li>
+                            <span class="h6-title">{{ block.settings.menu.title }}</span>
 
-                <li>
-                    <span class="h6-title">trust kailo</span>
+                            <ul class="navigation__sublist">
+                                {% for link in block.settings.menu.links -%}
+                                    <li>
+                                        <a class="button-text" href="{{ link.url }}">{{ link.title }}</a>
+                                    </li>
+                                {%- endfor %}
+                            </ul>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+
+                <li class="navigation__socials">
+                    <a href="{{ settings.email }}">support@gokailo.com</a>
+
+                    <ul class="navigation__socials-list">
+                        <li>
+                            <a class="button-icon" href="{{ settings.twitter }}" target="_blank">
+                                Twitter
+                                {% render "icon-twitter" %}
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="button-icon" href="{{ settings.facebook }}" target="_blank">
+                                Facebook
+                                {% render "icon-facebook" %}
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="button-icon" href="{{ settings.youtube }}" target="_blank">
+                                Youtube
+                                {% render "icon-youtube" %}
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="button-icon navigation__socials-instagram" href="{{ settings.instagram }}"
+                               target="_blank">
+                                Instagram
+                                {% render "icon-instagram" %}
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="button-icon" href="{{ settings.email }}">
+                                Email
+                                {% render "icon-email" %}
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
 
             <ul class="navigation__icons">
                 <li>
-                    <a href="#" class="button-icon">
-                        Favorite
+                    <a href="/pages/rewards" class="button-icon">
+                        Rewards
                         {% render "icon-favorite" %}
                     </a>
                 </li>
@@ -182,6 +561,13 @@
                     </a>
                 </li>
             </ul>
+
+            <button class="navigation__btn-menu">
+                menu
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </div>
 
@@ -190,6 +576,40 @@
 
 <script type="module">
     const navigation = document.querySelector(".navigation");
+    const navigationMenu = navigation.querySelector(".navigation__list");
+    const navigationIcon = navigation.querySelector(".navigation__icons");
+    const navigationMenuBtn = navigation.querySelector(".navigation__btn-menu");
+    const accords = navigation.querySelectorAll(".navigation__list > li > span");
+
+    accords.forEach(accord => {
+        accord.addEventListener("click", () => {
+            if (window.innerWidth <= 768) {
+                const parent = accord.parentElement;
+                const list = parent.querySelector(".navigation__sublist");
+
+                accords.forEach(item => {
+                    if (accord !== item) {
+                        const parent = item.parentElement;
+                        const list = parent.querySelector(".navigation__sublist");
+                        list.classList.remove("opened");
+                        item.classList.remove("opened");
+                    }
+                });
+
+                list.classList.toggle("opened");
+                accord.classList.toggle("opened");
+            }
+        });
+    })
+
+    navigationMenuBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        navigationMenuBtn.classList.toggle("opened");
+        navigation.classList.toggle("white");
+        navigationMenu.classList.toggle("opened");
+        document.body.classList.toggle("hidden");
+        navigationIcon.classList.toggle("disabled");
+    });
 
     const addClassIsScrolling = () => {
         if (document.documentElement.scrollTop > 0) {
@@ -205,3 +625,35 @@
         addClassIsScrolling();
     });
 </script>
+
+{% schema %}
+{
+  "name": "Navigation",
+  "settings": [
+    {
+      "type": "collection_list",
+      "id": "collection_list",
+      "label": "Collections",
+      "limit": 3
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Nav Item",
+      "type": "nav",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

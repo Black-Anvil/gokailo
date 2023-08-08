@@ -15,7 +15,7 @@
                 <p>No active collections here.</p>
             {% else %}
                 <ul class="catalog__list">
-                    {% for collection in collections %}
+                    {% for collection in section.settings.collection_list %}
                         <li>
                             <a class="catalog__collection" href="{{ collection.url }}">
                                 <div class="catalog__collection-img">
@@ -31,3 +31,15 @@
     </div>
 </div>
 
+{% schema %}
+{
+  "name": "Collections List",
+  "settings": [
+    {
+      "type": "collection_list",
+      "id": "collection_list",
+      "label": "Choose visible collections:"
+    }
+  ]
+}
+{% endschema %}

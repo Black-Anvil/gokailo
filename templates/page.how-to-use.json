@@ -7,7 +7,7 @@
         "title": "how to use your kailo",
         "description": "<p>Follow the steps in this general placement video to learn where to place your Kailo pain patch for the best pain relief.  Location is everything. Sometimes, when you’ve found the right spot, your Kailo pain patch will start to tingle or warm up. Sometimes the only thing you will feel is your pain subsiding. Kailo is designed to relieve pain in seconds.<\/p>",
         "image_background": "shopify:\/\/shop_images\/cbf7486200ba2c8d5cc66eec9b46cdb3.png",
-        "link_url": "\/",
+        "link_url": "#more",
         "link_text": "read more"
       }
     },
@@ -64,15 +64,87 @@
         "4bc27ae8-69fa-4814-b3c9-3b076bc475e2": {
           "type": "block",
           "settings": {
-            "title": "Head pain",
-            "description": "<p>A headache can ruin even the brightest day. One reported successful placement for head pain is to orient the Kailo horizontally across the side of the forehead down to the temple with the top edge at the hairline. There is no movement necessary for this placement. For additional successful head placements contact a placement specialist at: <a href=\"mailto:support@gokailo.com\" title=\"mailto:support@gokailo.com\">support@gokailo.com<\/a><\/p>",
-            "video": "<iframe title=\"Kailo-PlacementVideos-HeadV2-1080P\" src=\"https:\/\/player.vimeo.com\/video\/718286612?h=da79498663&amp;dnt=1&amp;app_id=122963\" height=\"608\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" style=\"opacity: 1; visibility: visible;\"><\/iframe>"
+            "title": "FACE PAIN",
+            "description": "<p>One successful placement for face pain is to orient the Kailo vertically across the side of the face with the bottom edge on the jaw line and the top edge at the temple. No movement is necessary.For additional successful face placements contact us at <a href=\"mailto:support@gokailo.com\">support@gokailo.com<\/a><\/p>",
+            "video": "<iframe title=\"Kailo-PlacementVideos-FaceV2-1080P\" src=\"https:\/\/player.vimeo.com\/video\/718287262?h=97c4302cd8&amp;dnt=1&amp;app_id=122963\" width=\"1080\" height=\"608\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" style=\"opacity: 1; visibility: visible;\"><\/iframe>"
+          }
+        },
+        "ee56036c-cfe5-453a-af31-4edcae1602b0": {
+          "type": "block",
+          "settings": {
+            "title": "ELBOW PAIN",
+            "description": "<p>One successful placement for elbow pain is to orient the Kailo horizontally and place it over the back of the upper arm right above the elbow. Gradually moving the patch up the back of the arm towards the brain. For additional successful elbow placements see our other videos or contact a placement specialist at <a href=\"mailto:support@gokailo.com\">support@gokailo.com<\/a>.<\/p>",
+            "video": "<iframe title=\"Kailo-PlacementVideos-ElbowV2-1080P\" src=\"https:\/\/player.vimeo.com\/video\/718287558?h=c74b241965&amp;dnt=1&amp;app_id=122963\" width=\"1080\" height=\"608\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" style=\"opacity: 1; visibility: visible;\"><\/iframe>"
+          }
+        },
+        "80b88a4b-d60d-48bc-b1b7-7d9d3bcd1950": {
+          "type": "block",
+          "settings": {
+            "title": "SHOULDER PAIN",
+            "description": "<p>One successful placement for shoulder pain is to orient the Kailo at a 45 degree angle on the back of the shoulder. Gradually move the Kailo up and across the trapezius muscle toward the brain, keeping this same angle. For additional successful shoulder placements see our other videos or contact a placement specialist at <a href=\"mailto:support@gokailo.com\">support@gokailo.com<\/a>.<\/p>",
+            "video": "<iframe title=\"Kailo-PlacementVideos-ShoulderV2-1080P\" src=\"https:\/\/player.vimeo.com\/video\/718286497?h=a15157f587&amp;dnt=1&amp;app_id=122963\" width=\"1080\" height=\"608\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" style=\"opacity: 1; visibility: visible;\"><\/iframe>"
+          }
+        },
+        "d8d691cd-f8ba-47a3-9c01-ca9804c1f709": {
+          "type": "block",
+          "settings": {
+            "title": "HAND & WRIST PAIN",
+            "description": "<p>One successful placement for hand and wrist pain is to orient the Kailo horizontally across the wrist and gradually move it up the forearm towards the brain.<\/p>",
+            "video": "<iframe title=\"Kailo-PlacementVideos-HandWrist-1-1080P\" src=\"https:\/\/player.vimeo.com\/video\/718287462?h=13aa6b86d0&amp;dnt=1&amp;app_id=122963\" width=\"1080\" height=\"608\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" style=\"opacity: 1; visibility: visible;\"><\/iframe>"
+          }
+        },
+        "e56e93f6-c93c-44db-9a47-f4f878cea5fb": {
+          "type": "block",
+          "settings": {
+            "title": "LOWER BACK PAIN",
+            "description": "<p>Are you frustrated by back pain? One successful placement for lower back pain is to orient the Kailo horizontally and place the patch centered at the waistline across the lower back and slowly move the patch up along the spine towards the brain. For additional successful back placements see our other videos or contact a placement specialist at <a href=\"mailto:support@gokailo.com\">support@gokailo.com<\/a>.<\/p>",
+            "video": "<iframe title=\"Kailo-PlacementVideos-BodyTrunkV2-1080P\" src=\"https:\/\/player.vimeo.com\/video\/718286549?h=dd1036f575&amp;dnt=1&amp;app_id=122963\" width=\"1080\" height=\"608\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" style=\"opacity: 1; visibility: visible;\"><\/iframe>"
+          }
+        },
+        "53eb7924-fd3d-46d4-8b74-d3e10e084cf6": {
+          "type": "block",
+          "settings": {
+            "title": "KNEE PAIN",
+            "description": "<p>One successful placement for knee pain is to orient the Kailo horizontally. Place the patch below the knee with one edge on the center of the knee and the patch reaching around the outer side of the leg. No movement is needed for additional successful knee placements see our other videos or contact a placement specialist at <a href=\"mailto:support@gokailo.com\">support@gokailo.com<\/a>.<\/p>",
+            "video": "<iframe title=\"Kailo-PlacementVideos-KneeV2-1080P\" src=\"https:\/\/player.vimeo.com\/video\/718287655?h=26b1e7910d&amp;dnt=1&amp;app_id=122963\" width=\"1080\" height=\"608\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" style=\"opacity: 1; visibility: visible;\"><\/iframe>"
+          }
+        },
+        "ad399342-d8f1-492a-88b8-1879bd24e842": {
+          "type": "block",
+          "settings": {
+            "title": "FOOT & ANKLE PAIN",
+            "description": "<p>One successful placements for foot pain is to orient the Kailo horizontally across the top of the foot and wear it in your shoe or sock.Another successful placements for foot pain is orient the Kailo horizontally across the top of the foot and wear it in your shoe or sock.Another successful placement for foot pain is wrap the Kailo horizontally across the heel in the back of your shoe. For additional successful knee placements see our other videos or contact a placement specialist at <a href=\"mailto:support@gokailo.com\">support@gokailo.com<\/a>.<\/p>",
+            "video": "<iframe title=\"Kailo Placement Videos - Foot\" src=\"https:\/\/player.vimeo.com\/video\/718286982?h=53b9185631&amp;dnt=1&amp;app_id=122963\" width=\"1080\" height=\"608\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" style=\"opacity: 1; visibility: visible;\"><\/iframe>"
+          }
+        },
+        "a5afdc5d-3f0b-463a-8c5e-30cfd3b36889": {
+          "type": "block",
+          "settings": {
+            "title": "TRUNK PAIN",
+            "description": "<p>One successful placement for trunk pain is to orient the Kailo horizontally and place it centered at the belly button and move the patch gradually up toward the bottom of the rib cage. For additional successful trunk pain placements see our other videos or contact a placement specialist at <a href=\"mailto:support@gokailo.com\">support@gokailo.com<\/a>.<\/p>",
+            "video": "<iframe title=\"Kailo-PlacementVideos-BodyTrunkV2-1080P\" src=\"https:\/\/player.vimeo.com\/video\/718286549?h=dd1036f575&amp;dnt=1&amp;app_id=122963\" width=\"1080\" height=\"608\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" style=\"opacity: 1; visibility: visible;\"><\/iframe>"
+          }
+        },
+        "d911adaf-bede-4b7b-b613-b23270cc3394": {
+          "type": "block",
+          "settings": {
+            "title": "HIP & UPPER LEG PAIN",
+            "description": "<p>One successful placement for hip and upper leg pain is to orient the patch at a 45 degree angle across the buttocks on the side that hurts with the lower part of the Kailo pointed towards the center of the body and the upper part pointed towards the hip. Move the Kailo towards the center of the body, twisting it slightly until it has a horizontal orientation on the lower spine. For additional successful hip and upper leg placements see our other videos or contact a placement specialist at <a href=\"mailto:support@gokailo.com\">support@gokailo.com<\/a>.<\/p>",
+            "video": "<iframe title=\"Kailo-PlacementVideos-UpperLeg-1080P\" src=\"https:\/\/player.vimeo.com\/video\/718286756?h=8d79de182f&amp;dnt=1&amp;app_id=122963\" width=\"1080\" height=\"608\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" style=\"opacity: 1; visibility: visible;\"><\/iframe>"
           }
         }
       },
       "block_order": [
         "5871d894-be5e-4ec4-ab55-75d0d95151ad",
-        "4bc27ae8-69fa-4814-b3c9-3b076bc475e2"
+        "4bc27ae8-69fa-4814-b3c9-3b076bc475e2",
+        "ee56036c-cfe5-453a-af31-4edcae1602b0",
+        "80b88a4b-d60d-48bc-b1b7-7d9d3bcd1950",
+        "d8d691cd-f8ba-47a3-9c01-ca9804c1f709",
+        "e56e93f6-c93c-44db-9a47-f4f878cea5fb",
+        "53eb7924-fd3d-46d4-8b74-d3e10e084cf6",
+        "ad399342-d8f1-492a-88b8-1879bd24e842",
+        "a5afdc5d-3f0b-463a-8c5e-30cfd3b36889",
+        "d911adaf-bede-4b7b-b613-b23270cc3394"
       ],
       "settings": {
         "title": "The following videos are offered as placement suggestions for both the original Kailo and the Kailo Flex™."
@@ -89,50 +161,50 @@
     "icon-list": {
       "type": "icon-list",
       "blocks": {
-        "66288c5f-2923-4732-8916-fcce785d4d44": {
+        "28bffeef-7425-4fe0-b9f3-040c0e05224c": {
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
           }
         },
-        "492d02e5-329a-4b26-8f72-751fa39cbd6c": {
+        "31d12227-6898-4556-8683-17683561039e": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_10.png"
           }
         },
-        "21ea36b5-037a-4eff-ac1a-b3c7dbe9022c": {
+        "38a8b462-9183-48c9-aea5-1ae292649094": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_12.png"
           }
         },
-        "32e8c041-a7cb-4848-98bd-908af9ab9b18": {
+        "a98e13e7-0572-4c40-b624-aa5822f0b609": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_9.png"
           }
         },
-        "3e4787ba-1a67-41ad-9c50-be04e37e7060": {
+        "93491daa-47a4-462d-9e5b-25f80eea7aa8": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_8.png"
           }
         },
-        "cac74525-d17f-4dae-8b20-d01130e4d110": {
+        "1e137e2b-1a05-4606-8ea9-63646a15fb44": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_7.png"
           }
         }
       },
       "block_order": [
-        "66288c5f-2923-4732-8916-fcce785d4d44",
-        "492d02e5-329a-4b26-8f72-751fa39cbd6c",
-        "21ea36b5-037a-4eff-ac1a-b3c7dbe9022c",
-        "32e8c041-a7cb-4848-98bd-908af9ab9b18",
-        "3e4787ba-1a67-41ad-9c50-be04e37e7060",
-        "cac74525-d17f-4dae-8b20-d01130e4d110"
+        "28bffeef-7425-4fe0-b9f3-040c0e05224c",
+        "31d12227-6898-4556-8683-17683561039e",
+        "38a8b462-9183-48c9-aea5-1ae292649094",
+        "a98e13e7-0572-4c40-b624-aa5822f0b609",
+        "93491daa-47a4-462d-9e5b-25f80eea7aa8",
+        "1e137e2b-1a05-4606-8ea9-63646a15fb44"
       ],
       "settings": {
         "background_color": "#2794a8"
@@ -141,28 +213,78 @@
     "reviews-block": {
       "type": "reviews-block",
       "blocks": {
-        "8d963f35-8863-48e5-9fcc-f2652861c265": {
+        "6565d877-4ab4-40a7-ae14-a6ceb29c9321": {
           "type": "slide",
           "settings": {
-            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "blockquote": "\"My hand had osteoarthritis and I use the kailo for 5 minutes and I free of pain for the rest of the day is GOOD gracias all of you\"",
             "stars": 5,
             "author_name": "Mauricio C.",
             "author_info": "Verified Buyer | 09\/09\/21"
           }
         },
-        "864545a6-8122-42c2-a27b-eaebbb393b8b": {
+        "545b2e9b-49e2-4621-ac8c-5c69cb2df12b": {
           "type": "slide",
           "settings": {
-            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "blockquote": "\"I’m training for a 500 mile walk and my hip was killing me. I placed the Kailo patch in two places and my pain is gone! I used a small piece near my ear and it’s also helping diminish my tinnitus.\"",
             "stars": 5,
-            "author_name": "Mauricio C.",
-            "author_info": "Verified Buyer | 09\/09\/21"
+            "author_name": "Ana A.",
+            "author_info": "Verified Buyer | 07\/26\/21"
+          }
+        },
+        "1d63207d-8ab1-48c5-9934-d47be4841326": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"Hi, as a repeat customer, I wish to express my total satisfaction of your Kailo pain product. I never would believe how such a thing could relieve pain like this. I have been spreading the extra ones that I purchased among my family and they just love it also.\"",
+            "stars": 5,
+            "author_name": "Randall S",
+            "author_info": "Verified Buyer | 05\/14\/20"
+          }
+        },
+        "f3b56489-09ff-4f28-aa09-e35c5477e73e": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"Quick shipping, great value, and has always reduced or eliminated pain when placed properly. This is the second one I ordered. Very satisfied customer.\"",
+            "stars": 5,
+            "author_name": "John B.",
+            "author_info": "Verified Buyer | 05\/16\/22"
+          }
+        },
+        "6542bf2b-afe1-4e38-bbea-893f439f2d13": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"Thanks this has been a break through in pain management for my wife and your products make it possible.\"",
+            "stars": 5,
+            "author_name": "William H.",
+            "author_info": "Verified Buyer | 04\/15\/22"
+          }
+        },
+        "bdc2d547-0b6d-4e5f-b656-4dac232213e4": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"So far the Kailo patch has worked for both my husband and me! I have also shared our stories with family and friends\"",
+            "stars": 4,
+            "author_name": "Anne D.",
+            "author_info": "Verified Buyer | 04\/14\/22"
+          }
+        },
+        "68e95ccb-b313-498e-aa56-13222e128101": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"Noticed a difference right away! I was able to work my whole shift without a pain reliever! Total Game Changer! it leaves no marks or sticky rings on the skin and is easy to move. Great product all the way around! I've told everyone i know about it!\"",
+            "stars": 5,
+            "author_name": "SABRINA B.",
+            "author_info": "Verified Buyer | 04\/12\/22"
           }
         }
       },
       "block_order": [
-        "8d963f35-8863-48e5-9fcc-f2652861c265",
-        "864545a6-8122-42c2-a27b-eaebbb393b8b"
+        "6565d877-4ab4-40a7-ae14-a6ceb29c9321",
+        "545b2e9b-49e2-4621-ac8c-5c69cb2df12b",
+        "1d63207d-8ab1-48c5-9934-d47be4841326",
+        "f3b56489-09ff-4f28-aa09-e35c5477e73e",
+        "6542bf2b-afe1-4e38-bbea-893f439f2d13",
+        "bdc2d547-0b6d-4e5f-b656-4dac232213e4",
+        "68e95ccb-b313-498e-aa56-13222e128101"
       ],
       "settings": {
       }
@@ -172,9 +294,9 @@
       "settings": {
         "title": "shop by category",
         "collection_list": [
-          "frontpage",
-          "last-test",
-          "test-1"
+          "kailo-accessories",
+          "kailo-bundles",
+          "kailo-flex"
         ]
       }
     }

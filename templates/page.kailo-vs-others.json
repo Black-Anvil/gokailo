@@ -7,12 +7,104 @@
         "title": "kailo vs everything...",
         "description": "<p>Kailo offers a reliable drug-free pain relief option for those living with the debilitating effects of chronic and acute pain. Experience a new and innovative approach to pain relief.<\/p>",
         "image_background": "shopify:\/\/shop_images\/page-kailo-vs-others.png",
-        "link_url": "\/",
+        "link_url": "#more",
         "link_text": "read more"
       }
     },
     "solutions": {
       "type": "solutions",
+      "blocks": {
+        "ce2a64ed-0cd0-46eb-ac14-5314ea110391": {
+          "type": "block",
+          "settings": {
+            "name": "FDA registered",
+            "kailo": true,
+            "signal": false,
+            "salonpas": true,
+            "luminas": false
+          }
+        },
+        "b9ac3000-8378-469b-8785-3e7ff4a14954": {
+          "type": "block",
+          "settings": {
+            "name": "Clinical study with positive outcomes",
+            "kailo": true,
+            "signal": false,
+            "salonpas": true,
+            "luminas": true
+          }
+        },
+        "959421cb-139e-4349-ad9d-6800399348b8": {
+          "type": "block",
+          "settings": {
+            "name": "Peer-reviewed study results in published scientific article",
+            "kailo": true,
+            "signal": true,
+            "salonpas": true,
+            "luminas": false
+          }
+        },
+        "96456ecd-f1e2-45f8-8df8-6c10947c50af": {
+          "type": "block",
+          "settings": {
+            "name": "Positive patient outcomes after 30 days use",
+            "kailo": true,
+            "signal": false,
+            "salonpas": true,
+            "luminas": false
+          }
+        },
+        "1290dfbe-fd24-4129-82a6-8de097aadd51": {
+          "type": "block",
+          "settings": {
+            "name": "No drugs",
+            "kailo": true,
+            "signal": true,
+            "salonpas": false,
+            "luminas": false
+          }
+        },
+        "6b646d57-6c16-4849-8f5b-094b4340d9bf": {
+          "type": "block",
+          "settings": {
+            "name": "One-time purchase",
+            "kailo": true,
+            "signal": true,
+            "salonpas": false,
+            "luminas": true
+          }
+        },
+        "ba70c90d-59e1-406b-a09a-ff01b9b9e251": {
+          "type": "block",
+          "settings": {
+            "name": "Thousands of testimonials from actual patients",
+            "kailo": true,
+            "signal": false,
+            "salonpas": false,
+            "luminas": false
+          }
+        },
+        "12a3a2da-90a0-4ce7-b8df-59b2ae9a6f99": {
+          "type": "block",
+          "settings": {
+            "name": "Available direct from manufacturer",
+            "kailo": true,
+            "signal": true,
+            "salonpas": false,
+            "luminas": false
+          }
+        }
+      },
+      "block_order": [
+        "ce2a64ed-0cd0-46eb-ac14-5314ea110391",
+        "b9ac3000-8378-469b-8785-3e7ff4a14954",
+        "959421cb-139e-4349-ad9d-6800399348b8",
+        "96456ecd-f1e2-45f8-8df8-6c10947c50af",
+        "1290dfbe-fd24-4129-82a6-8de097aadd51",
+        "6b646d57-6c16-4849-8f5b-094b4340d9bf",
+        "ba70c90d-59e1-406b-a09a-ff01b9b9e251",
+        "12a3a2da-90a0-4ce7-b8df-59b2ae9a6f99"
+      ],
       "settings": {
         "image": "shopify:\/\/shop_images\/page-solutions-1.png",
         "title": "ONE SOLUTION STANDS OUT",
@@ -23,53 +115,53 @@
     "icon-list": {
       "type": "icon-list",
       "blocks": {
-        "d96d33a0-78b8-4278-b841-dbd5e3b92756": {
+        "28bffeef-7425-4fe0-b9f3-040c0e05224c": {
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
           }
         },
-        "687c6acb-43d3-4a09-b8b9-d1ba4fccce92": {
+        "31d12227-6898-4556-8683-17683561039e": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_10.png"
           }
         },
-        "fe259b9e-a40d-4a51-86dc-82c06fbf631a": {
+        "38a8b462-9183-48c9-aea5-1ae292649094": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_12.png"
           }
         },
-        "7f97374a-3529-4f01-8579-2a93aa24d08c": {
+        "a98e13e7-0572-4c40-b624-aa5822f0b609": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_9.png"
           }
         },
-        "4bfa30f6-0c98-4a9a-96ca-da067e5b641b": {
+        "93491daa-47a4-462d-9e5b-25f80eea7aa8": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_8.png"
           }
         },
-        "7c3b7788-282e-4fa8-bdea-ac602fe49526": {
+        "1e137e2b-1a05-4606-8ea9-63646a15fb44": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_7.png"
           }
         }
       },
       "block_order": [
-        "d96d33a0-78b8-4278-b841-dbd5e3b92756",
-        "687c6acb-43d3-4a09-b8b9-d1ba4fccce92",
-        "fe259b9e-a40d-4a51-86dc-82c06fbf631a",
-        "7f97374a-3529-4f01-8579-2a93aa24d08c",
-        "4bfa30f6-0c98-4a9a-96ca-da067e5b641b",
-        "7c3b7788-282e-4fa8-bdea-ac602fe49526"
+        "28bffeef-7425-4fe0-b9f3-040c0e05224c",
+        "31d12227-6898-4556-8683-17683561039e",
+        "38a8b462-9183-48c9-aea5-1ae292649094",
+        "a98e13e7-0572-4c40-b624-aa5822f0b609",
+        "93491daa-47a4-462d-9e5b-25f80eea7aa8",
+        "1e137e2b-1a05-4606-8ea9-63646a15fb44"
       ],
       "settings": {
-        "background_color": "#355d66"
+        "background_color": "#2794a8"
       }
     },
     "medical-review": {
@@ -80,7 +172,7 @@
         "description": "<p>They also experienced a better quality of life, improved function, were very satisfied with the Kailo Pain Patch, and preferred the patch over oral pain medications.<br\/><br\/>\"With the increased focus on identifying alternative therapies for patients experiencing pain, the use and ongoing research of novel approaches including the non-drug and microtechnology based Kailo patch, seem to have a very positive effect on patients who are experiencing mild, moderate, and chronic pain.”<\/p>",
         "author": "Jeffrey Gudin, MD | Principal Investigator",
         "image_background": "shopify:\/\/shop_images\/page-medical-review.png",
-        "link_url": "\/",
+        "link_url": "shopify:\/\/pages\/clinical-trials",
         "link_text": "read medical opinons"
       }
     },
@@ -127,28 +219,78 @@
     "reviews-block": {
       "type": "reviews-block",
       "blocks": {
-        "e8cdeb29-6f2e-416c-ad06-68773529a9af": {
+        "6565d877-4ab4-40a7-ae14-a6ceb29c9321": {
           "type": "slide",
           "settings": {
-            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "blockquote": "\"My hand had osteoarthritis and I use the kailo for 5 minutes and I free of pain for the rest of the day is GOOD gracias all of you\"",
             "stars": 5,
             "author_name": "Mauricio C.",
             "author_info": "Verified Buyer | 09\/09\/21"
           }
         },
-        "d263faf3-7a79-4ebc-b1f6-fae4acfb29e5": {
+        "545b2e9b-49e2-4621-ac8c-5c69cb2df12b": {
           "type": "slide",
           "settings": {
-            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "blockquote": "\"I’m training for a 500 mile walk and my hip was killing me. I placed the Kailo patch in two places and my pain is gone! I used a small piece near my ear and it’s also helping diminish my tinnitus.\"",
             "stars": 5,
-            "author_name": "Mauricio C.",
-            "author_info": "Verified Buyer | 09\/09\/21"
+            "author_name": "Ana A.",
+            "author_info": "Verified Buyer | 07\/26\/21"
+          }
+        },
+        "1d63207d-8ab1-48c5-9934-d47be4841326": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"Hi, as a repeat customer, I wish to express my total satisfaction of your Kailo pain product. I never would believe how such a thing could relieve pain like this. I have been spreading the extra ones that I purchased among my family and they just love it also.\"",
+            "stars": 5,
+            "author_name": "Randall S",
+            "author_info": "Verified Buyer | 05\/14\/20"
+          }
+        },
+        "f3b56489-09ff-4f28-aa09-e35c5477e73e": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"Quick shipping, great value, and has always reduced or eliminated pain when placed properly. This is the second one I ordered. Very satisfied customer.\"",
+            "stars": 5,
+            "author_name": "John B.",
+            "author_info": "Verified Buyer | 05\/16\/22"
+          }
+        },
+        "6542bf2b-afe1-4e38-bbea-893f439f2d13": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"Thanks this has been a break through in pain management for my wife and your products make it possible.\"",
+            "stars": 5,
+            "author_name": "William H.",
+            "author_info": "Verified Buyer | 04\/15\/22"
+          }
+        },
+        "bdc2d547-0b6d-4e5f-b656-4dac232213e4": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"So far the Kailo patch has worked for both my husband and me! I have also shared our stories with family and friends\"",
+            "stars": 4,
+            "author_name": "Anne D.",
+            "author_info": "Verified Buyer | 04\/14\/22"
+          }
+        },
+        "68e95ccb-b313-498e-aa56-13222e128101": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"Noticed a difference right away! I was able to work my whole shift without a pain reliever! Total Game Changer! it leaves no marks or sticky rings on the skin and is easy to move. Great product all the way around! I've told everyone i know about it!\"",
+            "stars": 5,
+            "author_name": "SABRINA B.",
+            "author_info": "Verified Buyer | 04\/12\/22"
           }
         }
       },
       "block_order": [
-        "e8cdeb29-6f2e-416c-ad06-68773529a9af",
-        "d263faf3-7a79-4ebc-b1f6-fae4acfb29e5"
+        "6565d877-4ab4-40a7-ae14-a6ceb29c9321",
+        "545b2e9b-49e2-4621-ac8c-5c69cb2df12b",
+        "1d63207d-8ab1-48c5-9934-d47be4841326",
+        "f3b56489-09ff-4f28-aa09-e35c5477e73e",
+        "6542bf2b-afe1-4e38-bbea-893f439f2d13",
+        "bdc2d547-0b6d-4e5f-b656-4dac232213e4",
+        "68e95ccb-b313-498e-aa56-13222e128101"
       ],
       "settings": {
       }
@@ -158,9 +300,9 @@
       "settings": {
         "title": "shop by category",
         "collection_list": [
-          "frontpage",
-          "last-test",
-          "test-1"
+          "kailo-accessories",
+          "kailo-bundles",
+          "kailo-flex"
         ]
       }
     }

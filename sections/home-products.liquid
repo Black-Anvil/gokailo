@@ -22,41 +22,41 @@
 
     .home-products__list > li {
         display: flex;
-        align-items: center;
+        justify-content: center;
         flex-direction: column;
-        max-width: 520px;
-    }
-
-    .home-products__list > li {
-        padding: 0 48px;
-    }
-
-    .home-products__list > li:not(:last-child) {
-        border-right: 1px solid var(--grays4);
-    }
-
-    .home-products__list .button {
-        margin: auto 0 0;
-    }
-
-    .home-products__sublist {
-        flex-grow: 1;
-        margin: 32px 0;
-        color: var(--primary2);
         text-align: center;
+        gap: 24px;
+        padding: 0 20px;
+        width: 33.33%;
+    }
+
+    .home-products__list ul,
+    .home-products__list ol {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        gap: 16px;
+        padding-bottom: 24px;
         border-bottom: 1px solid var(--grays4);
     }
 
-    .home-products__sublist > li {
-        margin: 0 0 24px;
+    .home-products__list .button {
+        margin-top: auto;
+        align-self: center;
     }
 
-    .home-products__info {
-        text-align: center;
+    .home-products__list ul > li,
+    .home-products__list ol > li {
+        color: var(--primary2);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+        text-transform: uppercase;
     }
 
-    .home-products__info > *:not(:last-child) {
-        margin: 0 0 8px;
+    .home-products__list > li:not(:last-child) {
+        box-shadow: inset -1px 0 0 0 var(--grays4);
     }
 
     @media screen and (max-width: 768px) {
@@ -70,75 +70,86 @@
 
         .home-products__list {
             flex-direction: column;
-            align-items: center;
+            gap: 40px;
         }
 
         .home-products__list > li {
+            width: 100%;
             padding: 0;
         }
 
+        .home-products__list .button {
+            align-self: stretch;
+        }
+
         .home-products__list > li:not(:last-child) {
-            margin: 0 0 40px;
-            border-right: none;
-        }
-
-        .home-products__sublist {
-            margin: 24px 0;
-        }
-
-        .home-products__sublist > li {
-            margin: 0 0 16px;
+            box-shadow: none;
         }
     }
 </style>
 
+{{ "single-product.css" | asset_url | stylesheet_tag }}
+{{ "compare-price.css" | asset_url | stylesheet_tag }}
+{{ "tag.css" | asset_url | stylesheet_tag }}
+
 <section class="home-products">
     <div class="container">
         <div class="home-products__header">
-            <h2 class="h2-title">WHICH KAILO IS RIGHT FOR YOU?</h2>
-            <p>KAILO OR KAILO FLEX</p>
+            <h2 class="h2-title">{{ section.settings.title }}</h2>
+            <p>{{ section.settings.subtitle }}</p>
         </div>
 
         <ul class="home-products__list">
-            <li>
-                <div class="home-products__item">
-                    <img src="{{ "home-products-1.png" | asset_url }}" alt="">
+            {% for block in section.blocks %}
+                <li>
+                    {% if block.settings.product != blank %}
+                        {% render "single-product", product: block.settings.product %}
+                    {% endif %}
 
-                    <div class="home-products__info">
-                        <h3 class="h6-title">Kailo™ Original</h3>
-                        <span><b>$119.00</b></span>
-                    </div>
-                </div>
+                    {{ block.settings.description }}
 
-                <ul class="home-products__sublist">
-                    <li class="h6-title">1 YEAR USAGE</li>
-                    <li class="h6-title">DURABLE MULTI-LAYERED construction</li>
-                    <li class="h6-title">EFFECTIVE FOR ANY PAIN SYMPTOM</li>
-                    <li class="h6-title">90-DAY MONEY-BACK GUARANTEE (no restrictions)</li>
-                    <li class="h6-title">$119.00 / ea</li>
-                </ul>
-
-                <a href="#" class="button button--primary">learn more</a>
-            </li>
-
-            <li>
-                <img src="{{ "home-products-2.png" | asset_url }}" alt="">
-
-                <div class="home-products__info">
-                    <h3 class="h6-title">Kailo™ Original</h3>
-                    <span><b>$49.00 - or $24.99/month</b></span>
-                </div>
-
-                <ul class="home-products__sublist">
-                    <li class="h6-title">1 month USAGE</li>
-                    <li class="h6-title">DYNAMIC FLEX SINGLE-LAYERED CONSTRUCTION</li>
-                    <li class="h6-title">EFFECTIVE FOR ANY PAIN SYMPTOM</li>
-                    <li class="h6-title">NO WARRANTY</li>
-                    <li class="h6-title">$49.00 / ea</li>
-                </ul>
-
-                <a href="#" class="button button--primary">learn more</a>
-            </li>
+                    {% if block.settings.product != blank %}
+                        <a class="button button--primary" href="{{ block.settings.product.url }}">learn more</a>
+                    {% endif %}
+                </li>
+            {% endfor %}
         </ul>
     </div>
 </section>
+
+{% schema %}
+{
+  "name": "Home Products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Product",
+      "type": "block",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

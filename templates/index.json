@@ -10,7 +10,7 @@
             "title": "the future of pain relief",
             "content": "",
             "image": "shopify:\/\/shop_images\/hero-image.png",
-            "button_link": "\/",
+            "button_link": "shopify:\/\/collections",
             "button_link_text": "shop now"
           }
         },
@@ -18,16 +18,27 @@
           "type": "slide",
           "settings": {
             "bg_image": "shopify:\/\/shop_images\/cbf7486200ba2c8d5cc66eec9b46cdb3.png",
-            "title": "the future of pain relief",
-            "content": "<p>the futureof pain relief the futureof pain relief the futureof pain relief<\/p>",
-            "button_link": "\/",
-            "button_link_text": "shop now"
+            "title": "OUR GOAL...",
+            "content": "<p>is that every customer trusts us as <br\/>their #1 choice for pain relief.<\/p>",
+            "button_link": "shopify:\/\/pages\/testimonials",
+            "button_link_text": "learn more"
+          }
+        },
+        "3c81e249-079e-48c7-9907-0250cc898227": {
+          "type": "slide",
+          "settings": {
+            "bg_image": "shopify:\/\/shop_images\/contact.png",
+            "title": "THE KAILO FLEX™ IS HERE.",
+            "content": "<p>INTRODUCING A MORE FLEXIBLE,<br\/>SOFTER, AND LESS EXPENSIVE <\/p>",
+            "button_link": "shopify:\/\/collections\/all",
+            "button_link_text": "learn more"
           }
         }
       },
       "block_order": [
         "975a47b5-c697-4197-a751-4cef40514ba0",
-        "18b19a9b-7634-4065-b2af-314f5b732ca8"
+        "18b19a9b-7634-4065-b2af-314f5b732ca8",
+        "3c81e249-079e-48c7-9907-0250cc898227"
       ],
       "settings": {
       }
@@ -48,21 +59,21 @@
         "aa66e86e-5e1f-43d3-8cb3-97afa46b70be": {
           "type": "slide",
           "settings": {
-            "title": "THIS THING REALLY WORKS",
-            "content": "<p>\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"<\/p>",
-            "author_image": "shopify:\/\/shop_images\/home-testimonials.jpg",
-            "author_name": "cary p.",
-            "author_position": "CALIFORNIA"
+            "title": "FINALLY SOME RELIEF. IT WORKS.",
+            "content": "<p>\"I am a skeptic! It has gotten worse with age, but I have always been that way. I am no stranger to pain. I was accident prone as a child. Breaking, twisting and rupturing. At 17 I was hit head on by a drunk driver, changing my life. I got to go try Kailo before buying it...Guess what?!?! IT WORKED!!!! It took a little while to figure out where to best place it. But then.... RELIEF!...Finally some RELIEF. It WORKS. It's weird, I know.\" <\/p>",
+            "author_image": "shopify:\/\/shop_images\/story-video-1.png",
+            "author_name": "LIZA B.",
+            "author_position": "Utah"
           }
         },
         "d813be48-793f-459f-b550-b45dd79f028f": {
           "type": "slide",
           "settings": {
-            "title": "THIS THING REALLY WORKS",
-            "content": "<p>\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"<\/p>",
-            "author_image": "shopify:\/\/shop_images\/home-testimonials.jpg",
-            "author_name": "cary p.",
-            "author_position": "CALIFORNIA"
+            "title": "IT IS SIMPLY MIRACULOUS!",
+            "content": "<p>\"Living with pain for an extended amount of time, not getting results from doctors visits and tests, it became very frustrating. We have found it to help with headaches, cramps, back pain and neck pain. It has helped my friends and family with hip pain and knee pain and even worked to make the pain of passing a kidney stone tolerable. It works...It is simply miraculous.\" <\/p>",
+            "author_image": "shopify:\/\/shop_images\/story-video-2.png",
+            "author_name": "MELODY S.",
+            "author_position": "Utah"
           }
         }
       },
@@ -75,7 +86,7 @@
         "video": "https:\/\/vimeo.com\/644391532",
         "preview": "shopify:\/\/shop_images\/home-testimonials.gif",
         "link_text": "read testimonials",
-        "link_url": "\/"
+        "link_url": "shopify:\/\/pages\/testimonials"
       }
     },
     "icon-list": {
@@ -90,31 +101,31 @@
         "31d12227-6898-4556-8683-17683561039e": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_10.png"
           }
         },
         "38a8b462-9183-48c9-aea5-1ae292649094": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_12.png"
           }
         },
         "a98e13e7-0572-4c40-b624-aa5822f0b609": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_9.png"
           }
         },
         "93491daa-47a4-462d-9e5b-25f80eea7aa8": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_8.png"
           }
         },
         "1e137e2b-1a05-4606-8ea9-63646a15fb44": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_7.png"
           }
         }
       },
@@ -146,7 +157,7 @@
         "slide_1_video_3": "https:\/\/vimeo.com\/718286549",
         "slide_1_preview_4": "shopify:\/\/shop_images\/home-about-knees.png",
         "slide_1_video_4": "https:\/\/vimeo.com\/718287655",
-        "slide_1_link_url": "\/",
+        "slide_1_link_url": "shopify:\/\/pages\/how-to-use",
         "slide_1_link_text": "see all video",
         "slide_2_name": "HOW TO USE ADHESIVES",
         "slide_2_preview": "shopify:\/\/shop_images\/home-about-adhesives.png",
@@ -154,27 +165,27 @@
         "slide_3_name": "TRY KAILO RISK FREE",
         "slide_3_image": "shopify:\/\/shop_images\/home-about-risk.png",
         "slide_3_content": "<h3>We offer a no-hassle, no restrictions, 100% money-back guarantee on our Kailo Original product. We offer a 90 day money-back guarantee on unopened Kailo Flex™ product. If you feel Kailo isn't working for you within 90 days, we'll gladly take it back.<\/h3><h3><\/h3><h3><\/h3><p>Over 90% of our customers have found an increase in comfort. Our goal is to help everyone get relief. If you feel Kailo isn’t working for you within 90 days,​ we’ll gladly take it back.<\/p><p><br\/>Before returning your Kailo, we would love a chance to make sure you’ve found the correct placement. Please contact us at <a href=\"mailto:support@gokailo.com\" title=\"mailto:support@gokailo.com\">support@gokailo.com<\/a><\/p>",
-        "slide_3_link_url": "\/",
+        "slide_3_link_url": "shopify:\/\/pages\/return-policy",
         "slide_3_link_text": "return policy",
         "slide_4_name": "WILL KAILO HELP MY CONDITION",
         "slide_4_content": "<h3>Will Kailo help my condition?<\/h3><h3><\/h3><p>Most common ailments experienced by Kailo Customers<\/p>",
         "slide_4_item_1_title": "CHRONIC BACK PAIN",
         "slide_4_item_1_text": "Kailo patches are engineered to help help many types of back pain and fit anywhere on your back",
-        "slide_4_item_1_link": "\/",
+        "slide_4_item_1_link": "shopify:\/\/pages\/how-to-use",
         "slide_4_item_2_title": "MENSTRUAL PAIN",
         "slide_4_item_2_text": "The Kailo pain patch has shown to be capable of relieving or eliminating pain from menstrual cramps",
-        "slide_4_item_2_link": "\/",
+        "slide_4_item_2_link": "shopify:\/\/pages\/how-to-use",
         "slide_4_item_3_title": "KNEE PAIN",
         "slide_4_item_3_text": "Kailo drug-free pain relief has shown to be effective in targeting knee pain",
-        "slide_4_item_3_link": "\/",
+        "slide_4_item_3_link": "shopify:\/\/pages\/how-to-use",
         "slide_4_item_4_title": "ARTHRITIS",
         "slide_4_item_4_text": "Many Kailo users report the relief of painful arthritic symptoms",
-        "slide_4_item_4_link": "\/",
+        "slide_4_item_4_link": "shopify:\/\/pages\/how-to-use",
         "slide_4_item_5_title": "OSTEOPOROSIS",
         "slide_4_item_5_text": "Kailo customers report significant relief from Osteoporosis pain while using Kailo",
-        "slide_4_item_5_link": "\/",
+        "slide_4_item_5_link": "shopify:\/\/pages\/how-to-use",
         "slide_4_item_6_text": "These are the most common ailments customers suffer from. Please contact us if you would like information about Kailo's effectiveness \/ use for other ailments.",
-        "slide_4_item_6_link": "\/",
+        "slide_4_item_6_link": "shopify:\/\/pages\/how-to-use",
         "slide_5_name": "REVIEWS: THE GOOD BAD AND UGLY",
         "slide_5_content": "<h3>The good, bad and the ugly<\/h3>",
         "slide_5_item_1_author": "Mauricio C.",
@@ -189,7 +200,7 @@
         "slide_5_item_4_author": "John B.",
         "slide_5_item_4_stars": 5,
         "slide_5_item_4_text": "\"Quick shipping, great value, and has always reduced or eliminated pain when placed properly. This is the second one I ordered. Very satisfied customer.\"",
-        "slide_5_link_url": "\/",
+        "slide_5_link_url": "shopify:\/\/pages\/testimonials",
         "slide_5_link_text": "more reviews",
         "slide_6_name": "CLINICAL TRIAL RESULTS",
         "slide_6_image": "shopify:\/\/shop_images\/home-about-trial.png",
@@ -198,7 +209,38 @@
     },
     "home-products": {
       "type": "home-products",
+      "blocks": {
+        "e875deab-fb18-405d-bab2-32c272b84b46": {
+          "type": "block",
+          "settings": {
+            "product": "kailo-kit-product",
+            "description": "<ul><li>1 YEAR USAGE<\/li><li>DURABLE MULTI-LAYERED construction <\/li><li>EFFECTIVE FOR ANY PAIN SYMPTOM <\/li><li>90-DAY MONEY BACK GUARANTEE (no restrictions) <\/li><li>$119.00 \/ ea<\/li><\/ul>"
+          }
+        },
+        "ea67b208-7d16-4072-9d26-79ee552d464e": {
+          "type": "block",
+          "settings": {
+            "product": "kailo-flex™",
+            "description": "<ul><li>1 month USAGE<\/li><li>DYNAMIC FLEX SINGLE-LAYERED CONSTRUCTION<\/li><li>EFFECTIVE FOR ANY PAIN SYMPTOM <\/li><li>NO WARRANTY<\/li><li>$49.00 \/ ea<\/li><\/ul>"
+          }
+        },
+        "cdd8a59b-12df-4599-a471-2371f01e35a6": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "product": "adhesive-10-pack-1",
+            "description": "<ul><li>1 month USAGE<\/li><li>DYNAMIC FLEX SINGLE-LAYERED CONSTRUCTION<\/li><li>EFFECTIVE FOR ANY PAIN SYMPTOM <\/li><li>NO WARRANTY<\/li><li>$24.99 \/ ea<\/li><\/ul>"
+          }
+        }
+      },
+      "block_order": [
+        "e875deab-fb18-405d-bab2-32c272b84b46",
+        "ea67b208-7d16-4072-9d26-79ee552d464e",
+        "cdd8a59b-12df-4599-a471-2371f01e35a6"
+      ],
       "settings": {
+        "title": "WHICH KAILO IS RIGHT FOR YOU?",
+        "subtitle": "KAILO OR KAILO FLEX"
       }
     },
     "home-links": {
@@ -207,7 +249,7 @@
         "e86feb36-9972-4255-abd8-0d2113be03ee": {
           "type": "block",
           "settings": {
-            "link_url": "\/",
+            "link_url": "shopify:\/\/collections",
             "image": "shopify:\/\/shop_images\/home-links-1.png",
             "icon": "shopify:\/\/shop_images\/home-links-buy.png",
             "title": "buy",
@@ -217,7 +259,7 @@
         "dba86ecb-6076-4743-b887-0f3cdb607b9d": {
           "type": "block",
           "settings": {
-            "link_url": "\/",
+            "link_url": "shopify:\/\/pages\/how-to-use",
             "image": "shopify:\/\/shop_images\/home-links-2.png",
             "icon": "shopify:\/\/shop_images\/home-links-place.png",
             "title": "place",
@@ -227,7 +269,7 @@
         "d05873e1-2fdf-4308-9526-4d88f2f68dd2": {
           "type": "block",
           "settings": {
-            "link_url": "\/",
+            "link_url": "shopify:\/\/pages\/testimonials",
             "image": "shopify:\/\/shop_images\/home-links-3.png",
             "icon": "shopify:\/\/shop_images\/home-links-love.png",
             "title": "LOVE",

@@ -7,7 +7,7 @@
         "title": "testimonials",
         "description": "<p>Discover the possibilities of Kailo drug-free pain relief with testimonials from some of our most valued customers.<\/p>",
         "image_background": "shopify:\/\/shop_images\/page-testimonials.png",
-        "link_url": "\/",
+        "link_url": "#more",
         "link_text": "read more testimonials"
       }
     },
@@ -119,58 +119,53 @@
     "icon-list": {
       "type": "icon-list",
       "blocks": {
-        "0ca06201-9eda-4d56-a400-979e0c11cf04": {
+        "28bffeef-7425-4fe0-b9f3-040c0e05224c": {
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
           }
         },
-        "60de126f-e902-4781-a50a-4197d0a5bd49": {
+        "31d12227-6898-4556-8683-17683561039e": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_10.png"
           }
         },
-        "6123fcca-3d7f-410d-80c6-4732ee5c8a0a": {
+        "38a8b462-9183-48c9-aea5-1ae292649094": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_12.png"
           }
         },
-        "6b557b72-2a03-41ec-ac8c-c98f33008f9f": {
+        "a98e13e7-0572-4c40-b624-aa5822f0b609": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_9.png"
           }
         },
-        "124a3479-475e-4aa5-8c98-5d3bc9f77877": {
+        "93491daa-47a4-462d-9e5b-25f80eea7aa8": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_8.png"
           }
         },
-        "472d9de4-82e1-4b1c-8f6f-1d733d238a35": {
+        "1e137e2b-1a05-4606-8ea9-63646a15fb44": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_7.png"
           }
         }
       },
       "block_order": [
-        "0ca06201-9eda-4d56-a400-979e0c11cf04",
-        "60de126f-e902-4781-a50a-4197d0a5bd49",
-        "6123fcca-3d7f-410d-80c6-4732ee5c8a0a",
-        "6b557b72-2a03-41ec-ac8c-c98f33008f9f",
-        "124a3479-475e-4aa5-8c98-5d3bc9f77877",
-        "472d9de4-82e1-4b1c-8f6f-1d733d238a35"
+        "28bffeef-7425-4fe0-b9f3-040c0e05224c",
+        "31d12227-6898-4556-8683-17683561039e",
+        "38a8b462-9183-48c9-aea5-1ae292649094",
+        "a98e13e7-0572-4c40-b624-aa5822f0b609",
+        "93491daa-47a4-462d-9e5b-25f80eea7aa8",
+        "1e137e2b-1a05-4606-8ea9-63646a15fb44"
       ],
       "settings": {
         "background_color": "#2794a8"
-      }
-    },
-    "yotpo-reviews": {
-      "type": "yotpo-reviews",
-      "settings": {
       }
     },
     "shop-category": {
@@ -178,10 +173,15 @@
       "settings": {
         "title": "shop by category",
         "collection_list": [
-          "frontpage",
-          "last-test",
-          "test-1"
+          "kailo-accessories",
+          "kailo-bundles",
+          "kailo-flex"
         ]
+      }
+    },
+    "yotpo-reviews": {
+      "type": "yotpo-reviews",
+      "settings": {
       }
     }
   },

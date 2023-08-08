@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+
+    <title>
+      {% if template.name == 'password' %}{{ shop.name }}{% else %}{{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}{% endif %}
+    </title>
 
     {{ "reset.css" | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
@@ -13,80 +17,7 @@
 
     <script src="{{ 'shopify_common.js' | asset_url }}" defer="defer"></script>
 
-    {% style %}
-        {{ settings.primary_font | font_face }}
-        {{ settings.secondary_font | font_face }}
-        {{ settings.headline_font | font_face }}
-
-        :root {
-        --font-weight-primary: {{ settings.primary_font.weight }};
-        --font-family-primary: {{ settings.primary_font.family }}, {{ settings.primary_font.fallback_families }};
-
-        --font-weight-secondary: {{ settings.secondary_font.weight }};
-        --font-family-secondary: {{ settings.secondary_font.family }}, {{ settings.secondary_font.fallback_families }};
-
-        --font-weight-headline: {{ settings.headline_font.weight }};
-        --font-family-headline: {{ settings.headline_font.family }}, {{ settings.headline_font.fallback_families }};
-
-        --primary1: {{ settings.primary_1 }};
-        --primary2: {{ settings.primary_2 }};
-        --primary3: {{ settings.primary_3 }};
-        --primary4: {{ settings.primary_4 }};
-        --primary5: {{ settings.primary_5 }};
-        --primary6: {{ settings.primary_6 }};
-
-        --grays1: {{ settings.grays_1 }};
-        --grays2: {{ settings.grays_2 }};
-        --grays3: {{ settings.grays_3 }};
-        --grays4: {{ settings.grays_4 }};
-        --grays5: {{ settings.grays_5 }};
-        --grays6: {{ settings.grays_6 }};
-
-        --system-error: #CC4429;
-
-        --complete: #249985;
-        --complete-bg: #DCF5F1;
-
-        --fulfilled: #248799;
-        --fulfilled-bg: #DCF1F5;
-
-        --partial: #CC9629;
-        --partial-bg: #FAF1E0;
-
-        --restocked: #7A29CC;
-        --restocked-bg: #EDE0FA;
-
-        --unfulfilled: #CC4429;
-        --unfulfilled-bg: #FFE9E5;
-
-        --authorized: #248799;
-        --authorized-bg: #DCF1F5;
-
-        --expired: #997224;
-        --expired-bg: #F5EDDC;
-
-        --paid: #249985;
-        --paid-bg: #DCF5F1;
-
-        --partially_paid: #B2B224;
-        --partially_paid-bg: #F5F5DC;
-
-        --partially_refunded: #B129CC;
-        --partially_refunded-bg: #F6E0FA;
-
-        --pending: #CC9629;
-        --pending-bg: #FAF1E0;
-
-        --refunded: #7A29CC;
-        --refunded-bg: #EDE0FA;
-
-        --unpaid: #CC4429;
-        --unpaid-bg: #FFE9E5;
-
-        --voided: #CC2944;
-        --voided-bg: #FFE5E9;
-        }
-    {% endstyle %}
+    {{ "root.css" | asset_url | stylesheet_tag }}
 
     {{ "index.css" | asset_url | stylesheet_tag }}
     {{ "content.css" | asset_url | stylesheet_tag }}
@@ -94,7 +25,7 @@
     {{ content_for_header }}
   <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/6VubeMJ7GY2e0Ai0ynXuSw" async></script>
 </head>
-<body>
+<body class="checkout">
 
 <header class="header">
     {% sections "header-group" %}

@@ -13,6 +13,7 @@ const mainImageSize = () => {
     };
 
     const catalogListSelector = ".catalog__list > li";
+    const singleProductSelector = ".single-product";
     const blogListSelector = ".blog__list > li";
     const productImageSelector = ".product__images > li";
     const productSlideSelector = ".product__swiper .swiper-slide";
@@ -25,6 +26,7 @@ const mainImageSize = () => {
         changeImgSize(pageCollectionSelector);
         changeImgSize(blogListSelector);
         changeImgSize(pageSearchSelector);
+        changeImgSize(singleProductSelector);
         changeImgSize(productSlideSelector);
     };
 

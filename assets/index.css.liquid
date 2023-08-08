@@ -8,9 +8,13 @@ body {
     background-color: var(--grays6);
 }
 
+body.hidden {
+    overflow: hidden;
+}
+
 body.hidden::before {
     content: "";
-    position: absolute;
+    position: fixed;
     z-index: 999;
     top: 0;
     left: 0;

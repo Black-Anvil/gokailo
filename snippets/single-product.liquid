@@ -1,0 +1,41 @@
+{% assign productImagesSize = product.images | size %}
+
+{% form "product", product %}
+    <input class="visible-hidden" type="hidden" name="id"
+           value="{{ product.variants.first.id }}"/>
+    <input class="visible-hidden" min="1" type="hidden" name="quantity" value="1"/>
+
+    <div class="single-product">
+        {% if product.compare_at_price %}
+            <span class="tag tag--authorized">sale</span>
+        {% endif %}
+        <a href="{{ product.url }}" class="single-product__img">
+            {% if productImagesSize > 1 %}
+                <img src="{{ product.images[0] | image_url }}"
+                     alt="{{ product.images[0].alt }}">
+                <img src="{{ product.images[1] | image_url }}"
+                     alt="{{ product.images[1].alt }}">
+            {% else %}
+                <img src="{{ product.featured_image | image_url }}"
+                     alt="{{ product.featured_image.alt }}">
+            {% endif %}
+        </a>
+
+        <div class="single-product__info">
+            <a href="{{ product.url }}" class="button-text">{{ product.title }}</a>
+
+            <div class="single-product__bottom">
+                <div class="single-product__price">
+                    {% render "compare-product-price", product: product %}
+                </div>
+
+                <div class="single-product__buttons">
+                    <button type="submit">
+                        {% render "icon-cart" %}
+                        Add To Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endform %}

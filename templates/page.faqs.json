@@ -7,7 +7,7 @@
         "title": "FREQUENTLY ASKED QUESTIONS…",
         "description": "<p>Have questions? We have all the answers.<\/p>",
         "image_background": "shopify:\/\/shop_images\/faq-page.png",
-        "link_url": "\/",
+        "link_url": "#more",
         "link_text": "read more"
       }
     },
@@ -25,45 +25,173 @@
           "type": "kailo_work",
           "settings": {
             "title": "Do you plug them in? Is there a battery?",
-            "description": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage.  Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
+            "description": "<p>Kailo does not have a battery and it doesn’t plug in. Kailo has billions of tiny capacitors  that are designed to react to the electrical charges in your body, enhancing and propagating your body’s natural communication signals.<\/p><p><\/p>"
+          }
+        },
+        "9b08e730-ac54-41e8-aa26-8c711480aee8": {
+          "type": "kailo_work",
+          "settings": {
+            "title": "How do I use the adhesive with my Kailo and which side goes towards my skin?",
+            "description": "<p>If you are using the Kailo Original, you can put the adhesive on either side. However, we find that the Kailo adhesives stick better and are easier to remove from the smooth side of the Kailo. So, the smooth side will be against your skin. If you are using the Kailo Flex, please put the adhesive on the white side. The white side will then be against your skin.<\/p>"
+          }
+        },
+        "cfbaea8f-8cd2-4a04-a165-b06c384e31da": {
+          "type": "kailo_work",
+          "settings": {
+            "title": "Can you wear more than one Kailo at a time?",
+            "description": "<p>Kailo works locally so it can only focus on one area of pain at a time, however, you can wear more than one Kailo at a time. Almost everyone can wear 2 and many people can wear 3. We have had a few customers that wear more. There is however a definite threshold that varies from person to person, where adding one more Kailo decreases the effectiveness of the others. The best bet is to add one at a time, find a good placement and then as you add each additional one, evaluate if the first ones placed have decreased in their effectiveness at all.<\/p><h3><\/h3>"
+          }
+        },
+        "712c9ac7-7de7-4125-a2f8-6400f81ddd4e": {
+          "type": "kailo_work",
+          "settings": {
+            "title": "Is the Kailo a patch?",
+            "description": "<p>Kailo is an innovative, non-transdermal technology that looks and acts like a pain patch.<\/p><h3><\/h3>"
+          }
+        },
+        "ff7d7147-9875-4709-ba3e-b18b5fbc37d1": {
+          "type": "kailo_work",
+          "settings": {
+            "title": "What is the Flex™ Pain Patch made of?",
+            "description": "<p>The Flex™ Pain Patch is made out of a material called Tyvek.  Tyvek® may resemble paper, but its performance is anything but paper-like. Tyvek® is a 100% synthetic material made from high-density spun-bound polyethylene fibers.  It is lightweight, durable, and breathable, yet resistant to water, abrasion, bacterial penetration, and aging.<\/p><h3><\/h3>"
+          }
+        },
+        "14fe1b88-afc4-4a71-ac99-0d9237312352": {
+          "type": "kailo_work",
+          "settings": {
+            "title": "Is the Flex™ Pain Patch waterproof?",
+            "description": "<p>Yes, you may shower with your Flex™ Pain Patch on.  Always be aware that the adhesive may become loose when it gets wet, however.<\/p><h3><\/h3>"
+          }
+        },
+        "9cfac637-3909-42ef-a104-82f8304b2056": {
+          "type": "kailo_work",
+          "settings": {
+            "title": "When is it time to get a new Flex™ Pain Patch?",
+            "description": "<p>The Flex™ Pain Patch will work for you as long as the gold pattern on the one side is still there. That gold is the slurry with the capacitors in it. Your Kailo Flex an get wrinkled and crinkled but if the slurry is still there, it can still relieve your pain.<\/p>"
           }
         },
         "68263456-3f42-415b-b09f-f8d91b81147d": {
           "type": "specific_condition",
           "settings": {
             "title": "Will Kailo help with my specific ailment?",
-            "description": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage.  Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
+            "description": "<p>Kailo has proven to be very capable. Please contact us at <a href=\"mailto:support@gokailo.com\" title=\"mailto:support@gokailo.com\">support@gokailo.com<\/a>  to learn what experiences we have had with specific conditions.<\/p>"
           }
         },
         "01604c71-1f5d-472f-8a38-6b689c7f3be8": {
           "type": "specific_condition",
           "settings": {
             "title": "What if Kailo doesn't work for me?",
-            "description": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage.  Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
+            "description": "<p>Kailo is far more than just a business for us, it’s changed thousands of lives already. We offer a no-hassle, 100% money-back guarantee. If you feel your Kailo Original* isn’t working for you within 90 days,​ we’ll gladly take it back. Before returning your Kailo Original*, we would love a chance to make sure you’ve found the correct placement. Over 90% of our customers have found an increase in comfort. Our goal is to help everyone get relief. Please contact us at <a href=\"mailto:support@gokailo.com\" title=\"mailto:support@gokailo.com\">support@gokailo.com<\/a> For specifics on our return policy, please<a href=\"\/pages\/return-policy\" title=\"return policy\"> click here<\/a>.<\/p>"
+          }
+        },
+        "196e264a-f359-4c7a-8a63-66df08032a97": {
+          "type": "specific_condition",
+          "settings": {
+            "title": "Will the Kailo pain patch help with menstrual cramps?",
+            "description": "<p>Most women experience menstrual cramps at some time during their life — and for many, the pain is excruciating. Painful periods can disrupt life, force you to miss work, lose sleep, and say no to opportunities to enjoy friends, family, and activities. Women report they have experienced the best pain relief for cramps possible — without narcotics.<\/p><h3><\/h3>"
+          }
+        },
+        "8398cf97-5751-40ad-83df-15c2829f168c": {
+          "type": "specific_condition",
+          "settings": {
+            "title": "Can you wear a Kailo if you are pregnant?",
+            "description": "<p>We do not recommend that individuals who are pregnant use Kailo products.<\/p><h3><\/h3>"
+          }
+        },
+        "07865862-0fff-4920-96ee-eb199f207343": {
+          "type": "specific_condition",
+          "settings": {
+            "title": "Can the Kailo patch help with back pain?",
+            "description": "<p>The short answer is YES! You can finally experience the pain relief you’ve been searching for. The Kailo pain patch is designed to work with your body’s natural electrical system to turn down your pain receptors so you can feel good again and smile at life. You won’t believe the back pain relief you can find with Kailo pain patches — until you experience the pain relief yourself. Our customers report that Kailo is the best reliever for back pain. <a href=\"\/pages\/how-to-use\" title=\"how-to-use\">Learn more here<\/a>.<\/p>"
           }
         },
         "2f43021d-388f-48a8-adb4-ebe13ea131b5": {
           "type": "logistical_questions",
           "settings": {
             "title": "Where is Kailo located?",
-            "description": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage.  Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
+            "description": "<p>We’re based in the heart of Silicon Slopes, Utah. Kailo is designed, engineered, and manufactured in Utah — the birthplace of television, artificial heart, electric traffic lights, and Frisbee. We’re proud to be part of the innovative, hard-working, and kind culture of the Beehive State.<\/p><h3><\/h3>"
           }
         },
         "55b568fe-56da-4e7a-b7d7-beff0d9902ca": {
           "type": "logistical_questions",
           "settings": {
             "title": "Do you ship internationally?",
-            "description": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage.  Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
+            "description": "<p>Yes! We love sharing Kailo with the world. We have shipped to 103 countries.<\/p><h3><\/h3>"
+          }
+        },
+        "6e3ffcc8-b02e-4a92-8397-57035b448d81": {
+          "type": "logistical_questions",
+          "settings": {
+            "title": "What is the best way to contact Kailo?",
+            "description": "<p>Please email us at <a href=\"mailto:support@gokailo.com\">support@gokailo.com<\/a> for the quickest response. If you are contacting us about an order, please include your name as it appears on your order.<\/p>"
+          }
+        },
+        "189a2f61-3380-4e06-a27f-c4b321d8bc02": {
+          "type": "logistical_questions",
+          "settings": {
+            "title": "How do I clean my Kailo?",
+            "description": "<p>You can use warm water and soap. If there is adhesive residue from medical tape, you can use Goo Gone, but wash it gently afterwards. Do not use caustic cleaners or rubbing alcohol as they can deteriorate Kailo over time<\/p>"
+          }
+        },
+        "4f995a0b-866b-46c9-b2d0-31f023e46ea4": {
+          "type": "logistical_questions",
+          "settings": {
+            "title": "Do you have an influencer program?",
+            "description": "<p>We do have an influencer program. Email us at <a href=\"mailto:support@gokailo.com\">support@gokailo.com<\/a> for more information.<\/p>"
+          }
+        },
+        "c9cd967a-03a1-4417-980c-cc3fe70db332": {
+          "type": "logistical_questions",
+          "settings": {
+            "title": "How do you remove the adhesive from the Flex™ Pain Patch?",
+            "description": "<p>The adhesive for the Flex™ Pain Patch has been designed with a notch in one corner.  This is to aid in removing it from the Flex patch.  To remove the adhesive hold your Flex patch in the corner that the adhesive does not cover and roll the adhesive down and away from that corner.<\/p>"
+          }
+        },
+        "e5ec339e-a47f-454d-8705-6f3c945b048d": {
+          "type": "logistical_questions",
+          "settings": {
+            "title": "My Flex™ Pain Patch is all wrinkled. Will it still work?",
+            "description": "<p>Yes!   The Flex™ Pain Patch will become wrinkled over time.  This may seem concerning but be assured that your patch will still work.  The more you use the Kailo Flex, the more flexible it will become.<\/p>"
+          }
+        },
+        "6f4edbef-8188-44ce-9101-35eba5d2124e": {
+          "type": "logistical_questions",
+          "settings": {
+            "title": "What is the return policy of the Flex™ Pain Patch?",
+            "description": "<p>The Flex™ Pain Patch has a 30-day money back guarantee on unopened and unused Flex products.<\/p>"
+          }
+        },
+        "1a31f042-ac99-45d0-8817-80785d1199c3": {
+          "type": "logistical_questions",
+          "settings": {
+            "title": "Do you have to remove the white back from the Flex™ Pain Patch in order to use it?",
+            "description": "<p>No.  There is nothing that needs to be removed from the Flex™ Pain Patch.  You may apply the Flex adhesive to the white side of the patch.<\/p>"
           }
         }
       },
       "block_order": [
         "384069f5-ebdb-4dbf-afcc-5985defc2a12",
         "d4ec83ac-88db-497b-a005-791780966f12",
+        "9b08e730-ac54-41e8-aa26-8c711480aee8",
+        "cfbaea8f-8cd2-4a04-a165-b06c384e31da",
+        "712c9ac7-7de7-4125-a2f8-6400f81ddd4e",
+        "ff7d7147-9875-4709-ba3e-b18b5fbc37d1",
+        "14fe1b88-afc4-4a71-ac99-0d9237312352",
+        "9cfac637-3909-42ef-a104-82f8304b2056",
         "68263456-3f42-415b-b09f-f8d91b81147d",
         "01604c71-1f5d-472f-8a38-6b689c7f3be8",
+        "196e264a-f359-4c7a-8a63-66df08032a97",
+        "8398cf97-5751-40ad-83df-15c2829f168c",
+        "07865862-0fff-4920-96ee-eb199f207343",
         "2f43021d-388f-48a8-adb4-ebe13ea131b5",
-        "55b568fe-56da-4e7a-b7d7-beff0d9902ca"
+        "55b568fe-56da-4e7a-b7d7-beff0d9902ca",
+        "6e3ffcc8-b02e-4a92-8397-57035b448d81",
+        "189a2f61-3380-4e06-a27f-c4b321d8bc02",
+        "4f995a0b-866b-46c9-b2d0-31f023e46ea4",
+        "c9cd967a-03a1-4417-980c-cc3fe70db332",
+        "e5ec339e-a47f-454d-8705-6f3c945b048d",
+        "6f4edbef-8188-44ce-9101-35eba5d2124e",
+        "1a31f042-ac99-45d0-8817-80785d1199c3"
       ],
       "settings": {
         "title_1": "How Does the Kailo Work?",
@@ -74,50 +202,50 @@
     "icon-list": {
       "type": "icon-list",
       "blocks": {
-        "43c79d2a-f330-436b-a3d6-d7adcfa758a0": {
+        "28bffeef-7425-4fe0-b9f3-040c0e05224c": {
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
           }
         },
-        "2a2f7184-0acd-406c-a582-e58da68415a4": {
+        "31d12227-6898-4556-8683-17683561039e": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_10.png"
           }
         },
-        "4b7b552b-3a57-478c-8935-4216b272c2d8": {
+        "38a8b462-9183-48c9-aea5-1ae292649094": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_12.png"
           }
         },
-        "6785c4ab-83cc-4a6d-b481-8d48542b1a28": {
+        "a98e13e7-0572-4c40-b624-aa5822f0b609": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_9.png"
           }
         },
-        "e69dac7a-9502-4726-bdcd-395da514664f": {
+        "93491daa-47a4-462d-9e5b-25f80eea7aa8": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_8.png"
           }
         },
-        "87c54079-f0a0-48a8-ab69-5c1a7a2b0686": {
+        "1e137e2b-1a05-4606-8ea9-63646a15fb44": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
+            "image": "shopify:\/\/shop_images\/image_7.png"
           }
         }
       },
       "block_order": [
-        "43c79d2a-f330-436b-a3d6-d7adcfa758a0",
-        "2a2f7184-0acd-406c-a582-e58da68415a4",
-        "4b7b552b-3a57-478c-8935-4216b272c2d8",
-        "6785c4ab-83cc-4a6d-b481-8d48542b1a28",
-        "e69dac7a-9502-4726-bdcd-395da514664f",
-        "87c54079-f0a0-48a8-ab69-5c1a7a2b0686"
+        "28bffeef-7425-4fe0-b9f3-040c0e05224c",
+        "31d12227-6898-4556-8683-17683561039e",
+        "38a8b462-9183-48c9-aea5-1ae292649094",
+        "a98e13e7-0572-4c40-b624-aa5822f0b609",
+        "93491daa-47a4-462d-9e5b-25f80eea7aa8",
+        "1e137e2b-1a05-4606-8ea9-63646a15fb44"
       ],
       "settings": {
         "background_color": "#2794a8"
@@ -126,28 +254,78 @@
     "reviews-block": {
       "type": "reviews-block",
       "blocks": {
-        "6831fa99-b783-442b-a615-a8f22919d82f": {
+        "6565d877-4ab4-40a7-ae14-a6ceb29c9321": {
           "type": "slide",
           "settings": {
-            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "blockquote": "\"My hand had osteoarthritis and I use the kailo for 5 minutes and I free of pain for the rest of the day is GOOD gracias all of you\"",
             "stars": 5,
             "author_name": "Mauricio C.",
             "author_info": "Verified Buyer | 09\/09\/21"
           }
         },
-        "77c26a17-246d-41d4-b9cb-f35b1c97013b": {
+        "545b2e9b-49e2-4621-ac8c-5c69cb2df12b": {
           "type": "slide",
           "settings": {
-            "blockquote": "\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"",
+            "blockquote": "\"I’m training for a 500 mile walk and my hip was killing me. I placed the Kailo patch in two places and my pain is gone! I used a small piece near my ear and it’s also helping diminish my tinnitus.\"",
             "stars": 5,
-            "author_name": "Mauricio C.",
-            "author_info": "Verified Buyer | 09\/09\/21"
+            "author_name": "Ana A.",
+            "author_info": "Verified Buyer | 07\/26\/21"
+          }
+        },
+        "1d63207d-8ab1-48c5-9934-d47be4841326": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"Hi, as a repeat customer, I wish to express my total satisfaction of your Kailo pain product. I never would believe how such a thing could relieve pain like this. I have been spreading the extra ones that I purchased among my family and they just love it also.\"",
+            "stars": 5,
+            "author_name": "Randall S",
+            "author_info": "Verified Buyer | 05\/14\/20"
+          }
+        },
+        "f3b56489-09ff-4f28-aa09-e35c5477e73e": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"Quick shipping, great value, and has always reduced or eliminated pain when placed properly. This is the second one I ordered. Very satisfied customer.\"",
+            "stars": 5,
+            "author_name": "John B.",
+            "author_info": "Verified Buyer | 05\/16\/22"
+          }
+        },
+        "6542bf2b-afe1-4e38-bbea-893f439f2d13": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"Thanks this has been a break through in pain management for my wife and your products make it possible.\"",
+            "stars": 5,
+            "author_name": "William H.",
+            "author_info": "Verified Buyer | 04\/15\/22"
+          }
+        },
+        "bdc2d547-0b6d-4e5f-b656-4dac232213e4": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"So far the Kailo patch has worked for both my husband and me! I have also shared our stories with family and friends\"",
+            "stars": 4,
+            "author_name": "Anne D.",
+            "author_info": "Verified Buyer | 04\/14\/22"
+          }
+        },
+        "68e95ccb-b313-498e-aa56-13222e128101": {
+          "type": "slide",
+          "settings": {
+            "blockquote": "\"Noticed a difference right away! I was able to work my whole shift without a pain reliever! Total Game Changer! it leaves no marks or sticky rings on the skin and is easy to move. Great product all the way around! I've told everyone i know about it!\"",
+            "stars": 5,
+            "author_name": "SABRINA B.",
+            "author_info": "Verified Buyer | 04\/12\/22"
           }
         }
       },
       "block_order": [
-        "6831fa99-b783-442b-a615-a8f22919d82f",
-        "77c26a17-246d-41d4-b9cb-f35b1c97013b"
+        "6565d877-4ab4-40a7-ae14-a6ceb29c9321",
+        "545b2e9b-49e2-4621-ac8c-5c69cb2df12b",
+        "1d63207d-8ab1-48c5-9934-d47be4841326",
+        "f3b56489-09ff-4f28-aa09-e35c5477e73e",
+        "6542bf2b-afe1-4e38-bbea-893f439f2d13",
+        "bdc2d547-0b6d-4e5f-b656-4dac232213e4",
+        "68e95ccb-b313-498e-aa56-13222e128101"
       ],
       "settings": {
       }
@@ -157,9 +335,9 @@
       "settings": {
         "title": "shop by category",
         "collection_list": [
-          "frontpage",
-          "last-test",
-          "test-1"
+          "kailo-accessories",
+          "kailo-bundles",
+          "kailo-flex"
         ]
       }
     }

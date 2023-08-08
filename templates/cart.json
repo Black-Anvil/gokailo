@@ -20,40 +20,72 @@
     "single-faq": {
       "type": "single-faq",
       "blocks": {
-        "e4cf79e8-da5d-48f2-95d3-ba3c7a4d1587": {
+        "384069f5-ebdb-4dbf-afcc-5985defc2a12": {
           "type": "block",
           "settings": {
             "title": "How does the Kailo work?",
-            "content": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage. Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
+            "content": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage.  Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
           }
         },
-        "fbf7b35c-3ed9-4e4a-aaf6-8d32dd93555d": {
+        "d4ec83ac-88db-497b-a005-791780966f12": {
           "type": "block",
           "settings": {
             "title": "Do you plug them in? Is there a battery?",
-            "content": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage. Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
+            "content": "<p>Kailo does not have a battery and it doesn’t plug in. Kailo has billions of tiny capacitors  that are designed to react to the electrical charges in your body, enhancing and propagating your body’s natural communication signals.<\/p><p><\/p>"
           }
         },
-        "fd40f5c7-2ef6-47b5-8bc4-189376b348d1": {
+        "9b08e730-ac54-41e8-aa26-8c711480aee8": {
+          "type": "block",
+          "settings": {
+            "title": "How do I use the adhesive with my Kailo and which side goes towards my skin?",
+            "content": "<p>If you are using the Kailo Original, you can put the adhesive on either side. However, we find that the Kailo adhesives stick better and are easier to remove from the smooth side of the Kailo. So, the smooth side will be against your skin. If you are using the Kailo Flex, please put the adhesive on the white side. The white side will then be against your skin.<\/p>"
+          }
+        },
+        "cfbaea8f-8cd2-4a04-a165-b06c384e31da": {
           "type": "block",
           "settings": {
             "title": "Can you wear more than one Kailo at a time?",
-            "content": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage. Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
+            "content": "<p>Kailo works locally so it can only focus on one area of pain at a time, however, you can wear more than one Kailo at a time. Almost everyone can wear 2 and many people can wear 3. We have had a few customers that wear more. There is however a definite threshold that varies from person to person, where adding one more Kailo decreases the effectiveness of the others. The best bet is to add one at a time, find a good placement and then as you add each additional one, evaluate if the first ones placed have decreased in their effectiveness at all.<\/p><h3><\/h3>"
           }
         },
-        "92e8eb11-f4de-49e0-a9d7-b8fb1d4963b7": {
+        "712c9ac7-7de7-4125-a2f8-6400f81ddd4e": {
           "type": "block",
           "settings": {
             "title": "Is the Kailo a patch?",
-            "content": "<p>Kailo is made with a patented technology that is being developed for use in high-tech applications like antennas, signal transmission, bio-identification, and energy storage. Kailo has been developed with the same technology and is designed to boost the natural signals of the body and help the brain communicate with disrupted areas more effectively.<\/p>"
+            "content": "<p>Kailo is an innovative, non-transdermal technology that looks and acts like a pain patch.<\/p><h3><\/h3>"
+          }
+        },
+        "ff7d7147-9875-4709-ba3e-b18b5fbc37d1": {
+          "type": "block",
+          "settings": {
+            "title": "What is the Flex™ Pain Patch made of?",
+            "content": "<p>The Flex™ Pain Patch is made out of a material called Tyvek.  Tyvek® may resemble paper, but its performance is anything but paper-like. Tyvek® is a 100% synthetic material made from high-density spun-bound polyethylene fibers.  It is lightweight, durable, and breathable, yet resistant to water, abrasion, bacterial penetration, and aging.<\/p><h3><\/h3>"
+          }
+        },
+        "14fe1b88-afc4-4a71-ac99-0d9237312352": {
+          "type": "block",
+          "settings": {
+            "title": "Is the Flex™ Pain Patch waterproof?",
+            "content": "<p>Yes, you may shower with your Flex™ Pain Patch on.  Always be aware that the adhesive may become loose when it gets wet, however.<\/p><h3><\/h3>"
+          }
+        },
+        "9cfac637-3909-42ef-a104-82f8304b2056": {
+          "type": "block",
+          "settings": {
+            "title": "When is it time to get a new Flex™ Pain Patch?",
+            "content": "<p>The Flex™ Pain Patch will work for you as long as the gold pattern on the one side is still there. That gold is the slurry with the capacitors in it. Your Kailo Flex an get wrinkled and crinkled but if the slurry is still there, it can still relieve your pain.<\/p>"
           }
         }
       },
       "block_order": [
-        "e4cf79e8-da5d-48f2-95d3-ba3c7a4d1587",
-        "fbf7b35c-3ed9-4e4a-aaf6-8d32dd93555d",
-        "fd40f5c7-2ef6-47b5-8bc4-189376b348d1",
-        "92e8eb11-f4de-49e0-a9d7-b8fb1d4963b7"
+        "384069f5-ebdb-4dbf-afcc-5985defc2a12",
+        "d4ec83ac-88db-497b-a005-791780966f12",
+        "9b08e730-ac54-41e8-aa26-8c711480aee8",
+        "cfbaea8f-8cd2-4a04-a165-b06c384e31da",
+        "712c9ac7-7de7-4125-a2f8-6400f81ddd4e",
+        "ff7d7147-9875-4709-ba3e-b18b5fbc37d1",
+        "14fe1b88-afc4-4a71-ac99-0d9237312352",
+        "9cfac637-3909-42ef-a104-82f8304b2056"
       ],
       "settings": {
         "title": "FAQs"

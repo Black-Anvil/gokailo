@@ -76,6 +76,7 @@
         flex-wrap: wrap;
         padding: 40px 0 0;
         margin: 0 0 -40px -40px;
+        text-align: center;
     }
 
     .footer__nav {
@@ -209,25 +210,11 @@
         <nav class="footer__navigation">
             <div class="footer__nav">
                 <ul class="footer__nav-list">
-                    <li>
-                        <a class="h6-title" href="#">contact</a>
-                    </li>
-
-                    <li>
-                        <a class="h6-title" href="#">return policy</a>
-                    </li>
-
-                    <li>
-                        <a class="h6-title" href="#">news</a>
-                    </li>
-
-                    <li>
-                        <a class="h6-title" href="#">terms & conditions</a>
-                    </li>
-
-                    <li>
-                        <a class="h6-title" href="#">partnership inquiries</a>
-                    </li>
+                    {% for link in linklists.footer.links -%}
+                        <li>
+                            <a class="h6-title" href="{{ link.url }}">{{ link.title }}</a>
+                        </li>
+                    {%- endfor %}
                 </ul>
             </div>
         </nav>
@@ -235,32 +222,56 @@
         {% if section.settings.socials %}
             <div class="footer__socials">
                 <ul class="footer__socials-list">
-                    <li>
-                        <a href="#" target="_blank">
-                            Twitter
-                            {% render "icon-twitter" %}
-                        </a>
-                    </li>
+                    {% if section.settings.twitter %}
+                        <li>
+                            <a href="{{ settings.twitter }}" target="_blank">
+                                Twitter
+                                {% render "icon-twitter" %}
+                            </a>
+                        </li>
+                    {% endif %}
 
-                    <li>
-                        <a href="#" target="_blank">
-                            Facebook
-                            {% render "icon-facebook" %}
-                        </a>
-                    </li>
+                    {% if section.settings.facebook %}
+                        <li>
+                            <a href="{{ settings.facebook }}" target="_blank">
+                                Facebook
+                                {% render "icon-facebook" %}
+                            </a>
+                        </li>
+                    {% endif %}
 
-                    <li>
-                        <a href="#" target="_blank">
-                            Instagram
-                            {% render "icon-instagram" %}
-                        </a>
-                    </li>
+                    {% if section.settings.youtube %}
+                        <li>
+                            <a href="{{ settings.youtube }}" target="_blank">
+                                Youtube
+                                {% render "icon-youtube" %}
+                            </a>
+                        </li>
+                    {% endif %}
+
+                    {% if section.settings.instagram %}
+                        <li>
+                            <a href="{{ settings.instagram }}" target="_blank">
+                                Instagram
+                                {% render "icon-instagram" %}
+                            </a>
+                        </li>
+                    {% endif %}
+
+                    {% if section.settings.email %}
+                        <li>
+                            <a href="{{ settings.email }}">
+                                Email
+                                {% render "icon-email" %}
+                            </a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         {% endif %}
 
         {% if section.settings.copyright != blank %}
-            <p class="footer__copyright">{{ section.settings.copyright }}</p>
+            <div class="footer__copyright">{{ section.settings.copyright }}</div>
         {% endif %}
     </div>
 </footer>
@@ -271,12 +282,6 @@
   "settings": [
     {
       "type": "checkbox",
-      "id": "socials",
-      "label": "Show Socials",
-      "default": true
-    },
-    {
-      "type": "checkbox",
       "id": "newsletter",
       "label": "Show Newsletter",
       "default": true
@@ -285,6 +290,46 @@
       "type": "richtext",
       "id": "copyright",
       "label": "Copyright"
+    },
+    {
+      "type": "header",
+      "content": "Socials"
+    },
+    {
+      "type": "checkbox",
+      "id": "socials",
+      "label": "Show Socials",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "twitter",
+      "label": "Show Twitter",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "facebook",
+      "label": "Show Facebook",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "youtube",
+      "label": "Show Youtube",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "instagram",
+      "label": "Show Instagram",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "email",
+      "label": "Show Email",
+      "default": false
     }
   ]
 }

@@ -299,19 +299,19 @@
     searchLink.addEventListener("click", (e) => {
         e.preventDefault();
         search.classList.add("opened");
-        document.body.style.overflow = "hidden";
         document.body.classList.add("hidden");
     });
 
     searchBtnClear.addEventListener("click", () => {
         searchInput.value = "";
+        searchResults.innerHTML = "";
+        searchError.textContent = "Start typing to search...";
         searchBtnClear.style.display = "none";
     });
 
     searchBtnClose.addEventListener("click", () => {
         search.classList.remove("opened");
         predictiveSearch.classList.remove("opened");
-        document.body.style.overflow = "visible";
         document.body.classList.remove("hidden");
     });
 
@@ -334,15 +334,15 @@
 
         predictiveLoader.classList.add("isLoading");
 
-        const res = await fetch(`/search/suggest.json?q=${searchInput.value}&resources[type]=collection,product,article`);
+        const res = await fetch(`/search/suggest.json?q=${searchInput.value}&resources[type]=product,article`);
 
         const html = await res.json();
 
         predictiveLoader.classList.remove("isLoading");
 
-        const {products, collections, articles} = html.resources.results;
+        const {products, articles} = html.resources.results;
 
-        if (products.length === 0 && collections.length === 0 && articles.length === 0) {
+        if (products.length === 0 && articles.length === 0) {
             searchError.textContent = "No results found.";
             return;
         }
@@ -383,23 +383,6 @@
             }) : "";
         };
 
-        const createSearchCollections = ({title, items}) => {
-            return items.length ? createRow({
-                title,
-                items: items.map(item => (`
-                    <li>
-                        <a href="${item.url}">
-                            <img src="${item.featured_image.url}" alt="${item.title}">
-
-                            <div class="predictive-search__info">
-                                <p class="button-text">${item.title}</p>
-                            </div>
-                        </a>
-                    </li>
-                `))
-            }) : "";
-        };
-
         const createSearchArticles = ({title, items}) => {
             return items.length ? createRow({
                 title,
@@ -424,10 +407,9 @@
         };
 
         const productsBlock = createSearchProducts({title: "Products", items: products});
-        const collectionsBlock = createSearchCollections({title: "Collections", items: collections});
         const articlesBlock = createSearchArticles({title: "Articles", items: articles});
 
-        const columnFirst = createColumn(productsBlock + collectionsBlock);
+        const columnFirst = createColumn(productsBlock);
         const columnSecond = createColumn(articlesBlock);
 
         searchResults.innerHTML = columnFirst + columnSecond;

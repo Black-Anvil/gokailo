@@ -7,7 +7,7 @@
         "title": "partnership inquiries",
         "description": "<p>Pain Relief Technologies is in the infancy of bringing the KAILO Pain Patch to the marketplace and is currently looking for Partners that share our vision and values to expand KAILO’s market presence. <\/p>",
         "image_background": "shopify:\/\/shop_images\/cbf7486200ba2c8d5cc66eec9b46cdb3.png",
-        "link_url": "\/",
+        "link_url": "#more",
         "link_text": "apply now"
       }
     },
@@ -18,7 +18,7 @@
           "type": "block",
           "settings": {
             "text": "<p>Pain Relief Technologies is a Company founded on its commitment to help as many people as possible live their best lives without the interference of pain.<br\/><br\/>Observational Clinical trial results were recently published  in Anesthesia and Pain Research, an international peer-reviewed journal devoted to the clinical practice of anesthesia and pain medicine. The PREVENT Clinical Trial found that participants using the KAILO Pain Patch experienced a measurable decrease in pain severity, pain interference, and a decrease in concurrent medication usage -including Opioids.<\/p>",
-            "link_url": "\/",
+            "link_url": "https:\/\/scivisionpub.com\/pdfs\/using-nanotechnology-to-improve-pain-and-function-with-a-novel-drugfree-topical-painrelief-patch-an-interim-analysis-1476.pdf",
             "link_text": "read study",
             "author_position": "",
             "author_name": ""

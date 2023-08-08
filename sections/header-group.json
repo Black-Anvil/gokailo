@@ -5,11 +5,34 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "settings": {
+        "text": "Due to the worker shortage please expect 1-2 day shipping delays for USPS Priority Mail and First Class Package Service",
+        "twitter": true,
+        "facebook": true,
+        "youtube": true,
+        "instagram": true,
+        "email": true
       }
     },
     "navigation": {
       "type": "navigation",
+      "blocks": {
+        "eb4ee482-2eef-4592-8a3f-97d8bd1bf7ff": {
+          "type": "nav",
+          "settings": {
+            "menu": ""
+          }
+        }
+      },
+      "block_order": [
+        "eb4ee482-2eef-4592-8a3f-97d8bd1bf7ff"
+      ],
       "settings": {
+        "collection_list": [
+          "kailo-flex",
+          "kailo-accessories",
+          "kailo-bundles"
+        ],
+        "product": "kailo-flex™-20-off"
       }
     }
   },

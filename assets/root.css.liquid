@@ -1,0 +1,75 @@
+{% style %}
+{{ settings.primary_font | font_face }}
+{{ settings.secondary_font | font_face }}
+{{ settings.headline_font | font_face }}
+
+:root {
+    --font-weight-primary: {{ settings.primary_font.weight }};
+    --font-family-primary: {{ settings.primary_font.family }},{{ settings.primary_font.fallback_families }};
+
+    --font-weight-secondary: {{ settings.secondary_font.weight }};
+    --font-family-secondary: {{ settings.secondary_font.family }},{{ settings.secondary_font.fallback_families }};
+
+    --font-weight-headline: {{ settings.headline_font.weight }};
+    --font-family-headline: {{ settings.headline_font.family }},{{ settings.headline_font.fallback_families }};
+
+    --primary1: {{ settings.primary_1 }};
+    --primary2: {{ settings.primary_2 }};
+    --primary3: {{ settings.primary_3 }};
+    --primary4: {{ settings.primary_4 }};
+    --primary5: {{ settings.primary_5 }};
+    --primary6: {{ settings.primary_6 }};
+
+    --grays1: {{ settings.grays_1 }};
+    --grays2: {{ settings.grays_2 }};
+    --grays3: {{ settings.grays_3 }};
+    --grays4: {{ settings.grays_4 }};
+    --grays5: {{ settings.grays_5 }};
+    --grays6: {{ settings.grays_6 }};
+
+    --system-error: #CC4429;
+
+    --complete: #249985;
+    --complete-bg: #DCF5F1;
+
+    --fulfilled: #248799;
+    --fulfilled-bg: #DCF1F5;
+
+    --partial: #CC9629;
+    --partial-bg: #FAF1E0;
+
+    --restocked: #7A29CC;
+    --restocked-bg: #EDE0FA;
+
+    --unfulfilled: #CC4429;
+    --unfulfilled-bg: #FFE9E5;
+
+    --authorized: #248799;
+    --authorized-bg: #DCF1F5;
+
+    --expired: #997224;
+    --expired-bg: #F5EDDC;
+
+    --paid: #249985;
+    --paid-bg: #DCF5F1;
+
+    --partially_paid: #B2B224;
+    --partially_paid-bg: #F5F5DC;
+
+    --partially_refunded: #B129CC;
+    --partially_refunded-bg: #F6E0FA;
+
+    --pending: #CC9629;
+    --pending-bg: #FAF1E0;
+
+    --refunded: #7A29CC;
+    --refunded-bg: #EDE0FA;
+
+    --unpaid: #CC4429;
+    --unpaid-bg: #FFE9E5;
+
+    --voided: #CC2944;
+    --voided-bg: #FFE5E9;
+}
+
+{% endstyle %}
