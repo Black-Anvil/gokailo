@@ -1,0 +1,144 @@
+<style>
+    .blog {
+        padding: 80px 0 100px;
+    }
+
+    .blog__image {
+        position: relative;
+        overflow: hidden;
+        margin: 0 0 16px;
+    }
+
+    .blog__image::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(53, 93, 102, 0.60);
+    }
+
+    .blog__image img {
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.15s linear;
+    }
+
+    .blog__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+    }
+
+    .blog__content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .blog__author {
+        display: flex;
+        align-items: center;
+    }
+
+    .blog__author-separator {
+        margin: 0 8px;
+        width: 1px;
+        height: 14px;
+        background-color: var(--grays4);
+    }
+
+    .pagination {
+        margin: 60px 0 0;
+    }
+
+    .blog__link:hover,
+    .blog__link:focus {
+        text-decoration: none;
+    }
+
+    .blog__link:hover img,
+    .blog__link:focus img {
+        transform: scale(1.1);
+    }
+
+    .blog__link:hover .blog__title,
+    .blog__link:focus .blog__title {
+        color: var(--primary2);
+    }
+
+    .blog__title {
+        transition: color 0.15s linear;
+    }
+
+    @media screen and (max-width: 768px) {
+        .blog {
+            padding: 60px 0 100px;
+        }
+
+        .blog__list {
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .pagination {
+            margin: 24px 0 0;
+        }
+
+        .blog__author {
+            flex-direction: column;
+            gap: 4px;
+            align-items: flex-start;
+        }
+
+        .blog__author-separator {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .blog__list {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+{{ "pagination.css" | asset_url | stylesheet_tag }}
+{{ "tag.css" | asset_url | stylesheet_tag }}
+
+<div class="blog">
+   <div class="container">
+       {% paginate blog.articles by 12 %}
+           <ul class="blog__list">
+               {% for article in blog.articles %}
+                   <li class="blog__article">
+                       <a class="blog__link" href="{{ article.url }}">
+                           <div class="blog__image">
+                               <img src="{{ article.image | image_url }}" alt="{{ article.image.alt }}">
+                           </div>
+
+                           <div class="blog__content">
+                               {% if article.tags[0] %}
+                                   <div>
+                                       <span class="caption-text tag tag--fulfilled">{{ article.tags[0] }}</span>
+                                   </div>
+                               {% endif %}
+                               <h4 class="h4-title blog__title">{{ article.title }}</h4>
+                               <div class="blog__author">
+                                   <span>By {{ article.author }}</span>
+                                   <span class="blog__author-separator"></span>
+                                   <span>{{ article.published_at | date: '%B %d, %Y' }}</span>
+                               </div>
+                           </div>
+                       </a>
+                   </li>
+               {% endfor %}
+           </ul>
+
+           <div class="pagination">
+               {{ paginate | default_pagination }}
+           </div>
+       {% endpaginate %}
+   </div>
+</div>

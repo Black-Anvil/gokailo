@@ -61,12 +61,15 @@
       ],
       "settings": {
         "blockquote_text": "<p>Patients who used Kailo over a period of 30 days showed a vast reduction of their pain severity levels. They experienced a better quality of life, improved function, were very satisfied with the Kailo Pain Patch, and preferred the patch over oral pain medications.\"<\/p>",
+        "blockquote_image": "shopify:\/\/shop_images\/summary-review.png",
         "author_name": "Jeffrey Gudin, MD",
         "author_position": "Principal Investigator",
         "blockquote_link_url": "\/",
         "blockquote_link_text": "read study",
+        "image_background": "shopify:\/\/shop_images\/page-medical-review.png",
         "summary_title": "summary \/ findings",
-        "summary_description": "<p>No time to read the full trial results? We have you covered with a brief outline of the trial and its outcome. The study was administered by Clarity Science LLC, a respected international scientific research company, and led by Dr. Jeffrey Gudin, the principal investigator.<br\/><br\/>The clinical trial results represent the outcomes from the PREVENT study. PREVENT is an IRB-approved, minimal risk, observational trial.<br\/><br\/>The trial evaluated a group of 66 patients with mild, moderate, and severe pain and neuropathic, musculoskeletal, and arthritic conditions. Their changes in pain severity, medication usage, pain interference, and side effects were closely monitored and evaluated.<\/p>"
+        "summary_description": "<p>No time to read the full trial results? We have you covered with a brief outline of the trial and its outcome. The study was administered by Clarity Science LLC, a respected international scientific research company, and led by Dr. Jeffrey Gudin, the principal investigator.<br\/><br\/>The clinical trial results represent the outcomes from the PREVENT study. PREVENT is an IRB-approved, minimal risk, observational trial.<br\/><br\/>The trial evaluated a group of 66 patients with mild, moderate, and severe pain and neuropathic, musculoskeletal, and arthritic conditions. Their changes in pain severity, medication usage, pain interference, and side effects were closely monitored and evaluated.<\/p>",
+        "summary_image": "shopify:\/\/shop_images\/summary-review-info.png"
       }
     },
     "science-small": {
@@ -74,6 +77,7 @@
       "settings": {
         "title": "THE SCIENCE BEHIND KAILO",
         "text": "Learn everything you need to know about how the kailo works",
+        "image": "shopify:\/\/shop_images\/behind-small.png",
         "link_url": "\/",
         "link_text": "learn more"
       }
@@ -84,31 +88,37 @@
         "44787196-5060-46c4-a3a4-d8148c22d120": {
           "type": "block",
           "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
           }
         },
         "4bff5309-1ae2-47e4-93b7-17b78eb3620b": {
           "type": "block",
           "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
           }
         },
         "f84483d2-1a45-4247-99b7-d9bc9eef29df": {
           "type": "block",
           "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
           }
         },
         "0885b358-2b55-4cb4-8763-c35c9d9ad1a1": {
           "type": "block",
           "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
           }
         },
         "2d971b40-4cde-42ea-8797-0ce9809eb6af": {
           "type": "block",
           "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
           }
         },
         "a0658ea1-9bc2-4485-b220-1046e9a6dc79": {
           "type": "block",
           "settings": {
+            "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
           }
         }
       },

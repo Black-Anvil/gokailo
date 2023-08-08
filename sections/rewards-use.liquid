@@ -1,0 +1,166 @@
+<style>
+    .rewards-use {
+        padding: 100px 0;
+    }
+
+    .rewards-use .container {
+        --container-width: 950px;
+    }
+
+    .rewards-use__wrapper:not(:last-child) {
+        margin: 0 0 100px;
+    }
+
+    .rewards-use__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 40px 0 0;
+    }
+
+    .rewards-use__title {
+        max-width: 840px;
+        margin: 0 auto 24px;
+        color: var(--primary5);
+    }
+
+    .rewards-use__text {
+        max-width: 740px;
+        margin: 0 auto 40px;
+        text-align: center;
+    }
+
+    .rewards-use__subtitle {
+        max-width: 620px;
+        margin: 0 auto 24px;
+        text-align: center;
+    }
+
+    .rewards-use__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 0 -40px -40px;
+    }
+
+    .rewards-use__list > li {
+        width: calc(25% - 40px);
+        margin: 0 0 40px 40px;
+        padding: 16px;
+        background-color: var(--grays5);
+        text-align: center;
+    }
+
+    .rewards-use__list > li > *:first-child {
+        color: var(--primary1);
+        margin: 0 0 4px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .rewards-use {
+            padding: 80px 0;
+        }
+
+        .rewards-use__wrapper:not(:last-child) {
+            margin: 0 0 80px;
+        }
+
+        .rewards-use__title {
+            margin: 0 auto 16px;
+        }
+
+        .rewards-use__subtitle {
+            margin: 0 auto 24px;
+        }
+
+        .rewards-use__list {
+            margin: 0 0 -16px -16px;
+        }
+
+        .rewards-use__list > li {
+            width: calc(50% - 16px);
+            margin: 0 0 16px 16px;
+        }
+    }
+</style>
+
+<div class="rewards-use">
+    <div class="container">
+        <div class="rewards-use__wrapper">
+            <h2 class="h2-title rewards-use__title title-decorator">
+                How to Use Your Points for One Time Purchases
+            </h2>
+
+            <p class="rewards-use__text">
+                If you have enough points to redeem, simply apply your points for a discount at checkout with the drop
+                down menu!
+            </p>
+
+            <h5 class="h5-title rewards-use__subtitle">
+                You can redeem in 100 point increments
+            </h5>
+
+            <ul class="rewards-use__list">
+                <li>
+                    <h3 class="h3-title">10$</h3>
+                    <p>100 points</p>
+                </li>
+
+                <li>
+                    <h3 class="h3-title">20$</h3>
+                    <p>200 points</p>
+                </li>
+
+                <li>
+                    <h3 class="h3-title">30$</h3>
+                    <p>300 points</p>
+                </li>
+
+                <li>
+                    <h3 class="h3-title">40$</h3>
+                    <p>400 points</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="rewards-use__wrapper">
+            <h2 class="h2-title rewards-use__title title-decorator">
+                How to Use Your Points for Subscription Purchases
+            </h2>
+
+            <p class="rewards-use__text">
+                Redeeming your points is easy! For active subscriptions, click Redeem My Points and copy & paste your
+                code at checkout. These coupons are for subscription purchases only.
+            </p>
+
+            <h5 class="h5-title rewards-use__subtitle">
+                You can redeem in 100 point increments
+            </h5>
+
+            <ul class="rewards-use__list">
+                <li>
+                    <h3 class="h3-title">10% Off</h3>
+                    <p>100 points</p>
+                </li>
+
+                <li>
+                    <h3 class="h3-title">20% Off</h3>
+                    <p>200 points</p>
+                </li>
+
+                <li>
+                    <h3 class="h3-title">30% Off</h3>
+                    <p>300 points</p>
+                </li>
+
+                <li>
+                    <h3 class="h3-title">40% Off</h3>
+                    <p>400 points</p>
+                </li>
+            </ul>
+
+            <div class="rewards-use__buttons">
+                <a class="button button--primary" href="#">REDEEM MY POINTS</a>
+            </div>
+        </div>
+    </div>
+</div>

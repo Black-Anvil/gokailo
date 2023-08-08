@@ -5,12 +5,6 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "settings": {
-        "text": "Due to the worker shortage please expect 1-2 day shipping delays for USPS Priority Mail and First Class Package Service",
-        "twitter": true,
-        "facebook": true,
-        "youtube": true,
-        "instagram": true,
-        "email": true
       }
     },
     "navigation": {

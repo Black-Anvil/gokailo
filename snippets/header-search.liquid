@@ -85,6 +85,7 @@
         background-color: var(--grays6);
         border-radius: 0 0 6px 6px;
         box-shadow: 0 4px 8px 0 rgba(77, 77, 77, 0.10);
+        overflow: hidden;
     }
 
     .predictive-search.opened {
@@ -95,6 +96,12 @@
         display: flex;
         justify-content: space-between;
         padding: 12px 0;
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+    .predictive-search__link svg {
+        min-width: 24px;
     }
 
     .predictive-search__wrapper {
@@ -121,8 +128,8 @@
         width: 100px;
         min-width: 100px;
         height: 100px;
-        margin: 0 8px 0 0;
         object-fit: cover;
+        overflow: hidden;
     }
 
     .predictive-search__title {
@@ -139,6 +146,26 @@
         margin: 0 0 8px;
         padding: 0 0 8px;
         border-bottom: 1px solid var(--grays4);
+    }
+
+    .predictive-search__list a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .predictive-search__article-image {
+        position: relative;
+    }
+
+    .predictive-search__article-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(53, 93, 102, 0.60);
     }
 
     .predictive-search__published {
@@ -162,9 +189,54 @@
         transform: translateY(-50%);
     }
 
-    .predictive-search__list a {
-        display: flex;
-        align-items: center;
+    @media screen and (max-width: 768px) {
+        .search form {
+            position: static;
+        }
+
+        .predictive-search {
+            left: 0;
+            top: 100%;
+            padding: 0 16px;
+        }
+
+        .predictive-search__wrapper {
+            padding: 16px 0 0;
+        }
+
+        .predictive-search__results {
+            flex-direction: column;
+            margin: 0;
+        }
+
+        .predictive-search__column {
+            margin: 0 0 16px;
+        }
+
+        .predictive-search__row:not(:last-child) {
+            margin: 0 0 16px;
+        }
+
+        .predictive-search img {
+            width: 80px;
+            min-width: 80px;
+            height: 80px;
+        }
+
+        .predictive-search__title {
+            margin: 0 0 16px;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .predictive-search__published {
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .predictive-search__published span::before {
+            display: none;
+        }
     }
 </style>
 
@@ -174,7 +246,7 @@
             <label>
                 {% render "icon-search" %}
 
-                <input placeholder="Search" type="text">
+                <input placeholder="Search" maxlength="20" type="text">
 
                 <span style="display:none;" class="search__btn-clear button-icon">
                     clear
@@ -227,6 +299,8 @@
     searchLink.addEventListener("click", (e) => {
         e.preventDefault();
         search.classList.add("opened");
+        document.body.style.overflow = "hidden";
+        document.body.classList.add("hidden");
     });
 
     searchBtnClear.addEventListener("click", () => {
@@ -237,6 +311,8 @@
     searchBtnClose.addEventListener("click", () => {
         search.classList.remove("opened");
         predictiveSearch.classList.remove("opened");
+        document.body.style.overflow = "visible";
+        document.body.classList.remove("hidden");
     });
 
     const convertData = (originalTime) => {
@@ -330,7 +406,9 @@
                 items: items.map(item => (`
                     <li>
                         <a href="${item.url}">
-                            <img src="${item.featured_image.url}" alt="${item.title}">
+                            <div class="predictive-search__article-image">
+                                <img src="${item.featured_image.url}" alt="${item.title}">
+                            </div>
 
                             <div class="predictive-search__info">
                                 <p><b>${item.title}</b></p>

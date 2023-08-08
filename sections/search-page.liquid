@@ -1,0 +1,128 @@
+<style>
+    .search-page__wrapper {
+        padding: 80px 0 100px;
+    }
+
+    .search-page__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 40px;
+    }
+
+    .search-page form {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin: 0 auto 40px;
+        max-width: 500px;
+    }
+
+    .search-page .field-block {
+        width: 100%;
+    }
+
+    .search-page__item {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .search-page__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .search-page__list {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .search-page__wrapper {
+            padding: 60px 0 80px;
+        }
+
+        .search-page__list {
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .search-page form {
+            margin: 0 auto 24px;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .search-page__list {
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .search-page form {
+            flex-direction: column;
+        }
+
+        .search-page form .button {
+            width: 100%;
+        }
+    }
+</style>
+
+<div class="search-page">
+    {% render "top-logo", title: "your search", text: "Items", count: search.results_count %}
+
+    <div class="search-page__wrapper">
+        <div class="container">
+            <form action="{{ routes.search_url }}">
+                <div class="field-block">
+                    <input type="text"
+                           placeholder="Search"
+                           name="q"
+                           value="{{ search.terms | escape }}"
+                    >
+                </div>
+
+                <input class="button button--primary" type="submit" value="Search">
+            </form>
+
+            {% assign resultsSize = search.results.size %}
+
+            {% if resultsSize != 0 %}
+                <ul class="search-page__list">
+                    {% for result in search.results %}
+                        {% if result.object_type == "product" %}
+                            <li class="search-page__item">
+                                <div class="search-page__image">
+                                    <img src="{{ result.featured_image | image_url }}"
+                                         alt="{{ result.featured_image.alt }}">
+                                </div>
+
+                                <h3 class="button-text">{{ result.title }}</h3>
+
+                                <a class="button button--primary" href="{{ result.url }}">View Product</a>
+                            </li>
+                        {% endif %}
+
+                        {% if result.object_type == "article" %}
+                            <li class="search-page__item">
+                                <div class="search-page__image">
+                                    <img src="{{ result.image | image_url }}" alt="{{ result.image.alt }}">
+                                </div>
+
+                                <h3 class="button-text">{{ result.title }}</h3>
+
+                                <a class="button button--primary" href="{{ result.url }}">View Article</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Nothing not found. Please try again.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -27,6 +27,11 @@
         margin: 0 0 24px;
     }
 
+    .page-hero__buttons {
+        display: flex;
+        gap: 24px;
+    }
+
     @media screen and (max-width: 768px) {
         .page-hero {
             padding: 100px 0 60px;
@@ -35,6 +40,13 @@
         .page-hero__block > *:not(:last-child),
         .page-hero__info > *:not(:last-child) {
             margin: 0 0 16px;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .page-hero__buttons {
+            flex-direction: column;
+            gap: 16px;
         }
     }
 </style>
@@ -59,7 +71,8 @@
                     {% endif %}
 
                     {% if section.settings.image %}
-                        <img src="{{ section.settings.image | image_url }}" width="200" alt="{{ section.settings.image.alt }}">
+                        <img src="{{ section.settings.image | image_url }}" width="200"
+                             alt="{{ section.settings.image.alt }}">
                     {% endif %}
 
                     {% if section.settings.link_url != blank and section.settings.link_text != blank %}
@@ -67,6 +80,23 @@
                             {{ section.settings.link_text }}
                         </a>
                     {% endif %}
+
+                    <div class="page-hero__buttons">
+                        {% for block in section.blocks %}
+                            {% case block.settings.type %}
+                                {% when "primary" %}
+                                    {% assign class = "button--primary" %}
+                                {% when "stroked" %}
+                                    {% assign class = "button--stroked white" %}
+                                {% else %}
+                                    {% assign class = "" %}
+                            {% endcase %}
+
+                            <a class="button {{ class }}" href="{{ block.settings.link_url }}">
+                                {{ block.settings.link_text }}
+                            </a>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
@@ -115,6 +145,41 @@
       "type": "text",
       "id": "link_text",
       "label": "Link Text"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Link",
+      "type": "link",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "select",
+          "id": "type",
+          "label": "Link Type",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "stroked",
+              "label": "Stroked"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text"
+        }
+      ]
     }
   ]
 }

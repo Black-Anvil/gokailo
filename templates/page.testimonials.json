@@ -168,6 +168,11 @@
         "background_color": "#2794a8"
       }
     },
+    "yotpo-reviews": {
+      "type": "yotpo-reviews",
+      "settings": {
+      }
+    },
     "shop-category": {
       "type": "shop-category",
       "settings": {
@@ -185,6 +190,7 @@
     "stories-list",
     "stories-video",
     "icon-list",
-    "shop-category"
+    "shop-category",
+    "yotpo-reviews"
   ]
 }

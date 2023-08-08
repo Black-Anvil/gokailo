@@ -1,7 +1,7 @@
 <style>
     .page-science-small {
         padding: 80px 0;
-        background-image: url({{ "page-science-small.png" | asset_url }});
+        background-image: url({{ section.settings.image | image_url }});
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -74,6 +74,11 @@
       "type": "text",
       "id": "text",
       "label": "Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
     },
     {
       "type": "url",

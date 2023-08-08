@@ -1,12 +1,12 @@
 {
   "sections": {
-    "rewards": {
-      "type": "rewards",
+    "search-page": {
+      "type": "search-page",
       "settings": {
       }
     }
   },
   "order": [
-    "rewards"
+    "search-page"
   ]
 }

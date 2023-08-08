@@ -13,13 +13,19 @@ const mainImageSize = () => {
     };
 
     const catalogListSelector = ".catalog__list > li";
+    const blogListSelector = ".blog__list > li";
     const productImageSelector = ".product__images > li";
+    const productSlideSelector = ".product__swiper .swiper-slide";
     const pageCollectionSelector = ".shop-category__swiper .swiper-slide";
+    const pageSearchSelector = ".search-page__list > li";
 
     const initImagesChanger = () => {
         changeImgSize(catalogListSelector);
         changeImgSize(productImageSelector);
         changeImgSize(pageCollectionSelector);
+        changeImgSize(blogListSelector);
+        changeImgSize(pageSearchSelector);
+        changeImgSize(productSlideSelector);
     };
 
     initImagesChanger();

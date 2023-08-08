@@ -15,6 +15,11 @@
     background-color: var(--complete-bg);
 }
 
+.tag--default {
+    color: var(--grays6);
+    background: rgba(255, 255, 255, 0.20);
+}
+
 .tag--fulfilled {
     color: var(--fulfilled);
     background-color: var(--fulfilled-bg);

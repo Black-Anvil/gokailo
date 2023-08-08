@@ -45,7 +45,17 @@
             "author_position": "CALIFORNIA"
           }
         },
-        "9220a555-1e34-4d21-b91a-da60ee2d9e4c": {
+        "aa66e86e-5e1f-43d3-8cb3-97afa46b70be": {
+          "type": "slide",
+          "settings": {
+            "title": "THIS THING REALLY WORKS",
+            "content": "<p>\"I had lung surgery 5 years ago and have been in pain every day since (nerve damage they say). I've tried physical therapy, acupuncture, cryotherapy, several nerve pills but the only thing up until Kailo that helped cut the pain was Oxy. I've been wearing two Kailo patches now for about 2 months and haven't taken a pain pill the entire time. THANK YOU KAILO!\"<\/p>",
+            "author_image": "shopify:\/\/shop_images\/home-testimonials.jpg",
+            "author_name": "cary p.",
+            "author_position": "CALIFORNIA"
+          }
+        },
+        "d813be48-793f-459f-b550-b45dd79f028f": {
           "type": "slide",
           "settings": {
             "title": "THIS THING REALLY WORKS",
@@ -58,7 +68,8 @@
       },
       "block_order": [
         "682df9a3-2db9-4911-9373-4494bad24266",
-        "9220a555-1e34-4d21-b91a-da60ee2d9e4c"
+        "aa66e86e-5e1f-43d3-8cb3-97afa46b70be",
+        "d813be48-793f-459f-b550-b45dd79f028f"
       ],
       "settings": {
         "video": "https:\/\/vimeo.com\/644391532",
@@ -76,31 +87,31 @@
             "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
           }
         },
-        "d03c3b00-8867-4e09-8fc0-5f2ddbe901d7": {
+        "31d12227-6898-4556-8683-17683561039e": {
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
           }
         },
-        "3b918b82-01ae-4da9-9f8e-ba3408003c56": {
+        "38a8b462-9183-48c9-aea5-1ae292649094": {
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
           }
         },
-        "3ba45dc0-a78f-4018-b3ad-3cdaa759b8ad": {
+        "a98e13e7-0572-4c40-b624-aa5822f0b609": {
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
           }
         },
-        "df8ab8a6-60b7-42ae-b0e2-1c130e7b8ad1": {
+        "93491daa-47a4-462d-9e5b-25f80eea7aa8": {
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
           }
         },
-        "9157630f-1e86-41b1-82e2-5f7285fedc62": {
+        "1e137e2b-1a05-4606-8ea9-63646a15fb44": {
           "type": "block",
           "settings": {
             "image": "shopify:\/\/shop_images\/home-advantages-icon.png"
@@ -109,11 +120,11 @@
       },
       "block_order": [
         "28bffeef-7425-4fe0-b9f3-040c0e05224c",
-        "d03c3b00-8867-4e09-8fc0-5f2ddbe901d7",
-        "3b918b82-01ae-4da9-9f8e-ba3408003c56",
-        "3ba45dc0-a78f-4018-b3ad-3cdaa759b8ad",
-        "df8ab8a6-60b7-42ae-b0e2-1c130e7b8ad1",
-        "9157630f-1e86-41b1-82e2-5f7285fedc62"
+        "31d12227-6898-4556-8683-17683561039e",
+        "38a8b462-9183-48c9-aea5-1ae292649094",
+        "a98e13e7-0572-4c40-b624-aa5822f0b609",
+        "93491daa-47a4-462d-9e5b-25f80eea7aa8",
+        "1e137e2b-1a05-4606-8ea9-63646a15fb44"
       ],
       "settings": {
         "background_color": "#355d66"

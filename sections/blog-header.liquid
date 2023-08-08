@@ -1,0 +1,231 @@
+<style>
+    .blog-header {
+        position: relative;
+        color: var(--grays6);
+        background-color: var(--primary5);
+        overflow: hidden;
+    }
+
+    .blog-header .swiper-slide {
+        padding: 150px 0 90px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .blog-header__block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        max-width: 1030px;
+        padding: 0 300px 0 0;
+    }
+
+    .blog-header__pagination {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+    }
+
+    .blog-header__pagination .swiper-pagination {
+        display: flex;
+        flex-direction: column;
+        max-width: 286px;
+        gap: 24px;
+        width: 100% !important;
+    }
+
+    .blog-header__pagination .swiper-pagination-bullet::before {
+        display: none;
+    }
+
+    .blog-header__pagination .swiper-pagination-bullet {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        text-align: left;
+        width: 100%;
+        height: 100%;
+        margin: 0 !important;
+        opacity: 1;
+    }
+
+    .blog-header__pagination i {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .blog-header__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .blog-header__author {
+        display: flex;
+        align-items: center;
+    }
+
+    .blog-header__author-separator {
+        margin: 0 8px;
+        width: 1px;
+        height: 14px;
+        background-color: var(--grays4);
+    }
+
+    .blog-header__pagination i::after,
+    .blog-header__pagination i::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: rgba(255, 255, 255, 0.20);
+    }
+
+    .blog-header__pagination i::after {
+        width: 0;
+        background-color: var(--primary1);
+    }
+
+    .blog-header__pagination .swiper-pagination-bullet-active i::after {
+        animation-name: countingBar;
+        animation-duration: 3s;
+        animation-timing-function: ease-in;
+        animation-iteration-count: 1;
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes countingBar {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .blog-header .swiper-slide {
+            padding: 100px 0 60px;
+        }
+
+        .blog-header__block {
+            padding: 0 0 200px;
+        }
+
+        .blog-header__pagination {
+            top: auto;
+            bottom: 60px;
+            left: 0;
+            transform: translate(0, 0);
+        }
+
+        .blog-header__pagination .swiper-pagination {
+            max-width: 100%;
+            gap: 16px;
+            width: 100% !important;
+        }
+
+        .blog-header__pagination .swiper-pagination-bullet {
+            gap: 16px;
+        }
+
+        .blog-header__info {
+            gap: 16px;
+        }
+
+        .blog-header__author {
+            flex-direction: column;
+            gap: 4px;
+            align-items: flex-start;
+        }
+
+        .blog-header__author-separator {
+            display: none;
+        }
+    }
+</style>
+
+<div class="blog-header">
+    <div class="blog-header__swiper">
+        <div class="swiper-wrapper">
+            {% for article in blog.articles limit: 3 %}
+                <div class="swiper-slide" style="background-image: linear-gradient(0deg, rgba(53, 93, 102, 0.80) 0%, rgba(53, 93, 102, 0.80) 100%), url({{ article.image | image_url }})">
+                    <div class="container">
+                        <div class="blog-header__block">
+                            {% if article.tags[0] %}
+                                <div>
+                                    <span class="caption-text tag tag--default">{{ article.tags[0] }}</span>
+                                </div>
+                            {% endif %}
+
+                            <div class="blog-header__info">
+                                <h2 class="h2-title">{{ article.title }}</h2>
+
+                                <div class="blog-header__author">
+                                    <span>By {{ article.author }}</span>
+                                    <span class="blog-header__author-separator"></span>
+                                    <span>{{ article.published_at | date: '%B %d, %Y' }}</span>
+                                </div>
+
+                                <a class="button-text button-link" href="{{ article.url }}">read article</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="container blog-header__pagination">
+            <div class="swiper-pagination swiper-pagination--vertical"
+                 data-pagination="{% for article in blog.articles limit: 3 %}{{ article.title }},{% endfor %}"></div>
+        </div>
+    </div>
+</div>
+
+<script type="module">
+    const initSlider = () => {
+        new Swiper('.blog-header__swiper', {
+            slidesPerView: 1,
+
+            autoHeight: true,
+
+            loop: true,
+            autoplayDisableOnInteraction: false,
+            autoplay: {
+                delay: 3000
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    const swiper = document.querySelector(".blog-header__swiper");
+                    const list = swiper.querySelector(".swiper-pagination").dataset.pagination.split(",").filter(item => item);
+
+                    return '<span class="' + className + '">' + `<b>${list[index]}</b>` + '<i></i>' + '</span>';
+                },
+            },
+        });
+    };
+
+    document.addEventListener("shopify:section:load", initSlider);
+
+    initSlider();
+</script>
+

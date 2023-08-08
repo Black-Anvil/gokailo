@@ -1,0 +1,88 @@
+<style>
+    .article-header {
+        position: relative;
+        padding: 150px 0 130px;
+        color: var(--grays6);
+        background-color: var(--primary5);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(0deg, rgba(53, 93, 102, 0.80) 0%, rgba(53, 93, 102, 0.80) 100%), url({{ article.image | image_url }})
+    }
+
+    .article-header .container {
+        --container-width: 1060px;
+    }
+
+    .article-header__block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .article-header__info {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .article-header__author {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .article-header__author-separator {
+        margin: 0 8px;
+        width: 1px;
+        height: 14px;
+        background-color: var(--grays4);
+    }
+
+    @media screen and (max-width: 768px) {
+        .article-header {
+            padding: 100px 0 60px;
+        }
+
+        .article-header__info {
+            gap: 16px;
+        }
+
+        .article-header__author {
+            flex-direction: column;
+            gap: 8px;
+        }
+        .article-header__author-separator {
+            display: none;
+        }
+    }
+</style>
+
+{{ "tag.css" | asset_url | stylesheet_tag }}
+
+<div class="article-header">
+    <div class="container">
+        <div class="article-header__block">
+            {% if article.tags[0] %}
+                <div>
+                    <span class="caption-text tag tag--default">{{ article.tags[0] }}</span>
+                </div>
+            {% endif %}
+
+            <div class="article-header__info">
+                <h2 class="h1-title">{{ article.title }}</h2>
+
+                <div class="article-header__author">
+                    <span>By {{ article.author }}</span>
+                    <span class="article-header__author-separator"></span>
+                    <span>{{ article.published_at | date: '%B %d, %Y' }}</span>
+                    <span class="article-header__author-separator"></span>
+                    <span>{% if article.comments_count != 0 %}{{ article.comments_count }}{% else %}No{% endif %} Comments</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,169 @@
+<style>
+    .vip-club {
+        padding: 100px 0;
+        background-color: var(--grays5);
+    }
+
+    .vip-club__title {
+        margin: 0 0 60px;
+        color: var(--primary5);
+    }
+
+    .vip-club__swiper {
+        overflow: hidden;
+    }
+
+    .vip-club .swiper-slide {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 24px;
+        border-radius: 6px;
+        background-color: var(--grays6);
+        height: 100%;
+    }
+
+    .vip-club .swiper-slide > svg {
+        margin: 0 0 8px;
+    }
+
+    .vip-club__subtitle {
+        margin: 0 0 4px;
+        color: var(--grays1);
+    }
+
+    .vip-club .swiper-slide p {
+        color: var(--grays3);
+    }
+
+    .vip-club__sublist {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        margin: 24px 0 0;
+    }
+
+    .vip-club__sublist > li {
+        display: flex;
+        align-items: center;
+    }
+
+    .vip-club__sublist > li:not(:last-child) {
+        margin: 0 0 16px;
+    }
+
+    .vip-club__sublist svg {
+        margin: 0 8px 0 0;
+    }
+
+    .vip-club__swiper .swiper-pagination {
+        margin-top: 24px;
+        justify-content: center;
+    }
+
+    @media screen and (max-width: 768px) {
+        .vip-club {
+            padding: 60px 0;
+        }
+
+        .vip-club .swiper-slide {
+            padding: 16px;
+        }
+
+        .vip-club__sublist {
+            margin: 16px 0 0;
+        }
+    }
+</style>
+
+<div class="vip-club">
+    <div class="container">
+        <h2 class="h2-title vip-club__title title-decorator">the vip club</h2>
+
+        <div class="vip-club__swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    {% render "icon-bronze-club" %}
+                    <h4 class="h4-title vip-club__subtitle">Bronze</h4>
+                    <p>Spend $100</p>
+
+                    <ul class="vip-club__sublist">
+                        <li>
+                            {% render "icon-check" %}
+                            <span>1x Point Multipliers</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="swiper-slide">
+                    {% render "icon-silver-club" %}
+                    <h4 class="h4-title vip-club__subtitle">Silver</h4>
+                    <p>Spend $300</p>
+
+                    <ul class="vip-club__sublist">
+                        <li>
+                            {% render "icon-check" %}
+                            <span>1.25x Point Multipliers</span>
+                        </li>
+
+                        <li>
+                            {% render "icon-check" %}
+                            <span>25 Points Upon Entry</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="swiper-slide">
+                    {% render "icon-gold-club" %}
+                    <h4 class="h4-title vip-club__subtitle">Gold</h4>
+                    <p>Spend $500</p>
+
+                    <ul class="vip-club__sublist">
+                        <li>
+                            {% render "icon-check" %}
+                            <span>1.5x Point Multipliers</span>
+                        </li>
+
+                        <li>
+                            {% render "icon-check" %}
+                            <span>25 Points Upon Entry</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="swiper-pagination primary"></div>
+        </div>
+    </div>
+</div>
+
+<script type="module">
+    const initSlider = () => {
+        new Swiper('.vip-club__swiper', {
+            slidesPerView: 1,
+            spaceBetween: 16,
+
+            breakpoints: {
+                630: {
+                    slidesPerView: 2,
+                },
+                920: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+            },
+
+            autoHeight: true,
+
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        })
+    };
+
+    document.addEventListener("shopify:section:load", initSlider);
+
+    initSlider();
+</script>
