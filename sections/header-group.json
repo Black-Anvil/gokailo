@@ -15,17 +15,6 @@
     },
     "navigation": {
       "type": "navigation",
-      "blocks": {
-        "eb4ee482-2eef-4592-8a3f-97d8bd1bf7ff": {
-          "type": "nav",
-          "settings": {
-            "menu": ""
-          }
-        }
-      },
-      "block_order": [
-        "eb4ee482-2eef-4592-8a3f-97d8bd1bf7ff"
-      ],
       "settings": {
         "collection_list": [
           "kailo-flex",

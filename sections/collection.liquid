@@ -1,3 +1,13 @@
+<style>
+  .catalog .title-decorator:not(:first-of-type) {
+    margin-top: 60px;
+  }
+
+  .catalog .title-decorator {
+    margin-bottom: 40px;
+  }
+</style>
+
 {{ "catalog.css" | asset_url | stylesheet_tag }}
 {{ "tag.css" | asset_url | stylesheet_tag }}
 {{ "compare-price.css" | asset_url | stylesheet_tag }}
@@ -38,13 +48,36 @@
             {% if productsCount == 0 %}
                 <p>No active products here.</p>
             {% else %}
-                <ul class="catalog__list">
-                    {% for product in collection.products %}
-                        <li>
-                            {% render "single-product", product: product %}
-                        </li>
-                    {% endfor %}
-                </ul>
+                {% if collection.handle == 'all-pain-patches' %}
+                    <h2 class="h2-title title-decorator">Kailo Original Products</h2>
+                    <ul class="catalog__list">
+                        {% for product in collection.products %}
+                            {% if product.tags contains 'kailo family' %}
+                                <li>
+                                    {% render "single-product", product: product %}
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <h2 class="h2-title title-decorator">Flex Products</h2>
+                    <ul class="catalog__list">
+                        {% for product in collection.products %}
+                            {% if product.tags contains 'flex family' %}
+                                <li>
+                                    {% render "single-product", product: product %}
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <ul class="catalog__list">
+                        {% for product in collection.products %}
+                            <li>
+                                {% render "single-product", product: product %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             {% endif %}
         </div>
     </div>
