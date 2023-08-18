@@ -175,7 +175,7 @@ path {
 }
 
 
-
+.shopify-challenge__button,
 .button {
     position: relative;
     display: inline-flex;
@@ -197,11 +197,14 @@ path {
     transition: opacity 0.15s linear;
 }
 
+.shopify-challenge__button,
 .button:disabled {
     opacity: 0.8;
     pointer-events: none;
 }
 
+.shopify-challenge__button:hover,
+.shopify-challenge__button:focus,
 .button:hover,
 .button:focus {
     text-decoration: none;
@@ -239,6 +242,8 @@ path {
     pointer-events: none;
 }
 
+
+.shopify-challenge__button,
 .button--primary {
     color: var(--grays6);
     border: 1px solid var(--primary1);
@@ -246,6 +251,8 @@ path {
     transition: box-shadow 0.15s linear, transform 0.15s linear, background-color 0.15s linear, border 0.15s linear, color 0.15s linear;
 }
 
+.shopify-challenge__button:hover,
+.shopify-challenge__button:focus,
 .button--primary:hover,
 .button--primary:focus {
     transform: translateY(-3px);
@@ -313,12 +320,20 @@ path {
 .bg-gray {
     background-color: var(--grays5);
 }
-
+.shopify-challenge__container,
 .page-inner {
     padding: 150px 0 100px;
 }
 
+.shopify-challenge__container,
+.shopify-challenge__container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 @media screen and (max-width: 768px) {
+    .shopify-challenge__container,
     .page-inner {
         padding: 100px 0 80px;
     }

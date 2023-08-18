@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
 
     <title>
-      {% if template.name == 'password' %}{{ shop.name }}{% else %}{{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}{% endif %}
+        {% if template.name == 'password' %}{{ shop.name }}{% else %}{{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}{% endif %}
     </title>
 
     {{ "reset.css" | asset_url | stylesheet_tag }}
@@ -23,7 +23,7 @@
     {{ "content.css" | asset_url | stylesheet_tag }}
 
     {{ content_for_header }}
-  <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/6VubeMJ7GY2e0Ai0ynXuSw" async></script>
+    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/6VubeMJ7GY2e0Ai0ynXuSw" async></script>
 </head>
 <body class="checkout">
 

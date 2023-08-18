@@ -62,7 +62,7 @@
     }
 
     .home-about__list button.active::before {
-      opacity: 1;
+        opacity: 1;
     }
 
     .home-about__list button.active {
@@ -476,47 +476,47 @@
 </section>
 
 <script type="module">
-   const initSlide = () => {
-       const about = document.querySelector(".home-about");
-       const list = about.querySelector(".home-about__list");
-       const slider = about.querySelector(".home-about__slider");
-       const listButtons = list.querySelectorAll("button");
-       const slides = slider.querySelectorAll(".home-about__slide");
+    const initSlide = () => {
+        const about = document.querySelector(".home-about");
+        const list = about.querySelector(".home-about__list");
+        const slider = about.querySelector(".home-about__slider");
+        const listButtons = list.querySelectorAll("button");
+        const slides = slider.querySelectorAll(".home-about__slide");
 
-       slides.forEach(slide => {
-           slide.classList.add("visible-hidden");
-       });
+        slides.forEach(slide => {
+            slide.classList.add("visible-hidden");
+        });
 
-       listButtons.forEach((btn, btnIndex) => {
-           if (btn.classList.contains("active")) {
-               slides[btnIndex].classList.remove("visible-hidden");
-           }
+        listButtons.forEach((btn, btnIndex) => {
+            if (btn.classList.contains("active")) {
+                slides[btnIndex].classList.remove("visible-hidden");
+            }
 
-           const slideShow = (btnIndex) => {
-               slides.forEach((slide, slideIndex) => {
-                   if (btnIndex === slideIndex) {
-                       slide.classList.remove("visible-hidden");
-                   } else {
-                       slide.classList.add("visible-hidden");
-                   }
-               });
-           };
+            const slideShow = (btnIndex) => {
+                slides.forEach((slide, slideIndex) => {
+                    if (btnIndex === slideIndex) {
+                        slide.classList.remove("visible-hidden");
+                    } else {
+                        slide.classList.add("visible-hidden");
+                    }
+                });
+            };
 
-           btn.addEventListener("click", (e) => {
-               listButtons.forEach(btn => {
-                   btn.classList.remove("active");
-               });
+            btn.addEventListener("click", (e) => {
+                listButtons.forEach(btn => {
+                    btn.classList.remove("active");
+                });
 
-               slideShow(btnIndex);
+                slideShow(btnIndex);
 
-               e.target.classList.add("active");
-           });
-       });
-   };
+                e.target.classList.add("active");
+            });
+        });
+    };
 
-   window.addEventListener("shopify:section:load", initSlide);
+    window.addEventListener("shopify:section:load", initSlide);
 
-   initSlide();
+    initSlide();
 </script>
 
 {% schema %}

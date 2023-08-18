@@ -439,7 +439,9 @@
 
             <ul class="navigation__list">
                 <li>
-                    <span class="h6-title">shop</span>
+                    <span class="h6-title">
+                        <a href="{{ routes.all_products_collection_url }}">shop</a>
+                    </span>
 
                     <ul class="navigation__sublist navigation__sublist--store">
                         {% for collection in section.settings.collection_list %}

@@ -69,6 +69,12 @@
         margin-top: 24px;
     }
 
+    .product__form-flex {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
     @media screen and (max-width: 768px) {
         .product .breadcrumbs {
             margin: 0 0 24px;
@@ -105,6 +111,12 @@
 
         .product__info-price {
             margin: 0 0 16px;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .product__form-flex {
+          grid-template-columns: 1fr;
         }
     }
 </style>
@@ -169,23 +181,28 @@
                             </div>
 
                             <div class="form__row{% if product.has_only_default_variant and product.available == false %} form__row--no-variants-sold-out{% endif %}">
-                                <select style='display: none;' name="id" data-productid="{{ product.id }}" id="productSelect-{{ section.id }}" class="product-single__variants">
-                                    {% for variant in product.variants %}
-                                        {% if variant.available %}
-
-                                            <option {% if variant == current_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
-
-                                        {% else %}
-                                            <option disabled="disabled">
-                                                {{ variant.title }} - {{ 'products.product.sold_out' | t }}
-                                            </option>
-                                        {% endif %}
-                                    {% endfor %}
-                                </select>
-
-                                <div id="quantity-selector-{{ section.id }}" class="field-block form__column quantity-selector">
-                                    <label for="Quantity" class="quantity-selector">Quantity</label>
-                                    <input type="number" id="Quantity" name="quantity" value="1" min="1" class="qty-remove-defaults quantity-selector">
+                                <div class="product__form-flex">
+                                  <div id="variants-selector-{{ section.id }}" class="field-block variants-selector">
+                                    <label for="productSelect-{{ section.id }}">Denominations</label>
+                                     <select name="id" data-productid="{{ product.id }}" id="productSelect-{{ section.id }}" class="product-single__variants">
+                                        {% for variant in product.variants %}
+                                            {% if variant.available %}
+    
+                                                <option {% if variant == current_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+    
+                                            {% else %}
+                                                <option disabled="disabled">
+                                                    {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                                                </option>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </select>
+                                  </div>
+  
+                                  <div id="quantity-selector-{{ section.id }}" class="field-block">
+                                      <label for="Quantity" class="quantity-selector">Quantity</label>
+                                      <input type="number" id="Quantity" name="quantity" value="1" min="1" class="qty-remove-defaults quantity-selector">
+                                  </div>
                                 </div>
 
                                 <div class="form__column{% if section.settings.enable_payment_button %} form__column--shopify-payment-btn{% endif %}">
@@ -315,5 +332,16 @@
     document.addEventListener("shopify:section:load", initSlider);
 
     initSlider();
+
+    const variants = document.querySelector(".variants-selector");
+    const formFlex = document.querySelector(".product__form-flex");
+    const variantsSelect = variants.querySelector("select");
+
+    if (variantsSelect.options.length <= 1) {
+      variants.style.display = "none";
+      formFlex.style.gridTemplateColumns = "none";
+    }
 </script>
+
+
 
