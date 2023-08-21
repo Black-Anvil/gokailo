@@ -379,6 +379,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		{% endif %}
   {% render 'preorder-now' %}
 
+  {% if product %}
+    {% render 'klaviyo-added-to-cart' %}
+  {% endif %}
+
 <script type="text/javascript">
 var _learnq = _learnq || [];
 function addedToCart() {
