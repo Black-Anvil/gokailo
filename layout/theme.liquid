@@ -383,7 +383,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {% render 'klaviyo-added-to-cart' %}
   {% endif %}
 
-<script type="text/javascript">
+{% comment %} <script type="text/javascript">
 var _learnq = _learnq || [];
 function addedToCart() {
   fetch(`${window.location.origin}/cart.js`)
@@ -417,7 +417,7 @@ $(document).ajaxComplete(function(event, request, settings){
   if(settings.url == "/cart/add.js"){
       addedToCart()
   }
-})</script>
+})</script> {% endcomment %}
 	
 	
     
