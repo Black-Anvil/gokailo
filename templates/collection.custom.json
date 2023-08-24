@@ -1,0 +1,34 @@
+{
+  "sections": {
+    "main": {
+      "type": "collection-template-custom",
+      "blocks": {
+        "a05cc28a-702d-42e5-a277-fe3a63b7efa1": {
+          "type": "subcollection",
+          "settings": {
+            "subheading": "Flex Products",
+            "subcollection_tag": "flex family",
+            "bg_color": ""
+          }
+        },
+        "09050245-0759-4cc9-bf3a-eb5fe4b08d61": {
+          "type": "subcollection",
+          "settings": {
+            "subheading": "Kailo Original Products",
+            "subcollection_tag": "kailo family",
+            "bg_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "a05cc28a-702d-42e5-a277-fe3a63b7efa1",
+        "09050245-0759-4cc9-bf3a-eb5fe4b08d61"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
