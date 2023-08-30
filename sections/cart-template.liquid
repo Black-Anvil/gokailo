@@ -162,6 +162,16 @@
     padding: 10px;
     font-weight: bold;
   }
+  .cart-warning__btn {
+    width: 100%;
+    min-height: 60px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+  }
   @media screen and (max-width: 1105px) {
     .number {
       font-size: 4.5em;
@@ -310,9 +320,11 @@
                     {%- endif -%}
                   </div>
                   {% if item.product.tags contains 'kailo adhesives' and kailo_in_cart == false and flex_in_cart == true %}
-                    <p class="cart-warning">Note: These Kailo Original adhesives are not compatible with a Flex product in your cart.</p>
+                    <p class="cart-warning">Note: These Kailo Original adhesives are not compatible with a Flex product in your cart.</p>                   
+                    <a id="flex-adhesives" class="btn btn--fill btn--color cart-warning__btn">Replace with Flex adhesives</a>
                   {% elsif item.product.tags contains 'flex adhesives' and flex_in_cart == false and kailo_in_cart == true %}
                     <p class="cart-warning">Note: These Flex adhesives are not compatible with a Kailo Original product in your cart.</p>
+                    <a id="kailo-adhesives" class="btn btn--fill btn--color cart-warning__btn">Replace with Kailo Original adhesives</a>
                   {% endif %}
                 </div>
 
@@ -334,7 +346,7 @@
 
             <label for="updates_{{ item.key }}" class="fallback-text">{{ 'cart.general.quantity' | t }}</label>
             <input class="count qty-remove-defaults" type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0" data-id="{{ item.key }}">
-            <a class="remove" href="/cart/change?line={{ forloop.index }}&amp;quantity=0" data-id="{{ item.key }}">
+            <a {% if item.product.tags contains 'kailo adhesives' %}id="kailo" {% elsif item.product.tags contains 'flex adhesives' %}id="flex" {% endif %}class="remove" href="/cart/change?line={{ forloop.index }}&amp;quantity=0" data-id="{{ item.key }}">
               <span aria-hidden="true">{% include 'asset_svg' with 'close' %}</span>
               <span class="fallback-text">{{ 'cart.general.remove_item' | t }}</span>
             </a>
@@ -487,6 +499,39 @@
 
 </div>
 
+<script>
+
+  const flexRemover = document.querySelector('#flex');
+  const kailoRemover = document.querySelector('#kailo');
+  const removeAdhesives = sessionStorage.getItem('removeAdhesives');
+  if (removeAdhesives === 'flex') {
+    sessionStorage.removeItem('removeAdhesives');
+    flexRemover.click();
+  }
+  if (removeAdhesives === 'kailo') {
+    sessionStorage.removeItem('removeAdhesives');
+    kailoRemover.click();
+  }
+
+  const flexAdhesivesBtn = document.querySelector('#flex-adhesives');
+  if (flexAdhesivesBtn) {
+    flexAdhesivesBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      sessionStorage.setItem('removeAdhesives', 'kailo');
+      window.location.pathname = '/cart/add/42789177491587';
+    });
+  }
+
+  const kailoAdhesivesBtn = document.querySelector('#kailo-adhesives');
+  if (kailoAdhesivesBtn) {
+    kailoAdhesivesBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      sessionStorage.setItem('removeAdhesives', 'flex');
+      window.location.pathname = '/cart/add/20859019427902';
+    });
+  }
+
+</script>
 
 {% schema %}
 {
