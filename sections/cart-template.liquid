@@ -266,6 +266,15 @@
             {% if item.image %}
             <a class="cart-img" href="{{ item.url }}">
               <img class="cart__image" src="{{ item | img_url: '150x150', scale: 2 }}" alt="{{ item.title | escape }}">
+              {% if item.product.tags contains 'flex adhesives' %}
+                <div class="adhesive-tag in-cart">
+                  <span class="text-center">for flex patch only<span>
+                </div>
+              {% elsif item.product.tags contains 'kailo adhesives' %}
+                <div class="adhesive-tag kailo-adhesive in-cart">
+                  <span class="text-center">for kailo original only<span>
+                </div>
+              {% endif %}
             </a>
             {% endif %}
 

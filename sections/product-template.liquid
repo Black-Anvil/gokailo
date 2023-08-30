@@ -55,44 +55,53 @@
             {%- assign img_url = featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
                 <li class="slide" data-index="0" data-variant-img="{{ featured_image.id }}">
                   <a class="image-popup">
-                  <div class="lazyload__image-wrapper supports-no-js" style="padding-top:{{ 1 | divided_by: featured_image.aspect_ratio | times: 100}}%;">
-                    
-										{%- assign load_img = featured_image -%}
+                    <div class="lazyload__image-wrapper supports-no-js" style="padding-top:{{ 1 | divided_by: featured_image.aspect_ratio | times: 100}}%;">
+                      
+                      {%- assign load_img = featured_image -%}
 
-										<img
-											alt="{{ load_img.alt | escape }}"
-											src="{{ load_img | img_url: '720x' }}"
-											srcset="
-											{{ load_img | img_url: '2048x' }} 2048w,
-											{{ load_img | img_url: '1728x' }} 1728w,
-											{{ load_img | img_url: '1512x' }} 1512w,
-											{{ load_img | img_url: '1296x' }} 1296w,
-											{{ load_img | img_url: '1080x' }} 1080w,
-											{{ load_img | img_url: '900x' }} 900w,
-											{{ load_img | img_url: '720x' }} 720w"
-										/>										
-										
-										<!-- {{ template.name }}_image_lcp [{{ load_img | img_url: '720x' }}] -->
+                      <img
+                        alt="{{ load_img.alt | escape }}"
+                        src="{{ load_img | img_url: '720x' }}"
+                        srcset="
+                        {{ load_img | img_url: '2048x' }} 2048w,
+                        {{ load_img | img_url: '1728x' }} 1728w,
+                        {{ load_img | img_url: '1512x' }} 1512w,
+                        {{ load_img | img_url: '1296x' }} 1296w,
+                        {{ load_img | img_url: '1080x' }} 1080w,
+                        {{ load_img | img_url: '900x' }} 900w,
+                        {{ load_img | img_url: '720x' }} 720w"
+                      />
+                      {% if product.tags contains 'flex adhesives' %}
+                        <div class="adhesive-tag">
+                          <span class="text-center">for flex patch only<span>
+                        </div>
+                      {% elsif product.tags contains 'kailo adhesives' %}
+                        <div class="adhesive-tag kailo-adhesive">
+                          <span class="text-center">for kailo original only<span>
+                        </div>
+                      {% endif %}
+                      
+                      <!-- {{ template.name }}_image_lcp [{{ load_img | img_url: '720x' }}] -->
 
-										{% comment %} <img class="no-js lazyload"
-                    src="{{ featured_image | img_url: '300x300' }}"
-                    data-src="{{ img_url }}"
-                    data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
-                    data-aspectratio="{{ featured_image.aspect_ratio }}"
-                    data-sizes="auto"
-                    data-parent-fit="width"
-                    alt="{{ featured_image.alt | escape }}"> {% endcomment %}
-                    </div>
-                    <noscript>
-                      <img src="{{ featured_image | img_url: '1024x1024' }}"
-                        srcset="{{ featured_image | img_url: '1024x1024' }} 1x, {{ featured_image | img_url: '1024x1024', scale: 2 }} 2x"
-                        alt="{{ featured_image.alt }}" style="opacity:1;">
-                        <style>
-                          .flexslider .slides li {
-                            display: block;
-                          }
-                        </style>
-                    </noscript>
+                      {% comment %} <img class="no-js lazyload"
+                      src="{{ featured_image | img_url: '300x300' }}"
+                      data-src="{{ img_url }}"
+                      data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                      data-aspectratio="{{ featured_image.aspect_ratio }}"
+                      data-sizes="auto"
+                      data-parent-fit="width"
+                      alt="{{ featured_image.alt | escape }}"> {% endcomment %}
+                      </div>
+                      <noscript>
+                        <img src="{{ featured_image | img_url: '1024x1024' }}"
+                          srcset="{{ featured_image | img_url: '1024x1024' }} 1x, {{ featured_image | img_url: '1024x1024', scale: 2 }} 2x"
+                          alt="{{ featured_image.alt }}" style="opacity:1;">
+                          <style>
+                            .flexslider .slides li {
+                              display: block;
+                            }
+                          </style>
+                      </noscript>
                   </a>
                 </li>
                 {% if product.images.size > 1 %}
@@ -111,7 +120,16 @@
                           data-sizes="auto"
                           data-parent-fit="width"
                           alt="{{ image.alt | escape }}">
-                          </div>
+                          {% if product.tags contains 'flex adhesives' %}
+                            <div class="adhesive-tag">
+                              <span class="text-center">for flex patch only<span>
+                            </div>
+                          {% elsif product.tags contains 'kailo adhesives' %}
+                            <div class="adhesive-tag kailo-adhesive">
+                              <span class="text-center">for kailo original only<span>
+                            </div>
+                          {% endif %}
+                        </div>
                         </a>
                       </li>
                     {% endunless %}

@@ -21,15 +21,24 @@
             {%- assign img_url = featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
                 <li class="slide" data-index="0" data-variant-img="{{ featured_image.id }}">
                   <a class="image-popup">
-                  <div class="lazyload__image-wrapper supports-no-js" style="padding-top:{{ 1 | divided_by: featured_image.aspect_ratio | times: 100}}%;">
-                    <img class="no-js lazyload"
-                    src="{{ featured_image | img_url: '300x300' }}"
-                    data-src="{{ img_url }}"
-                    data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
-                    data-aspectratio="{{ featured_image.aspect_ratio }}"
-                    data-sizes="auto"
-                    data-parent-fit="width"
-                    alt="{{ featured_image.alt | escape }}">
+                    <div class="lazyload__image-wrapper supports-no-js" style="padding-top:{{ 1 | divided_by: featured_image.aspect_ratio | times: 100}}%;">
+                      <img class="no-js lazyload"
+                      src="{{ featured_image | img_url: '300x300' }}"
+                      data-src="{{ img_url }}"
+                      data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                      data-aspectratio="{{ featured_image.aspect_ratio }}"
+                      data-sizes="auto"
+                      data-parent-fit="width"
+                      alt="{{ featured_image.alt | escape }}">
+                      {% if product.tags contains 'flex adhesives' %}
+                        <div class="adhesive-tag">
+                          <span class="text-center">for flex patch only<span>
+                        </div>
+                      {% elsif product.tags contains 'kailo adhesives' %}
+                        <div class="adhesive-tag kailo-adhesive">
+                          <span class="text-center">for kailo original only<span>
+                        </div>
+                      {% endif %}
                     </div>
                     <noscript>
                       <img src="{{ featured_image | img_url: '1024x1024' }}"
@@ -51,14 +60,23 @@
                       {% assign index = index | plus: 1 %}
                       <li class="slide" data-index="{{ index }}" data-variant-img="{{ image.id }}">
                         <a class="image-popup">
-                        <div class="lazyload__image-wrapper supports-no-js" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
-                          <img class="no-js lazyload"
-                          data-src="{{ img_url }}"
-                          data-widths="[320, 360, 375, 414, 568, 684, 720, 732, 736, 768, 1024, 1200, 1296, 1512, 1728, 1944, 2048, 4472]"
-                          data-aspectratio="{{ image.aspect_ratio }}"
-                          data-sizes="auto"
-                          data-parent-fit="width"
-                          alt="{{ image.alt | escape }}">
+                          <div class="lazyload__image-wrapper supports-no-js" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
+                            <img class="no-js lazyload"
+                            data-src="{{ img_url }}"
+                            data-widths="[320, 360, 375, 414, 568, 684, 720, 732, 736, 768, 1024, 1200, 1296, 1512, 1728, 1944, 2048, 4472]"
+                            data-aspectratio="{{ image.aspect_ratio }}"
+                            data-sizes="auto"
+                            data-parent-fit="width"
+                            alt="{{ image.alt | escape }}">
+                            {% if product.tags contains 'flex adhesives' %}
+                              <div class="adhesive-tag">
+                                <span class="text-center">for flex patch only<span>
+                              </div>
+                            {% elsif product.tags contains 'kailo adhesives' %}
+                              <div class="adhesive-tag kailo-adhesive">
+                                <span class="text-center">for kailo original only<span>
+                              </div>
+                            {% endif %}
                           </div>
                         </a>
                       </li>
