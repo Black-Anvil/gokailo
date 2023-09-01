@@ -45,6 +45,15 @@
         data-parent-fit="width"
         alt="{{ product.featured_image.alt | escape }}">			
 		{%- endif -%}
+    {% if product.tags contains 'flex adhesives' %}
+      <div class="adhesive-tag">
+        <span>for flex patch only<span>
+      </div>
+    {% elsif product.tags contains 'kailo adhesives' %}
+      <div class="adhesive-tag kailo-adhesive">
+        <span>for kailo original only<span>
+      </div>
+    {% endif %}
     </div>
     <noscript>
       <img src="{{ product.featured_image | img_url: '580x' }}"
