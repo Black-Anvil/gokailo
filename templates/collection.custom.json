@@ -1,7 +1,25 @@
 {
   "sections": {
     "main": {
-      "type": "collection-template-custom",
+      "type": "collection-list",
+      "blocks": {
+        "c9e2129b-3979-479b-82b9-95dfeb0edf9c": {
+          "type": "Collection",
+          "settings": {
+            "collection": "flex-products"
+          }
+        },
+        "807c50b4-b52d-4030-9d31-30b408aee862": {
+          "type": "Collection",
+          "settings": {
+            "collection": "kailo-products"
+          }
+        }
+      },
+      "block_order": [
+        "c9e2129b-3979-479b-82b9-95dfeb0edf9c",
+        "807c50b4-b52d-4030-9d31-30b408aee862"
+      ],
       "settings": {
       }
     }
