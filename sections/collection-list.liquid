@@ -1,0 +1,162 @@
+{% assign header_title = page_title %}
+{% include 'page_header' with header_title %}
+<button class="pop-up__trigger btn btn--fill btn--color">
+    <span>Which Kailo is right for you?</span>
+    <img src="{{ 'hand-pointer.svg' | asset_url }}" class="cursor-pointer">
+</button>
+<div class="section-wrapper">
+    {% for block in section.blocks %}
+        {% if block.type == 'Collection' %}
+            {% render 'collection-grid-item-custom', collection: block.settings.collection %}
+        {% endif %}
+    {% endfor %}
+</div>
+<div class="modal-wrapper">
+    <div class="modal">
+        <img src="{{ 'KailoFlexVOriginal_3220d80b-1dfc-4ebe-8479-bdb473bf7421.jpg' | file_url }}" class="modal-img">
+        <button class="modal-closer__btn">
+            <img src="{{ 'popup-closer.svg' | asset_url }}" class="modal-closer">
+        </button>
+    </div>
+</div>
+
+<style>
+    
+    .section-wrapper {
+        max-width: 1200px;
+        margin: 0 auto 40px;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        position: relative;
+    }
+    .grid-item-custom {
+        width: 400px;
+    }
+    .pop-up__trigger {
+        min-height: 50px;
+        padding: 10px 40px;
+        display: block;
+        margin: 40px auto;
+        position: relative;
+        font-size: 2rem;
+        max-width: 95%;
+        line-height: 1.2;
+    }
+    .cursor-pointer {
+        width: 25px;
+        position: absolute;
+        z-index: 100;
+        bottom: -10px;
+        animation: 2s ease-out infinite pointer-rise;
+    }
+    .modal-wrapper {
+        position: fixed;
+        top: 0;
+        background-color: rgba(0, 0, 0, .3);
+        width: 100%;
+        height: 0;
+        opacity: 0;
+        z-index: 100;
+    }
+    .modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        max-width: 95%;
+        height: 0;
+    }
+    .modal-img {
+        width: 100%;
+        height: 0;
+        opacity: 0;
+    }
+    .modal-closer__btn {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: 5px;
+        left: 5px;
+    }
+    .modal-wrapper.active {
+        height: 100%;
+        opacity: 1;
+    }
+    .modal.active,
+    .modal-img.active {
+        height: auto;
+    }
+    .modal-img.active {
+        opacity: 1;
+        transition: opacity 300ms;
+    }
+    @keyframes pointer-rise {
+        from {
+            bottom: -50px;
+            right: -50px;
+        }
+        to {
+            bottom: -10px;
+            right: 0;
+        }
+    }
+    @media screen and (max-width: 425px) {
+        .pop-up__trigger {
+            font-size: 1rem;
+        }
+    }
+</style>
+
+<script>
+    const popupTrigger = document.querySelector('.pop-up__trigger');
+    const modalWrapper = document.querySelector('.modal-wrapper');
+    const modal = document.querySelector('.modal');
+    const modalImage = document.querySelector('.modal-img');
+    const body = document.querySelector('body');
+    popupTrigger.addEventListener('click', function(e) {
+        modalWrapper.classList.add('active');
+        modal.classList.add('active');
+        modalImage.classList.add('active');
+        body.style.overflowY = 'hidden';
+    })
+    modalWrapper.addEventListener('click', function(e) {
+        if (!e.target.closest('.modal') || e.target.matches('.modal-closer')) {
+            modalWrapper.classList.remove('active');
+            modal.classList.remove('active');
+            modalImage.classList.remove('active');
+            body.style.overflowY = 'scroll';
+        }
+    })
+</script>
+
+{% schema %}
+{
+    "name": "Collection List",
+    "settings": [
+       
+    ],
+    "blocks": [
+        {
+            "name": "Collection",
+            "type": "Collection",
+            "settings": [
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Add a collection"
+                }
+            ] 
+        },
+        {
+            "name": "Popup trigger",
+            "type": "button",
+            "settings": [
+
+            ]
+        }
+    ]
+}
+
+{% endschema %}

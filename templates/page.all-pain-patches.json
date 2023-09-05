@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "main": {
+      "type": "collection-list",
+      "blocks": {
+        "cb4e2239-be5d-4294-9024-192d40ad4b58": {
+          "type": "Collection",
+          "settings": {
+            "collection": "kailo-flex"
+          }
+        },
+        "4b0d79dc-41a2-408e-8e73-a5bcad0cde8a": {
+          "type": "Collection",
+          "settings": {
+            "collection": "original-kailo"
+          }
+        }
+      },
+      "block_order": [
+        "cb4e2239-be5d-4294-9024-192d40ad4b58",
+        "4b0d79dc-41a2-408e-8e73-a5bcad0cde8a"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
