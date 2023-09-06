@@ -1,12 +1,74 @@
+{% assign header_title = page_title %}
+{% include 'page_header' with header_title %}
+<div class="section-wrapper">
+    {% for block in section.blocks %}
+        {% if block.type == 'Collection' %}
+            {% render 'collection-grid-item-custom', collection: block.settings.collection %}
+        {% endif %}
+    {% endfor %}
+</div>
+<button class="pop-up__trigger btn btn--fill btn--color">Which Kailo is right for you?</button>
+<div class="modal-wrapper">
+    <div class="modal">
+        <img src="{{ 'KailoFlexVOriginal_3220d80b-1dfc-4ebe-8479-bdb473bf7421.jpg' | file_url }}" class="modal-img">
+        <button class="modal-closer__btn">
+            <img src="{{ 'popup-closer-2.svg' | asset_url }}" class="modal-closer">
+        </button>
+        <div class="btn-container">
+            <a href="/collections/flex-products" class="modal-btn btn btn--fill btn--color">Shop Flex Products</a>
+            <a href="/collections/kailo-products" class="modal-btn btn btn--fill btn--color">Shop Kailo Products</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const popupTrigger = document.querySelector('.pop-up__trigger');
+    const modalWrapper = document.querySelector('.modal-wrapper');
+    const modal = document.querySelector('.modal');
+    const modalImage = document.querySelector('.modal-img');
+    const body = document.querySelector('body');
+    popupTrigger.addEventListener('click', function(e) {
+        modalWrapper.classList.add('active');
+        modal.classList.add('active');
+        modalImage.classList.add('active');
+        body.style.overflowY = 'hidden';
+    })
+    modalWrapper.addEventListener('click', function(e) {
+        if (!e.target.closest('.modal') || e.target.matches('.modal-closer')) {
+            modalWrapper.classList.remove('active');
+            modal.classList.remove('active');
+            modalImage.classList.remove('active');
+            body.style.overflowY = 'scroll';
+        }
+    })
+</script>
+
 {% schema %}
-  {
-    "name": "Collection list",
-    "settings": []
-  }
+{
+    "name": "Collection List",
+    "settings": [
+       
+    ],
+    "blocks": [
+        {
+            "name": "Collection",
+            "type": "Collection",
+            "settings": [
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Add a collection"
+                }
+            ] 
+        },
+        {
+            "name": "Popup trigger",
+            "type": "button",
+            "settings": [
+
+            ]
+        }
+    ]
+}
+
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}

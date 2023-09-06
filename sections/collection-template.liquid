@@ -4,22 +4,23 @@
 
 <div class="wrapper wrapper--margins">
 
-  {% if collection.image %}
-    <div class="collection-image">
-    {% assign img_url = collection.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
-      <img class="no-js lazyload"
-            data-src="{{ img_url }}"
-            data-widths="[320, 360, 375, 414, 568, 684, 720, 732, 736, 768, 1024, 1200, 1296, 1512, 1728, 1944, 2048, 4472]"
-            data-aspectratio="{{ collection.image.aspect_ratio }}"
-            data-sizes="auto"
-            data-parent-fit="width"
-            alt="{{ collection.image.alt }}" />
-            <noscript>
-              <img src="{{ collection.image | img_url: '1200x' }}"
-                srcset="{{ collection.image | img_url: '1200x' }} 1x, {{ collection.image | img_url: '1200x', scale: 2 }} 2x"
-                alt="{{ collection.image.alt }}"  style="opacity:1;">
-            </noscript>
-    </div>
+  {% if collection.image and section.settings.collection_img %}
+      <div class="collection-image">
+      {% assign img_url = collection.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+        <img class="no-js lazyload"
+              data-src="{{ img_url }}"
+              data-widths="[320, 360, 375, 414, 568, 684, 720, 732, 736, 768, 1024, 1200, 1296, 1512, 1728, 1944, 2048, 4472]"
+              data-aspectratio="{{ collection.image.aspect_ratio }}"
+              data-sizes="auto"
+              data-parent-fit="width"
+              alt="{{ collection.image.alt }}"
+        />
+        <noscript>
+          <img src="{{ collection.image | img_url: '1200x' }}"
+            srcset="{{ collection.image | img_url: '1200x' }} 1x, {{ collection.image | img_url: '1200x', scale: 2 }} 2x"
+            alt="{{ collection.image.alt }}"  style="opacity:1;">
+        </noscript>
+      </div>
   {% endif %}
 
   {%- assign limit = section.settings.grid | times: section.settings.rows -%}
@@ -223,6 +224,12 @@
     "zh-TW": "商品系列頁面"
   },
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "collection_img",
+      "label": "Show collection image",
+      "default": false
+    },
     {
       "type": "select",
       "id": "grid",
