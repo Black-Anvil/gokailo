@@ -248,19 +248,6 @@
 
         {% for item in cart.items %}
 
-          {% comment %} {% if item.id == 32217170608259 %}
-          {% assign bundle_item_1 = true %}
-          {% endif %}
-          {% if item.id == 20859019427902 %}
-            {% assign bundle_item_2 = true %}
-          {% endif %}
-          {% if item.product.tags contains 'kailo adhesives' %}
-            {% assign kailo_adhesives = true %}
-          {% endif %}
-          {% if item.product.tags contains 'flex adhesives' %}
-            {% assign flex_adhesives = true %}
-          {% endif %} {% endcomment %}
-
           <div class="cart-row cart-item clearfix" data-id="{{ item.key }}">
 
             {% if item.image %}
