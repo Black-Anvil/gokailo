@@ -161,7 +161,13 @@ src="https://www.facebook.com/tr?id=746065746668502&ev=PageView&noscript=1"
     {% if template.suffix == 'kailo-landing-11' or 'kailo-landing-cs' %}
     	{{ 'slick.css' | asset_url | stylesheet_tag }}
 	{% endif %}
-  
+  {% if template.name == 'collection' or template.name == 'list-collections' %}
+    <script>
+      if (window.location.pathname == '/collections' || window.location.pathname == '/collections/all') {
+        window.location.replace('https://gokailo.com/collections/all-pain-patches');
+      }
+    </script>
+  {% endif %}
   </head>
 
   <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
