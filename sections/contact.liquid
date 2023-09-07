@@ -1,0 +1,233 @@
+<style>
+    .contact__top {
+        padding: 150px 0 80px;
+        color: var(--grays6);
+        background-color: var(--primary3);
+        background-image: linear-gradient(0deg, rgba(53, 93, 102, 0.80) 0%, rgba(53, 93, 102, 0.80) 100%), url({{ section.settings.image | image_url }});
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .contact .container {
+        --container-width: 840px;
+    }
+
+    .contact__map iframe {
+        width: 100% !important;
+        height: 560px !important;
+    }
+
+    .contact__header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .contact__top .title-decorator {
+        color: inherit;
+    }
+
+    .contact__top .title-decorator::before {
+        background-color: var(--grays6);
+    }
+
+    .contact__inner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .contact__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .contact__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 620px;
+        gap: 24px;
+        padding: 40px;
+        border-radius: 6px;
+        color: var(--grays2);
+        background-color: var(--grays6);
+    }
+
+    #contact-form:target + #successContact {
+        display: inline-flex;
+    }
+
+    #contact-form:target {
+        display: none;
+    }
+
+    .contact__form .button {
+        align-self: flex-start;
+    }
+
+    .contact__success {
+        display: none;
+        align-items: flex-start;
+        justify-content: center;
+        text-align: left;
+        padding: 8px 12px;
+        border-radius: 12px;
+        background-color: var(--grays6);
+        color: var(--primary1);
+    }
+
+    .contact__success p {
+        margin: 2px 0 0;
+    }
+
+    .contact__success svg {
+        margin: 0 6px 0 0;
+        min-width: 28px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .contact__top {
+            padding: 100px 0 60px;
+        }
+
+        .contact__map iframe {
+            height: 375px !important;
+        }
+
+        .contact__header {
+            gap: 16px;
+        }
+
+        .contact__inner {
+            gap: 24px;
+        }
+
+        .contact__form {
+            width: 100%;
+            max-width: 100%;
+            gap: 16px;
+            padding: 16px;
+        }
+
+        .contact__form .button {
+            align-self: stretch;
+        }
+    }
+</style>
+
+<div class="contact">
+    <div class="contact__top">
+        <div class="container">
+            <div class="contact__inner">
+                <div class="contact__header">
+                    {% if section.settings.title != blank %}
+                        <h2 class="h1-title title-decorator">{{ section.settings.title }}</h2>
+                    {% endif %}
+
+                    {% if section.settings.description != blank %}
+                        <p>{{ section.settings.description }}</p>
+                    {% endif %}
+                </div>
+
+                <ul class="contact__list">
+                    {% if section.settings.address_1 != blank %}
+                        <li>
+                            <span>{{ section.settings.address_1 }}</span>
+                        </li>
+                    {% endif %}
+
+                    {% if section.settings.address_2 != blank %}
+                        <li>
+                            <span>{{ section.settings.address_2 }}</span>
+                        </li>
+                    {% endif %}
+
+                    {% if section.settings.email != blank %}
+                        <li>
+                            <a href="{{ settings.email }}">{{ section.settings.email }}</a>
+                        </li>
+                    {% endif %}
+                </ul>
+
+                {% form 'contact', id: "contact-form", class: "contact__form" %}
+                    {% render "field-block", label: "Name", id: "contact_name", name: "contact[first_name]", type: "text", placeholder: "Name", required: true %}
+
+                    {% render "field-block", label: "Email", id: "contact_email", name: "contact[email]", type: "text", placeholder: "example@mail.com", required: true %}
+
+                    {% render "field-block", label: "Message", id: "contact_message", name: "contact[body]", type: "text", placeholder: "Your Message", required: true %}
+
+                    <input class="button button--primary" type="submit" value="Submit"/>
+                {% endform %}
+
+                <div id="successContact" class="contact__success">
+                    {% render "icon-success" %}
+                    <p>Thank you for contacting us! Your message has been successfully delivered to our team.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if section.settings.map_show %}
+        <div class="contact__map">{{ section.settings.map }}</div>
+    {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Contact",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "address_1",
+      "label": "Address 1"
+    },
+    {
+      "type": "text",
+      "id": "address_2",
+      "label": "Address 2"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email"
+    },
+    {
+      "type": "html",
+      "id": "map",
+      "label": "Map Iframe"
+    },
+    {
+      "type": "checkbox",
+      "id": "map_show",
+      "label": "Show Map",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

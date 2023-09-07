@@ -1,0 +1,60 @@
+<style>
+    .page-content {
+        padding: 80px 0 100px;
+    }
+
+    .page-content .container {
+        --container-width: 950px
+    }
+
+    .page-content__header {
+        margin: 0 0 60px;
+    }
+
+    .page-content .content h1,
+    .page-content .content h2,
+    .page-content .content h3,
+    .page-content .content h4 {
+        color: var(--grays1);
+    }
+
+    @media screen and (max-width: 768px) {
+        .page-content {
+            padding: 60px 0 80px;
+        }
+
+        .page-content__header {
+            margin: 0 0 40px;
+        }
+    }
+</style>
+
+<div id="more" class="page-content">
+    <div class="container">
+        <div class="page-content__header">
+            {% if section.settings.title != blank %}
+                <h2 class="h2-title title-decorator">{{ section.settings.title }}</h2>
+            {% endif %}
+        </div>
+
+        <div class="content">{{ section.settings.content }}</div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Page Content",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    }
+  ]
+}
+{% endschema %}

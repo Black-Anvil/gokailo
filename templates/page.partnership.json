@@ -1,0 +1,57 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+        "caption": "kailo",
+        "title": "partnership inquiries",
+        "description": "<p>Pain Relief Technologies is in the infancy of bringing the KAILO Pain Patch to the marketplace and is currently looking for Partners that share our vision and values to expand KAILO’s market presence. <\/p>",
+        "image_background": "shopify:\/\/shop_images\/cbf7486200ba2c8d5cc66eec9b46cdb3.png",
+        "link_url": "#more",
+        "link_text": "apply now"
+      }
+    },
+    "apply-partner": {
+      "type": "apply-partner",
+      "blocks": {
+        "f5b03eeb-b30c-4f66-a0b6-38da1bd1fb15": {
+          "type": "block",
+          "settings": {
+            "text": "<p>Pain Relief Technologies is a Company founded on its commitment to help as many people as possible live their best lives without the interference of pain.<br\/><br\/>Observational Clinical trial results were recently published  in Anesthesia and Pain Research, an international peer-reviewed journal devoted to the clinical practice of anesthesia and pain medicine. The PREVENT Clinical Trial found that participants using the KAILO Pain Patch experienced a measurable decrease in pain severity, pain interference, and a decrease in concurrent medication usage -including Opioids.<\/p>",
+            "link_url": "https:\/\/scivisionpub.com\/pdfs\/using-nanotechnology-to-improve-pain-and-function-with-a-novel-drugfree-topical-painrelief-patch-an-interim-analysis-1476.pdf",
+            "link_text": "read study",
+            "author_position": "",
+            "author_name": ""
+          }
+        },
+        "b52b34db-5250-428f-b7df-ea3262a5f3b9": {
+          "type": "block",
+          "settings": {
+            "text": "<p>Pain Relief Technologies is in the infancy of bringing the KAILO Pain Patch to the marketplace and is currently looking for Partners that share our vision and values to expand KAILO’s market presence. There is plenty of upside potential for the right Partner to experience dramatic growth in new market sectors and geographies.<\/p>",
+            "link_url": "",
+            "link_text": "",
+            "author_position": "In Wellness",
+            "author_name": "KAILO Channel Development Team"
+          }
+        }
+      },
+      "block_order": [
+        "f5b03eeb-b30c-4f66-a0b6-38da1bd1fb15",
+        "b52b34db-5250-428f-b7df-ea3262a5f3b9"
+      ],
+      "settings": {
+        "title": "apply to be a partner"
+      }
+    },
+    "partner-inquiry": {
+      "type": "partner-inquiry",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "page-hero",
+    "apply-partner",
+    "partner-inquiry"
+  ]
+}
