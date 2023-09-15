@@ -1,0 +1,168 @@
+<style>
+    .comments {
+        padding: 80px 0;
+        background-color: var(--grays5);
+    }
+
+    .comments .errors {
+        color: var(--system-error);
+    }
+
+    .comments__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .comments__form form {
+        margin: 24px 0 0;
+    }
+
+    .comments__form form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .comments__form .flex {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .comments__list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .comments__item {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 24px;
+        border-radius: 6px;
+        background: var(--grays6);
+    }
+
+    .comments__author {
+        display: flex;
+        align-items: center;
+    }
+
+    .comments__author-separator {
+        margin: 0 8px;
+        width: 1px;
+        height: 14px;
+        background-color: var(--grays4);
+    }
+
+    @media screen and (max-width: 768px) {
+        .comments {
+            padding: 60px 0;
+        }
+
+        .comments__wrapper {
+            gap: 24px;
+        }
+
+        .comments__form form {
+            margin: 16px 0 0;
+        }
+
+        .comments__form form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .comments__form .flex {
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+
+        .comments__list {
+            gap: 8px;
+        }
+
+        .comments__item {
+            gap: 8px;
+            padding: 16px;
+        }
+
+        .comments__author {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .comments__author-separator {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .comments__form .button {
+            width: 100%;
+        }
+    }
+</style>
+
+{{ "pagination.css" | asset_url | stylesheet_tag }}
+
+{% if article.comments_enabled? %}
+    <div class="comments">
+        <div class="container">
+            <div class="comments__wrapper">
+                <h3 class="h3-title">Comments ({{ article.comments_count }})</h3>
+
+                <div class="comments__form">
+                    <h3><b>Leave a reply</b></h3>
+
+                    {% form 'new_comment', article %}
+                        <div class="flex">
+                            {% render "field-block", label: "Name", id: "comment_name", name: "comment[author]", type: "text", placeholder: "Name", value: form.author, required: true %}
+
+                            {% render "field-block", label: "Email", id: "comment_email", name: "comment[email]", type: "email", placeholder: "Email", value: form.email, required: true %}
+                        </div>
+
+                        {% render "field-block", label: "Comment", id: "comment_body", name: "comment[body]", type: "text", placeholder: "Comment", value: form.body, required: true %}
+
+                        {{ form.errors | default_errors }}
+
+                        <div class="submit">
+                            <input class="button button--primary" type="submit" value="submit comment">
+                        </div>
+                    {% endform %}
+                </div>
+
+                {% if article.comments_count != 0 %}
+                    {% paginate article.comments by 20 %}
+                        <ul class="comments__list">
+                            {% for comment in article.comments %}
+                               <li class="comments__item">
+                                   <div class="comments__author">
+                                       <b>{{ comment.author }}</b>
+                                       <span class="comments__author-separator"></span>
+                                       <span class="small-text">{{ comment.email }}</span>
+                                       <span class="comments__author-separator"></span>
+                                       <span class="small-text">Published on {{ comment.created_at | date: '%B %d, %Y' }}</span>
+                                   </div>
+
+                                   <div>
+                                       <p>{{ comment.content }}</p>
+                                   </div>
+                               </li>
+                            {% endfor %}
+                        </ul>
+
+                        {{ paginate | default_pagination }}
+                    {% endpaginate %}
+                {% else %}
+                    <p>No comments yet for this article.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
