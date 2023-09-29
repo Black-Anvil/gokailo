@@ -269,14 +269,16 @@
                     </div>
                 </div>
               {% else %}
-<div class="ro_widget"></div>
+                <div class="ro_widget"></div>
                 <button type="submit" name="add" id="AddToCart-{{ section.id }}" class="addtocart btn btn--fill btn--regular btn--color{% if section.settings.enable_payment_button %} btn--shopify-payment-btn btn--secondary-accent{% endif %}" "pintrk('track', 'addtocart', {value:1 {{ product.selected_variant.price | money_without_currency}}, order_quantity: 1});">
                   <span id="AddToCartText-{{ section.id }}">{{ 'products.product.add_to_cart' | t }}</span>
                 </button>
               {% endif %}
-              {% if product.available %}
-<div id="bread-checkout-btn-product" style="width:100%; height:50px; margin:20px 0px;"></div>
-{% endif %}
+              {% unless product.handle contains 'gift' %}
+                {% if product.available %}
+                  <div id="bread-checkout-btn-product" style="width:100%; height:50px; margin:20px 0px;"></div>
+                {% endif %}
+              {% endunless %}
               {% if section.settings.enable_payment_button %}
                 {% comment %} {{ form | payment_button }} {% endcomment %}
                 <script>
